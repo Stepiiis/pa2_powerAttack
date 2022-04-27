@@ -2,14 +2,16 @@
 
 #include "Entity.h"
 #include "constants.h"
+
+
 class basicAttacker: Entity
 {
 public:
-    basicAttacker(int posX, int posY, uint maxHealth);
+    basicAttacker(int posX, int posY, int maxHealth);
     
-    ~Attacker();
+    ~basicAttacker();
 
     bool move (int x, int y) override;
 
-    void speed;
+    int speed;
 };

@@ -1,8 +1,12 @@
 #pragma once
 #include "constants.h"
+
+#include <iostream>
+
+
 class Entity{
 public:
-    Entity(int posX, int posY, uint maxHealth);
+    Entity(int posX, int posY, int maxHealth);
     
     virtual bool move(int x, int y);
 
@@ -11,17 +15,17 @@ public:
     bool giveDamage(int damage, Entity* target);
         
 protected:
-    uint m_x;       // souřadnice x
+    size_t m_x;       // souřadnice x
 
-    uint m_y;       // -//- y
+    size_t m_y;       // -//- y
 
-    char symbol;    // symbol identifikující typ entity
+    char m_symbol;    // symbol identifikující typ entity
 
     size_t m_id;    // identifikator dane postavy
 
-    uint m_hp;      // současné zdraví
+    size_t m_hp;      // současné zdraví
 
-    uint m_maxhp;   // maximální zdraví
+    uint32_t m_maxhp;   // maximální zdraví
 
     char color;     // barva entity
 };
