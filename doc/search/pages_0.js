@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['plánovač_20tras_96',['Plánovač tras',['../index.html',1,'']]]
+  ['plánovač_20tras_102',['Plánovač tras',['../index.html',1,'']]]
 ];

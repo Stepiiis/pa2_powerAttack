@@ -6,10 +6,10 @@ class Map
 public:
     void printMap(std::string& map);
     explicit Map();
+    bool updateMap(int x, int y, Entity * entity);
     bool loadNextMap(int level); // pass last map index as parameter
     bool readMap(int level); // pas new map index as parameter
     class Point {
-
     private:
         friend Map;
         Point(int x, int y);
@@ -20,7 +20,7 @@ public:
     int currentLevel;
 };
 
-enum class PointType {
+enum class PointType{
     Empty,
     Wall,
     Entity

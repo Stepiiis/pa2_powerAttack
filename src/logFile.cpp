@@ -12,7 +12,7 @@ bool sendToLogFile(short level, const std::string& text, const std::string conte
     if(!logFile.is_open()){
         throw logException("Log file not found");
     }
-    std::cout << "Level: " << level << " Context: " << context << " Text: " << text << std::endl;
+//    std::cout << "Level: " << level << " Context: " << context << " Text: " << text << std::endl;
     logFile << "Level: " << level << " Context: " << context << " Text: " << text << std::endl;
     return true;
 }

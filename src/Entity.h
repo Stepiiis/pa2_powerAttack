@@ -15,6 +15,8 @@ public:
 
     char getSymbol();
 
+    bool printEntity(int x, int y);
+
 protected:
     size_t m_x;       // souřadnice x
 
@@ -28,5 +30,5 @@ protected:
 
     uint32_t m_maxhp;   // maximální zdraví
 
-    char color;     // barva entity
+    short m_color;     // barva entity
 };

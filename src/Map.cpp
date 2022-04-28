@@ -3,13 +3,33 @@
 #include <fstream>
 #include <memory>
 #include "logFile.h"
+#include "Entity.h"
 #include "Map.h"
+#include "ncurses.h"
 
 Map::Map()
 : currentLevel(0)
 {
     readMap(0);
 }
+
+bool Map::updateMap(int x, int y, Entity * entity)
+{
+    if(y>m_map.size() || (y<0) || (x>m_map[0].size()) || (x<0))
+    {
+        throw("Out of bounds");
+    }
+    char symbol = entity->getSymbol();
+    entity->move(x,y);
+    m_map[y][x] = symbol;
+    mvprintw(y,x,"%c",symbol);
+    return true;
+}
+
+bool Map::loadNextMap(int level){
+    return   readMap(level);
+}
+
 // loads map from data files and sets up the map into a 2D array
 bool Map::readMap(int level) {
     std::string mapLocation = "data/maps/map" + std::to_string(level) + ".txt";
@@ -39,8 +59,7 @@ bool Map::readMap(int level) {
             m_map.emplace_back(mapLines);
         }
     }
-
-    std::cout << "Map loaded" << std::endl;
+    sendToLogFile(0, "Map::readMap: Map loaded successfully", "Map.cpp");
     return true;
 }
 
@@ -53,3 +72,7 @@ void Map::printMap(std::string & map){
         }
     }
 }
+
+Map::Point::Point(int x, int y)
+: x(x), y(y)
+{}

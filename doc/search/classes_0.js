@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basicattacker_45',['basicAttacker',['../classbasicAttacker.html',1,'']]]
+  ['basicattacker_48',['basicAttacker',['../classbasicAttacker.html',1,'']]]
 ];

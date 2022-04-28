@@ -1,0 +1,4 @@
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully

@@ -1,5 +1,6 @@
 <map id="Map::Map" name="Map::Map">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,92,32"/>
-<area shape="rect" id="node2" href="$classMap.html#a79a4355510b026646449df1852768c38" title=" " alt="" coords="140,5,255,32"/>
-<area shape="rect" id="node3" href="$logFile_8cpp.html#a7044c91cfa1a776cbf7b08b4af30888d" title=" " alt="" coords="303,5,416,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,92,57"/>
+<area shape="rect" id="node2" href="$classMap.html#a79a4355510b026646449df1852768c38" title=" " alt="" coords="140,31,255,57"/>
+<area shape="rect" id="node3" href="$logFile_8cpp.html#a7044c91cfa1a776cbf7b08b4af30888d" title=" " alt="" coords="319,5,433,32"/>
+<area shape="rect" id="node4" href="$classlogException.html#aee5cf9c19e99ce539b58973237cf12ec" title=" " alt="" coords="303,56,449,83"/>
 </map>

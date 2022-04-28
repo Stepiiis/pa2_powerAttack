@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7ebasicattacker_76',['~basicAttacker',['../classbasicAttacker.html#ada794e28b7cc49c05309a117cd3df74e',1,'basicAttacker']]]
+  ['what_80',['what',['../classlogException.html#aee5cf9c19e99ce539b58973237cf12ec',1,'logException']]]
 ];
