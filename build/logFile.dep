@@ -1,0 +1,1 @@
+build/logFile.o: src/logFile.cpp src/logFile.h

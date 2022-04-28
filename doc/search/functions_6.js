@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7ebasicattacker_48',['~basicAttacker',['../classbasicAttacker.html#ada794e28b7cc49c05309a117cd3df74e',1,'basicAttacker']]]
+  ['readmap_72',['readMap',['../classMap.html#a79a4355510b026646449df1852768c38',1,'Map']]]
 ];

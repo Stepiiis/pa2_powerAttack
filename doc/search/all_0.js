@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['attacker_2ecpp_0',['Attacker.cpp',['../Attacker_8cpp.html',1,'']]],
-  ['attacker_2eh_1',['Attacker.h',['../Attacker_8h.html',1,'']]]
+  ['_5fmsg_0',['_msg',['../classlogException.html#a982d40bfaa893a4964d2287f65cfde06',1,'logException']]]
 ];

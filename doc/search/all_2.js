@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['color_3',['color',['../classEntity.html#a81003990c37a87a5f259531278d16582',1,'Entity']]],
-  ['constants_2eh_4',['constants.h',['../constants_8h.html',1,'']]]
+  ['basicattacker_3',['basicAttacker',['../classbasicAttacker.html',1,'basicAttacker'],['../classbasicAttacker.html#a05cb87767550c96b5c152cfd465fa256',1,'basicAttacker::basicAttacker()']]]
 ];

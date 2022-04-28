@@ -1,2 +1,2 @@
-build/main.o: src/main.cpp src/./Entity.h src/./constants.h \
- src/./Attacker.h
+build/main.o: src/main.cpp src/Entity.h src/constants.h src/Attacker.h \
+ src/Map.h

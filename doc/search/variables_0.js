@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['color_49',['color',['../classEntity.html#a81003990c37a87a5f259531278d16582',1,'Entity']]]
+  ['_5fmsg_77',['_msg',['../classlogException.html#a982d40bfaa893a4964d2287f65cfde06',1,'logException']]]
 ];

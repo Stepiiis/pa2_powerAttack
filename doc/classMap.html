@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Plánovač tras: Map Class Reference</title>
+<title>Tower Attack: Map Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Plánovač tras
+   <div id="projectname">Tower Attack
    </div>
   </td>
  </tr>
@@ -62,7 +62,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classMap-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Map Class Reference</div>  </div>
@@ -71,14 +73,32 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="Map_8h_source.html">Map.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a2179ca4485b379700751a13247e1c4e2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a2179ca4485b379700751a13247e1c4e2">printMap</a> ()</td></tr>
-<tr class="separator:a2179ca4485b379700751a13247e1c4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap_1_1Point.html">Point</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a7b487cdd84a27c16cfb2218c834a7768"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a7b487cdd84a27c16cfb2218c834a7768">printMap</a> ()</td></tr>
+<tr class="separator:a7b487cdd84a27c16cfb2218c834a7768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f5ad0fd4563497b4214038cbca8b582"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a> ()</td></tr>
+<tr class="separator:a0f5ad0fd4563497b4214038cbca8b582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1bc119b284fc82e2f3b1c2956b4381"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381">loadNextMap</a> (int level)</td></tr>
+<tr class="separator:a0a1bc119b284fc82e2f3b1c2956b4381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a4355510b026646449df1852768c38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a79a4355510b026646449df1852768c38">readMap</a> (int level)</td></tr>
+<tr class="separator:a79a4355510b026646449df1852768c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a6b42bf9fd6fe16d287ff24df65070243"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; char &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a6b42bf9fd6fe16d287ff24df65070243">m_map</a></td></tr>
+<tr class="separator:a6b42bf9fd6fe16d287ff24df65070243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2680ebb5156e77a26693f600800829b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a2680ebb5156e77a26693f600800829b3">currentLevel</a></td></tr>
+<tr class="separator:a2680ebb5156e77a26693f600800829b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2179ca4485b379700751a13247e1c4e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2179ca4485b379700751a13247e1c4e2">&#9670;&nbsp;</a></span>printMap()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0f5ad0fd4563497b4214038cbca8b582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f5ad0fd4563497b4214038cbca8b582">&#9670;&nbsp;</a></span>Map()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -87,7 +107,7 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* Map::printMap </td>
+          <td class="memname">Map::Map </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -95,15 +115,119 @@ Private Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a0f5ad0fd4563497b4214038cbca8b582_cgraph.svg" width="422" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0a1bc119b284fc82e2f3b1c2956b4381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1bc119b284fc82e2f3b1c2956b4381">&#9670;&nbsp;</a></span>loadNextMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Map::loadNextMap </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a7b487cdd84a27c16cfb2218c834a7768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b487cdd84a27c16cfb2218c834a7768">&#9670;&nbsp;</a></span>printMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * Map::printMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a7b487cdd84a27c16cfb2218c834a7768_icgraph.svg" width="230" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a79a4355510b026646449df1852768c38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79a4355510b026646449df1852768c38">&#9670;&nbsp;</a></span>readMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Map::readMap </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a79a4355510b026646449df1852768c38_cgraph.svg" width="287" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a79a4355510b026646449df1852768c38_icgraph.svg" width="260" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2680ebb5156e77a26693f600800829b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2680ebb5156e77a26693f600800829b3">&#9670;&nbsp;</a></span>currentLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Map::currentLevel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b42bf9fd6fe16d287ff24df65070243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b42bf9fd6fe16d287ff24df65070243">&#9670;&nbsp;</a></span>m_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;char&gt; &gt; Map::m_map</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="Map_8h_source.html">Map.h</a></li>
+<li>src/<a class="el" href="Map_8cpp.html">Map.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
