@@ -18,8 +18,29 @@ int main (int argc, char **argv){
 
     terminal term;
 
-    int choice = mainMenu(term);
+    initscr(); // inicializace ncurses a pameti
+    noecho(); // zakaz vypisu na obrazovku
+    cbreak(); // ctrlc se neukonci program
+    std::vector<string> text();
+    std::vector<string> options ();
 
+    int choice = newMenu(CMenu({"Welcome to", "The Tower Attack 2 ", "Electric Boogaloo"},{"New Game", "Load Game", "Exit"}));
+//    int choice = mainMenu(term);
+
+    if(choice == 1){
+        //new game
+        CGame game(0);
+        game.start();
+    }
+    else if(choice == 2){
+        // load game
+        CGame game();
+    }
+    else if(choice == 3){
+        //exit
+        endwin();
+        return EXIT_SUCCESS;
+    }
 
 
     Map mapa;
@@ -34,3 +55,4 @@ int main (int argc, char **argv){
 
     return 0;
 }
+
