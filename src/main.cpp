@@ -1,15 +1,21 @@
 //
 // Created by Štěpán on 27.04.2022.
 //
-#include <ncurses>
+#include <ncurses.h>
+#include "./Entity.h"
+#include "./Attacker.h"
 using namespace std;
 
 int main (int argc, char **argv){
 
+    auto test = new basicAttacker(0,0,100);
+
     initscr(); // inicializace ncurses a pameti
     refresh(); // zobrazeni okna podle toho co je v pameti
-    printw("Hello world!"); // vypis textu
-
+//    printw("Hello world!"); // vypis textu
+    string map;
+    map += test->getSymbol();
+    printw(map.c_str());
     getch(); // cekani na stisk klavesy
     endwin(); // dealoc pameti a zavreni ncurses
 

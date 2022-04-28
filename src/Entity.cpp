@@ -19,3 +19,7 @@ void Entity::takeDamage(int damage){
 bool Entity::giveDamage(int damage, Entity* target){
         target->takeDamage(damage);
     }
+
+char Entity::getSymbol(){
+    return m_symbol;
+}

@@ -4,7 +4,7 @@
 #include "constants.h"
 
 
-class basicAttacker: Entity
+class basicAttacker: public Entity
 {
 public:
     basicAttacker(int posX, int posY, int maxHealth);

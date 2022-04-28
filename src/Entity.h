@@ -1,6 +1,5 @@
 #pragma once
 #include "constants.h"
-
 #include <iostream>
 
 
@@ -13,7 +12,9 @@ public:
     void takeDamage(int damage);
 
     bool giveDamage(int damage, Entity* target);
-        
+
+    char getSymbol();
+
 protected:
     size_t m_x;       // souřadnice x
 

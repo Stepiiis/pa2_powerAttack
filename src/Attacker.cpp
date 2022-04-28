@@ -1,5 +1,6 @@
 #pragma once
 #include "Attacker.h"
+#include "Entity.h"
 #include "constants.h"
 
 basicAttacker::basicAttacker(int posX, int posY, int maxHealth)
