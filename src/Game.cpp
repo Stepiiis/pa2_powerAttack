@@ -1,19 +1,21 @@
 #include "Game.h"
 #include <ncurses.h>
 #include <iostream>
+#include <experimental/filesystem>
+
 void hell(){
     attron(A_STANDOUT);
     printw("welcome to hell");
     attroff(A_STANDOUT);
 }
-CMenu::CMenu(std::initializer_list<std::string> text, std::initializer_list<std::string> options)
+
+CMenu::CMenu(std::vector<std::string> text, std::vector<std::string> options)
 {
     _text = std::move(text);
     _options = std::move(options);
 }
 
-
-int newMenu(CMenu && menu){
+int newMenu(const CMenu & menu){
     terminal term;
     int height = 25;
     int width = 75;
@@ -42,13 +44,13 @@ int newMenu(CMenu && menu){
     wrefresh(menu_win);
     int keypress;
     int choice = 0;
-    posY++;
-    mvwprintw(menu_win, posY, posX, "Press any key to continue");
-    printShrek(menu_win, posY+1,posX);
-    refresh();
-    wgetch(menu_win);
-    mvwprintw(menu_win, posY, posX, "                         ");
-    clearShrek(menu_win, posY+1,posX);
+//    posY++;
+//    mvwprintw(menu_win, posY, posX, "Press any key to continue");
+//    printShrek(menu_win, posY+1,posX);
+//    refresh();
+//    wgetch(menu_win);
+//    mvwprintw(menu_win, posY, posX, "                         ");
+//    clearShrek(menu_win, posY+1,posX);
     posY++;
     int temp = posY;
     while(true){
@@ -89,93 +91,71 @@ int newMenu(CMenu && menu){
     return choice;
 }
 
-int mainMenu(terminal term){
-    int height = 50;
-    int width = 100;
-    int posNew = 5;
-    int posLoad = 6;
-    int posExit = 7;
-    int posX = 16;
+int mainMenu(){
 
-    auto style = A_STANDOUT;
-    attron(style);
-    printw("welcome to hell");
-    attroff(style);
-    refresh();
-    getmaxyx(stdscr, term.height, term.width); // zjisteni velikosti obrazovky
-    int starty = (term.height - height) / 2; // vypocet pozice mapy
-    int startx = (term.width - width )/ 2; // vypocet pozice mapy
-    auto menu_win = newwin(height, width, starty, startx);
-    refresh();
-    keypad(menu_win, TRUE);
-    box(menu_win, 0, 0);
-    wrefresh(menu_win);
-    mvwprintw(menu_win, 1, 1, "\t\tWelcome to");
-    mvwprintw(menu_win,2,1,"\t\tTowerAttack 2");
-    mvwprintw(menu_win,3,1,"\t\tElectric Boogaloo!");
-    wattron(menu_win,style);
-    mvwprintw(menu_win, posNew, posX, "NEW GAME");
-    wattroff(menu_win,style);
-    wgetch(menu_win);
-    mvwprintw(menu_win, posLoad, posX, "LOAD GAME");
-    mvwprintw(menu_win, posExit, posX, "EXIT");
-    wrefresh(menu_win);
-    int choice = 0;
-    int keypress;
-    while(true){
-        keypress = wgetch(menu_win);
-        if (keypress == KEY_UP) {
-            choice = (choice - 1) % 3;
-            if(choice == -1) choice = 2;
-        } else if (keypress == KEY_DOWN) {
-            choice = (choice + 1) % 3;
-        } else if (keypress == KEY_DC) {
-            break;
-        }
-        if(choice == 0) {
-//            cout << "new game" << endl;
-            move(starty + posNew, startx + posX);
-            wattron(menu_win,style);
-            mvwprintw(menu_win, posNew, posX, "NEW GAME");
-            wattroff(menu_win,style);
-            mvwprintw(menu_win, posLoad, posX, "LOAD GAME");
-            mvwprintw(menu_win, posExit, posX, "EXIT");
-            wrefresh(menu_win);
-            continue;
-        }else if(choice == 1) {
-//            cout<< "load game" << endl;
-            move(starty + posLoad, startx + posX);
-            mvwprintw(menu_win, posNew, posX, "NEW GAME");
-            wattron(menu_win,style);
-            mvwprintw(menu_win, posLoad, posX, "LOAD GAME");
-            wattroff(menu_win,style);
-            mvwprintw(menu_win, posExit, posX, "EXIT");
-            wrefresh(menu_win);
-            continue;
-        }else if(choice == 2) {
-//            cout << "exit" << endl;
-            move(starty + posExit, startx + posX);
-            mvwprintw(menu_win, posNew, posX, "NEW GAME");
-            mvwprintw(menu_win, posLoad, posX, "LOAD GAME");
-            wattron(menu_win,style);
-            mvwprintw(menu_win, posExit, posX, "EXIT");
-            wattroff(menu_win,style);
-            wrefresh(menu_win);
-            continue;
-        }
+    return newMenu(CMenu({
+                                      "Welcome to",
+                                      "Tower Attack 2",
+                                      "Electric Boogaloo"
+                              },{
+                                      "New game",
+                                      "Load game",
+                                      "Exit"
+                              }));
+}
+int loadMenu(std::vector<std::string>& save_names){
+    const std::experimental::filesystem::path path {"data/saves/"};
+    for(const auto & saves: std::experimental::filesystem::directory_iterator(path)){
+        save_names.emplace_back(saves.path().filename().string());
+//        std::cout << saves.path().filename().string() << std::endl;
     }
+    if(!save_names.empty())
+        return newMenu(CMenu({
+                                          "Please select a save file",
+                                          "and confirm with delete"
+                                  },save_names));
 
-    touchwin(stdscr);
-    refresh();
-    move(0,0);
-    return choice;
+    return newMenu(CMenu({
+                                      "No save files found",
+                                      "Please create a new game"
+                              },{
+                                      "New game"
+                              }));
+
 }
 
-CGame::CGame(int){}
-CGame::~CGame(){}
-bool CGame::start(){}
+
+CGame::CGame(int level,  int difficulty, std::string pathToSave)
+        : _level(level),_difficulty(difficulty), _save_name(pathToSave)
+{
+    if(level == 0){
+        loadFromSave(pathToSave);
+    } else {
+        load(level);
+    }
+
+}
+CGame::~CGame(){
+    endwin(); // dealoc pameti a zavreni ncurses
+}
+bool CGame::start(){
+    load();
+    drawTowers(_difficulty);
+}
+
+bool CGame::load(int level){
+    if(_gameMap.readMap(level)){
+        _gameMap.redrawMap();
+        return true;
+    }
+    return false;
+}
+
+void CGame::drawTowers(int difficulty){
+    _tower_manager.clearTowers();
+}
 bool CGame::save(){}
-bool CGame::load(){}
+bool CGame::loadFromSave(std::string path){}
 bool CGame::exit(){}
 
 void printShrek(WINDOW* menu_win, int posY, int posX){

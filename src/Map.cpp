@@ -73,6 +73,11 @@ void Map::printMap(std::string & map){
     }
 }
 
+void Map::redrawMap(){
+    printMap(m_mapString);
+    mvprintw(0,0,"%s",m_mapString.c_str());
+}
+
 Map::Point::Point(int x, int y)
 : x(x), y(y)
 {}

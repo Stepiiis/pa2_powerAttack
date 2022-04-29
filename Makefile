@@ -3,7 +3,7 @@
 LOGIN = beranst6
 CXX = g++
 BASIC_FLAGS = -std=c++17 -O2 -g -Wall -pedantic
-FLAGS = -lncurses
+FLAGS = -lstdc++fs -lncurses
 
 ZIP = Makefile Doxyfile DOCUMENTATION.md zadani.txt prohlaseni.txt \
   .gitignore $(wildcard examples/*) $(wildcard src/*)

@@ -7,7 +7,8 @@ public:
     void printMap(std::string& map);
     explicit Map();
     bool updateMap(int x, int y, Entity * entity);
-    bool loadNextMap(int level); // pass last map index as parameter
+    void redrawMap();
+        bool loadNextMap(int level); // pass last map index as parameter
     bool readMap(int level); // pas new map index as parameter
     class Point {
     private:
@@ -17,6 +18,7 @@ public:
     };
 
     std::vector<std::vector<char> > m_map;  // 2D vector of chars
+    std::string m_mapString;
     int currentLevel;
 };
 

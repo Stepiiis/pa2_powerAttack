@@ -27,16 +27,17 @@ int main (int argc, char **argv){
     int choice = newMenu(CMenu({"Welcome to", "The Tower Attack 2 ", "Electric Boogaloo"},{"New Game", "Load Game", "Exit"}));
 //    int choice = mainMenu(term);
 
-    if(choice == 1){
+    if(choice == 0){
         //new game
         CGame game(0);
         game.start();
     }
-    else if(choice == 2){
+    else if(choice == 1){
         // load game
-        CGame game();
+        std::vector<string> saves;
+        choice = loadMenu(saves);
     }
-    else if(choice == 3){
+    else if(choice == 2){
         //exit
         endwin();
         return EXIT_SUCCESS;
