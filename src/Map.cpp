@@ -66,7 +66,7 @@ bool Map::readMap(int level) {
                     mapLines.emplace_back(x,y,line[x]);
                 }
             }
-            m_map.emplace_back(mapLines);
+            m_map.emplace_back(mapLines); // SEGFAULT HERE
             mapLines.clear();
             y++;
         }
