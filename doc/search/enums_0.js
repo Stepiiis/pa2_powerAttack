@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pointtype_96',['PointType',['../Map_8h.html#a18ab7b7b419342201c07425bdcd420cd',1,'Map.h']]]
+  ['pointtype_255',['PointType',['../classPoint.html#ac4cc62b224c258e128a6e591b0248b41',1,'Point']]]
 ];

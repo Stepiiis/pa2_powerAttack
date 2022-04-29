@@ -4,8 +4,8 @@
 #include "ncurses.h"
 
 
-Entity::Entity(int posX, int posY, int maxHealth)
-    :   m_x(posX), m_y(posY), m_hp(maxHealth),m_maxhp(maxHealth)
+Entity::Entity(int posX, int posY, int maxHealth, std::shared_ptr<Map> map)
+    :   m_x(posX), m_y(posY), m_hp(maxHealth),m_maxhp(maxHealth), _map(map)
     {}
 
 bool Entity::move(int x, int y)
@@ -24,7 +24,8 @@ bool Entity::giveDamage(int damage, Entity* target){
         return true;
     }
 
-char Entity::getSymbol(){
-    return m_symbol;
+bool Entity::destroy() {
+    _map->m_map[m_x][m_y].type = Point::Empty;
+    _map->m_map[m_x][m_y].m_symbol = ' ';
+    return true;
 }
-

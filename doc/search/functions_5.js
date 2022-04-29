@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['point_73',['Point',['../classMap_1_1Point.html#a4ffb1bd24b71214207a4d6ece6dfb73b',1,'Map::Point']]],
-  ['printentity_74',['printEntity',['../classEntity.html#a3d676b4245def353851c4ccb84cec868',1,'Entity']]],
-  ['printmap_75',['printMap',['../classMap.html#a6ee8da517f307341839fe49731a72c59',1,'Map']]]
+  ['fasttower_173',['fastTower',['../classfastTower.html#a4376b780681f9a022b33cc779694de70',1,'fastTower']]],
+  ['findemptyspaces_174',['findEmptySpaces',['../classEnemy.html#a5d58ae9775a61353ab0203b75edbd7eb',1,'Enemy']]]
 ];

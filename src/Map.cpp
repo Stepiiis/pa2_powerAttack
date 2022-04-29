@@ -13,15 +13,24 @@ Map::Map()
     readMap(0);
 }
 
-bool Map::updateMap(int x, int y, Entity * entity)
+/**
+ * @brief Map::readMap
+ * @param prevX  previous x position which will be filled with empty space
+ * @param prevY  previous y position which will be filled with empty space
+ * @param x      new x position to move entity to
+ * @param y      new y position to move entity to
+ * @param entity entity to move
+ */
+bool Map::updateMap(int prevX, int prevY, int x, int y, Entity * entity)
 {
     if(y>m_map.size() || (y<0) || (x>m_map[0].size()) || (x<0))
     {
         throw("Out of bounds");
     }
+    m_map[prevX][prevY] = Point(prevX, prevY, ' ');
     char symbol = entity->getSymbol();
     entity->move(x,y);
-    m_map[y][x] = symbol;
+    m_map[y][x] = Point(x,y,symbol);
     mvprintw(y,x,"%c",symbol);
     return true;
 }
@@ -45,18 +54,18 @@ bool Map::readMap(int level) {
     }
     std::string line;
     std::vector <char> mapLines;
+    int y = 0;
     while(getline(mapFile, line)) {
-        mapLines.clear();
         if(line.length() > 0) {
-            for(size_t i = 0; i<=line.length(); i++) {
-                if(i==line.length()){
-                    mapLines.push_back('\n');
+            for(size_t x = 0; x<=line.length(); x++) {
+                if(x==line.length()){
+                    m_map[y].emplace_back(x,y,'\n');
                     break;
                 } else {
-                    mapLines.emplace_back(line[i]);
+                    m_map[y].emplace_back(x,y,line[x]);
                 }
+                y++;
             }
-            m_map.emplace_back(mapLines);
         }
     }
     sendToLogFile(0, "Map::readMap: Map loaded successfully", "Map.cpp");
@@ -68,9 +77,21 @@ bool Map::readMap(int level) {
 void Map::printMap(std::string & map){
     for(size_t i = 0; i<m_map.size(); i++) {
         for(size_t j = 0; j<m_map[i].size(); j++) {
-            map=map + m_map[i][j];
+            map=map + m_map[i][j].m_symbol;
         }
     }
+}
+
+std::vector<std::vector<char> >Map::getEmptySpaces(){
+    std::vector<std::vector<char> > emptySpaces;
+    for(int row = 0; row<m_map.size(); row++) {
+        for(int col = 0; col<m_map[row].size(); col++) {
+            if(emptySpaces[row][col] != ' ') {
+                emptySpaces[row][col] = '#';
+            }
+        }
+    }
+return emptySpaces;
 }
 
 void Map::redrawMap(){
@@ -78,6 +99,27 @@ void Map::redrawMap(){
     mvprintw(0,0,"%s",m_mapString.c_str());
 }
 
-Map::Point::Point(int x, int y)
-: x(x), y(y)
-{}
+Point::Point(int x, int y, char symbol)
+: x(x), y(y), m_symbol(symbol)
+{
+    switch(symbol){
+        case '#':
+            type = Wall;
+            break;
+        case ' ':
+            type = Empty;
+            break;
+        case '@':
+            type = Attacker;
+            break;
+        case 'I':
+            type = Tower;
+            break;
+        case '<':
+            type = Entry;
+            break;
+        case '>':
+            type = Exit;
+            break;
+    }
+}

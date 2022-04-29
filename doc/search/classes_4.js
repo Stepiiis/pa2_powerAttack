@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['point_52',['Point',['../classMap_1_1Point.html',1,'Map']]]
+  ['fasttower_131',['fastTower',['../classfastTower.html',1,'']]]
 ];

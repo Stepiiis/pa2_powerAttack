@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what_80',['what',['../classlogException.html#aee5cf9c19e99ce539b58973237cf12ec',1,'logException']]]
+  ['newmenu_188',['newMenu',['../Game_8cpp.html#a5f00bd86c2427bc56a5c44240776567d',1,'newMenu(const CMenu &amp;menu):&#160;Game.cpp'],['../Game_8h.html#a5f00bd86c2427bc56a5c44240776567d',1,'newMenu(const CMenu &amp;menu):&#160;Game.cpp']]]
 ];

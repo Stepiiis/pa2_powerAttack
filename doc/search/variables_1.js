@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['currentlevel_83',['currentLevel',['../classMap.html#a2680ebb5156e77a26693f600800829b3',1,'Map']]]
+  ['alive_236',['alive',['../classEntity.html#a0d09a7e175d9dcfbfb359e5f74f2e692',1,'Entity']]]
 ];

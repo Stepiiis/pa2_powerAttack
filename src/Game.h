@@ -1,6 +1,7 @@
 #pragma once
 #include "HelpStructs.h"
 #include <ncurses.h>
+#include "Attacker.h"
 #include "Map.h"
 #include "Player.h"
 #include "Enemy.h"
@@ -8,7 +9,7 @@
 #include <string>
 class CGame {
 public:
-    CGame(int,int, std::string = "");       // first int is the current level that we want to start on
+    CGame(int,int, std::string pathToSave = "");       // first int is the current level that we want to start on
                                             //                  player can choose from 1-5
                                             //                  0 means load game
                                             // second int is difficulty level (1-3)
@@ -21,10 +22,11 @@ public:
     bool exit();        // exits the game
     void draw();        // draws the game
     void drawTowers(int);  // draws the towers according to difficulty
-private:
-    Map _gameMap;
-    Player _player;
-    Enemy _tower_manager;
+    void Pause();       // pauses the game
+protected:
+    std::shared_ptr<Map> _gameMap;
+    Player * _player;
+    Enemy * _tower_manager;
     std::string _save_name;
     int _level;
     int _difficulty;

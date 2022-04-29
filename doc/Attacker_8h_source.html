@@ -73,34 +73,53 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Entity_8h.html">Entity.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">constants.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classbasicAttacker.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbasicAttacker.html">basicAttacker</a>: <span class="keyword">public</span> <a class="code" href="classEntity.html">Entity</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classbasicAttacker.html#a05cb87767550c96b5c152cfd465fa256">basicAttacker</a>(<span class="keywordtype">int</span> posX, <span class="keywordtype">int</span> posY, <span class="keywordtype">int</span> maxHealth);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classbasicAttacker.html#ada794e28b7cc49c05309a117cd3df74e">~basicAttacker</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classbasicAttacker.html#a5b7a46059eaf43894f32016477c1e9a9">move</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classbasicAttacker.html#a4e8e5ca3fb267975a922f962476de0dc">   16</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classbasicAttacker.html#a4e8e5ca3fb267975a922f962476de0dc">speed</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Map_8h.html">Map.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classAttacker.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAttacker.html">Attacker</a>: <span class="keyword">public</span> <a class="code" href="classEntity.html">Entity</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classAttacker.html#a7182a9f93e600aa85ee9f1dad7230cdb">Attacker</a>(<span class="keywordtype">int</span> posX, <span class="keywordtype">int</span> posY, <span class="keywordtype">int</span> maxHealth, std::shared_ptr&lt;Map&gt; map);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//    ~Attacker() = default;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classAttacker.html#aa933edde82ad9a88257c0bfbc06e2a4c">getSymbol</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classAttacker.html#a7daf305d38f0a6e93d16398da3d095ce">~Attacker</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classAttacker.html#a37c423687d31c9431930c7e53c4b8ce4">checkRadius</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAttacker.html#a89648191a2b3d861bc2bcac0f8668fe3">setPosition</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAttacker.html#a5e03bc229ca8d038d06a2ab5bc941be1">place</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classbasicAttacker.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbasicAttacker.html">basicAttacker</a> final: <span class="keyword">public</span> <a class="code" href="classEntity.html">Entity</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classbasicAttacker.html#ac6ded7c83ade213694757615f4520a97">basicAttacker</a>(<span class="keywordtype">int</span> posX, <span class="keywordtype">int</span> posY, <span class="keywordtype">int</span> maxHealth, std::shared_ptr&lt;Map&gt; map);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classbasicAttacker.html#acd6001f0d25ce986963affe459f2f993">getSymbol</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classbasicAttacker.html#a92a5aa3eb535455644dfa1825948a382">checkRadius</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassEntity_html_aaca495f33c355db0350cbfd2f95bea75"><div class="ttname"><a href="classEntity.html#aaca495f33c355db0350cbfd2f95bea75">Entity::m_x</a></div><div class="ttdeci">size_t m_x</div><div class="ttdef"><b>Definition:</b> Entity.h:21</div></div>
+<div class="ttc" id="aclassbasicAttacker_html_a92a5aa3eb535455644dfa1825948a382"><div class="ttname"><a href="classbasicAttacker.html#a92a5aa3eb535455644dfa1825948a382">basicAttacker::checkRadius</a></div><div class="ttdeci">bool checkRadius() override</div><div class="ttdef"><b>Definition:</b> Attacker.cpp:48</div></div>
+<div class="ttc" id="aclassAttacker_html_a5e03bc229ca8d038d06a2ab5bc941be1"><div class="ttname"><a href="classAttacker.html#a5e03bc229ca8d038d06a2ab5bc941be1">Attacker::place</a></div><div class="ttdeci">void place(int x, int y)</div></div>
+<div class="ttc" id="aclassEntity_html_a3b9a9926c41bd760cd92a7fee064c9bc"><div class="ttname"><a href="classEntity.html#a3b9a9926c41bd760cd92a7fee064c9bc">Entity::m_radius</a></div><div class="ttdeci">int m_radius</div><div class="ttdef"><b>Definition:</b> Entity.h:47</div></div>
 <div class="ttc" id="aEntity_8h_html"><div class="ttname"><a href="Entity_8h.html">Entity.h</a></div></div>
-<div class="ttc" id="aclassbasicAttacker_html_ada794e28b7cc49c05309a117cd3df74e"><div class="ttname"><a href="classbasicAttacker.html#ada794e28b7cc49c05309a117cd3df74e">basicAttacker::~basicAttacker</a></div><div class="ttdeci">~basicAttacker()</div></div>
-<div class="ttc" id="aconstants_8h_html_a529d5ebb449edf31d9835d13f4fb9f89"><div class="ttname"><a href="constants_8h.html#a529d5ebb449edf31d9835d13f4fb9f89">MAP_HEIGHT</a></div><div class="ttdeci">#define MAP_HEIGHT</div><div class="ttdef"><b>Definition:</b> constants.h:2</div></div>
-<div class="ttc" id="aclassbasicAttacker_html_a05cb87767550c96b5c152cfd465fa256"><div class="ttname"><a href="classbasicAttacker.html#a05cb87767550c96b5c152cfd465fa256">basicAttacker::basicAttacker</a></div><div class="ttdeci">basicAttacker(int posX, int posY, int maxHealth)</div><div class="ttdef"><b>Definition:</b> Attacker.cpp:6</div></div>
+<div class="ttc" id="aMap_8h_html"><div class="ttname"><a href="Map_8h.html">Map.h</a></div></div>
+<div class="ttc" id="aclassAttacker_html_a37c423687d31c9431930c7e53c4b8ce4"><div class="ttname"><a href="classAttacker.html#a37c423687d31c9431930c7e53c4b8ce4">Attacker::checkRadius</a></div><div class="ttdeci">bool checkRadius() override</div><div class="ttdef"><b>Definition:</b> Attacker.cpp:46</div></div>
+<div class="ttc" id="aclassAttacker_html_a89648191a2b3d861bc2bcac0f8668fe3"><div class="ttname"><a href="classAttacker.html#a89648191a2b3d861bc2bcac0f8668fe3">Attacker::setPosition</a></div><div class="ttdeci">void setPosition(int x, int y)</div><div class="ttdef"><b>Definition:</b> Attacker.cpp:40</div></div>
 <div class="ttc" id="aAttacker_8h_html"><div class="ttname"><a href="Attacker_8h.html">Attacker.h</a></div></div>
-<div class="ttc" id="aclassEntity_html_af393e889bfb60a85894abcac17362dc1"><div class="ttname"><a href="classEntity.html#af393e889bfb60a85894abcac17362dc1">Entity::m_y</a></div><div class="ttdeci">size_t m_y</div><div class="ttdef"><b>Definition:</b> Entity.h:23</div></div>
-<div class="ttc" id="aclassEntity_html"><div class="ttname"><a href="classEntity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:6</div></div>
-<div class="ttc" id="aconstants_8h_html_aa037a6d6a4f04d51c7ec1c9ee9054e76"><div class="ttname"><a href="constants_8h.html#aa037a6d6a4f04d51c7ec1c9ee9054e76">MAP_WIDTH</a></div><div class="ttdeci">#define MAP_WIDTH</div><div class="ttdef"><b>Definition:</b> constants.h:1</div></div>
-<div class="ttc" id="aclassbasicAttacker_html"><div class="ttname"><a href="classbasicAttacker.html">basicAttacker</a></div><div class="ttdef"><b>Definition:</b> Attacker.h:7</div></div>
+<div class="ttc" id="aclassEntity_html"><div class="ttname"><a href="classEntity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:9</div></div>
+<div class="ttc" id="aclassbasicAttacker_html_ac6ded7c83ade213694757615f4520a97"><div class="ttname"><a href="classbasicAttacker.html#ac6ded7c83ade213694757615f4520a97">basicAttacker::basicAttacker</a></div><div class="ttdeci">basicAttacker(int posX, int posY, int maxHealth, std::shared_ptr&lt; Map &gt; map)</div><div class="ttdef"><b>Definition:</b> Attacker.cpp:14</div></div>
+<div class="ttc" id="aclassAttacker_html_a7daf305d38f0a6e93d16398da3d095ce"><div class="ttname"><a href="classAttacker.html#a7daf305d38f0a6e93d16398da3d095ce">Attacker::~Attacker</a></div><div class="ttdeci">~Attacker()=default</div></div>
+<div class="ttc" id="aclassAttacker_html"><div class="ttname"><a href="classAttacker.html">Attacker</a></div><div class="ttdef"><b>Definition:</b> Attacker.h:10</div></div>
+<div class="ttc" id="aclassbasicAttacker_html"><div class="ttname"><a href="classbasicAttacker.html">basicAttacker</a></div><div class="ttdef"><b>Definition:</b> Attacker.h:25</div></div>
+<div class="ttc" id="aclassEntity_html_a6f73affa000bdde25f9c8d790aa2fd1a"><div class="ttname"><a href="classEntity.html#a6f73affa000bdde25f9c8d790aa2fd1a">Entity::_map</a></div><div class="ttdeci">std::shared_ptr&lt; Map &gt; _map</div><div class="ttdef"><b>Definition:</b> Entity.h:43</div></div>
 <div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
-<div class="ttc" id="aclassbasicAttacker_html_a4e8e5ca3fb267975a922f962476de0dc"><div class="ttname"><a href="classbasicAttacker.html#a4e8e5ca3fb267975a922f962476de0dc">basicAttacker::speed</a></div><div class="ttdeci">int speed</div><div class="ttdef"><b>Definition:</b> Attacker.h:16</div></div>
-<div class="ttc" id="aclassbasicAttacker_html_a5b7a46059eaf43894f32016477c1e9a9"><div class="ttname"><a href="classbasicAttacker.html#a5b7a46059eaf43894f32016477c1e9a9">basicAttacker::move</a></div><div class="ttdeci">bool move(int x, int y) override</div><div class="ttdef"><b>Definition:</b> Attacker.cpp:12</div></div>
-<div class="ttc" id="aclassEntity_html_a8b6f5fdf38f2be75330f24f272785acc"><div class="ttname"><a href="classEntity.html#a8b6f5fdf38f2be75330f24f272785acc">Entity::m_symbol</a></div><div class="ttdeci">char m_symbol</div><div class="ttdef"><b>Definition:</b> Entity.h:25</div></div>
+<div class="ttc" id="aclassbasicAttacker_html_acd6001f0d25ce986963affe459f2f993"><div class="ttname"><a href="classbasicAttacker.html#acd6001f0d25ce986963affe459f2f993">basicAttacker::getSymbol</a></div><div class="ttdeci">char getSymbol() override</div><div class="ttdef"><b>Definition:</b> Attacker.cpp:25</div></div>
+<div class="ttc" id="aclassAttacker_html_aa933edde82ad9a88257c0bfbc06e2a4c"><div class="ttname"><a href="classAttacker.html#aa933edde82ad9a88257c0bfbc06e2a4c">Attacker::getSymbol</a></div><div class="ttdeci">char getSymbol() override</div><div class="ttdef"><b>Definition:</b> Attacker.cpp:21</div></div>
+<div class="ttc" id="aclassAttacker_html_a7182a9f93e600aa85ee9f1dad7230cdb"><div class="ttname"><a href="classAttacker.html#a7182a9f93e600aa85ee9f1dad7230cdb">Attacker::Attacker</a></div><div class="ttdeci">Attacker(int posX, int posY, int maxHealth, std::shared_ptr&lt; Map &gt; map)</div><div class="ttdef"><b>Definition:</b> Attacker.cpp:7</div></div>
+<div class="ttc" id="aclassEntity_html_a8b6f5fdf38f2be75330f24f272785acc"><div class="ttname"><a href="classEntity.html#a8b6f5fdf38f2be75330f24f272785acc">Entity::m_symbol</a></div><div class="ttdeci">char m_symbol</div><div class="ttdef"><b>Definition:</b> Entity.h:35</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

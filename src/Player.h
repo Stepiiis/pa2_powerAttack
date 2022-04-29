@@ -1,14 +1,21 @@
 #pragma once
 #include "Entity.h"
+#include "Attacker.h"
 #include <memory>
-class Player : public Entity {
+#include <vector>
+#include "Map.h"
+class Player{
 public:
-    Player();
+    Player(std::shared_ptr<Map> map, int baseHp, int range, int damage);
     Player(const Player&);
     Player& operator=(const Player&);
-    ~Player();
-private:
-    int m_score;
-    int m_currency;
-    vector<unique_ptr<Entity >>;
+    ~Player() = default;
+protected:
+    int _score;
+    int _currency;
+    int _baseHp;
+    int _baseRange;
+    int _baseAtk;
+    std::shared_ptr<Map> _map;
+    std::vector<std::unique_ptr<Attacker> > _attackers;
 };

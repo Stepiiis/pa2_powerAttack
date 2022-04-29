@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['logexception_50',['logException',['../classlogException.html',1,'']]]
+  ['cgame_127',['CGame',['../classCGame.html',1,'']]],
+  ['cmenu_128',['CMenu',['../structCMenu.html',1,'']]]
 ];

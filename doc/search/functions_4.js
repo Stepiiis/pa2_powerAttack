@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main_70',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['map_71',['Map',['../classMap.html#a0f5ad0fd4563497b4214038cbca8b582',1,'Map']]],
-  ['move_72',['move',['../classbasicAttacker.html#a5b7a46059eaf43894f32016477c1e9a9',1,'basicAttacker::move()'],['../classEntity.html#a6171cc57bf9ab1a0d0fe18b7a8acc4ea',1,'Entity::move()']]]
+  ['enemy_170',['Enemy',['../classEnemy.html#aaec8326e564d9a2ce8d29a8e0d2ddba7',1,'Enemy']]],
+  ['entity_171',['Entity',['../classEntity.html#a3ed0b5a5f10c54b77a94a71b9998f03c',1,'Entity']]],
+  ['exit_172',['exit',['../classCGame.html#a5cf37f0be981d432677cae371af5748c',1,'CGame']]]
 ];

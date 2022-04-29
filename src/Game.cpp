@@ -1,7 +1,50 @@
 #include "Game.h"
 #include <ncurses.h>
 #include <iostream>
+#include <memory>
 #include <experimental/filesystem>
+
+
+CGame::CGame(int level,  int difficulty, std::string pathToSave)
+        : _level(level),_difficulty(difficulty), _save_name(pathToSave)
+{
+    load(1);
+    _player = new Player(_gameMap,_difficulty * 15, 6/_difficulty, _difficulty*2);
+    _tower_manager = new Enemy(_gameMap,_difficulty * 30, _difficulty * 3, _difficulty * 5, _difficulty,_level);
+    if(level == 0){
+        loadFromSave(pathToSave);
+    } else {
+        load(level);
+    }
+
+}
+CGame::~CGame(){
+    delete _player;
+    delete _tower_manager;
+    endwin(); // dealoc pameti a zavreni ncurses
+}
+bool CGame::start(){
+    drawTowers(_difficulty);
+}
+
+bool CGame::load(int level){
+    if(_gameMap->readMap(level)){
+        _gameMap->redrawMap();
+        return true;
+    }
+    return false;
+}
+
+void CGame::drawTowers(int difficulty){
+    _tower_manager->clearTowers();
+    _tower_manager->findEmptySpaces(*_gameMap);
+    _tower_manager->createTowers();
+}
+bool CGame::save(){}
+bool CGame::loadFromSave(std::string path){}
+bool CGame::exit(){}
+
+
 
 void hell(){
     attron(A_STANDOUT);
@@ -124,39 +167,6 @@ int loadMenu(std::vector<std::string>& save_names){
 
 }
 
-
-CGame::CGame(int level,  int difficulty, std::string pathToSave)
-        : _level(level),_difficulty(difficulty), _save_name(pathToSave)
-{
-    if(level == 0){
-        loadFromSave(pathToSave);
-    } else {
-        load(level);
-    }
-
-}
-CGame::~CGame(){
-    endwin(); // dealoc pameti a zavreni ncurses
-}
-bool CGame::start(){
-    load();
-    drawTowers(_difficulty);
-}
-
-bool CGame::load(int level){
-    if(_gameMap.readMap(level)){
-        _gameMap.redrawMap();
-        return true;
-    }
-    return false;
-}
-
-void CGame::drawTowers(int difficulty){
-    _tower_manager.clearTowers();
-}
-bool CGame::save(){}
-bool CGame::loadFromSave(std::string path){}
-bool CGame::exit(){}
 
 void printShrek(WINDOW* menu_win, int posY, int posX){
     mvwprintw(menu_win, posY++, posX,  "                         ");

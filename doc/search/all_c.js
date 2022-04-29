@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['takedamage_41',['takeDamage',['../classEntity.html#a9534c576045aabcf406d1f891d5b3b60',1,'Entity']]]
+  ['operator_3d_87',['operator=',['../classPlayer.html#a21a09f49e2e5d2995a08701318ef0484',1,'Player']]]
 ];

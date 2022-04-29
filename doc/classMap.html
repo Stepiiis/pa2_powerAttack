@@ -62,9 +62,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classMap-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Map Class Reference</div>  </div>
@@ -73,28 +73,35 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="Map_8h_source.html">Map.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap_1_1Point.html">Point</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6ee8da517f307341839fe49731a72c59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a6ee8da517f307341839fe49731a72c59">printMap</a> (std::string &amp;map)</td></tr>
 <tr class="separator:a6ee8da517f307341839fe49731a72c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f5ad0fd4563497b4214038cbca8b582"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a0f5ad0fd4563497b4214038cbca8b582">Map</a> ()</td></tr>
 <tr class="separator:a0f5ad0fd4563497b4214038cbca8b582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae84f294b7e9de1a49954dc2d13698e13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#ae84f294b7e9de1a49954dc2d13698e13">updateMap</a> (int x, int y, <a class="el" href="classEntity.html">Entity</a> *entity)</td></tr>
-<tr class="separator:ae84f294b7e9de1a49954dc2d13698e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d6c021e958df55b4c1969d2c0e6c54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#ac4d6c021e958df55b4c1969d2c0e6c54">updateMap</a> (int prevX, int prevY, int x, int y, <a class="el" href="classEntity.html">Entity</a> *entity)</td></tr>
+<tr class="memdesc:ac4d6c021e958df55b4c1969d2c0e6c54"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMap.html#a79a4355510b026646449df1852768c38">Map::readMap</a>.  <a href="classMap.html#ac4d6c021e958df55b4c1969d2c0e6c54">More...</a><br /></td></tr>
+<tr class="separator:ac4d6c021e958df55b4c1969d2c0e6c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5b5492b49e9d1aaa54e586d1203030f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#af5b5492b49e9d1aaa54e586d1203030f">redrawMap</a> ()</td></tr>
+<tr class="separator:af5b5492b49e9d1aaa54e586d1203030f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a1bc119b284fc82e2f3b1c2956b4381"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381">loadNextMap</a> (int level)</td></tr>
 <tr class="separator:a0a1bc119b284fc82e2f3b1c2956b4381"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79a4355510b026646449df1852768c38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a79a4355510b026646449df1852768c38">readMap</a> (int level)</td></tr>
 <tr class="separator:a79a4355510b026646449df1852768c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b42bd45dd0e585fed7a9d71244e3567"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; char &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a2b42bd45dd0e585fed7a9d71244e3567">getEmptySpaces</a> ()</td></tr>
+<tr class="separator:a2b42bd45dd0e585fed7a9d71244e3567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a6b42bf9fd6fe16d287ff24df65070243"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; char &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a6b42bf9fd6fe16d287ff24df65070243">m_map</a></td></tr>
-<tr class="separator:a6b42bf9fd6fe16d287ff24df65070243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a3a594f9b54a224c3cc9c93ec21e0c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="classPoint.html">Point</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a91a3a594f9b54a224c3cc9c93ec21e0c">m_map</a></td></tr>
+<tr class="separator:a91a3a594f9b54a224c3cc9c93ec21e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963b60e3737ef799910981e1f96dc565"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a963b60e3737ef799910981e1f96dc565">Point</a></td></tr>
+<tr class="separator:a963b60e3737ef799910981e1f96dc565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a77ac83afdd4ec49414bf563abf905c8d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a77ac83afdd4ec49414bf563abf905c8d">m_mapString</a></td></tr>
+<tr class="separator:a77ac83afdd4ec49414bf563abf905c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2680ebb5156e77a26693f600800829b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a2680ebb5156e77a26693f600800829b3">currentLevel</a></td></tr>
 <tr class="separator:a2680ebb5156e77a26693f600800829b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -130,6 +137,29 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2b42bd45dd0e585fed7a9d71244e3567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b42bd45dd0e585fed7a9d71244e3567">&#9670;&nbsp;</a></span>getEmptySpaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; char &gt; &gt; Map::getEmptySpaces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a2b42bd45dd0e585fed7a9d71244e3567_icgraph.svg" width="874" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a0a1bc119b284fc82e2f3b1c2956b4381"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a1bc119b284fc82e2f3b1c2956b4381">&#9670;&nbsp;</a></span>loadNextMap()</h2>
 
@@ -171,7 +201,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a6ee8da517f307341839fe49731a72c59_icgraph.svg" width="230" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a6ee8da517f307341839fe49731a72c59_icgraph.svg" width="306" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -204,8 +235,31 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ae84f294b7e9de1a49954dc2d13698e13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae84f294b7e9de1a49954dc2d13698e13">&#9670;&nbsp;</a></span>updateMap()</h2>
+<a id="af5b5492b49e9d1aaa54e586d1203030f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b5492b49e9d1aaa54e586d1203030f">&#9670;&nbsp;</a></span>redrawMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Map::redrawMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_af5b5492b49e9d1aaa54e586d1203030f_cgraph.svg" width="306" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac4d6c021e958df55b4c1969d2c0e6c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4d6c021e958df55b4c1969d2c0e6c54">&#9670;&nbsp;</a></span>updateMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,6 +267,18 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool Map::updateMap </td>
           <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prevX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prevY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
@@ -235,15 +301,23 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="classMap.html#a79a4355510b026646449df1852768c38">Map::readMap</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prevX</td><td>previous x position which will be filled with empty space </td></tr>
+    <tr><td class="paramname">prevY</td><td>previous y position which will be filled with empty space </td></tr>
+    <tr><td class="paramname">x</td><td>new x position to move entity to </td></tr>
+    <tr><td class="paramname">y</td><td>new y position to move entity to </td></tr>
+    <tr><td class="paramname">entity</td><td>entity to move </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ae84f294b7e9de1a49954dc2d13698e13_cgraph.svg" width="327" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ac4d6c021e958df55b4c1969d2c0e6c54_cgraph.svg" width="327" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ae84f294b7e9de1a49954dc2d13698e13_icgraph.svg" width="244" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -254,23 +328,67 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int Map::currentLevel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91a3a594f9b54a224c3cc9c93ec21e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a3a594f9b54a224c3cc9c93ec21e0c">&#9670;&nbsp;</a></span>m_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;<a class="el" href="classPoint.html">Point</a>&gt; &gt; Map::m_map</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a6b42bf9fd6fe16d287ff24df65070243"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b42bf9fd6fe16d287ff24df65070243">&#9670;&nbsp;</a></span>m_map</h2>
+<a id="a77ac83afdd4ec49414bf563abf905c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77ac83afdd4ec49414bf563abf905c8d">&#9670;&nbsp;</a></span>m_mapString</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Map::m_mapString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a963b60e3737ef799910981e1f96dc565"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963b60e3737ef799910981e1f96dc565">&#9670;&nbsp;</a></span>Point</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;char&gt; &gt; Map::m_map</td>
+          <td class="memname">friend Map::Point</td>
         </tr>
       </table>
 </div><div class="memdoc">

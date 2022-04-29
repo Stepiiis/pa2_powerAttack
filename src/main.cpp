@@ -14,7 +14,8 @@ using namespace std;
 int main (int argc, char **argv){
 
     int money = 100;
-    auto test = new basicAttacker(0,0,100);
+    shared_ptr<Map> mapa;
+    auto test = new basicAttacker(0,0,100,mapa);
 
     terminal term;
 
@@ -29,7 +30,7 @@ int main (int argc, char **argv){
 
     if(choice == 0){
         //new game
-        CGame game(0);
+        CGame game(0,1);
         game.start();
     }
     else if(choice == 1){
@@ -44,13 +45,13 @@ int main (int argc, char **argv){
     }
 
 
-    Map mapa;
     string map;
-    mapa.printMap(map);
+    mapa->printMap(map);
     printw(map.c_str());
     getch(); // cekani na stisk klavesy
 
-    mapa.updateMap(5,5,test);
+    mapa->updateMap(0,0,5,5,test);
+    delete test;
     getch();
     endwin(); // dealoc pameti a zavreni ncurses
 

@@ -1,29 +1,41 @@
 #pragma once
 #include <vector>
 #include <string>
+#include "Entity.h"
+class Entity;
+class Map;
+class Point {
+public:
+    enum PointType{
+        Empty,
+        Wall,
+        Attacker,
+        Tower,
+        Entry,
+        Exit
+    };
+    Point(int x, int y, char symbol);
+    char m_symbol;
+    int x, y;
+    PointType type;
+    friend Map;
+};
+
 class Map
 {
 public:
+
     void printMap(std::string& map);
     explicit Map();
-    bool updateMap(int x, int y, Entity * entity);
+    bool updateMap(int prevX, int prevY,int x, int y, Entity * entity);
     void redrawMap();
-        bool loadNextMap(int level); // pass last map index as parameter
+    bool loadNextMap(int level); // pass last map index as parameter
     bool readMap(int level); // pas new map index as parameter
-    class Point {
-    private:
-        friend Map;
-        Point(int x, int y);
-        int x, y;
-    };
+    std::vector<std::vector<char> > getEmptySpaces();
 
-    std::vector<std::vector<char> > m_map;  // 2D vector of chars
+    std::vector<std::vector<Point> > m_map;  // 2D vector of chars
+    friend Point;
+protected:
     std::string m_mapString;
     int currentLevel;
-};
-
-enum class PointType{
-    Empty,
-    Wall,
-    Entity
 };

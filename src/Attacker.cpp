@@ -1,19 +1,48 @@
 #pragma once
 #include "Attacker.h"
 #include "Entity.h"
+#include "Map.h"
 #include "constants.h"
 
-basicAttacker::basicAttacker(int posX, int posY, int maxHealth)
-: Entity(posX, posY, maxHealth)
+Attacker::Attacker(int posX, int posY, int maxHealth,std::shared_ptr<Map> map)
+: Entity(posX, posY, maxHealth, map)
+{
+    m_symbol = '@';
+    m_radius = 2;
+}
+
+basicAttacker::basicAttacker(int posX, int posY, int maxHealth,std::shared_ptr<Map> map)
+:Entity(posX, posY, maxHealth,map)
     {
         m_symbol = '$';
+        m_radius = 2; // the slower and more HP version will have range of 5 fire
     }
 
-    bool basicAttacker::move (int x, int y)
-    {
-        if(x+y < 0 || m_x+x > MAP_HEIGHT || m_y+y > MAP_WIDTH)
-            return false;
-        m_x += x;
-        m_y += y;
-        return true;
-    }
+char inline Attacker::getSymbol()
+{
+    return m_symbol;
+
+}char inline basicAttacker::getSymbol()
+{
+    return m_symbol;
+}
+
+//    bool Attacker::move (int x, int y)
+//    {
+//        if(x+y < 0 || m_x+x > MAP_HEIGHT || m_y+y > MAP_WIDTH)
+//            return false;
+//        m_x += x;
+//        m_y += y;
+//        return true;
+//    }
+
+// do not use
+void Attacker::setPosition(int x, int y){
+    _map->m_map[x][y].m_symbol = m_symbol;
+}
+
+
+
+bool Attacker::checkRadius(){}
+
+bool basicAttacker::checkRadius(){}

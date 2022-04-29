@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['loadnextmap_68',['loadNextMap',['../classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381',1,'Map']]],
-  ['logexception_69',['logException',['../classlogException.html#a53448f208709052114b2f43b9f60e7af',1,'logException']]]
+  ['destroy_167',['destroy',['../classEntity.html#aa67123f207c384937c5495360c06dfcd',1,'Entity']]],
+  ['draw_168',['draw',['../classCGame.html#a4c6b4d93dbc2f44438cd365e1cfde101',1,'CGame']]],
+  ['drawtowers_169',['drawTowers',['../classCGame.html#ab4b3b154086cd0c34c18522a0716840c',1,'CGame']]]
 ];

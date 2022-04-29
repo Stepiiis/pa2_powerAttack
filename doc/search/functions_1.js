@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['entity_65',['Entity',['../classEntity.html#ad23c0b94fa9dcd870eb0b4d5873e7e58',1,'Entity']]]
+  ['basicattacker_160',['basicAttacker',['../classbasicAttacker.html#ac6ded7c83ade213694757615f4520a97',1,'basicAttacker']]]
 ];

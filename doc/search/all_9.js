@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['plánovač_20tras_33',['Plánovač tras',['../index.html',1,'']]],
-  ['point_34',['Point',['../classMap_1_1Point.html',1,'Map::Point'],['../classMap_1_1Point.html#a4ffb1bd24b71214207a4d6ece6dfb73b',1,'Map::Point::Point()']]],
-  ['pointtype_35',['PointType',['../Map_8h.html#a18ab7b7b419342201c07425bdcd420cd',1,'Map.h']]],
-  ['printentity_36',['printEntity',['../classEntity.html#a3d676b4245def353851c4ccb84cec868',1,'Entity']]],
-  ['printmap_37',['printMap',['../classMap.html#a6ee8da517f307341839fe49731a72c59',1,'Map']]]
+  ['load_60',['load',['../classCGame.html#a9945af5487d059db1d7119ae16cd2dd3',1,'CGame']]],
+  ['loadfromsave_61',['loadFromSave',['../classCGame.html#a7957599866556d2dfd5d80cc270c4a4e',1,'CGame']]],
+  ['loadmenu_62',['loadMenu',['../Game_8cpp.html#af66392f74826c89391d33dcbfb45e5b3',1,'loadMenu(std::vector&lt; std::string &gt; &amp;save_names):&#160;Game.cpp'],['../Game_8h.html#af66392f74826c89391d33dcbfb45e5b3',1,'loadMenu(std::vector&lt; std::string &gt; &amp;save_names):&#160;Game.cpp']]],
+  ['loadnextmap_63',['loadNextMap',['../classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381',1,'Map']]],
+  ['logexception_64',['logException',['../classlogException.html',1,'logException'],['../classlogException.html#a53448f208709052114b2f43b9f60e7af',1,'logException::logException()']]],
+  ['logfile_2ecpp_65',['logFile.cpp',['../logFile_8cpp.html',1,'']]],
+  ['logfile_2eh_66',['logFile.h',['../logFile_8h.html',1,'']]]
 ];

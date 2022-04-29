@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['empty_74',['Empty',['../classMap_1_1Point.html#a6da313da20269d06e033342e19df330eace2c8aed9c2fa0cfbed56cbda4d8bf07',1,'Map::Point']]]
+  ['tower_260',['Tower',['../classPoint.html#ac4cc62b224c258e128a6e591b0248b41a4bf41dbf83d01aa3736a2f239f691ae8',1,'Point']]]
 ];

@@ -1,2 +1,4 @@
 #define MAP_WIDTH 51
 #define MAP_HEIGHT 9
+#define BASIC_ATTACKER_DAMAGE = 2
+#define ATTACKER_DAMAGE = 3

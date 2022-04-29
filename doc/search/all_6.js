@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getsymbol_11',['getSymbol',['../classEntity.html#a8d63b0b026cdcd2cd60c51b73dc64988',1,'Entity']]],
-  ['givedamage_12',['giveDamage',['../classEntity.html#a45cb0c95ba5ed056038583db9a00cac1',1,'Entity']]]
+  ['fasttower_50',['fastTower',['../classfastTower.html',1,'fastTower'],['../classfastTower.html#a4376b780681f9a022b33cc779694de70',1,'fastTower::fastTower()']]],
+  ['findemptyspaces_51',['findEmptySpaces',['../classEnemy.html#a5d58ae9775a61353ab0203b75edbd7eb',1,'Enemy']]]
 ];
