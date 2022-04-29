@@ -8,7 +8,7 @@
 CGame::CGame(int level,  int difficulty, std::string pathToSave)
         : _level(level),_difficulty(difficulty), _save_name(pathToSave)
 {
-    load(1);
+    load(level);
     _player = new Player(_gameMap,_difficulty * 15, 6/_difficulty, _difficulty*2);
     _tower_manager = new Enemy(_gameMap,_difficulty * 30, _difficulty * 3, _difficulty * 5, _difficulty,_level);
     if(level == 0){
