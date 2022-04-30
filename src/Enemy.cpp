@@ -2,7 +2,7 @@
 #include "Enemy.h"
 
 
-Enemy::Enemy(std::shared_ptr<Map> map,int towerHp, int range, int damage, int dif, int level)
+Enemy::Enemy(Map & map,int towerHp, int range, int damage, int dif, int level)
 : Player(map,std::move(towerHp), std::move(range), std::move(damage)), _difficulty(dif), _level(level)
 {
 }

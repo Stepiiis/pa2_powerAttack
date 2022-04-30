@@ -24,7 +24,7 @@ public:
     void drawTowers(int);  // draws the towers according to difficulty
     void Pause();       // pauses the game
 protected:
-    std::shared_ptr<Map> _gameMap;
+    Map _gameMap;
     Player * _player;
     Enemy * _tower_manager;
     std::string _save_name;

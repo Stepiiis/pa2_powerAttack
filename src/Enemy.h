@@ -6,7 +6,7 @@
 #include <vector>
 class Enemy : public Player{
 public:
-    Enemy(std::shared_ptr<Map> map,int towerHp, int range, int damage, int dif, int level);
+    Enemy(Map& map,int towerHp, int range, int damage, int dif, int level);
     ~Enemy() = default;
     void clearTowers();
     void findEmptySpaces(Map&);

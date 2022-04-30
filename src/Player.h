@@ -6,7 +6,7 @@
 #include "Map.h"
 class Player{
 public:
-    Player(std::shared_ptr<Map> map, int baseHp, int range, int damage);
+    Player(Map& map, int baseHp, int range, int damage);
     Player(const Player&);
     Player& operator=(const Player&);
     ~Player() = default;

@@ -28,8 +28,8 @@ bool CGame::start(){
 }
 
 bool CGame::load(int level){
-    if(_gameMap->readMap(level)){
-        _gameMap->redrawMap();
+    if(_gameMap.readMap(level)){
+        _gameMap.redrawMap();
         return true;
     }
     return false;
@@ -37,7 +37,7 @@ bool CGame::load(int level){
 
 void CGame::drawTowers(int difficulty){
     _tower_manager->clearTowers();
-    _tower_manager->findEmptySpaces(*_gameMap);
+    _tower_manager->findEmptySpaces(_gameMap);
     _tower_manager->createTowers();
 }
 bool CGame::save(){}

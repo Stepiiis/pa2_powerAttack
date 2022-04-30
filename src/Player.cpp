@@ -1,5 +1,6 @@
 #include "Player.h"
-Player::Player(std::shared_ptr<Map> map,int baseHp, int range, int damage)
-        : _map(map),_baseHp(baseHp), _baseRange(range), _baseAtk(damage)
+Player::Player(Map& map,int baseHp, int range, int damage)
+        : _baseHp(baseHp), _baseRange(range), _baseAtk(damage)
 {
+    _map = std::make_shared<Map>(map);
 }

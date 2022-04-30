@@ -42,6 +42,8 @@ bool Map::loadNextMap(int level){
 // loads map from data files and sets up the map into a 2D array
 bool Map::readMap(int level) {
     m_map.clear();
+    m_map.reserve(30);
+
     std::string mapLocation = "data/maps/map" + std::to_string(level) + ".txt";
     std::ifstream mapFile(mapLocation, std::ios::in);
     if(!mapFile.is_open()) {
@@ -55,9 +57,11 @@ bool Map::readMap(int level) {
     }
     std::string line;
     std::vector <Point> mapLines;
+    auto it = m_map.begin();
     int y = 0;
     while(getline(mapFile, line)) {
         if(line.length() > 0) {
+            m_map[y].reserve(100);
             for(size_t x = 0; x<=line.length(); x++) {
                 if(x==line.length()){
                     mapLines.emplace_back(x,y,'\n');
@@ -66,7 +70,7 @@ bool Map::readMap(int level) {
                     mapLines.emplace_back(x,y,line[x]);
                 }
             }
-            m_map.emplace_back(mapLines); // SEGFAULT HERE
+            m_map.push_back(mapLines); // SEGFAULT HERE
             mapLines.clear();
             y++;
         }
