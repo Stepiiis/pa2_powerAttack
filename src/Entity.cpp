@@ -27,5 +27,6 @@ bool Entity::giveDamage(int damage, Entity* target){
 bool Entity::destroy() {
     _map->m_map[m_x][m_y].type = Point::Empty;
     _map->m_map[m_x][m_y].m_symbol = ' ';
+
     return true;
 }

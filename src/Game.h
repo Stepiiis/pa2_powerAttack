@@ -3,6 +3,7 @@
 #include <ncurses.h>
 #include "Attacker.h"
 #include "Map.h"
+#include "exceptions.h"
 #include "Player.h"
 #include "Enemy.h"
 #include <vector>

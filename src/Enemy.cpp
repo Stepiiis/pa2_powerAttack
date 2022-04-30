@@ -6,14 +6,15 @@ Enemy::Enemy(Map & map,int towerHp, int range, int damage, int dif, int level)
 : Player(map,std::move(towerHp), std::move(range), std::move(damage)), _difficulty(dif), _level(level)
 {
 }
-void Enemy::findEmptySpaces(Map& currMap){
-    _emptySpaces = std::move(currMap.getEmptySpaces());
+void Enemy::findEmptySpaces(){
+    _map->getEmptySpaces(_emptySpaces);
 }
 
 void Enemy::clearTowers(){
     for(auto& tower : _towers){
         tower->destroy();
     }
+    _towers.clear();
 }
 
 void Enemy::createTowers(){

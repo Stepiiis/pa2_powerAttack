@@ -76,3 +76,38 @@ Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 10 Context: Map.cpp Text: Map::readMap: Could not open map file: data/maps/map0.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 10 Context: Map.cpp Text: Map::readMap: Could not open map file: data/maps/map0.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 10 Context: Map.cpp Text: Map::readMap: Could not open map file: data/maps/map0.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 10 Context: Map.cpp Text: Map::readMap: Could not open map file: data/maps/map0.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 10 Context: Map.cpp Text: Map::readMap: Could not open map file: data/maps/map0.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 10 Context: Map.cpp Text: Map::readMap: Could not open map file: data/maps/map0.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 10 Context: Map.cpp Text: Map::readMap: Could not open map file: data/maps/map0.txt
+Level: 10 Context: Map.cpp Text: Map::readMap: Could not open map file: data/maps/map0.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully

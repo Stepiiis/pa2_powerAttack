@@ -7,11 +7,7 @@
 #include "Map.h"
 #include "ncurses.h"
 
-Map::Map()
-: currentLevel(0)
-{
-    readMap(0);
-}
+
 
 /**
  * @brief Map::updateMap
@@ -41,7 +37,7 @@ bool Map::loadNextMap(int level){
 
 // loads map from data files and sets up the map into a 2D array
 bool Map::readMap(int level) {
-//    m_map.erase(m_map.begin(), m_map.end());
+    m_map.erase(m_map.begin(), m_map.end());
     m_map.reserve(30);
 
     std::string mapLocation = "data/maps/map" + std::to_string(level) + ".txt";
@@ -93,16 +89,18 @@ void Map::printMap(std::string & map){
     }
 }
 
-std::vector<std::vector<char> >Map::getEmptySpaces(){
-    std::vector<std::vector<char> > emptySpaces;
+bool Map::getEmptySpaces(    std::vector<std::vector<char> > &_emptySpaces){
+_emptySpaces.erase(_emptySpaces.begin(), _emptySpaces.end());
     for(int row = 0; row<m_map.size(); row++) {
         for(int col = 0; col<m_map[row].size(); col++) {
-            if(emptySpaces[row][col] != ' ') {
-                emptySpaces[row][col] = '#';
+            if(m_map[row][col].m_symbol != ' ') {
+                _emptySpaces[row][col] = '#';
+            }else{
+                _emptySpaces[row][col] = ' ';
             }
         }
     }
-return emptySpaces;
+    return true;
 }
 
 void Map::redrawMap(){

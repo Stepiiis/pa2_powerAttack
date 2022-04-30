@@ -1,1 +1,1 @@
-build/logFile.o: src/logFile.cpp src/logFile.h
+build/logFile.o: src/logFile.cpp src/logFile.h src/exceptions.h

@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <memory>
 #include "Entity.h"
 class Entity;
 class Map;
@@ -26,12 +27,12 @@ class Map
 public:
 
     void printMap(std::string& map);
-    explicit Map();
+    Map() = default;
     bool updateMap(int prevX, int prevY,int x, int y, Entity * entity);
     void redrawMap();
     bool loadNextMap(int level); // pass last map index as parameter
     bool readMap(int level); // pas new map index as parameter
-    std::vector<std::vector<char> > getEmptySpaces();
+    bool getEmptySpaces(    std::vector<std::vector<char> >& );
 
     std::vector<std::vector<Point> > m_map;  // 2D vector of chars
     friend Point;
