@@ -91,20 +91,32 @@ void Map::printMap(std::string & map){
 
 bool Map::getEmptySpaces(    std::vector<std::vector<char> > &_emptySpaces){
 _emptySpaces.erase(_emptySpaces.begin(), _emptySpaces.end());
+std::vector<char> lines;
     for(int row = 0; row<m_map.size(); row++) {
+        lines.clear();
         for(int col = 0; col<m_map[row].size(); col++) {
             if(m_map[row][col].m_symbol != ' ') {
-                _emptySpaces[row][col] = '#';
+                lines.emplace_back('#');
             }else{
-                _emptySpaces[row][col] = ' ';
+                lines.emplace_back(' ');
             }
         }
+        _emptySpaces.push_back(lines);
     }
     return true;
 }
 
+void Map::convertMap() {
+    for(int row = 0; row<m_map.size(); row++) {
+        for(int col = 0; col<m_map[row].size(); col++) {
+            m_mapString.push_back(m_map[row][col].m_symbol);
+        }
+    }
+}
+
 void Map::redrawMap(){
-    printMap(m_mapString);
+    convertMap();
+//    printMap(m_mapString);
     mvprintw(0,0,"%s",m_mapString.c_str());
 }
 

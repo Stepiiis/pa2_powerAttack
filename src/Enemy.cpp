@@ -16,13 +16,13 @@ void Enemy::clearTowers(){
     }
     _towers.clear();
 }
-
+// randomly creates towers throughout the map and adds them to the vector of towers with their respective coordinates
 void Enemy::createTowers(){
     int nrTowers = _difficulty * _level * 3;
     if(_difficulty == 1) {
         for (int i = 0; i < nrTowers; i++) {
-            int x = rand() % _emptySpaces.size();
-            int y = rand() % _emptySpaces.size();
+            int x = rand() % _emptySpaces.size();       // FIX ME random not working.
+            int y = rand() % _emptySpaces.size();       // FIX ME implement proper randomness throughout the map.
             if(_emptySpaces[x][y] == ' '){
                 _towers.emplace_back(new Tower(x, y, _baseHp, _map));
                 _emptySpaces[x][y] = 'T';
@@ -49,4 +49,14 @@ void Enemy::createTowers(){
             }
         }
     }
+}
+
+// goes trough all the towers and draws them onto the map if their HP is bigger than 0
+void Enemy::printTowers(){
+    for(auto& tower : _towers){
+        if(tower->getHP() > 0){
+            tower->draw();
+        }
+    }
+    getch();
 }

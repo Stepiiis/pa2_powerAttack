@@ -33,7 +33,7 @@ public:
     bool loadNextMap(int level); // pass last map index as parameter
     bool readMap(int level); // pas new map index as parameter
     bool getEmptySpaces(    std::vector<std::vector<char> >& );
-
+    void convertMap();
     std::vector<std::vector<Point> > m_map;  // 2D vector of chars
     friend Point;
 protected:

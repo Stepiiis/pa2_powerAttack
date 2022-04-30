@@ -4,6 +4,7 @@
 #include "Map.h"
 #include <memory>
 #include <vector>
+#include <ncurses.h>
 class Enemy : public Player{
 public:
     Enemy(Map& map,int towerHp, int range, int damage, int dif, int level);

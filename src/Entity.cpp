@@ -30,3 +30,9 @@ bool Entity::destroy() {
 
     return true;
 }
+
+int Entity::getHP() const{ return m_hp; }
+
+void Entity::draw(){
+    mvprintw(m_y, m_x, "%c", m_symbol);
+}

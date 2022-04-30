@@ -24,13 +24,12 @@ CGame::~CGame(){
     endwin(); // dealoc pameti a zavreni ncurses
 }
 bool CGame::start(){
-    drawTowers(_difficulty);
     _gameMap.redrawMap();
+    drawTowers(_difficulty);
 }
 
 bool CGame::load(int level){
     if(_gameMap.readMap(level)){
-        _gameMap.redrawMap();
         return true;
     }
     return false;
@@ -42,6 +41,7 @@ void CGame::drawTowers(int difficulty){
     }
     _tower_manager->findEmptySpaces();
     _tower_manager->createTowers();
+    _tower_manager->printTowers();
 }
 bool CGame::save(){}
 bool CGame::loadFromSave(std::string path){

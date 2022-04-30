@@ -22,8 +22,6 @@ int main (int argc, char **argv){
     initscr(); // inicializace ncurses a pameti
     noecho(); // zakaz vypisu na obrazovku
     cbreak(); // ctrlc se neukonci program
-    std::vector<string> text();
-    std::vector<string> options ();
 
     int choice = newMenu(CMenu({"Welcome to", "The Tower Attack 2 ", "Electric Boogaloo"},{"New Game", "Load Game", "Exit"}));
 //    int choice = mainMenu(term);

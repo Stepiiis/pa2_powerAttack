@@ -21,6 +21,9 @@ public:
     void attack();
     void update();
 
+    void draw();
+    int getHP() const;
+
     virtual inline char getSymbol() = 0;
     virtual bool checkRadius() = 0;
     void setSymbol(char symbol);
