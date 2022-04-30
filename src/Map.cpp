@@ -41,7 +41,7 @@ bool Map::loadNextMap(int level){
 
 // loads map from data files and sets up the map into a 2D array
 bool Map::readMap(int level) {
-    m_map.clear();
+//    m_map.erase(m_map.begin(), m_map.end());
     m_map.reserve(30);
 
     std::string mapLocation = "data/maps/map" + std::to_string(level) + ".txt";
@@ -74,8 +74,11 @@ bool Map::readMap(int level) {
             mapLines.clear();
             y++;
         }
-
     }
+//    std::string mapa;
+//    printMap(mapa);
+//    std::cout << mapa<< std::endl;
+    mapFile.close();
     sendToLogFile(0, "Map::readMap: Map loaded successfully", "Map.cpp");
     return true;
 }

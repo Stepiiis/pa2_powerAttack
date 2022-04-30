@@ -18,6 +18,7 @@ CGame::CGame(int level,  int difficulty, std::string pathToSave)
     }
 
 }
+
 CGame::~CGame(){
     delete _player;
     delete _tower_manager;
