@@ -25,7 +25,7 @@ bool Map::updateMap(int prevX, int prevY, int x, int y, Entity * entity)
 {
     if(y>m_map.size() || (y<0) || (x>m_map[0].size()) || (x<0))
     {
-        throw("Out of bounds");
+        throw(mapException("Out of bounds"));
     }
     m_map[prevX][prevY] = Point(prevX, prevY, ' ');
     char symbol = entity->getSymbol();
