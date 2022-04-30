@@ -30,7 +30,7 @@ int main (int argc, char **argv){
 
     if(choice == 0){
         //new game
-        CGame game(0,1);
+        CGame game(1,1);
         game.start();
     }
     else if(choice == 1){

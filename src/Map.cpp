@@ -14,7 +14,7 @@ Map::Map()
 }
 
 /**
- * @brief Map::readMap
+ * @brief Map::updateMap
  * @param prevX  previous x position which will be filled with empty space
  * @param prevY  previous y position which will be filled with empty space
  * @param x      new x position to move entity to
