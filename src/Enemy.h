@@ -8,7 +8,7 @@
 class Enemy : public Player{
 public:
     Enemy(Map& map,int towerHp, int range, int damage, int dif, int level);
-    ~Enemy() = default;
+    ~Enemy();
     void clearTowers();
     void findEmptySpaces();
     void createTowers();

@@ -8,15 +8,19 @@ class Map;
 
 class Entity {
 public:
-    ~Entity() = default;
+    virtual ~Entity() = default;
     Entity(int posX, int posY, int maxHealth, std::shared_ptr<Map> map);
-    
+
+    // moves the entity to the given position on screen and updates the shared map structure
     bool move(int x, int y);
 
-    void takeDamage(int damage);
-
+    // if the entity is alive, it will take damage and return true, otherwise it will return false
+    bool takeDamage(int damage);
+    // gives damage to targeted entity and if the entity dies it returns false, otherwise it returns true.
+    // if the entity dies it will be removed from the map
     bool giveDamage(int damage, Entity* target);
 
+    // removes the entity from the map
     bool destroy(); // remove from the map and sets alive to false;
     void attack();
     void update();

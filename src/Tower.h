@@ -13,10 +13,20 @@ private:
     int _y;
 };
 
-// shoots twice as fasts as regular tower
+// shoots twice as fast as regular tower
 class fastTower final: public Entity{
 public:
     fastTower(int x, int y, int hp, std::shared_ptr<Map> map);
     char getSymbol() override;
     bool checkRadius() override;
 };
+
+class highDamageTower final: public Entity
+        {
+
+        };
+
+class slowEffectTower final: public Entity
+        {
+
+        };

@@ -84,22 +84,34 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classTower.html#af2ec08651d1462d2907e7bd5f091e4f4">   13</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classTower.html#af2ec08651d1462d2907e7bd5f091e4f4">_y</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// shoots twice as fasts as regular tower</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// shoots twice as fast as regular tower</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classfastTower.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfastTower.html">fastTower</a> final: <span class="keyword">public</span> <a class="code" href="classEntity.html">Entity</a>{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classfastTower.html#a4376b780681f9a022b33cc779694de70">fastTower</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> hp, std::shared_ptr&lt;Map&gt; map);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">char</span> <a class="code" href="classfastTower.html#aaffe49c4f5aaf2ff67a4c31b5946d8a2">getSymbol</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classfastTower.html#a2f2a5d079850e594425eec0e921fc0df">checkRadius</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classhighDamageTower.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classhighDamageTower.html">highDamageTower</a> final: <span class="keyword">public</span> <a class="code" href="classEntity.html">Entity</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        };</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classslowEffectTower.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classslowEffectTower.html">slowEffectTower</a> final: <span class="keyword">public</span> <a class="code" href="classEntity.html">Entity</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        };</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassTower_html_abadae3cb0b344ca668195290629cde13"><div class="ttname"><a href="classTower.html#abadae3cb0b344ca668195290629cde13">Tower::getSymbol</a></div><div class="ttdeci">char getSymbol() override</div><div class="ttdef"><b>Definition:</b> Tower.cpp:18</div></div>
 <div class="ttc" id="aTower_8h_html"><div class="ttname"><a href="Tower_8h.html">Tower.h</a></div></div>
 <div class="ttc" id="aclassTower_html_af2ec08651d1462d2907e7bd5f091e4f4"><div class="ttname"><a href="classTower.html#af2ec08651d1462d2907e7bd5f091e4f4">Tower::_y</a></div><div class="ttdeci">int _y</div><div class="ttdef"><b>Definition:</b> Tower.h:13</div></div>
 <div class="ttc" id="aclassfastTower_html_aaffe49c4f5aaf2ff67a4c31b5946d8a2"><div class="ttname"><a href="classfastTower.html#aaffe49c4f5aaf2ff67a4c31b5946d8a2">fastTower::getSymbol</a></div><div class="ttdeci">char getSymbol() override</div><div class="ttdef"><b>Definition:</b> Tower.cpp:20</div></div>
 <div class="ttc" id="aclassTower_html_a0d2c63e13d177f3a23e7f64f6f578b51"><div class="ttname"><a href="classTower.html#a0d2c63e13d177f3a23e7f64f6f578b51">Tower::checkRadius</a></div><div class="ttdeci">bool checkRadius() override</div><div class="ttdef"><b>Definition:</b> Tower.cpp:24</div></div>
+<div class="ttc" id="aclasshighDamageTower_html"><div class="ttname"><a href="classhighDamageTower.html">highDamageTower</a></div><div class="ttdef"><b>Definition:</b> Tower.h:24</div></div>
 <div class="ttc" id="aclassfastTower_html"><div class="ttname"><a href="classfastTower.html">fastTower</a></div><div class="ttdef"><b>Definition:</b> Tower.h:17</div></div>
-<div class="ttc" id="aclassEntity_html_a3b9a9926c41bd760cd92a7fee064c9bc"><div class="ttname"><a href="classEntity.html#a3b9a9926c41bd760cd92a7fee064c9bc">Entity::m_radius</a></div><div class="ttdeci">int m_radius</div><div class="ttdef"><b>Definition:</b> Entity.h:47</div></div>
+<div class="ttc" id="aclassEntity_html_a3b9a9926c41bd760cd92a7fee064c9bc"><div class="ttname"><a href="classEntity.html#a3b9a9926c41bd760cd92a7fee064c9bc">Entity::m_radius</a></div><div class="ttdeci">int m_radius</div><div class="ttdef"><b>Definition:</b> Entity.h:54</div></div>
 <div class="ttc" id="aEntity_8h_html"><div class="ttname"><a href="Entity_8h.html">Entity.h</a></div></div>
+<div class="ttc" id="aclassslowEffectTower_html"><div class="ttname"><a href="classslowEffectTower.html">slowEffectTower</a></div><div class="ttdef"><b>Definition:</b> Tower.h:29</div></div>
 <div class="ttc" id="aAttacker_8h_html"><div class="ttname"><a href="Attacker_8h.html">Attacker.h</a></div></div>
 <div class="ttc" id="aclassEntity_html"><div class="ttname"><a href="classEntity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:9</div></div>
 <div class="ttc" id="aclassTower_html_a15e168da64530b1a43cca963f1200775"><div class="ttname"><a href="classTower.html#a15e168da64530b1a43cca963f1200775">Tower::Tower</a></div><div class="ttdeci">Tower(int x, int y, int hp, std::shared_ptr&lt; Map &gt; map)</div><div class="ttdef"><b>Definition:</b> Tower.cpp:4</div></div>
@@ -107,7 +119,7 @@ $(function() {
 <div class="ttc" id="aclassfastTower_html_a4376b780681f9a022b33cc779694de70"><div class="ttname"><a href="classfastTower.html#a4376b780681f9a022b33cc779694de70">fastTower::fastTower</a></div><div class="ttdeci">fastTower(int x, int y, int hp, std::shared_ptr&lt; Map &gt; map)</div><div class="ttdef"><b>Definition:</b> Tower.cpp:11</div></div>
 <div class="ttc" id="aclassTower_html_ae8a0262a84be649240319a3d4ba98478"><div class="ttname"><a href="classTower.html#ae8a0262a84be649240319a3d4ba98478">Tower::_x</a></div><div class="ttdeci">int _x</div><div class="ttdef"><b>Definition:</b> Tower.h:12</div></div>
 <div class="ttc" id="aclassfastTower_html_a2f2a5d079850e594425eec0e921fc0df"><div class="ttname"><a href="classfastTower.html#a2f2a5d079850e594425eec0e921fc0df">fastTower::checkRadius</a></div><div class="ttdeci">bool checkRadius() override</div><div class="ttdef"><b>Definition:</b> Tower.cpp:25</div></div>
-<div class="ttc" id="aclassEntity_html_a8b6f5fdf38f2be75330f24f272785acc"><div class="ttname"><a href="classEntity.html#a8b6f5fdf38f2be75330f24f272785acc">Entity::m_symbol</a></div><div class="ttdeci">char m_symbol</div><div class="ttdef"><b>Definition:</b> Entity.h:35</div></div>
+<div class="ttc" id="aclassEntity_html_a8b6f5fdf38f2be75330f24f272785acc"><div class="ttname"><a href="classEntity.html#a8b6f5fdf38f2be75330f24f272785acc">Entity::m_symbol</a></div><div class="ttdeci">char m_symbol</div><div class="ttdef"><b>Definition:</b> Entity.h:42</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

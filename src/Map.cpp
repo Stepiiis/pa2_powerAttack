@@ -8,7 +8,6 @@
 #include "ncurses.h"
 
 
-
 /**
  * @brief Map::updateMap
  * @param prevX  previous x position which will be filled with empty space

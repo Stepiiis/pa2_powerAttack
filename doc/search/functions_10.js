@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['update_207',['update',['../classEntity.html#a00b6eeaf99b35c8f8b10b5fbfc1baf4f',1,'Entity']]],
-  ['updatemap_208',['updateMap',['../classMap.html#ac4d6c021e958df55b4c1969d2c0e6c54',1,'Map']]]
+  ['takedamage_229',['takeDamage',['../classEntity.html#a3d2df6e854f3b337e7cd5eec8291a9fc',1,'Entity']]],
+  ['tower_230',['Tower',['../classTower.html#a15e168da64530b1a43cca963f1200775',1,'Tower']]]
 ];

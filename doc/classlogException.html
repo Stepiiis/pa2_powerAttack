@@ -70,7 +70,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="logFile_8h_source.html">logFile.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="exceptions_8h_source.html">exceptions.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for logException:</div>
 <div class="dyncontent">
@@ -84,19 +84,19 @@ Collaboration diagram for logException:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a53448f208709052114b2f43b9f60e7af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogException.html#a53448f208709052114b2f43b9f60e7af">logException</a> (const std::string &amp;msg)</td></tr>
-<tr class="separator:a53448f208709052114b2f43b9f60e7af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee5cf9c19e99ce539b58973237cf12ec"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogException.html#aee5cf9c19e99ce539b58973237cf12ec">what</a> () const  throw ()</td></tr>
-<tr class="separator:aee5cf9c19e99ce539b58973237cf12ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6480564521f97260910703853684e2cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogException.html#a6480564521f97260910703853684e2cd">logException</a> (std::string msg)</td></tr>
+<tr class="separator:a6480564521f97260910703853684e2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae39c5653d4ea6c93444e3ac290878ad5"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogException.html#ae39c5653d4ea6c93444e3ac290878ad5">what</a> () const noexcept override</td></tr>
+<tr class="separator:ae39c5653d4ea6c93444e3ac290878ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a982d40bfaa893a4964d2287f65cfde06"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogException.html#a982d40bfaa893a4964d2287f65cfde06">_msg</a></td></tr>
-<tr class="separator:a982d40bfaa893a4964d2287f65cfde06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75caec1eb527f3c98f783587074c3d0e"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogException.html#a75caec1eb527f3c98f783587074c3d0e">_msg</a></td></tr>
+<tr class="separator:a75caec1eb527f3c98f783587074c3d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a53448f208709052114b2f43b9f60e7af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53448f208709052114b2f43b9f60e7af">&#9670;&nbsp;</a></span>logException()</h2>
+<a id="a6480564521f97260910703853684e2cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6480564521f97260910703853684e2cd">&#9670;&nbsp;</a></span>logException()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -107,14 +107,14 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">logException::logException </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -122,8 +122,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aee5cf9c19e99ce539b58973237cf12ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee5cf9c19e99ce539b58973237cf12ec">&#9670;&nbsp;</a></span>what()</h2>
+<a id="ae39c5653d4ea6c93444e3ac290878ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae39c5653d4ea6c93444e3ac290878ad5">&#9670;&nbsp;</a></span>what()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,36 +137,31 @@ Public Attributes</h2></td></tr>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
-        <tr>
-          <td align="right">throw </td><td>(</td><td colspan="2"></td>
-        </tr>
-        <tr>
-          <td align="right"></td><td>)</td><td></td><td></td>
-        </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classlogException_aee5cf9c19e99ce539b58973237cf12ec_icgraph.svg" width="514" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><!-- SVG 0 -->
+</div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a982d40bfaa893a4964d2287f65cfde06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a982d40bfaa893a4964d2287f65cfde06">&#9670;&nbsp;</a></span>_msg</h2>
+<a id="a75caec1eb527f3c98f783587074c3d0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75caec1eb527f3c98f783587074c3d0e">&#9670;&nbsp;</a></span>_msg</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string logException::_msg</td>
+          <td class="memname">const std::string logException::_msg</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -174,7 +169,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/<a class="el" href="logFile_8h_source.html">logFile.h</a></li>
+<li>src/<a class="el" href="exceptions_8h_source.html">exceptions.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

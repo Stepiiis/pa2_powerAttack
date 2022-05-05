@@ -2,10 +2,12 @@
 #include <ncurses.h>
 #include <iostream>
 #include <memory>
+#include <termios.h>
+#include <sys/ioctl.h>
 #include <experimental/filesystem>
 
 
-CGame::CGame(int level,  int difficulty, std::string pathToSave)
+CGame::CGame(int level,  int difficulty, const std::string & pathToSave)
         : _level(level),_difficulty(difficulty), _save_name(pathToSave)
 {
     if(_level == 0){
@@ -26,7 +28,34 @@ CGame::~CGame(){
 bool CGame::start(){
     _gameMap.redrawMap();
     drawTowers(_difficulty);
+    resume();
+    return true;
 }
+// prevzato ze stackowerflow
+// https://stackoverflow.com/questions/421860/capture-characters-from-standard-input-without-waiting-for-enter-to-be-pressed/67363091#67363091
+int kbhit(){
+    static int nbbytes;
+    ioctl(0, FIONREAD, &nbbytes);
+    return nbbytes;
+}
+// konec prevzateho
+
+bool CGame::resume()
+{
+    int input;
+    move(0,0);
+    while(true){
+        if(kbhit())
+             input = getch();
+        mvprintw(0,0,"%c", input);
+        if(input == 'q'){
+            break;
+        }
+    }
+    return true;
+}
+
+
 
 bool CGame::load(int level){
     if(_gameMap.readMap(level)){
@@ -163,13 +192,13 @@ int loadMenu(std::vector<std::string>& save_names){
                                           "and confirm with delete"
                                   },save_names));
 
-    return newMenu(CMenu({
+    newMenu(CMenu({
                                       "No save files found",
                                       "Please create a new game"
                               },{
                                       "New game"
                               }));
-
+    return -10;
 }
 
 

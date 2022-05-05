@@ -6,6 +6,12 @@ Enemy::Enemy(Map & map,int towerHp, int range, int damage, int dif, int level)
 : Player(map,std::move(towerHp), std::move(range), std::move(damage)), _difficulty(dif), _level(level)
 {
 }
+
+Enemy::~Enemy()
+{
+}
+
+
 void Enemy::findEmptySpaces(){
     _map->getEmptySpaces(_emptySpaces);
 }
@@ -58,5 +64,5 @@ void Enemy::printTowers(){
             tower->draw();
         }
     }
-    getch();
+//    getch();
 }

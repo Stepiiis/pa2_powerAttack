@@ -35,20 +35,25 @@ int main (int argc, char **argv){
         // load game
         std::vector<string> saves;
         choice = loadMenu(saves);
+        std::string save;
+        if(choice >0) {
+            save = saves[choice];
+        }else
+        {
+            save = "";
+        }
+        CGame game(1,1,save);
+        game.start();
+
+
     }
     else if(choice == 2){
         //exit
         endwin();
         return EXIT_SUCCESS;
     }
-
-
-    string map;
-    mapa->printMap(map);
-    printw(map.c_str());
-    getch(); // cekani na stisk klavesy
-
-    mapa->updateMap(0,0,5,5,test);
+    getch();
+    
     delete test;
     getch();
     endwin(); // dealoc pameti a zavreni ncurses

@@ -38,3 +38,15 @@ Efekty útoku věží: zranění, zpomalení, ...
 Políčka mapy: volno, věž, útočník ...
 Uživatelské rozhraní: konzole, ncurses, SDL, OpenGL (různé varianty), ...
 
+-----------------
+
+Specifikace:
+
+Uživatel si na začátku hry zvolí jestli chce začít novou hru anebo načíst starý save. Pokud zvolí novou hru, vytvoří se
+nová instance hry a na obrazovku zobrazí první z pěti map na kterou se vykreslí prvních několik towers.
+Poté je v závislosti na nastavené obtížnosti určena hodnota peněz které může hráč poté využít pro vyslání různého
+Attackera. Jakmile hráč zničí věž bude odměněn úměrným počet peněz. Když hráč zničí všechny věže a zničí dveře do
+dalšího levelu, může pokračovat do dalšího levelu. Jeho stav peněz bude přenesen do dalšího levelu. Takto hra pokračuje
+dokud hráč neprojde do 5. levelu. Tam hra končí a hra nabídne zapsat se do leaderboardu nebo vrátit se do menu.
+Score v leaderboardu je vypočítáno z času, který trvalo hru dohrát + zbylý počet peněz po výhře. V hlavním menu si
+uživatel může zvolit obtížnost hry, která ovlivní počet věží a počet peněz, které dostane za zničení věže.

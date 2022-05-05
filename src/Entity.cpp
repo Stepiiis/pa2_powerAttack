@@ -15,7 +15,7 @@ bool Entity::move(int x, int y)
         return true;
     }
 
-void Entity::takeDamage(int damage){
+bool Entity::takeDamage(int damage){
         m_hp -= damage;
     }
 

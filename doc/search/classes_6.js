@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['map_133',['Map',['../classMap.html',1,'']]]
+  ['logexception_145',['logException',['../classlogException.html',1,'']]]
 ];

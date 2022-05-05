@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['save_102',['save',['../classCGame.html#ad0eafae848690ed00fd50af9d7464bb2',1,'CGame']]],
-  ['sendtologfile_103',['sendToLogFile',['../logFile_8cpp.html#a7044c91cfa1a776cbf7b08b4af30888d',1,'sendToLogFile(short level, const std::string &amp;text, const std::string context):&#160;logFile.cpp'],['../logFile_8h.html#a7044c91cfa1a776cbf7b08b4af30888d',1,'sendToLogFile(short level, const std::string &amp;text, const std::string context):&#160;logFile.cpp']]],
-  ['setposition_104',['setPosition',['../classAttacker.html#a89648191a2b3d861bc2bcac0f8668fe3',1,'Attacker']]],
-  ['setsymbol_105',['setSymbol',['../classEntity.html#acbed91d85d0c440353e7ce9474f50152',1,'Entity']]],
-  ['start_106',['start',['../classCGame.html#aa70fa8586abbd097b8eb7fb8d540841d',1,'CGame']]]
+  ['readmap_109',['readMap',['../classMap.html#a79a4355510b026646449df1852768c38',1,'Map']]],
+  ['redrawmap_110',['redrawMap',['../classMap.html#af5b5492b49e9d1aaa54e586d1203030f',1,'Map']]],
+  ['resume_111',['resume',['../classCGame.html#abca9e7318a19887770d007a56248fa82',1,'CGame']]]
 ];

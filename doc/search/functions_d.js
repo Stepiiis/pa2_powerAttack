@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['readmap_198',['readMap',['../classMap.html#a79a4355510b026646449df1852768c38',1,'Map']]],
-  ['redrawmap_199',['redrawMap',['../classMap.html#af5b5492b49e9d1aaa54e586d1203030f',1,'Map']]]
+  ['pause_213',['pause',['../classCGame.html#a4993e80c1d42577114cd7bce8375309b',1,'CGame']]],
+  ['place_214',['place',['../classAttacker.html#a5e03bc229ca8d038d06a2ab5bc941be1',1,'Attacker']]],
+  ['player_215',['Player',['../classPlayer.html#ad3349d887ee4176ef09d7f168c883761',1,'Player::Player(Map &amp;map, int baseHp, int range, int damage)'],['../classPlayer.html#a8826850c4f8a2871819713ef61148836',1,'Player::Player(const Player &amp;)']]],
+  ['point_216',['Point',['../classPoint.html#a41849195a268116fe0a533d1bc5e5495',1,'Point']]],
+  ['printentity_217',['printEntity',['../classEntity.html#a3d676b4245def353851c4ccb84cec868',1,'Entity']]],
+  ['printmap_218',['printMap',['../classMap.html#a6ee8da517f307341839fe49731a72c59',1,'Map']]],
+  ['printshrek_219',['printShrek',['../Game_8cpp.html#a629460bad10d510d31de57335118cc2d',1,'printShrek(WINDOW *menu_win, int posY, int posX):&#160;Game.cpp'],['../Game_8h.html#a629460bad10d510d31de57335118cc2d',1,'printShrek(WINDOW *menu_win, int posY, int posX):&#160;Game.cpp']]],
+  ['printtowers_220',['printTowers',['../classEnemy.html#a95c457b3e58d8c931e06877c6bde6d11',1,'Enemy']]]
 ];

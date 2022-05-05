@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['wall_115',['Wall',['../classPoint.html#ac4cc62b224c258e128a6e591b0248b41ad1cf6d4d72fa769d7658d00ec213cbb0',1,'Point']]],
-  ['what_116',['what',['../classlogException.html#aee5cf9c19e99ce539b58973237cf12ec',1,'logException']]],
-  ['width_117',['width',['../structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b',1,'terminal']]]
+  ['update_124',['update',['../classEntity.html#a00b6eeaf99b35c8f8b10b5fbfc1baf4f',1,'Entity']]],
+  ['updatemap_125',['updateMap',['../classMap.html#ac4d6c021e958df55b4c1969d2c0e6c54',1,'Map']]]
 ];

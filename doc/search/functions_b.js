@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_3d_189',['operator=',['../classPlayer.html#a21a09f49e2e5d2995a08701318ef0484',1,'Player']]]
+  ['newmenu_210',['newMenu',['../Game_8cpp.html#a5f00bd86c2427bc56a5c44240776567d',1,'newMenu(const CMenu &amp;menu):&#160;Game.cpp'],['../Game_8h.html#a5f00bd86c2427bc56a5c44240776567d',1,'newMenu(const CMenu &amp;menu):&#160;Game.cpp']]],
+  ['notimplementedexception_211',['notImplementedException',['../classnotImplementedException.html#ae4004b8dde521af5fba73a9f354bc1da',1,'notImplementedException']]]
 ];

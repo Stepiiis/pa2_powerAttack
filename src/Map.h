@@ -25,9 +25,10 @@ public:
 class Map
 {
 public:
-
+    // draws the map specified as a string
     void printMap(std::string& map);
     Map() = default;
+    // updates map according to the certain entity. its previous position will be printed as its default value
     bool updateMap(int prevX, int prevY,int x, int y, Entity * entity);
     void redrawMap();
     bool loadNextMap(int level); // pass last map index as parameter
@@ -38,5 +39,5 @@ public:
     friend Point;
 protected:
     std::string m_mapString;
-    int currentLevel;
+    int currentLevel{};
 };

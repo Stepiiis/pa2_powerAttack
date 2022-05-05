@@ -6,7 +6,7 @@
 #include <memory>
 #include "Map.h"
 
-
+// 
 class Attacker: public Entity
 {
 public:
@@ -28,4 +28,9 @@ public:
     basicAttacker(int posX, int posY, int maxHealth, std::shared_ptr<Map> map);
     char getSymbol() override;
     bool checkRadius() override;
+};
+
+class FastAttacker final: public Entity
+{
+
 };
