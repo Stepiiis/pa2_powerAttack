@@ -22,11 +22,18 @@ public:
 };
 
 class highDamageTower final: public Entity
-        {
+    {
+public:
+        highDamageTower(int x, int y, int hp, std::shared_ptr<Map> map);
+        char getSymbol() override;
+        bool checkRadius() override;
 
-        };
+    };
 
 class slowEffectTower final: public Entity
         {
-
+public:
+    slowEffectTower(int x, int y, int hp, std::shared_ptr<Map> map);
+    char getSymbol() override;
+    bool checkRadius() override;
         };

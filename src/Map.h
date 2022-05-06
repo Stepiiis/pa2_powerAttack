@@ -41,3 +41,11 @@ protected:
     std::string m_mapString;
     int currentLevel{};
 };
+
+
+/*
+ * Procházení mapy v závislosti na tom, pro kterého attackera hledáme cestu k cíli
+ * Nejjednodušší - jde explicitně do cíle
+ * Vyhýbání se věžím - pro fast attackera  najde cestu do cíle
+ * Náběh na vež - běží k nejbližší věži a ničí věž dokud není mrtvá ( pro heavy attackera, který má hodně )
+ */

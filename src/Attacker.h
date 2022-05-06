@@ -6,7 +6,7 @@
 #include <memory>
 #include "Map.h"
 
-// 
+
 class Attacker: public Entity
 {
 public:
