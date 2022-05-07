@@ -7,6 +7,39 @@
 #include "Map.h"
 #include "ncurses.h"
 
+Point::Point(int x, int y, char symbol)
+        : x(x), y(y), m_symbol(symbol)
+{
+    switch (symbol) {
+        case '#':
+            type = Wall;
+            break;
+        case ' ':
+            type = Empty;
+            break;
+        case '@':
+            type = Attacker;
+            break;
+        case 'I':
+            type = Tower;
+            break;
+        case '<':
+            type = Entry;
+            break;
+        case '>':
+            type = Exit;
+            break;
+    }
+}
+
+Map::Map(WINDOW* win)
+: m_game_window(win)
+{}
+
+
+/**
+ * EVERY COORDINATE SHOULD BE MOVED BY 1 TO ACCOUNT FOR THE BORDER
+ */
 
 /**
  * @brief Map::updateMap
@@ -22,17 +55,34 @@ bool Map::updateMap(int prevX, int prevY, int x, int y, Entity * entity)
     {
         throw(mapException("Out of bounds"));
     }
-    m_map[prevX][prevY] = Point(prevX, prevY, ' ');
+    m_map[prevY][prevX] = Point(prevX, prevY, ' ');
+    mvwprintw(m_game_window,prevX+1,prevY+1,"%c"," ");
     char symbol = entity->getSymbol();
     entity->move(x,y);
     m_map[y][x] = Point(x,y,symbol);
-    mvprintw(y,x,"%c",symbol);
+    mvwprintw(m_game_window,y+1,x+1,"%c",symbol);
+    return true;
+}
+
+bool Map::updateEntity(int x, int y, Entity * entity){
+    if(y>m_map.size() || (y<0) || (x>m_map[0].size()) || (x<0))
+    {
+        throw(mapException("Out of bounds"));
+    }
+    m_map[y][x] = Point(x,y,entity->getSymbol());
+    entity->move(x,y);
+    mvwprintw(m_game_window,y+1,x+1,"%c",entity->getSymbol());
     return true;
 }
 
 bool Map::loadNextMap(int level){
     return   readMap(level);
 }
+
+void Map::refreshWindow(){
+    wrefresh(m_game_window);
+}
+
 
 // loads map from data files and sets up the map into a 2D array
 bool Map::readMap(int level) {
@@ -58,12 +108,12 @@ bool Map::readMap(int level) {
         if(line.length() > 0) {
             m_map[y].reserve(100);
             for(size_t x = 0; x<=line.length(); x++) {
-                if(x==line.length()){
-                    mapLines.emplace_back(x,y,'\n');
-                    break;
-                } else {
+//                if(x==line.length()){
+//                    mapLines.emplace_back(x,y,'\n');
+//                    break;
+//                } else {
                     mapLines.emplace_back(x,y,line[x]);
-                }
+//                }
             }
             m_map.push_back(mapLines); // SEGFAULT HERE
             mapLines.clear();
@@ -80,12 +130,13 @@ bool Map::readMap(int level) {
 
 
 // returns const string reference to map string
-void Map::printMap(std::string & map){
-    for(size_t i = 0; i<m_map.size(); i++) {
-        for(size_t j = 0; j<m_map[i].size(); j++) {
-            map=map + m_map[i][j].m_symbol;
+void Map::printMap(){
+    for(const auto& line : m_map) {
+        for (const auto &point: line) {
+            mvwprintw(m_game_window, point.y+1, point.x+1, "%c", point.m_symbol);
         }
     }
+    wrefresh(m_game_window);
 }
 
 bool Map::getEmptySpaces(    std::vector<std::vector<char> > &_emptySpaces){
@@ -115,31 +166,22 @@ void Map::convertMap() {
 
 void Map::redrawMap(){
     convertMap();
-//    printMap(m_mapString);
-    mvprintw(0,0,"%s",m_mapString.c_str());
+    printMap();
+//    mvwprintw(m_game_window,0,0,"%s",m_mapString.c_str());
 }
 
-Point::Point(int x, int y, char symbol)
-: x(x), y(y), m_symbol(symbol)
-{
-    switch(symbol){
-        case '#':
-            type = Wall;
-            break;
-        case ' ':
-            type = Empty;
-            break;
-        case '@':
-            type = Attacker;
-            break;
-        case 'I':
-            type = Tower;
-            break;
-        case '<':
-            type = Entry;
-            break;
-        case '>':
-            type = Exit;
-            break;
-    }
+bool Map::findShortestPath(Entity *entity) {
+    return false;
 }
+
+bool Map::checkNeighbours(int x, int y){
+    if(x > 0 && x < MAP_WIDTH - 1 && y > 0 && y < MAP_HEIGHT - 1){
+        if(m_map[y][x - 1].type != Point::Entry && m_map[y][x + 1].type != Point::Entry && m_map[y - 1][x].type != Point::Entry && m_map[y + 1][x].type != Point::Entry){
+            if(m_map[y-1][x - 1].type != Point::Entry && m_map[y-1][x + 1].type != Point::Entry && m_map[y - 1][x+1].type != Point::Entry && m_map[y + 1][x-1].type != Point::Entry){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+

@@ -6,16 +6,16 @@
 #include "Map.h"
 class Player{
 public:
-    Player(Map& map, int baseHp, int range, int damage);
+    Player(Map* map, int baseHp, int range, int damage);
     Player(const Player&);
     Player& operator=(const Player&);
-    ~Player() = default;
+    virtual ~Player() = default;
 protected:
-    int _score;
-    int _currency;
-    int _baseHp;
-    int _baseRange;
-    int _baseAtk;
-    std::shared_ptr<Map> _map;
+    int _score;    // score calculated at the end of the game. could be calculated in class CGame
+    int _currency; // current amount of money player has available to buy attackers
+    int _baseHp;   // base hp of attackers
+    int _baseRange; // base range of attackers
+    int _baseAtk;   // base damage of attackers
+    Map* _map;
     std::vector<std::unique_ptr<Attacker> > _attackers;
 };

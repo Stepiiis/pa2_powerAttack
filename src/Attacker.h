@@ -10,7 +10,7 @@
 class Attacker: public Entity
 {
 public:
-    Attacker(int posX, int posY, int maxHealth, std::shared_ptr<Map> map);
+    Attacker(int posX, int posY, int maxHealth, Map* map);
 //    ~Attacker() = default;
     char getSymbol() override;
     ~Attacker() = default;
@@ -22,15 +22,20 @@ public:
 
 
 };
-class basicAttacker final: public Entity
+class basicAttacker final: public Attacker
 {
 public:
-    basicAttacker(int posX, int posY, int maxHealth, std::shared_ptr<Map> map);
+    basicAttacker(int posX, int posY, int maxHealth, Map* map);
     char getSymbol() override;
     bool checkRadius() override;
 };
 
-class FastAttacker final: public Entity
+class FastAttacker final: public Attacker
+{
+
+};
+
+class chargerAttacker final: public Attacker
 {
 
 };

@@ -4,15 +4,13 @@
 #include "Map.h"
 #include "constants.h"
 
-Attacker::Attacker(int posX, int posY, int maxHealth,std::shared_ptr<Map> map)
+Attacker::Attacker(int posX, int posY, int maxHealth,Map *map)
 : Entity(posX, posY, maxHealth, map)
 {
-    m_symbol = '@';
-    m_radius = 2;
 }
 
-basicAttacker::basicAttacker(int posX, int posY, int maxHealth,std::shared_ptr<Map> map)
-:Entity(posX, posY, maxHealth,map)
+basicAttacker::basicAttacker(int posX, int posY, int maxHealth,Map* map)
+:Attacker(posX, posY, maxHealth,map)
     {
         m_symbol = '$';
         m_radius = 2; // the slower and more HP version will have range of 5 fire
@@ -38,7 +36,7 @@ char inline Attacker::getSymbol()
 
 // do not use
 void Attacker::setPosition(int x, int y){
-    _map->m_map[x][y].m_symbol = m_symbol;
+    m_sharedMap->m_map[x][y].m_symbol = m_symbol;
 }
 
 

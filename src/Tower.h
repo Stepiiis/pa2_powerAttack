@@ -5,7 +5,7 @@
 
 class Tower final: public Entity {
 public:
-    Tower(int x, int y, int hp, std::shared_ptr<Map> map);
+    Tower(int x, int y, int hp, Map* map);
     char getSymbol() override;
     bool checkRadius() override;
 private:
@@ -16,7 +16,7 @@ private:
 // shoots twice as fast as regular tower
 class fastTower final: public Entity{
 public:
-    fastTower(int x, int y, int hp, std::shared_ptr<Map> map);
+    fastTower(int x, int y, int hp, Map* map);
     char getSymbol() override;
     bool checkRadius() override;
 };
@@ -24,7 +24,7 @@ public:
 class highDamageTower final: public Entity
     {
 public:
-        highDamageTower(int x, int y, int hp, std::shared_ptr<Map> map);
+        highDamageTower(int x, int y, int hp, Map* map);
         char getSymbol() override;
         bool checkRadius() override;
 
@@ -33,7 +33,7 @@ public:
 class slowEffectTower final: public Entity
         {
 public:
-    slowEffectTower(int x, int y, int hp, std::shared_ptr<Map> map);
+    slowEffectTower(int x, int y, int hp, Map* map);
     char getSymbol() override;
     bool checkRadius() override;
         };

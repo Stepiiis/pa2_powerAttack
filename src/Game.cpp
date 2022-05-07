@@ -8,27 +8,46 @@
 
 
 CGame::CGame(int level,  int difficulty, const std::string & pathToSave)
-        : _level(level),_difficulty(difficulty), _save_name(pathToSave)
+        : _difficulty(difficulty), _save_name(pathToSave)
 {
-    if(_level == 0){
+    terminal term;
+    int winheight = 25;
+    int winwidth = 75;
+    getmaxyx(stdscr, term.height, term.width); // zjisteni velikosti obrazovky
+    int starty = (term.height - winheight) / 2; // vypocet pozice mapy
+    int startx = (term.width - winwidth )/ 2; // vypocet pozice mapy
+    _game_window = newwin(winheight, winwidth, starty, startx);
+    _gameMap = Map(_game_window);
+    initializeWindow();
+    if(level == 0){
         loadFromSave(pathToSave);
     } else {
-        load(_level);
+        load(level);
     }
-    _player = new Player(_gameMap,_difficulty * 15, 6/_difficulty, _difficulty*2);
-    _tower_manager = new Enemy(_gameMap,_difficulty * 30, _difficulty * 3, _difficulty * 5, _difficulty,_level);
-
+    _player = new Player(&_gameMap,_difficulty * 15, 6/_difficulty, _difficulty*2);
+    _tower_manager = new Enemy(&_gameMap,_difficulty * 30, _difficulty * 3, _difficulty * 5, _difficulty);
 }
 
 CGame::~CGame(){
     delete _player;
     delete _tower_manager;
+    delwin(_game_window); // zavreni okna s hrou
     endwin(); // dealoc pameti a zavreni ncurses
 }
+
 bool CGame::start(){
     _gameMap.redrawMap();
-    drawTowers(_difficulty);
+    drawTowers();
     resume();
+    return true;
+}
+
+bool CGame::initializeWindow(){
+    auto style = A_STANDOUT;
+    refresh();
+    keypad(_game_window, TRUE);
+    box(_game_window, 0, 0);
+    wrefresh(_game_window);
     return true;
 }
 
@@ -65,7 +84,7 @@ bool CGame::load(int level){
     return false;
 }
 
-void CGame::drawTowers(int difficulty){
+void CGame::drawTowers(){
     if(_tower_manager->_towers.size() != 0) {
         _tower_manager->clearTowers();
     }
@@ -73,11 +92,15 @@ void CGame::drawTowers(int difficulty){
     _tower_manager->createTowers();
     _tower_manager->printTowers();
 }
-bool CGame::save(){}
+bool CGame::save(){
+    throw(notImplementedException("save"));
+}
 bool CGame::loadFromSave(std::string path){
     throw(notImplementedException("loadFromSave"));
 }
-bool CGame::exit(){}
+bool CGame::exit(){
+    throw(notImplementedException("exit"));
+}
 
 
 
@@ -97,9 +120,6 @@ int newMenu(const CMenu & menu){
     terminal term;
     int height = 25;
     int width = 75;
-    int posNew = 5;
-    int posLoad = 6;
-    int posExit = 7;
     int posX = (width/2) - (menu._text.size()/2) - 10;
 
     auto style = A_STANDOUT;
@@ -137,9 +157,9 @@ int newMenu(const CMenu & menu){
         if (keypress == KEY_UP) {
             choice = (choice - 1) ;
             if(choice == -1)
-                choice =  menu._options.size() - 1;
+                choice =  (int)menu._options.size() - 1;
             else
-                choice %= menu._options.size();
+                choice %= (int)menu._options.size();
         } else if (keypress == KEY_DOWN) {
             choice = (choice + 1) % menu._options.size();
         } else if (keypress == KEY_DC) {
@@ -162,7 +182,7 @@ int newMenu(const CMenu & menu){
         wrefresh(menu_win);
 
     }
-
+    delwin(menu_win);
     touchwin(stdscr);
     refresh();
     move(0,0);

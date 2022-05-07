@@ -10,19 +10,18 @@
 #include <string>
 class CGame {
 public:
-    CGame(int,int, const std::string & pathToSave = "");       // first int is the current level that we want to start on
-                                            //                  player can choose from 1-5
-                                            //                  0 means load game
-                                            // second int is difficulty level (1-3)
-                                            // third string is the name of save to load. if left empty, new game initiates with the difficulty level chosen
+    CGame(int,int, const std::string & pathToSave = "");        // first intiger specifies if we want to start a new game or load a saved game
+                                                                // second int is difficulty level (1-3)
+                                                                // third string is the name of save to load. if left empty, new game initiates with the difficulty level chosen
     ~CGame();           // closes the window and frees the memory
+    bool initializeWindow();   // initializes the game window
     bool start();       // starts the game from current level or from the saved game
     bool save();        // saves the game into /data/saves/save_*save_number*.txt specified in menu
     bool load(int = 0);     // loads map from /data/saves/save_*save_number*.txt
     bool loadFromSave(std::string path); // loads save from /data/saves/*save_name*
     bool exit();        // exits the game and asks the user if they want to save the current progress
     void draw();        // draws the current state of map
-    void drawTowers(int);  // draws the towers according to difficulty
+    void drawTowers();  // draws the towers according to difficulty
     void pause();       // pauses the game
 
     bool resume();      // resumes the game. checks if player inputed a char.
@@ -33,11 +32,11 @@ public:
                         // if the player doesnt have enough money for the certain attacker, prints NOT ENOUGH MONEY to the bottom
                         // then runs the procedure again
 protected:
-    Map _gameMap;
+    Map _gameMap = Map(nullptr);
     Player * _player;
     Enemy * _tower_manager;
     std::string _save_name;
-    int _level;
+    WINDOW * _game_window;
     int _difficulty;
 };
 

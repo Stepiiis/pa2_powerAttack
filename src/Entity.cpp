@@ -4,14 +4,14 @@
 #include "ncurses.h"
 
 
-Entity::Entity(int posX, int posY, int maxHealth, std::shared_ptr<Map> map)
-    :   m_x(posX), m_y(posY), m_hp(maxHealth),m_maxhp(maxHealth), _map(map)
+Entity::Entity(int posX, int posY, int maxHealth, Map* map)
+    :   m_x(posX), m_y(posY), m_hp(maxHealth),m_maxhp(maxHealth), m_sharedMap(map)
     {}
 
 bool Entity::move(int x, int y)
     {
-        m_x += x;
-        m_y += y;
+        m_x = x;
+        m_y = y;
         return true;
     }
 
@@ -25,8 +25,8 @@ bool Entity::giveDamage(int damage, Entity* target){
     }
 
 bool Entity::destroy() {
-    _map->m_map[m_x][m_y].type = Point::Empty;
-    _map->m_map[m_x][m_y].m_symbol = ' ';
+    m_sharedMap->m_map[m_x][m_y].type = Point::Empty;
+    m_sharedMap->m_map[m_x][m_y].m_symbol = ' ';
 
     return true;
 }
@@ -34,5 +34,6 @@ bool Entity::destroy() {
 int Entity::getHP() const{ return m_hp; }
 
 void Entity::draw(){
-    mvprintw(m_y, m_x, "%c", m_symbol);
+    m_sharedMap->updateEntity( m_x, m_y, this);
+    m_sharedMap->refreshWindow();
 }

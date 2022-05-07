@@ -1,14 +1,14 @@
 #pragma once
 #include "Tower.h"
 
-Tower::Tower(int x, int y, int hp, std::shared_ptr<Map> map)
+Tower::Tower(int x, int y, int hp, Map* map)
 : Entity(x,y, hp, map)
 {
     m_symbol = 'I';
     m_radius = 4;
 }
 
-fastTower::fastTower(int x, int y, int hp, std::shared_ptr<Map> map)
+fastTower::fastTower(int x, int y, int hp, Map* map)
         : Entity(x,y, hp, map)
 {
     m_symbol = '&';

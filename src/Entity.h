@@ -9,7 +9,7 @@ class Map;
 class Entity {
 public:
     virtual ~Entity() = default;
-    Entity(int posX, int posY, int maxHealth, std::shared_ptr<Map> map);
+    Entity(int posX, int posY, int maxHealth, Map * map);
 
     // moves the entity to the given position on screen and updates the shared map structure
     bool move(int x, int y);
@@ -35,21 +35,22 @@ public:
     bool printEntity(int x, int y);
     bool alive = true;
 protected:
-    size_t m_x;       // souřadnice x
+    int m_x;       // souřadnice x
 
-    size_t m_y;       // -//- y
+    int m_y;       // -//- y
 
     char m_symbol;    // symbol identifikující typ entity
 
     size_t m_id;    // identifikator dane postavy
 
-    size_t m_hp;      // současné zdraví
+    uint32_t m_hp;      // současné zdraví
 
     uint32_t m_maxhp;   // maximální zdraví
 
-    std::shared_ptr<Map> _map;
+    Map* m_sharedMap;   // shared map accros all entities.
+                        // Entity never lives longer than a map so its safe
 
-    int _speed;
+    int m_speed;
 
     int m_radius;
 
