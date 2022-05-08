@@ -1,0 +1,2 @@
+build/Definitions.o: src/Definitions.cpp src/Definitions.h src/logFile.h \
+ src/exceptions.h

@@ -1,6 +1,6 @@
 #include "Player.h"
-Player::Player(Map* map,int baseHp, int range, int damage)
-        : _baseHp(baseHp), _baseRange(range), _baseAtk(damage)
+Player::Player(Map* map,attackerDefs def)
 {
+    _def = def;
     _map = map;
 }

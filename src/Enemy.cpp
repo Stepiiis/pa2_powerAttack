@@ -4,9 +4,10 @@
 #include "constants.h"
 #include <random>
 
-Enemy::Enemy(Map * map,int towerHp, int range, int damage, int dif)
-: Player(map,towerHp, range, damage), _difficulty(dif)
+Enemy::Enemy(Map * map,towerDefs def, int dif)
+: _def(def), _difficulty(dif)
 {
+    _map = map;
 }
 
 Enemy::~Enemy() = default;
@@ -28,17 +29,18 @@ void Enemy::createTowers(){
     std::random_device rds;
     std::mt19937 rng(rds());
     if(_difficulty == 1) {
+        // FIXME: TOWERS are sometimes created but not showed on the map
         for (int i = 0; i < nrTowers; i++) {
-            int x = rng() % MAP_WIDTH;       // FIX ME random not working.
-            int y = rng() % MAP_HEIGHT;       // sometimes creates towers in the border of the map
+            int x = rng() % MAP_WIDTH;
+            int y = rng() % MAP_HEIGHT;
             if (_map->m_map[y][x].type == Point::Empty) {
                 if (x <= MAP_WIDTH - 1 && x >= 0 && y <= MAP_HEIGHT - 1 && y >= 0) {
                     if(_map->checkNeighbours(x,y)){
-                        _towers.emplace_back(new Tower(x, y, _baseHp, _map));
+                        _towers.emplace_back(new basicTower(x, y, _def.base.maxHP, _map));
                         _emptySpaces[y][x] = 'T';
                     }else{
                         i--;
-                        break;
+                        continue;
                     }
                 }
             } else {
@@ -46,24 +48,12 @@ void Enemy::createTowers(){
             }
         }
     }
-//    }else if(_difficulty == 2){
-//        for (int i = 0; i < nrTowers; i++) {
-//            int x = rand() % _emptySpaces.size();
-//            int y = rand() % _emptySpaces.size();
-//            if(_emptySpaces[x][y] == ' '){
-//                if(i % 3 == 0){
-//                    _towers.emplace_back(new fastTower(x, y, _baseHp, _map));
-//                    _emptySpaces[x][y] = 'T';
-//                }else {
-//                    _towers.emplace_back(new Tower(x, y, _baseHp * 2, _map));
-//                    _emptySpaces[x][y] = 'T';
-//                }
-//            }
-//            else{
-//                i--;
-//            }
-//        }
-//    }
+    else if(_difficulty == 2) {
+        // TODO
+    }
+    else if(_difficulty == 3) {
+        // TODO
+    }
 }
 
 // goes trough all the towers and draws them onto the map if their HP is bigger than 0
@@ -74,4 +64,7 @@ void Enemy::printTowers(){
         }
     }
 //    getch();
+}
+int Enemy::getTowerCount(){
+    return _towers.size();
 }

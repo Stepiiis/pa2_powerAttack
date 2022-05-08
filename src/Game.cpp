@@ -24,8 +24,9 @@ CGame::CGame(int level,  int difficulty, const std::string & pathToSave)
     } else {
         load(level);
     }
-    _player = new Player(&_gameMap,_difficulty * 15, 6/_difficulty, _difficulty*2);
-    _tower_manager = new Enemy(&_gameMap,_difficulty * 30, _difficulty * 3, _difficulty * 5, _difficulty);
+    _definitions.loadDefinitions(); // FIXME
+    _player = new Player(&_gameMap, _definitions.getAttacker());
+    _tower_manager = new Enemy(&_gameMap,_definitions.getDefender(), _difficulty);
 }
 
 CGame::~CGame(){
@@ -85,12 +86,13 @@ bool CGame::load(int level){
 }
 
 void CGame::drawTowers(){
-    if(_tower_manager->_towers.size() != 0) {
+    if(_tower_manager->getTowerCount() != 0) {
         _tower_manager->clearTowers();
     }
     _tower_manager->findEmptySpaces();
     _tower_manager->createTowers();
     _tower_manager->printTowers();
+    wrefresh(_game_window);
 }
 bool CGame::save(){
     throw(notImplementedException("save"));

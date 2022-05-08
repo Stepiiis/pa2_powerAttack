@@ -51,7 +51,7 @@ public:
      *  Procházení mapy v závislosti na tom, pro kterého attackera hledáme cestu k cíli
     *   Hledání pomocí algoritmu BFS.
     *   Tato funkce bude sice volána pokaždé když se bude rozhodovat o dalším postupu,
-    *   protože se může stát, že věž na kterou byl původně attacker nasměrován je už zničena.*
+    *   protože se může stát, že věž na kterou byl původně attacker nasměrován je už zničena.
     *   @Nejjednodušší - jde vždy nejkratší cestou do cíle
     *   @Vyhýbání_se_věžím - pro fast attackera  najde cestu do cíle
     *   @Náběh_na_vež - běží k nejbližší věži a ničí věž dokud není mrtvá ( pro heavy attackera, který má hodně )

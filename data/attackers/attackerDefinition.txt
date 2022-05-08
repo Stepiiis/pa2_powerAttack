@@ -1,0 +1,6 @@
+# baseAttacker
+symbol=$;hp=240;rng=3;dmg=35;atkspeed=1;mov=2;price=100
+# fastAttacker
+symbol=%hp=130;rng=2;dmg=25;atkspeed=1;mov=1;price=250
+# ChargerAttacker
+symbol=@;hp=640;rng=4;dmg=30;atkspeed=3;mov=4;price=400

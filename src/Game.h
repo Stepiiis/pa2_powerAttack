@@ -37,6 +37,7 @@ protected:
     Enemy * _tower_manager;
     std::string _save_name;
     WINDOW * _game_window;
+    CDefinitions _definitions;
     int _difficulty;
 };
 

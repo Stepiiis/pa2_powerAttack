@@ -54,3 +54,10 @@ uživatel může zvolit obtížnost hry, která ovlivní počet věží a peníz
 
 F,I,T,S označuje věže ( F - fast, I - základní, T - high damage, S - SlowEffect )
 @,%,$ jsou různé druhy útočníků (@ - Charger, % - fast attacker, $ basic attacker)
+
+Polymorfismus bude uplatněn pro manipulaci s útočníky a věžmi.
+_tower_manager se stará o vytváření věží a jejich manipulaci. Udržuje vektor s prvky typu Towers na kterých provádí
+operace které se vykonají podle sbtypu věže.
+_player se stará o vytváření a manipulaci s útočníky. Při pohybu volá polymorfní metodu findShortestPath(Entity* entity),
+která podle typu útočníka najde specifickou cestu k cíli který daný útočník považuje za důležitou.
+Více specifik je v hlavičkových souborech.
