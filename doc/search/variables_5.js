@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['point_276',['Point',['../classMap.html#a963b60e3737ef799910981e1f96dc565',1,'Map']]]
+  ['type_298',['type',['../classPoint.html#ad45cb3c17cf58510bc92f61982b2390c',1,'Point']]]
 ];

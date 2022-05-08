@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['what_235',['what',['../classlogException.html#ae39c5653d4ea6c93444e3ac290878ad5',1,'logException::what()'],['../classmapException.html#a6fcb7f6749f95fb41b737b8495098b65',1,'mapException::what()'],['../classnotImplementedException.html#abe709674e6c24dddd916fb3b485bbcf8',1,'notImplementedException::what()']]]
+  ['update_252',['update',['../classEntity.html#a00b6eeaf99b35c8f8b10b5fbfc1baf4f',1,'Entity']]],
+  ['updateentity_253',['updateEntity',['../classMap.html#a4f31628bd7435dc2b6f79a465ce69435',1,'Map']]],
+  ['updatemap_254',['updateMap',['../classMap.html#ac4d6c021e958df55b4c1969d2c0e6c54',1,'Map']]]
 ];

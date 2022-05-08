@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fastattacker_142',['FastAttacker',['../classFastAttacker.html',1,'']]],
-  ['fasttower_143',['fastTower',['../classfastTower.html',1,'']]]
+  ['fastattacker_153',['FastAttacker',['../classFastAttacker.html',1,'']]],
+  ['fasttower_154',['fastTower',['../classfastTower.html',1,'']]]
 ];

@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="logFile_8cpp.html#a7044c91cfa1a776cbf7b08b4af30888d" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="logFile_8cpp.html#a4646ee780db7319bd0615817febd557c" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="134.5,-38.5 134.5,-57.5 219.5,-57.5 219.5,-38.5 134.5,-38.5"/>
 <text text-anchor="middle" x="177" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">sendToLogFile</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classlogException.html#aee5cf9c19e99ce539b58973237cf12ec" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="classlogException.html#ae39c5653d4ea6c93444e3ac290878ad5" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="122,-0.5 122,-19.5 232,-19.5 232,-0.5 122,-0.5"/>
 <text text-anchor="middle" x="177" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">logException::what</text>
 </a>

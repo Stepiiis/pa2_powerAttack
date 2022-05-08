@@ -1,5 +1,6 @@
 <map id="Map::readMap" name="Map::readMap">
-<area shape="rect" id="node1" title=" " alt="" coords="199,31,313,57"/>
-<area shape="rect" id="node2" href="$classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381" title=" " alt="" coords="5,5,151,32"/>
-<area shape="rect" id="node3" href="$classMap.html#a0f5ad0fd4563497b4214038cbca8b582" title=" " alt="" coords="35,56,121,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="373,31,488,57"/>
+<area shape="rect" id="node2" href="$classCGame.html#a9945af5487d059db1d7119ae16cd2dd3" title=" " alt="" coords="199,5,306,32"/>
+<area shape="rect" id="node4" href="$classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381" title=" " alt="" coords="180,56,325,83"/>
+<area shape="rect" id="node3" href="$classCGame.html#a68085be13e3fe743b90b57f69c92e140" title=" " alt="" coords="5,5,132,32"/>
 </map>

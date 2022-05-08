@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['width_278',['width',['../structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b',1,'terminal']]]
+  ['x_300',['x',['../classPoint.html#a8c779e11e694b20e0946105a9f5de842',1,'Point']]]
 ];

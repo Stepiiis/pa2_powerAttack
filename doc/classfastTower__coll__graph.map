@@ -1,4 +1,6 @@
 <map id="fastTower" name="fastTower">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,91,107"/>
-<area shape="rect" id="node2" href="$classEntity.html" title=" " alt="" coords="18,5,78,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,247,91,273"/>
+<area shape="rect" id="node2" href="$classTower.html" title=" " alt="" coords="18,171,78,197"/>
+<area shape="rect" id="node3" href="$classEntity.html" title=" " alt="" coords="18,95,78,121"/>
+<area shape="rect" id="node4" href="$classMap.html" title=" " alt="" coords="23,5,73,32"/>
 </map>

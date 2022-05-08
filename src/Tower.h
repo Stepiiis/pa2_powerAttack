@@ -3,7 +3,7 @@
 #include "Attacker.h"
 #include <memory>
 
-class Tower final: public Entity {
+class Tower : public Entity {
 public:
     Tower(int x, int y, int hp, Map* map);
     char getSymbol() override;
@@ -13,24 +13,37 @@ private:
     int _y;
 };
 
-// shoots twice as fast as regular tower
-class fastTower final: public Entity{
+// základní věž se symbolem T
+class basicTower final: public Tower{
+public:
+    basicTower(int x, int y, int hp, Map* map);
+    char getSymbol() override;
+    bool checkRadius() override;
+};
+
+
+// Střílí dvě rány za jednu interakci
+// Zničení odmění hráče základní odměnou
+class fastTower final: public Tower{
 public:
     fastTower(int x, int y, int hp, Map* map);
     char getSymbol() override;
     bool checkRadius() override;
 };
 
-class highDamageTower final: public Entity
+// útok od této věže je ~1,5x větší než základ. je však 2x dražší
+// odměna za zničení je 1,5x větší než fast tower
+class highDamageTower final: public Tower
     {
 public:
         highDamageTower(int x, int y, int hp, Map* map);
         char getSymbol() override;
         bool checkRadius() override;
-
     };
 
-class slowEffectTower final: public Entity
+
+// útok od této věže způsobí to, že attacker po dobu 4 cyklů nebude moct útočit na věže.
+class slowEffectTower final: public Tower
         {
 public:
     slowEffectTower(int x, int y, int hp, Map* map);

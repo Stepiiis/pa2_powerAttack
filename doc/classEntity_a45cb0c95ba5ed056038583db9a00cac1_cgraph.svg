@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classEntity.html#a9534c576045aabcf406d1f891d5b3b60" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classEntity.html#a3d2df6e854f3b337e7cd5eec8291a9fc" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="149,-0.5 149,-19.5 262,-19.5 262,-0.5 149,-0.5"/>
 <text text-anchor="middle" x="205.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity::takeDamage</text>
 </a>

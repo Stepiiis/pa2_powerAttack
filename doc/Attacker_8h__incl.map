@@ -1,10 +1,12 @@
 <map id="src/Attacker.h" name="src/Attacker.h">
-<area shape="rect" id="node1" title=" " alt="" coords="65,5,176,32"/>
-<area shape="rect" id="node2" href="$Entity_8h.html" title=" " alt="" coords="159,80,229,107"/>
-<area shape="rect" id="node3" href="$constants_8h.html" title=" " alt="" coords="21,155,119,181"/>
-<area shape="rect" id="node4" href="$Map_8h.html" title=" " alt="" coords="143,155,205,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="115,5,225,32"/>
+<area shape="rect" id="node2" href="$Entity_8h.html" title=" " alt="" coords="208,80,279,107"/>
+<area shape="rect" id="node3" href="$constants_8h.html" title=" " alt="" coords="71,155,168,181"/>
+<area shape="rect" id="node4" href="$Map_8h.html" title=" " alt="" coords="192,155,255,181"/>
 <area shape="rect" id="node5" title=" " alt="" coords="5,229,68,256"/>
-<area shape="rect" id="node8" title=" " alt="" coords="334,155,411,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="230,155,310,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="145,229,203,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="398,229,475,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="330,155,410,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="95,229,154,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="179,229,263,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="287,229,373,256"/>
 </map>

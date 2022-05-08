@@ -14,7 +14,7 @@ Jak může vypadat mapa?
 " " prázdné místa pro pohyb útočníku a stavbu věží
 I označuje věže
 # označuje zeď
-@ a % jsou různé druhy útočníků
+@, % jsou různé druhy útočníků
 <= jsou vstupy/výstupy z mapy.
 
  
@@ -27,7 +27,9 @@ I označuje věže
 #                        I    %#                #
 #                 %%%       %%%#    @          <=2
 #################################################                      
-Cesta kudy se budou útočníci ubírat bude vždy nejkratší možná vzhledem ke zdím a věžím. Můžete navíc implementovat více strategií procházení, kde každý útočník bude mít svoji strategii. Například slabší marvenci se mohou snažit vyhýbat věžím, naopak odolnější zase mohou být pomalejší a vždy musí udělat alespoň X kroků rovně.
+Cesta kudy se budou útočníci ubírat bude vždy nejkratší možná vzhledem ke zdím a věžím.
+Můžete navíc implementovat více strategií procházení, kde každý útočník bude mít svoji strategii.
+Například slabší marvenci se mohou snažit vyhýbat věžím, naopak odolnější zase mohou být pomalejší a vždy musí udělat alespoň X kroků rovně.
 
 Hráč volí vstup a typy útočníků
 
@@ -43,10 +45,12 @@ Uživatelské rozhraní: konzole, ncurses, SDL, OpenGL (různé varianty), ...
 Specifikace:
 
 Uživatel si na začátku hry zvolí jestli chce začít novou hru anebo načíst starý save. Pokud zvolí novou hru, vytvoří se
-nová instance hry a na obrazovku zobrazí první z pěti map na kterou se vykreslí prvních několik towers.
-Poté je v závislosti na nastavené obtížnosti určena hodnota peněz které může hráč poté využít pro vyslání různého
-Attackera. Jakmile hráč zničí věž bude odměněn úměrným počet peněz. Když hráč zničí všechny věže a zničí dveře do
-dalšího levelu, může pokračovat do dalšího levelu. Jeho stav peněz bude přenesen do dalšího levelu. Takto hra pokračuje
-dokud hráč neprojde do 5. levelu. Tam hra končí a hra nabídne zapsat se do leaderboardu nebo vrátit se do menu.
-Score v leaderboardu je vypočítáno z času, který trvalo hru dohrát + zbylý počet peněz po výhře. V hlavním menu si
-uživatel může zvolit obtížnost hry, která ovlivní počet věží a počet peněz, které dostane za zničení věže.
+nová instance hry a na obrazovce se zobrazí mapa na kterou se vykreslí prvních několik towers v závislosti na obtížnosti.
+Poté je v závislosti na nastavené obtížnosti určena hodnota peněz které může hráč poté využít pro vyslání různých
+Attackers. Jakmile hráč zničí věž bude odměněn úměrným počet peněz. Když hráč zničí všechny věže.
+Jakmile jsou všechny věže zničeny, hra končí. Je spočteno score, které odpovídá zbylému počtu peněz.
+Hra poté nabídne zapsat se do leaderboardu nebo vrátit se do hlavního menu. V hlavním menu si
+uživatel může zvolit obtížnost hry, která ovlivní počet věží a peníze, které dostane na začátku hry a za každé zničení věže.
+
+F,I,T,S označuje věže ( F - fast, I - základní, T - high damage, S - SlowEffect )
+@,%,$ jsou různé druhy útočníků (@ - Charger, % - fast attacker, $ basic attacker)

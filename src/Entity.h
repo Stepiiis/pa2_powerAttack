@@ -47,12 +47,12 @@ protected:
 
     uint32_t m_maxhp;   // maximální zdraví
 
-    Map* m_sharedMap;   // shared map accros all entities.
-                        // Entity never lives longer than a map so its safe
+    Map* m_sharedMap;   // pointer na sdilenou mapu.
+                        // Mapa vždy přežije všechny entity.
+
+    Entity* currentFocus; // pointer to an entity that we are currently attacking
 
     int m_speed;
 
     int m_radius;
-
-    short m_color;     // barva entity
 };

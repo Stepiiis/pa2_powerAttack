@@ -1,0 +1,6 @@
+<map id="FastAttacker" name="FastAttacker">
+<area shape="rect" id="node1" title=" " alt="" coords="5,247,108,273"/>
+<area shape="rect" id="node2" href="$classAttacker.html" title=" " alt="" coords="19,171,95,197"/>
+<area shape="rect" id="node3" href="$classEntity.html" title=" " alt="" coords="27,95,87,121"/>
+<area shape="rect" id="node4" href="$classMap.html" title=" " alt="" coords="31,5,82,32"/>
+</map>

@@ -51,7 +51,7 @@ bool CGame::initializeWindow(){
     return true;
 }
 
-// prevzato ze stackowerflow
+// prevzato ze StackOverflow
 // https://stackoverflow.com/questions/421860/capture-characters-from-standard-input-without-waiting-for-enter-to-be-pressed/67363091#67363091
 int kbhit(){
     static int nbbytes;

@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['_7eattacker_236',['~Attacker',['../classAttacker.html#a7daf305d38f0a6e93d16398da3d095ce',1,'Attacker']]],
-  ['_7ecgame_237',['~CGame',['../classCGame.html#a4db10c09035dc16b32d6c1ef4cca2143',1,'CGame']]],
-  ['_7eenemy_238',['~Enemy',['../classEnemy.html#ac0eec4755e28c02688065f9657150ac3',1,'Enemy']]],
-  ['_7eentity_239',['~Entity',['../classEntity.html#ac479d009ddde62dfb378ca0a70d81307',1,'Entity']]],
-  ['_7eplayer_240',['~Player',['../classPlayer.html#a40d3c47b65e9652c363a8fde41f7bbf5',1,'Player']]]
+  ['what_255',['what',['../classlogException.html#ae39c5653d4ea6c93444e3ac290878ad5',1,'logException::what()'],['../classmapException.html#a6fcb7f6749f95fb41b737b8495098b65',1,'mapException::what()'],['../classnotImplementedException.html#abe709674e6c24dddd916fb3b485bbcf8',1,'notImplementedException::what()']]]
 ];

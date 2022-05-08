@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['main_206',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['mainmenu_207',['mainMenu',['../Game_8cpp.html#a8396c50bf544009fb2fc4907b00cbad3',1,'mainMenu():&#160;Game.cpp'],['../Game_8h.html#a8396c50bf544009fb2fc4907b00cbad3',1,'mainMenu():&#160;Game.cpp']]],
-  ['map_208',['Map',['../classMap.html#a1197ab65e40dd20b891ba165471e3163',1,'Map']]],
-  ['mapexception_209',['mapException',['../classmapException.html#a0f9b76f63fac83cdf7daf6339515b8a3',1,'mapException']]],
-  ['move_210',['move',['../classEntity.html#a6171cc57bf9ab1a0d0fe18b7a8acc4ea',1,'Entity']]]
+  ['load_219',['load',['../classCGame.html#a9945af5487d059db1d7119ae16cd2dd3',1,'CGame']]],
+  ['loadfromsave_220',['loadFromSave',['../classCGame.html#a7957599866556d2dfd5d80cc270c4a4e',1,'CGame']]],
+  ['loadmenu_221',['loadMenu',['../Game_8cpp.html#af66392f74826c89391d33dcbfb45e5b3',1,'loadMenu(std::vector&lt; std::string &gt; &amp;save_names):&#160;Game.cpp'],['../Game_8h.html#af66392f74826c89391d33dcbfb45e5b3',1,'loadMenu(std::vector&lt; std::string &gt; &amp;save_names):&#160;Game.cpp']]],
+  ['loadnextmap_222',['loadNextMap',['../classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381',1,'Map']]],
+  ['logexception_223',['logException',['../classlogException.html#a6480564521f97260910703853684e2cd',1,'logException']]]
 ];

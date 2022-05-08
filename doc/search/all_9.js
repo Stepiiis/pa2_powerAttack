@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kbhit_66',['kbhit',['../Game_8cpp.html#ad5451da499ab9d3907da8dd7060ab677',1,'Game.cpp']]]
+  ['initializewindow_70',['initializeWindow',['../classCGame.html#ad3a6ae127f534b0f64f0b6404d454ef9',1,'CGame']]]
 ];

@@ -36,11 +36,13 @@ char inline Attacker::getSymbol()
 
 // do not use
 void Attacker::setPosition(int x, int y){
-    m_sharedMap->m_map[x][y].m_symbol = m_symbol;
+    m_sharedMap->m_map[x][y] = Point(x,y,m_symbol);
 }
 
 
 
 bool Attacker::checkRadius(){}
+
+Attacker::~Attacker() = default;
 
 bool basicAttacker::checkRadius(){}

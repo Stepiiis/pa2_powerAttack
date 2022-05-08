@@ -33,9 +33,12 @@ void Enemy::createTowers(){
             int y = rng() % MAP_HEIGHT;       // sometimes creates towers in the border of the map
             if (_map->m_map[y][x].type == Point::Empty) {
                 if (x <= MAP_WIDTH - 1 && x >= 0 && y <= MAP_HEIGHT - 1 && y >= 0) {
-                    if(_map->checkNeighbours(x,y)) {
+                    if(_map->checkNeighbours(x,y)){
                         _towers.emplace_back(new Tower(x, y, _baseHp, _map));
                         _emptySpaces[y][x] = 'T';
+                    }else{
+                        i--;
+                        break;
                     }
                 }
             } else {

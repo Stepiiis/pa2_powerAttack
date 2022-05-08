@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_277',['type',['../classPoint.html#ad45cb3c17cf58510bc92f61982b2390c',1,'Point']]]
+  ['width_299',['width',['../structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b',1,'terminal']]]
 ];

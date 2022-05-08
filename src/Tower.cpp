@@ -9,7 +9,7 @@ Tower::Tower(int x, int y, int hp, Map* map)
 }
 
 fastTower::fastTower(int x, int y, int hp, Map* map)
-        : Entity(x,y, hp, map)
+        : Tower(x,y, hp, map)
 {
     m_symbol = '&';
     m_radius = 3;

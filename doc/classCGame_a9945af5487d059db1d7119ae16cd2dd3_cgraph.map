@@ -1,8 +1,6 @@
 <map id="CGame::load" name="CGame::load">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,112,108"/>
-<area shape="rect" id="node2" href="$classMap.html#a79a4355510b026646449df1852768c38" title=" " alt="" coords="168,56,283,83"/>
-<area shape="rect" id="node5" href="$classMap.html#af5b5492b49e9d1aaa54e586d1203030f" title=" " alt="" coords="160,107,291,133"/>
-<area shape="rect" id="node3" href="$logFile_8cpp.html#a4646ee780db7319bd0615817febd557c" title=" " alt="" coords="355,5,469,32"/>
-<area shape="rect" id="node4" href="$classlogException.html#ae39c5653d4ea6c93444e3ac290878ad5" title=" " alt="" coords="339,56,485,83"/>
-<area shape="rect" id="node6" href="$classMap.html#a6ee8da517f307341839fe49731a72c59" title=" " alt="" coords="354,107,470,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,112,57"/>
+<area shape="rect" id="node2" href="$classMap.html#a79a4355510b026646449df1852768c38" title=" " alt="" coords="160,31,275,57"/>
+<area shape="rect" id="node3" href="$logFile_8cpp.html#a4646ee780db7319bd0615817febd557c" title=" " alt="" coords="339,5,453,32"/>
+<area shape="rect" id="node4" href="$classlogException.html#ae39c5653d4ea6c93444e3ac290878ad5" title=" " alt="" coords="323,56,469,83"/>
 </map>

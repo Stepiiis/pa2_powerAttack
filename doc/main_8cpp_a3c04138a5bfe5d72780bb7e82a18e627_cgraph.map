@@ -1,11 +1,19 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,60,83"/>
-<area shape="rect" id="node2" href="$Game_8cpp.html#af66392f74826c89391d33dcbfb45e5b3" title=" " alt="" coords="119,5,205,32"/>
-<area shape="rect" id="node3" href="$Game_8cpp.html#a5f00bd86c2427bc56a5c44240776567d" title=" " alt="" coords="299,31,384,57"/>
-<area shape="rect" id="node4" href="$classCGame.html#aa70fa8586abbd097b8eb7fb8d540841d" title=" " alt="" coords="108,107,216,133"/>
-<area shape="rect" id="node5" href="$classCGame.html#ab4b3b154086cd0c34c18522a0716840c" title=" " alt="" coords="264,107,419,133"/>
-<area shape="rect" id="node6" href="$classEnemy.html#ab8dab466556eb7f9a39697c045864289" title=" " alt="" coords="485,56,635,83"/>
-<area shape="rect" id="node7" href="$classEnemy.html#a238798e0d954a7ee3b6fafb592151cde" title=" " alt="" coords="480,107,640,133"/>
-<area shape="rect" id="node8" href="$classEnemy.html#a5d58ae9775a61353ab0203b75edbd7eb" title=" " alt="" coords="467,157,653,184"/>
-<area shape="rect" id="node9" href="$classMap.html#a2b42bd45dd0e585fed7a9d71244e3567" title=" " alt="" coords="701,157,868,184"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,120,60,147"/>
+<area shape="rect" id="node2" href="$Game_8cpp.html#af66392f74826c89391d33dcbfb45e5b3" title=" " alt="" coords="119,69,205,96"/>
+<area shape="rect" id="node4" href="$Game_8cpp.html#a8396c50bf544009fb2fc4907b00cbad3" title=" " alt="" coords="117,120,207,147"/>
+<area shape="rect" id="node5" href="$classCGame.html#aa70fa8586abbd097b8eb7fb8d540841d" title=" " alt="" coords="108,183,216,209"/>
+<area shape="rect" id="node3" href="$Game_8cpp.html#a5f00bd86c2427bc56a5c44240776567d" title=" " alt="" coords="299,69,384,96"/>
+<area shape="rect" id="node6" href="$classCGame.html#a6890a8e74412ff0ced3959e3093e6d84" title=" " alt="" coords="264,120,419,147"/>
+<area shape="rect" id="node13" href="$classMap.html#af5b5492b49e9d1aaa54e586d1203030f" title=" " alt="" coords="276,208,407,235"/>
+<area shape="rect" id="node16" href="$classCGame.html#abca9e7318a19887770d007a56248fa82" title=" " alt="" coords="278,284,405,311"/>
+<area shape="rect" id="node7" href="$classEnemy.html#ab8dab466556eb7f9a39697c045864289" title=" " alt="" coords="485,5,635,32"/>
+<area shape="rect" id="node8" href="$classEnemy.html#a238798e0d954a7ee3b6fafb592151cde" title=" " alt="" coords="480,56,640,83"/>
+<area shape="rect" id="node10" href="$classEnemy.html#ac81638432442d1e4cc2aa0c4ca49f439" title=" " alt="" coords="467,107,653,133"/>
+<area shape="rect" id="node12" href="$classEnemy.html#a95c457b3e58d8c931e06877c6bde6d11" title=" " alt="" coords="485,157,635,184"/>
+<area shape="rect" id="node9" href="$classMap.html#a4b669f3ae1f41ad70ae8c28910bfa4e8" title=" " alt="" coords="701,56,872,83"/>
+<area shape="rect" id="node11" href="$classMap.html#ae4713f8271b2c9fd62184ab0f2342447" title=" " alt="" coords="703,107,870,133"/>
+<area shape="rect" id="node14" href="$classMap.html#a1f7ed5381d68b10d5adfca2a7d26516a" title=" " alt="" coords="493,208,627,235"/>
+<area shape="rect" id="node15" href="$classMap.html#a1cefc1b8ed6692667e2019f64acc0f5a" title=" " alt="" coords="502,259,618,285"/>
+<area shape="rect" id="node17" href="$Game_8cpp.html#ad5451da499ab9d3907da8dd7060ab677" title=" " alt="" coords="533,309,587,336"/>
 </map>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wall_126',['Wall',['../classPoint.html#ac4cc62b224c258e128a6e591b0248b41ad1cf6d4d72fa769d7658d00ec213cbb0',1,'Point']]],
-  ['what_127',['what',['../classlogException.html#ae39c5653d4ea6c93444e3ac290878ad5',1,'logException::what()'],['../classmapException.html#a6fcb7f6749f95fb41b737b8495098b65',1,'mapException::what()'],['../classnotImplementedException.html#abe709674e6c24dddd916fb3b485bbcf8',1,'notImplementedException::what()']]],
-  ['width_128',['width',['../structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b',1,'terminal']]]
+  ['update_133',['update',['../classEntity.html#a00b6eeaf99b35c8f8b10b5fbfc1baf4f',1,'Entity']]],
+  ['updateentity_134',['updateEntity',['../classMap.html#a4f31628bd7435dc2b6f79a465ce69435',1,'Map']]],
+  ['updatemap_135',['updateMap',['../classMap.html#ac4d6c021e958df55b4c1969d2c0e6c54',1,'Map']]]
 ];
