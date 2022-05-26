@@ -152,7 +152,7 @@ void Map::highlightLane(int lanenr){
     for(int i = 0; i<m_entries.size(); i++){
         if(i==lanenr){
             wattron(m_game_window, style);
-            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+1,"%c",'*');
+            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+1,"%c",'<');
             mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+2,"%c",'=');
             mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+3,"%d",i+1);
             wattroff(m_game_window, style);
@@ -213,3 +213,6 @@ bool Map::checkNeighbours(int x, int y){
     return false;
 }
 
+void highlightAttacker(int type){
+    // todo highlight attacker according to definition file
+}

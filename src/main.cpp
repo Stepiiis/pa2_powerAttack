@@ -38,13 +38,10 @@ int main (int argc, char **argv){
         std::string save;
         if(choice >0) {
             save = saves[choice];
-        }else
-        {
-            save = "";
-        }
+        }else save = "";
+
         CGame game(1,1,save);
         game.start();
-
 
     }
     else if(choice == 2){

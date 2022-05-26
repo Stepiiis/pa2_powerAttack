@@ -50,6 +50,7 @@ public:
     std::vector<std::vector<Point> > m_map;  // 2D vector of chars
     const Point & getLaneByID(int id)const;
     void highlightLane(int lanenr);
+    void highlightAttacker(int type);
     /**
     *   @abstract
      *  Procházení mapy v závislosti na tom, pro kterého attackera hledáme cestu k cíli

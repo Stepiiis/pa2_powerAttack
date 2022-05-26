@@ -2,7 +2,6 @@
 #include <ncurses.h>
 #include <iostream>
 #include <memory>
-#include <termios.h>
 #include <sys/ioctl.h>
 #include <experimental/filesystem>
 #include "Definitions.h"
@@ -40,8 +39,10 @@ CGame::~CGame(){
 bool CGame::start(){
     _gameMap.redrawMap();
     drawTowers();
-    resume();
-    return true;
+    if(resume())
+        return true;
+    // TODO HANDLE GAME LOSS
+    return false;
 }
 
 bool CGame::initializeWindow(){
@@ -65,9 +66,12 @@ int kbhit(){
 bool CGame::resume()
 {
     int input;
-    move(0,0);
+    _player->setCoins(2500);
     while(true){
 //        if(kbhit())
+        if(_player->getCoins() <= 0){
+            return false;
+        }
         timeout(250);
         input = getch();
         if(input != ERR)
@@ -79,7 +83,6 @@ bool CGame::resume()
         {
             _player->setLane(0);
         }
-        {}
         if(input == '2')
         {
             _player->setLane(1);
@@ -87,6 +90,19 @@ bool CGame::resume()
         if(input == '3')
         {
             _player->setLane(2);
+        }
+        if(input == 'a') // choices of attacker to spawn
+        {
+            _player->spawnAttacker(0);
+            _gameMap.highlightAttacker(0);
+        }
+        if(input == 's')
+        {
+            _player->spawnAttacker(1);
+        }
+        if(input == 'd')
+        {
+            _player->spawnAttacker(2);
         }
     }
     return true;
