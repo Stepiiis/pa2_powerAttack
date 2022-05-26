@@ -1,8 +1,0 @@
-# basicTower
-symbol=I;hp=650;rng=4;dmg=30;atkspeed=2;mov=0;price=0;
-# fastTower
-symbol=F;hp=500;rng=3;dmg=30;atkspeed=1;mov=0;price=0
-# highDamageTower
-symbol=T;hp=300;rng=2;dmg=100;atkspeed=5;mov=0;price=0
-# slowEffectTower
-symbol=S;hp=300;rng=4;dmg=30;atkspeed=2;mov=0;price=0

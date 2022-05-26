@@ -2,9 +2,10 @@
 #include "Enemy.h"
 #include "Map.h"
 #include "constants.h"
+#include "Definitions.h"
 #include <random>
 
-Enemy::Enemy(Map * map,towerDefs def, int dif)
+Enemy::Enemy(Map * map,defEntity def, int dif)
 : _def(def), _difficulty(dif)
 {
     _map = map;
@@ -29,14 +30,14 @@ void Enemy::createTowers(){
     std::random_device rds;
     std::mt19937 rng(rds());
     if(_difficulty == 1) {
-        // FIXME: TOWERS are sometimes created but not showed on the map
+        // FIXME: TOWERS are sometimes created but not show up on the map
         for (int i = 0; i < nrTowers; i++) {
             int x = rng() % MAP_WIDTH;
             int y = rng() % MAP_HEIGHT;
             if (_map->m_map[y][x].type == Point::Empty) {
                 if (x <= MAP_WIDTH - 1 && x >= 0 && y <= MAP_HEIGHT - 1 && y >= 0) {
                     if(_map->checkNeighbours(x,y)){
-                        _towers.emplace_back(new basicTower(x, y, _def.base.maxHP, _map));
+                        _towers.emplace_back(new basicTower(x, y, _def["basicTower"]["hp"], _map));
                         _emptySpaces[y][x] = 'T';
                     }else{
                         i--;

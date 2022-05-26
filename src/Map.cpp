@@ -108,14 +108,9 @@ bool Map::readMap(int level) {
         if(line.length() > 0) {
             m_map[y].reserve(100);
             for(size_t x = 0; x<=line.length(); x++) {
-//                if(x==line.length()){
-//                    mapLines.emplace_back(x,y,'\n');
-//                    break;
-//                } else {
                     mapLines.emplace_back(x,y,line[x]);
-//                }
             }
-            m_map.push_back(mapLines); // SEGFAULT HERE
+            m_map.push_back(mapLines);
             mapLines.clear();
             y++;
         }
@@ -129,14 +124,47 @@ bool Map::readMap(int level) {
 }
 
 
-// returns const string reference to map string
+// Prints the map to the screen and also checks for inputs and exits from the map
 void Map::printMap(){
     for(const auto& line : m_map) {
         for (const auto &point: line) {
             mvwprintw(m_game_window, point.y+1, point.x+1, "%c", point.m_symbol);
+            if(point.x == 0){
+                if(point.m_symbol == '<'){
+                    m_exit = point;
+                }
+            }
+            else if(point.x == line.back().x-3) {
+                if(point.m_symbol == '<'){
+                    m_entries.emplace_back(point.x,point.y,point.m_symbol);
+                }
+            }
         }
     }
     wrefresh(m_game_window);
+}
+const Point & Map::getLaneByID(int id)const{
+    return m_entries.at(id);
+}
+
+void Map::highlightLane(int lanenr){
+    auto style = A_STANDOUT;
+    for(int i = 0; i<m_entries.size(); i++){
+        if(i==lanenr){
+            wattron(m_game_window, style);
+            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+1,"%c",'*');
+            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+2,"%c",'=');
+            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+3,"%d",i+1);
+            wattroff(m_game_window, style);
+            wrefresh(m_game_window);
+        }else{
+            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+1,"%c",'<');
+            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+2,"%c",'=');
+            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+3,"%d",i+1);
+            wrefresh(m_game_window);
+
+        }
+    }
 }
 
 bool Map::getEmptySpaces(    std::vector<std::vector<char> > &_emptySpaces){

@@ -10,7 +10,7 @@
 // handler of building and attacking of towers
 class Enemy{
 public:
-    Enemy(Map* map,towerDefs def, int dif);
+    Enemy(Map* map,defEntity def, int dif);
     ~Enemy();
     void clearTowers(); // erases old towers from the map
     void findEmptySpaces(); // finds empty spaces where towers can be built
@@ -21,6 +21,6 @@ protected:
     Map* _map;
     std::vector<std::unique_ptr<Tower> > _towers;
     int _difficulty;
-    towerDefs _def; // definitions of towers loaded from file
+    defEntity _def; // definitions of towers loaded from file
     std::vector<std::vector<char> > _emptySpaces;
 };

@@ -23,7 +23,6 @@ public:
     void draw();        // draws the current state of map
     void drawTowers();  // draws the towers according to difficulty
     void pause();       // pauses the game
-
     bool resume();      // resumes the game. checks if player inputed a char.
                         // if not, it calculates the path for every attacker and checks if there is a tower in their radius
                         // if there is, it attacks the tower. Then Towers check their radius and attack one of the players
@@ -39,6 +38,7 @@ protected:
     WINDOW * _game_window;
     CDefinitions _definitions;
     int _difficulty;
+
 };
 
 struct CMenu{

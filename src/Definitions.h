@@ -1,5 +1,11 @@
 #pragma once
 #include <fstream>
+#include <map>
+#include <string>
+#include <sstream>
+#include <iostream>
+
+using defEntity = std::map<std::string,std::map<std::string,int> >; // entity definitions map containing all values
 
 struct defBaseEntity{
     char symbol;
@@ -12,28 +18,29 @@ struct defBaseEntity{
 };
 
 
-struct attackerDefs{
+struct attackerDef{
     defBaseEntity base;
     defBaseEntity fast;
     defBaseEntity charger;
 };
 
-struct towerDefs{
+struct towerDef{
     defBaseEntity base;
     defBaseEntity fast;
     defBaseEntity highD;
     defBaseEntity slowEff;
 };
 
+
 class CDefinitions{
-    attackerDefs _attackers;
-    towerDefs _towers;
+        defEntity _attackers;
+        defEntity _towers;
 public:
     CDefinitions() = default;
     ~CDefinitions() = default;
     bool loadDefinitions();
-    bool loadEntity(std::string& line, defBaseEntity & ent);
-    const towerDefs & getDefender()const;
-    const attackerDefs & getAttacker()const;
+    bool loadEntity(std::string& path, defEntity& entity);
+    const defEntity & getTower()const;
+    const defEntity & getAttacker()const;
 };
 

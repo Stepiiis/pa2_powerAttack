@@ -5,6 +5,7 @@
 #include <ncurses.h>
 #include "Entity.h"
 #include "Attacker.h"
+#include "Definitions.h"
 #include "Map.h"
 #include "Game.h"
 
@@ -16,9 +17,11 @@ int main (int argc, char **argv){
     int money = 100;
     terminal term;
 
+
     initscr(); // inicializace ncurses a pameti
     noecho(); // zakaz vypisu na obrazovku
     cbreak(); // ctrlc se neukonci program
+
 
 //    int choice = newMenu(CMenu({"Welcome to", "The Tower Attack 2 ", "Electric Boogaloo"},{"New Game", "Load Game", "Exit"}));
     int choice = mainMenu();

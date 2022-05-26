@@ -19,7 +19,6 @@ public:
         return _msg.c_str();
     }
     const std::string _msg;
-
 };
 
 class notImplementedException : public std::exception {
@@ -30,4 +29,13 @@ public:
     }
     const std::string _msg;
 
+};
+
+class syntaxErr : public std::exception {
+public:
+    explicit syntaxErr(std::string  msg) : _msg(std::move(msg)) {}
+    const char* what() const noexcept override {
+        return _msg.c_str();
+    }
+    const std::string _msg;
 };

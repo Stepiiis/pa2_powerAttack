@@ -2,7 +2,7 @@
 
 LOGIN = beranst6
 CXX = g++
-BASIC_FLAGS = -std=c++17 -O2 -g -Wall -pedantic
+BASIC_FLAGS = -std=c++17 -O0 -g -Wall -pedantic
 FLAGS = -lstdc++fs -lncurses
 
 ZIP = Makefile Doxyfile DOCUMENTATION.md zadani.txt prohlaseni.txt \

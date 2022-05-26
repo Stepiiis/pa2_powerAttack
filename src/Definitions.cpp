@@ -3,45 +3,65 @@
 #include "logFile.h"
 
 bool CDefinitions::loadDefinitions(){
-    std::ifstream fileAttacker("data/attackers/attackerDefinitions.txt");
-    if(!fileAttacker.is_open()) {
-        sendToLogFile(10, "Could not open file attackerDefinitions.txt", "LoadDefinitions");
+    std::string path ="attackers/attackerDefinition.txt";
+    if(loadEntity(path,_attackers)) {
+        path = "towers/towerDefinition.txt";
+        if (loadEntity(path, _towers))
+            return true;
+    }else
+        return false;
+}
+
+bool CDefinitions::loadEntity(std::string & path, defEntity & ent){
+    ent.clear();
+    std::ifstream fileDef("data/definitions/"+path); // attackers/attackerDefinition.txt
+    if(!fileDef.is_open()) {
+        sendToLogFile(10, "Could not open file " + path , "LoadDefinitions");
         return false;
     }
     std::string line;
-    while(getline(fileAttacker, line)) {
+    std::string entName;
+    while(getline(fileDef, line)) {
+        if(line.empty()) continue;
         if(line[0] == '#') {
-            continue;
+            entName= line.substr(1);
+            ent.insert(std::pair<std::string,std::map<std::string, int> >(entName, std::map<std::string, int>()));
         }
-        //TODO: figure out how to automate this part
-    }
+        else{
+            std::stringstream ss(line);
+            std::string key;
+            std::string value;
+            std::string test;
+            int final;
+            ss >> key >> value >> test;
+            if(!test.empty()){
+                sendToLogFile(10, "Error in file " + path + " at line " + line, "LoadDefinitions");
+                throw(syntaxErr( "Error in file " + path + " at line " + line));
+            }
+            try{final = std::stoi(value);}
+            catch(std::invalid_argument){
+                final = *(value.substr(0,1).c_str());
+            }
 
+            ent[entName].insert(std::pair<std::string, int>(key, final));
+        }
+    }
+    sendToLogFile(0, "Loaded file " + path, "LoadDefinitions");
+//    std::cout << "Loaded " << ent.size() << " attacker definitions" << std::endl;
+//    std::cout << "For each attacker, there are " << ent.begin()->second.size() << " attributes" << std::endl;
+//    for(const auto & type: ent){
+//        std::cout << "Attacker type: " << type.first << std::endl;
+//        for(const auto & attr: type.second){
+//            std::cout << "Attribute: " << attr.first << " value: " << attr.second << std::endl;
+//        }
+//    }
+    return true;
 }
 
-bool CDefinitions::loadEntity(std::string & line, defBaseEntity & ent){
-    int index{};
-    int length = line.length();
-    while (index != length-1) {
-        if(line[index] == '=')
-            break;
-        index++;
-    }
-    ent.symbol = line[++index];
-    while (index < length-1) {
-        if(line[index] == '=')
-            break;
-        index++;
-    }
-    int numindex{};
-    while(index<length-1 && line[numindex] != ';'){
-        numindex++;
-    }
-    ent.maxHP = std::stoi(line.substr(index, numindex - index));
-    // TODO: add other stats
-}
-const towerDefs & CDefinitions::getDefender()const{
+
+const defEntity & CDefinitions::getTower()const{
     return _towers;
 }
-const attackerDefs & CDefinitions::getAttacker()const{
+const defEntity & CDefinitions::getAttacker()const{
     return _attackers;
 }

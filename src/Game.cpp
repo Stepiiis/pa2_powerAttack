@@ -5,6 +5,7 @@
 #include <termios.h>
 #include <sys/ioctl.h>
 #include <experimental/filesystem>
+#include "Definitions.h"
 
 
 CGame::CGame(int level,  int difficulty, const std::string & pathToSave)
@@ -24,9 +25,9 @@ CGame::CGame(int level,  int difficulty, const std::string & pathToSave)
     } else {
         load(level);
     }
-    _definitions.loadDefinitions(); // FIXME
+    _definitions.loadDefinitions(); // FIXME: only loads definitions of atttackers
     _player = new Player(&_gameMap, _definitions.getAttacker());
-    _tower_manager = new Enemy(&_gameMap,_definitions.getDefender(), _difficulty);
+    _tower_manager = new Enemy(&_gameMap,_definitions.getTower(), _difficulty);
 }
 
 CGame::~CGame(){
@@ -66,11 +67,26 @@ bool CGame::resume()
     int input;
     move(0,0);
     while(true){
-        if(kbhit())
-             input = getch();
-        mvprintw(0,0,"%c", input);
+//        if(kbhit())
+        timeout(250);
+        input = getch();
+        if(input != ERR)
+            mvprintw(0,0,"%c", input);
         if(input == 'q'){
             break;
+        }
+        if(input == '1') // CHOICES OF INPUT LANES
+        {
+            _player->setLane(0);
+        }
+        {}
+        if(input == '2')
+        {
+            _player->setLane(1);
+        }
+        if(input == '3')
+        {
+            _player->setLane(2);
         }
     }
     return true;

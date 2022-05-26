@@ -10,6 +10,9 @@ class Map;
 class Point {
 public:
     Point(int x, int y, char symbol);
+    Point() = default;
+    ~Point() = default;
+
     enum PointType{
         Empty,
         Wall,
@@ -45,7 +48,8 @@ public:
     void refreshWindow();
     bool checkNeighbours(int x, int y);
     std::vector<std::vector<Point> > m_map;  // 2D vector of chars
-
+    const Point & getLaneByID(int id)const;
+    void highlightLane(int lanenr);
     /**
     *   @abstract
      *  Procházení mapy v závislosti na tom, pro kterého attackera hledáme cestu k cíli
@@ -70,6 +74,8 @@ public:
 protected:
     std::string m_mapString; // currently used for debugging and first drawing of the map on screen
     WINDOW* m_game_window;
+    Point m_exit;
+    std::vector<Point> m_entries;
     using Callback = std::function<void(Point)>;
     void forEachNeighborImpl(Point p, Callback fun);
 };
