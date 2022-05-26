@@ -3,6 +3,7 @@
 #include "Entity.h"
 #include "Map.h"
 #include "constants.h"
+#include "exceptions.h"
 
 Attacker::Attacker(int posX, int posY, int maxHealth,Map *map)
 : Entity(posX, posY, maxHealth, map)
@@ -46,3 +47,28 @@ bool Attacker::checkRadius(){}
 Attacker::~Attacker() = default;
 
 bool basicAttacker::checkRadius(){}
+
+fastAttacker::fastAttacker(int posX, int posY, int maxHealth, Map *map) : Attacker(posX, posY, maxHealth, map) {
+
+}
+
+char fastAttacker::getSymbol() {
+    throw(notImplementedException("fastAttacker getSymbol"));
+}
+
+bool fastAttacker::checkRadius() {
+    throw(notImplementedException("fastAttacker checkRadius"));
+}
+
+chargerAttacker::chargerAttacker(int posX, int posY, int maxHealth, Map *map) : Attacker(posX, posY, maxHealth, map) {
+
+}
+
+char chargerAttacker::getSymbol() {
+    throw(notImplementedException("chargerAttacker getSymbol"));
+}
+
+bool chargerAttacker::checkRadius() {
+    throw(notImplementedException("chragerAttacker checkRadius"));
+
+}

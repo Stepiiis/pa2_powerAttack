@@ -4,9 +4,9 @@
 
 bool CDefinitions::loadDefinitions(){
     std::string path ="attackers/attackerDefinition.txt";
-    if(loadEntity(path,_attackers)) {
+    if(loadEntity(path,_attackerDefinitions)) {
         path = "towers/towerDefinition.txt";
-        if (loadEntity(path, _towers))
+        if (loadEntity(path, _towerDefinitions))
             return true;
     }else
         return false;
@@ -60,8 +60,13 @@ bool CDefinitions::loadEntity(std::string & path, defEntity & ent){
 
 
 const defEntity & CDefinitions::getTower()const{
-    return _towers;
+    return _towerDefinitions;
 }
 const defEntity & CDefinitions::getAttacker()const{
-    return _attackers;
+    return _attackerDefinitions;
 }
+
+// converts from map to structure which can be used inside
+//bool CDefinitions::convertDefinitions() {
+//    return false;
+//}

@@ -1,4 +1,9 @@
 #define MAP_WIDTH 50
-#define MAP_HEIGHT 8
-#define BASIC_ATTACKER_DAMAGE = 2
-#define ATTACKER_DAMAGE = 3
+#define MAP_HEIGHT 9
+#define BASICA "baseAttacker"
+#define FASTA "fastAttacker"
+#define CHARGERA "chargerAttacker"
+#define BASICT "basicTower"
+#define FASTT "fastTower"
+#define STRONGT "highDamageTower"
+#define SLOWET "slowEffectTower"

@@ -7,9 +7,10 @@
 #include "Definitions.h"
 
 
-CGame::CGame(int level,  int difficulty, const std::string & pathToSave)
+CGame::CGame(int level,  int difficulty, const std::string & pathToSave )
         : _difficulty(difficulty), _save_name(pathToSave)
 {
+    _definitions.loadDefinitions();
     terminal term;
     int winheight = 25;
     int winwidth = 75;
@@ -17,14 +18,13 @@ CGame::CGame(int level,  int difficulty, const std::string & pathToSave)
     int starty = (term.height - winheight) / 2; // vypocet pozice mapy
     int startx = (term.width - winwidth )/ 2; // vypocet pozice mapy
     _game_window = newwin(winheight, winwidth, starty, startx);
-    _gameMap = Map(_game_window);
+    Map _gameMap(_game_window,_definitions);
     initializeWindow();
     if(level == 0){
         loadFromSave(pathToSave);
     } else {
         load(level);
     }
-    _definitions.loadDefinitions(); // FIXME: only loads definitions of atttackers
     _player = new Player(&_gameMap, _definitions.getAttacker());
     _tower_manager = new Enemy(&_gameMap,_definitions.getTower(), _difficulty);
 }
@@ -37,11 +37,11 @@ CGame::~CGame(){
 }
 
 bool CGame::start(){
-    _gameMap.redrawMap();
+    _gameMap.redrawMap();   
     drawTowers();
     if(resume())
         return true;
-    // TODO HANDLE GAME LOSS
+    // TODO: HANDLE GAME LOSS
     return false;
 }
 
@@ -93,16 +93,20 @@ bool CGame::resume()
         }
         if(input == 'a') // choices of attacker to spawn
         {
-            _player->spawnAttacker(0);
+//            _player->spawnAttacker(0);
             _gameMap.highlightAttacker(0);
         }
         if(input == 's')
         {
-            _player->spawnAttacker(1);
+//            _player->spawnAttacker(1);
+            _gameMap.highlightAttacker(1);
+
         }
         if(input == 'd')
         {
-            _player->spawnAttacker(2);
+//            _player->spawnAttacker(2);
+            _gameMap.highlightAttacker(2);
+
         }
     }
     return true;

@@ -8,6 +8,7 @@
 #include "Enemy.h"
 #include <vector>
 #include <string>
+
 class CGame {
 public:
     CGame(int,int, const std::string & pathToSave = "");        // first intiger specifies if we want to start a new game or load a saved game
@@ -31,7 +32,7 @@ public:
                         // if the player doesnt have enough money for the certain attacker, prints NOT ENOUGH MONEY to the bottom
                         // then runs the procedure again
 protected:
-    Map _gameMap = Map(nullptr);
+    Map _gameMap;
     Player * _player;
     Enemy * _tower_manager;
     std::string _save_name;

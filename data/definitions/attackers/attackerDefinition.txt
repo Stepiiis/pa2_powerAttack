@@ -16,7 +16,7 @@ atkspeed 1
 mov 1
 price 250
 
-#ChargerAttacker
+#chargerAttacker
 symbol @
 hp 640
 rng 4

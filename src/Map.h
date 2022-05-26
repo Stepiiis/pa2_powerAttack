@@ -5,6 +5,7 @@
 #include <ncurses.h>
 #include <functional>
 #include "Entity.h"
+#include "Definitions.h"
 class Entity;
 class Map;
 class Point {
@@ -36,7 +37,7 @@ class Map
 public:
     // draws the map specified as a string
     void printMap();
-    explicit Map(WINDOW* win);
+    explicit Map(WINDOW* win, CDefinitions def);
     // updates map according to the certain entity. its previous position will be printed as its default value
     bool updateMap(int prevX, int prevY,int x, int y, Entity * entity);
     bool updateEntity(int x, int y, Entity * entity);
@@ -47,7 +48,6 @@ public:
     void convertMap();
     void refreshWindow();
     bool checkNeighbours(int x, int y);
-    std::vector<std::vector<Point> > m_map;  // 2D vector of chars
     const Point & getLaneByID(int id)const;
     void highlightLane(int lanenr);
     void highlightAttacker(int type);
@@ -72,6 +72,7 @@ public:
     template<typename T>
     bool forEachNeighbor(Point p, T Fun);
     friend Point;
+    std::vector<std::vector<Point> > m_map;  // 2D vector of chars
 protected:
     std::string m_mapString; // currently used for debugging and first drawing of the map on screen
     WINDOW* m_game_window;
@@ -79,6 +80,8 @@ protected:
     std::vector<Point> m_entries;
     using Callback = std::function<void(Point)>;
     void forEachNeighborImpl(Point p, Callback fun);
+    defEntity defAttacker;
+    defEntity defTower;
 };
 
 

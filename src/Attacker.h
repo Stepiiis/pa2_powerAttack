@@ -38,10 +38,10 @@ public:
 // Rychlý útočník, který se vyhíbá slowEffectTowers a má velmi nízký damage, Útočí však 2x rychleji jak ostatní.
 // Nízký počet HP, menší útok než basic attacker.
 // velmi efektviní v kombinaci s chargerAttacker, který bude sám brát damage od tower, zatím co fast attacker může útočit
-class FastAttacker final: public Attacker
+class fastAttacker final: public Attacker
 {
 public:
-    FastAttacker(int posX, int posY, int maxHealth, Map* map);
+    fastAttacker(int posX, int posY, int maxHealth, Map* map);
     char getSymbol() override;
     bool checkRadius() override;
 };

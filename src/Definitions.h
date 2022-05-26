@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
-
+#include "constants.h"
 using defEntity = std::map<std::string,std::map<std::string,int> >; // entity definitions map containing all values
 
 struct defBaseEntity{
@@ -33,14 +33,16 @@ struct towerDef{
 
 
 class CDefinitions{
-        defEntity _attackers;
-        defEntity _towers;
+        defEntity _attackerDefinitions;
+        defEntity _towerDefinitions;
 public:
     CDefinitions() = default;
     ~CDefinitions() = default;
-    bool loadDefinitions();
-    bool loadEntity(std::string& path, defEntity& entity);
+    bool loadDefinitions(); // helper func to facilitate all def. loadings
+    bool loadEntity(std::string& path, defEntity& entity); // loads deifinition for given entity
+//    bool convertDefinitions();
     const defEntity & getTower()const;
     const defEntity & getAttacker()const;
 };
+
 

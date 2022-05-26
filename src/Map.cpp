@@ -32,9 +32,12 @@ Point::Point(int x, int y, char symbol)
     }
 }
 
-Map::Map(WINDOW* win)
+Map::Map(WINDOW* win, CDefinitions def)
 : m_game_window(win)
-{}
+{
+    defAttacker = def.getAttacker();
+    defTower = def.getTower();
+}
 
 
 /**
@@ -213,6 +216,14 @@ bool Map::checkNeighbours(int x, int y){
     return false;
 }
 
-void highlightAttacker(int type){
+void Map::highlightAttacker(int type) {
+    int top = m_map.size() + 1 ;
+    int left = 1;
+    for(const auto & ent: defAttacker)
+    {
+
+    }
+
     // todo highlight attacker according to definition file
+
 }
