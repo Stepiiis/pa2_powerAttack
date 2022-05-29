@@ -71,10 +71,10 @@ bool CGame::resume()
     while(true){
 //        if(kbhit())
         if(_player->getCoins() <= 0){
-            return false;
+            return false; // GAME OVER, LET THE ATTACKERS FINISH/DIE
         }
-        timeout(1000);
-        input = getch();
+        wtimeout(_game_window,1000);
+        input = wgetch(_game_window);
         if(input != ERR)
             mvprintw(0,0,"%c", input);
         if(input == 'q'){
@@ -106,6 +106,8 @@ bool CGame::resume()
             _player->spawnAttacker();
         if(!_player->emptyAttackers())
             _player->moveAttackers();
+//        wtimeout(_game_window,50);
+//        wgetch(_game_window);
         wrefresh(_game_window);
         // first figure out the route for attackers
         // then add them to ncurses window buffer
@@ -113,8 +115,7 @@ bool CGame::resume()
         // perform attacks from attackers (we will make it easier for the player)
         // perform attacks from towers
     }
-
-    return true;
+    return true; // GAME WON
 }
 
 

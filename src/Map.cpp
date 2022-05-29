@@ -44,7 +44,7 @@ Point::Point(int x, int y) {
 }
 
 bool Point::operator<(const Point &rhs) const {
-    return std::sqrt(x * x + y * y) < std::sqrt(rhs.x * rhs.x + rhs.y * rhs.y);
+    return std::tie(x, y) < std::tie(rhs.x, rhs.y);
 }
 
 bool Point::operator!=(const Point &rhs) const {
@@ -97,7 +97,7 @@ bool Map::updateMap(int prevX, int prevY, int x, int y, Entity * entity)
     }
     m_map[prevY][prevX].m_symbol= ' ';
     m_map[prevY][prevX].IDent=0;
-    mvwprintw(m_game_window,prevX+1,prevY+1,"%c"," ");
+    mvwprintw(m_game_window,prevY+1,prevX+1,"%c",' ');
     char symbol = entity->getSymbol();
     entity->move(x,y);
     m_map[y][x] = Point(x,y,symbol);
@@ -281,7 +281,9 @@ void Map::forEachNeighborImpl(const Point &p, Map::Callback fun) {
         if (x < 0 || x >= (int)row.size()) continue;
         fun(m_map[y][x]);
 //        sendToLogFile(0, "currentPoint"+std::to_string(x)+" "+std::to_string(y), "BFS debug");
-        mvwprintw(m_game_window,y+1,x+1,"%c",'V');
+//        mvwprintw(m_game_window,y+1,x+1,"%c",'V');
+//        wtimeout(m_game_window,20);
+//        wgetch(m_game_window);
 //        wrefresh(m_game_window);
     }
 }

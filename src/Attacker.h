@@ -27,6 +27,9 @@ public:
 // que that is updated everytime findPath is called
 
 protected:
+
+    void popPath();
+    Point getNextPoint();
     std::deque<Point> m_path;
     int cycleCnt;
 };

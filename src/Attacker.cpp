@@ -58,7 +58,7 @@ bool Attacker::operator>(Attacker &rhs) {
 
 bool Attacker::findShortestPath(){
     m_path.clear();
-    using Type = Point::PointType;
+//    using Type = Point::PointType;
      Point start = Point(m_x,m_y);
      Point target = Point(-10,-10);
      std::map<Point, Point> visited;
@@ -72,15 +72,10 @@ bool Attacker::findShortestPath(){
 
         m_sharedMap->forEachNeighbor(current , [&](const Point& neighbor)
         {
-            if(neighbor.x == 0 && neighbor.y == 4)
-            {
-                target = neighbor;
-                std::cout << "found target" << std::endl;
-            }
-            if(neighbor.type==Type::Entry || neighbor.type==Type::Wall || visited.count(neighbor) != 0 )
+            if(neighbor == current || neighbor.type==Point::Entry || neighbor.type == Point::Attacker || neighbor.type==Point::Wall || neighbor.type == Point::Tower || visited.count(neighbor) != 0 )
                 return;
             visited.emplace(neighbor, current);
-            q.emplace_back(neighbor);
+            q.push_back(neighbor);
 
             if(this->isTarget(neighbor)){
                 target = neighbor;
@@ -99,6 +94,18 @@ bool Attacker::findShortestPath(){
      return true;
 }
 
+void Attacker::popPath() {
+    if(!m_path.empty())
+        m_path.pop_front();
+}
+
+Point Attacker::getNextPoint() {
+    popPath();
+    Point temp = m_path.front();
+    popPath();
+    return temp;
+}
+
 Attacker::~Attacker() = default;
 
 bool basicAttacker::checkRadius(){
@@ -115,8 +122,7 @@ void basicAttacker::moveOnPath() {
     cycleCnt++;
 //    if(cycleCnt % CDefinitions::_attackerDefinitions.at(BASICA).at("mov")== 0)
 //    {
-        Point next = m_path.front();
-        m_path.pop_front();
+        Point next = getNextPoint();
         if(!m_sharedMap->updateMap(m_x,m_y,next.x,next.y,this))
             return;
 //    }
