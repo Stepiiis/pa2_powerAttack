@@ -31,8 +31,11 @@ public:
                         // if the player inputs a char it creates a new attacker according to input
                         // if the player doesnt have enough money for the certain attacker, prints NOT ENOUGH MONEY to the bottom
                         // then runs the procedure again
+
 protected:
-    Map _gameMap;
+    void highlightAttacker(int type);
+    void drawAttackerDefs();
+    Map _gameMap = Map();
     Player * _player;
     Enemy * _tower_manager;
     std::string _save_name;

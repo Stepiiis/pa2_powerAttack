@@ -9,7 +9,7 @@ class Map;
 class Entity {
 public:
     virtual ~Entity() = default;
-    Entity(int posX, int posY, int maxHealth, Map * map);
+    Entity(int posX, int posY, int maxHealth, Map * map,int attackerID);
 
     // moves the entity to the given position on screen and updates the shared map structure
     bool move(int x, int y);
@@ -30,6 +30,7 @@ public:
 
     virtual inline char getSymbol() = 0;
     virtual bool checkRadius() = 0;
+    int getID()const;
     void setSymbol(char symbol);
 
     bool printEntity(int x, int y);

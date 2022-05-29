@@ -2,19 +2,19 @@
 #include "Tower.h"
 #include "exceptions.h"
 
-Tower::Tower(int x, int y, int hp, Map* map)
-: Entity(x,y, hp, map)
+Tower::Tower(int x, int y, int hp, Map* map, int towerID)
+: Entity(x,y, hp, map, towerID)
 {}
 
-basicTower::basicTower(int x, int y, int hp, Map* map)
-        : Tower(x,y, hp, map)
+basicTower::basicTower(int x, int y, int hp, Map* map,int towerID)
+        : Tower(x,y, hp, map, towerID)
 {
     m_symbol = 'I';
     m_radius = 4;
 }
 
-fastTower::fastTower(int x, int y, int hp, Map* map)
-        : Tower(x,y, hp, map)
+fastTower::fastTower(int x, int y, int hp, Map* map,int towerID)
+        : Tower(x,y, hp, map,towerID)
 {
     m_symbol = '&';
     m_radius = 3;

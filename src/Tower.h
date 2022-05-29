@@ -5,18 +5,15 @@
 
 class Tower : public Entity {
 public:
-    Tower(int x, int y, int hp, Map* map);
+    Tower(int x, int y, int hp, Map* map,int towerID);
     char getSymbol() override;
     bool checkRadius() override;
-private:
-    int _x;
-    int _y;
 };
 
 // základní věž se symbolem T
 class basicTower final: public Tower{
 public:
-    basicTower(int x, int y, int hp, Map* map);
+    basicTower(int x, int y, int hp, Map* map,int towerID);
     char getSymbol() override;
     bool checkRadius() override;
 };
@@ -26,7 +23,7 @@ public:
 // Zničení odmění hráče základní odměnou
 class fastTower final: public Tower{
 public:
-    fastTower(int x, int y, int hp, Map* map);
+    fastTower(int x, int y, int hp, Map* map,int towerID);
     char getSymbol() override;
     bool checkRadius() override;
 };
@@ -36,7 +33,7 @@ public:
 class highDamageTower final: public Tower
     {
 public:
-        highDamageTower(int x, int y, int hp, Map* map);
+        highDamageTower(int x, int y, int hp, Map* map,int towerID);
         char getSymbol() override;
         bool checkRadius() override;
     };
@@ -46,7 +43,7 @@ public:
 class slowEffectTower final: public Tower
         {
 public:
-    slowEffectTower(int x, int y, int hp, Map* map);
+    slowEffectTower(int x, int y, int hp, Map* map,int towerID);
     char getSymbol() override;
     bool checkRadius() override;
         };

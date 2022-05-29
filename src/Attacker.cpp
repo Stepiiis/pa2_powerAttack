@@ -4,14 +4,15 @@
 #include "Map.h"
 #include "constants.h"
 #include "exceptions.h"
+#include "Definitions.h"
 
-Attacker::Attacker(int posX, int posY, int maxHealth,Map *map)
-: Entity(posX, posY, maxHealth, map)
+Attacker::Attacker(int posX, int posY, int maxHealth,Map *map, int id)
+: Entity(posX, posY, maxHealth, map, id)
 {
 }
 
-basicAttacker::basicAttacker(int posX, int posY, int maxHealth,Map* map)
-:Attacker(posX, posY, maxHealth,map)
+basicAttacker::basicAttacker(int posX, int posY, int maxHealth,Map* map, int id)
+:Attacker(posX, posY, maxHealth,map,id)
     {
         m_symbol = '$';
         m_radius = 2; // the slower and more HP version will have range of 5 fire
@@ -42,13 +43,86 @@ void Attacker::setPosition(int x, int y){
 
 
 
-bool Attacker::checkRadius(){}
+bool Attacker::checkRadius(){
+    throw (notImplementedException("Attacker checkRadius"));
+}
+
+bool Attacker::operator<(Attacker &rhs) {
+    return this->m_id<rhs.m_id;
+}
+
+bool Attacker::operator>(Attacker &rhs) {
+    return this->m_id>rhs.m_id;
+}
+
+
+bool Attacker::findShortestPath(){
+    m_path.clear();
+    using Type = Point::PointType;
+     Point start = Point(m_x,m_y);
+     Point target = Point(-10,-10);
+     std::map<Point, Point> visited;
+     std::deque<Point> q;
+     Point current;
+     q.push_back(start);
+     while(!q.empty())
+     {
+        current = q.front();
+        q.pop_front();
+
+        m_sharedMap->forEachNeighbor(current , [&](const Point& neighbor)
+        {
+            if(neighbor.x == 0 && neighbor.y == 4)
+            {
+                target = neighbor;
+                std::cout << "found target" << std::endl;
+            }
+            if(neighbor.type==Type::Entry || neighbor.type==Type::Wall || visited.count(neighbor) != 0 )
+                return;
+            visited.emplace(neighbor, current);
+            q.emplace_back(neighbor);
+
+            if(this->isTarget(neighbor)){
+                target = neighbor;
+                return;
+            }
+        });
+     }
+
+     if(target.x == -10)
+         return false;
+     m_path.push_back(target);
+     while(target != start){
+         target = visited[target];
+         m_path.push_front(target);
+     }
+     return true;
+}
 
 Attacker::~Attacker() = default;
 
-bool basicAttacker::checkRadius(){}
+bool basicAttacker::checkRadius(){
+    throw (notImplementedException("basicAttacker checkRadius"));
+}
 
-fastAttacker::fastAttacker(int posX, int posY, int maxHealth, Map *map) : Attacker(posX, posY, maxHealth, map) {
+bool basicAttacker::isTarget(const Point &p) const{
+    return p.type == Point::Exit;
+}
+
+void basicAttacker::moveOnPath() {
+    if(m_path.empty())
+        return;
+    cycleCnt++;
+//    if(cycleCnt % CDefinitions::_attackerDefinitions.at(BASICA).at("mov")== 0)
+//    {
+        Point next = m_path.front();
+        m_path.pop_front();
+        if(!m_sharedMap->updateMap(m_x,m_y,next.x,next.y,this))
+            return;
+//    }
+}
+
+fastAttacker::fastAttacker(int posX, int posY, int maxHealth, Map *map, int id) : Attacker(posX, posY, maxHealth, map, id) {
 
 }
 
@@ -60,7 +134,15 @@ bool fastAttacker::checkRadius() {
     throw(notImplementedException("fastAttacker checkRadius"));
 }
 
-chargerAttacker::chargerAttacker(int posX, int posY, int maxHealth, Map *map) : Attacker(posX, posY, maxHealth, map) {
+bool fastAttacker::isTarget(const Point &p) const {
+    return p.type == Point::Exit;
+}
+
+void fastAttacker::moveOnPath() {
+    throw(notImplementedException("fastAttacker moveOnPath"));
+}
+
+chargerAttacker::chargerAttacker(int posX, int posY, int maxHealth, Map *map, int id) : Attacker(posX, posY, maxHealth, map, id) {
 
 }
 
@@ -71,4 +153,13 @@ char chargerAttacker::getSymbol() {
 bool chargerAttacker::checkRadius() {
     throw(notImplementedException("chragerAttacker checkRadius"));
 
+}
+
+// returns true if the point is a tower
+bool chargerAttacker::isTarget(const Point &p) const {
+    return p.type == Point::Tower || p.type == Point::Exit;
+}
+
+void chargerAttacker::moveOnPath() {
+    throw(notImplementedException("chargerAttacker moveOnPath"));
 }

@@ -5,6 +5,8 @@
 #include <memory>
 #include <vector>
 #include "Map.h"
+#include <algorithm>
+#include <queue>
 
 class Player{
 public:
@@ -13,14 +15,22 @@ public:
     Player& operator=(const Player&);
     virtual ~Player() = default;
     void setLane(int lane);
-    bool spawnAttacker(int type); // 0 = basic, 1 = fast, 2 = charger
+    void setAttackerType(int type); // same as spawn
+    void addAttackerToQueue();
+    bool spawnAttacker(); // 0 = basic, 1 = fast, 2 = charger
+    void moveAttackers();
+    bool emptyAttackers();
+    bool emptyAttackerQueue();
     void setCoins(int coins);
     int getCoins();
+    int attackerID;
 protected:
     int _score;    // score calculated at the end of the game. could be calculated in class CGame
     int _coins;    // current amount of money player has available to buy attackers
     Point _spawnLane;
+    std::string attackerType;
     Map* _map;
     defEntity _def; // definitions of towers loaded from file
-    std::vector< Attacker* > _attackers;
+    std::vector< std::unique_ptr<Attacker> > _attackers;
+    std::queue<std::string> _attackersQueue;
 };

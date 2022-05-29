@@ -10,6 +10,7 @@ bool CDefinitions::loadDefinitions(){
             return true;
     }else
         return false;
+    return true;
 }
 
 bool CDefinitions::loadEntity(std::string & path, defEntity & ent){
@@ -59,10 +60,10 @@ bool CDefinitions::loadEntity(std::string & path, defEntity & ent){
 }
 
 
-const defEntity & CDefinitions::getTower()const{
+const defEntity & CDefinitions::getTower(){
     return _towerDefinitions;
 }
-const defEntity & CDefinitions::getAttacker()const{
+const defEntity & CDefinitions::getAttacker(){
     return _attackerDefinitions;
 }
 

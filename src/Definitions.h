@@ -33,16 +33,17 @@ struct towerDef{
 
 
 class CDefinitions{
-        defEntity _attackerDefinitions;
-        defEntity _towerDefinitions;
+private:
+    defEntity _attackerDefinitions;
+    defEntity _towerDefinitions;
 public:
     CDefinitions() = default;
     ~CDefinitions() = default;
     bool loadDefinitions(); // helper func to facilitate all def. loadings
     bool loadEntity(std::string& path, defEntity& entity); // loads deifinition for given entity
 //    bool convertDefinitions();
-    const defEntity & getTower()const;
-    const defEntity & getAttacker()const;
+    const defEntity & getTower();
+    const defEntity & getAttacker();
 };
 
 

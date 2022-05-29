@@ -6,6 +6,7 @@
 #include "Entity.h"
 #include "Map.h"
 #include "ncurses.h"
+#include <complex>
 
 Point::Point(int x, int y, char symbol)
         : x(x), y(y), m_symbol(symbol)
@@ -30,15 +31,51 @@ Point::Point(int x, int y, char symbol)
             type = Exit;
             break;
     }
+    IDent = 0;
+}
+// helper constructor for ForEachNeighbour function
+Point::Point(int x, int y) {
+    this->x = x;
+    this->y = y;
+    type = Empty;
+    m_symbol = ' ';
+    IDent = 0;
+
 }
 
-Map::Map(WINDOW* win, CDefinitions def)
-: m_game_window(win)
+bool Point::operator<(const Point &rhs) const {
+    return std::sqrt(x * x + y * y) < std::sqrt(rhs.x * rhs.x + rhs.y * rhs.y);
+}
+
+bool Point::operator!=(const Point &rhs) const {
+    return x != rhs.x || y != rhs.y;
+}
+
+bool Point::operator==(const Point&rhs) const {
+    return x == rhs.x && y == rhs.y;
+}
+
+Point::Point(const Point & src) {
+    x=src.x;
+    y=src.y;
+    type=src.type;
+    m_symbol=src.m_symbol;
+    IDent=src.IDent;
+}
+
+Point &Point::operator=(const Point &rhs) {
+    x=rhs.x;
+    y=rhs.y;
+    type=rhs.type;
+    m_symbol=rhs.m_symbol;
+    IDent=rhs.IDent;
+    return *this;
+}
+
+Point::Point(int x, int y, PointType type)
+: x(x), y(y), type(type)
 {
-    defAttacker = def.getAttacker();
-    defTower = def.getTower();
 }
-
 
 /**
  * EVERY COORDINATE SHOULD BE MOVED BY 1 TO ACCOUNT FOR THE BORDER
@@ -58,11 +95,13 @@ bool Map::updateMap(int prevX, int prevY, int x, int y, Entity * entity)
     {
         throw(mapException("Out of bounds"));
     }
-    m_map[prevY][prevX] = Point(prevX, prevY, ' ');
+    m_map[prevY][prevX].m_symbol= ' ';
+    m_map[prevY][prevX].IDent=0;
     mvwprintw(m_game_window,prevX+1,prevY+1,"%c"," ");
     char symbol = entity->getSymbol();
     entity->move(x,y);
     m_map[y][x] = Point(x,y,symbol);
+    m_map[y][x].IDent = entity->getID();
     mvwprintw(m_game_window,y+1,x+1,"%c",symbol);
     return true;
 }
@@ -129,25 +168,32 @@ bool Map::readMap(int level) {
 
 // Prints the map to the screen and also checks for inputs and exits from the map
 void Map::printMap(){
-    for(const auto& line : m_map) {
-        for (const auto &point: line) {
+    for( auto& line : m_map) {
+        for ( auto & point: line) {
             mvwprintw(m_game_window, point.y+1, point.x+1, "%c", point.m_symbol);
-            if(point.x == 0){
+            if(point.x == 0 || point.x == 1){
                 if(point.m_symbol == '<'){
                     m_exit = point;
+                    point.type = Point::Exit;
+                }else if(point.m_symbol == '='){
+                    point.type = Point::Exit;
                 }
             }
             else if(point.x == line.back().x-3) {
                 if(point.m_symbol == '<'){
                     m_entries.emplace_back(point.x,point.y,point.m_symbol);
+                    point.type = Point::Entry;
                 }
             }
         }
     }
     wrefresh(m_game_window);
 }
-const Point & Map::getLaneByID(int id)const{
-    return m_entries.at(id);
+bool Map::getLaneByID(int id, Point & spawnLane)const{
+    if(m_entries.size()<id)
+        return false;
+    spawnLane = m_entries.at(id);
+    return true;
 }
 
 void Map::highlightLane(int lanenr){
@@ -165,8 +211,16 @@ void Map::highlightLane(int lanenr){
             mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+2,"%c",'=');
             mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+3,"%d",i+1);
             wrefresh(m_game_window);
-
         }
+    }
+}
+
+void Map::drawLanes(){
+    for(int i = 0; i<m_entries.size(); i++){
+        mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+1,"%c",'<');
+        mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+2,"%c",'=');
+        mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+3,"%d",i+1);
+        wrefresh(m_game_window);
     }
 }
 
@@ -201,9 +255,6 @@ void Map::redrawMap(){
 //    mvwprintw(m_game_window,0,0,"%s",m_mapString.c_str());
 }
 
-bool Map::findShortestPath(Entity *entity) {
-    return false;
-}
 
 bool Map::checkNeighbours(int x, int y){
     if(x > 0 && x < MAP_WIDTH - 1 && y > 0 && y < MAP_HEIGHT - 1){
@@ -216,14 +267,29 @@ bool Map::checkNeighbours(int x, int y){
     return false;
 }
 
-void Map::highlightAttacker(int type) {
-    int top = m_map.size() + 1 ;
-    int left = 1;
-    for(const auto & ent: defAttacker)
-    {
+void Map::setWindow(WINDOW *win) {
+    m_game_window=win;
+}
 
+void Map::forEachNeighborImpl(const Point &p, Map::Callback fun) {
+    int x, y;
+    for (auto [xd, yd] : { std::pair<int, int>{-1,0}, {0,-1}, {1, 0}, {0, 1} }) {
+        x = p.x + xd;
+        y = p.y + yd;
+        if (y < 0 || y >= (int)m_map.size()) continue;
+        auto& row = m_map[y];
+        if (x < 0 || x >= (int)row.size()) continue;
+        fun(m_map[y][x]);
+//        sendToLogFile(0, "currentPoint"+std::to_string(x)+" "+std::to_string(y), "BFS debug");
+        mvwprintw(m_game_window,y+1,x+1,"%c",'V');
+//        wrefresh(m_game_window);
     }
+}
 
-    // todo highlight attacker according to definition file
+Point::PointType Map::getType(const Point& p) {
+    return m_map[p.y][p.x].type;
+}
 
+Point Map::getMapExit() {
+    return m_exit;
 }

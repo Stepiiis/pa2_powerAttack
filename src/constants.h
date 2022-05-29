@@ -1,6 +1,6 @@
 #define MAP_WIDTH 50
 #define MAP_HEIGHT 9
-#define BASICA "baseAttacker"
+#define BASICA "basicAttacker"
 #define FASTA "fastAttacker"
 #define CHARGERA "chargerAttacker"
 #define BASICT "basicTower"

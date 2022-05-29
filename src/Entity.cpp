@@ -4,8 +4,8 @@
 #include "ncurses.h"
 
 
-Entity::Entity(int posX, int posY, int maxHealth, Map* map)
-    :   m_x(posX), m_y(posY), m_hp(maxHealth),m_maxhp(maxHealth), m_sharedMap(map)
+Entity::Entity(int posX, int posY, int maxHealth, Map* map,int attackerID)
+    :   m_x(posX), m_y(posY), m_hp(maxHealth),m_maxhp(maxHealth), m_sharedMap(map), m_id(attackerID)
     {}
 
 bool Entity::move(int x, int y)
@@ -36,4 +36,8 @@ int Entity::getHP() const{ return m_hp; }
 void Entity::draw(){
     m_sharedMap->updateEntity( m_x, m_y, this);
     m_sharedMap->refreshWindow();
+}
+
+int Entity::getID()const {
+    return m_id;
 }

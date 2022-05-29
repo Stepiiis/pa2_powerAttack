@@ -1,4 +1,4 @@
-#baseAttacker
+#basicAttacker
 symbol $
 hp 240
 rng 3

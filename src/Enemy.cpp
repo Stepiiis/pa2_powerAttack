@@ -6,9 +6,10 @@
 #include <random>
 
 Enemy::Enemy(Map * map,defEntity def, int dif)
-: _def(def), _difficulty(dif)
+: _def(std::move(def)), _difficulty(dif)
 {
     _map = map;
+    _towerIDcnt = 0;
 }
 
 Enemy::~Enemy() = default;
@@ -37,7 +38,7 @@ void Enemy::createTowers(){
             if (_map->m_map[y][x].type == Point::Empty) {
                 if (x <= MAP_WIDTH - 1 && x >= 0 && y <= MAP_HEIGHT - 1 && y >= 0) {
                     if(_map->checkNeighbours(x,y)){
-                        _towers.emplace_back(new basicTower(x, y, _def["basicTower"]["hp"], _map));
+                        _towers.emplace_back(new basicTower(x, y, _def["basicTower"]["hp"], _map, _towerIDcnt++));
                         _emptySpaces[y][x] = 'T';
                     }else{
                         i--;

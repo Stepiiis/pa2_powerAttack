@@ -18,7 +18,7 @@ CGame::CGame(int level,  int difficulty, const std::string & pathToSave )
     int starty = (term.height - winheight) / 2; // vypocet pozice mapy
     int startx = (term.width - winwidth )/ 2; // vypocet pozice mapy
     _game_window = newwin(winheight, winwidth, starty, startx);
-    Map _gameMap(_game_window,_definitions);
+    _gameMap.setWindow(_game_window);
     initializeWindow();
     if(level == 0){
         loadFromSave(pathToSave);
@@ -39,6 +39,7 @@ CGame::~CGame(){
 bool CGame::start(){
     _gameMap.redrawMap();   
     drawTowers();
+    drawAttackerDefs();
     if(resume())
         return true;
     // TODO: HANDLE GAME LOSS
@@ -72,43 +73,47 @@ bool CGame::resume()
         if(_player->getCoins() <= 0){
             return false;
         }
-        timeout(250);
+        timeout(1000);
         input = getch();
         if(input != ERR)
             mvprintw(0,0,"%c", input);
         if(input == 'q'){
             break;
         }
-        if(input == '1') // CHOICES OF INPUT LANES
-        {
-            _player->setLane(0);
-        }
-        if(input == '2')
-        {
-            _player->setLane(1);
-        }
-        if(input == '3')
-        {
-            _player->setLane(2);
-        }
+
+        if(input >= '0' && input <= '9')// CHOICES OF INPUT LANES, can be 0-9 (currently using 3)
+            _player->setLane(input-49);
         if(input == 'a') // choices of attacker to spawn
         {
-//            _player->spawnAttacker(0);
-            _gameMap.highlightAttacker(0);
+            highlightAttacker(0);
+            _player->setAttackerType(0);
         }
         if(input == 's')
         {
-//            _player->spawnAttacker(1);
-            _gameMap.highlightAttacker(1);
-
+            highlightAttacker(1);
+            _player->setAttackerType(1);
         }
         if(input == 'd')
         {
-//            _player->spawnAttacker(2);
-            _gameMap.highlightAttacker(2);
-
+            highlightAttacker(2);
+            _player->setAttackerType(2);
         }
+        if(input == ' ')
+        {
+            _player->addAttackerToQueue();
+        }
+        if(!_player->emptyAttackerQueue())
+            _player->spawnAttacker();
+        if(!_player->emptyAttackers())
+            _player->moveAttackers();
+        wrefresh(_game_window);
+        // first figure out the route for attackers
+        // then add them to ncurses window buffer
+        // refresh screen at the end !!!
+        // perform attacks from attackers (we will make it easier for the player)
+        // perform attacks from towers
     }
+
     return true;
 }
 
@@ -285,4 +290,55 @@ void clearShrek(WINDOW* menu_win, int posY, int posX){
     mvwprintw(menu_win, posY++, posX,  "                         ");
     mvwprintw(menu_win, posY++, posX,  "                         ");
     mvwprintw(menu_win, posY, posX,    "                         ");
+}
+
+void CGame::highlightAttacker(int type) {
+    int top = _gameMap.m_map.size() + 2 ;
+    int defaultTop = top;
+    int left = 2;
+    int i = 0;
+    for(const auto & ent: _definitions.getAttacker())
+    {
+        if(i == type)
+            wattron(_game_window,A_STANDOUT);
+        mvwprintw(_game_window,top,left,"%s",ent.first.c_str());
+        top++;
+        for(auto & hodnoty: ent.second){
+            top++;
+            if(hodnoty.first == "symbol") {
+                mvwprintw(_game_window,top,left,"%s : %c",hodnoty.first.c_str(), hodnoty.second);
+                continue;
+            }
+            mvwprintw(_game_window,top,left,"%s : %d",hodnoty.first.c_str(), hodnoty.second);
+        }
+        top=defaultTop;
+        left += ent.first.length()+4;
+        if(i == type)
+                wattroff(_game_window,A_STANDOUT);
+        i++;
+    }
+    wrefresh(_game_window);
+}
+
+void CGame::drawAttackerDefs() {
+    int top = _gameMap.m_map.size() + 2 ;
+    int defaultTop = top;
+    int left = 2;
+
+    for(const auto & ent: _definitions.getAttacker())
+    {
+        mvwprintw(_game_window,top,left,"%s",ent.first.c_str());
+        top++;
+        for(auto & hodnoty: ent.second){
+            top++;
+            if(hodnoty.first == "symbol") {
+                mvwprintw(_game_window,top,left,"%s : %c",hodnoty.first.c_str(), hodnoty.second);
+                continue;
+            }
+            mvwprintw(_game_window,top,left,"%s : %d",hodnoty.first.c_str(), hodnoty.second);
+        }
+        top=defaultTop;
+        left += ent.first.length()+4;
+    }
+    wrefresh(_game_window);
 }

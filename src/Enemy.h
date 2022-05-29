@@ -20,6 +20,7 @@ public:
 protected:
     Map* _map;
     std::vector<std::unique_ptr<Tower> > _towers;
+    int _towerIDcnt;
     int _difficulty;
     defEntity _def; // definitions of towers loaded from file
     std::vector<std::vector<char> > _emptySpaces;
