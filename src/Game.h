@@ -8,6 +8,13 @@
 #include "Enemy.h"
 #include <vector>
 #include <string>
+#include <ncurses.h>
+#include <iostream>
+#include <memory>
+#include <sys/ioctl.h>
+#include <experimental/filesystem>
+#include "Definitions.h"
+#include "Menu.h"
 
 class CGame {
 public:
@@ -20,7 +27,7 @@ public:
     [[nodiscard]] bool start();       // starts the game from current level or from the saved game
     bool save();        // saves the game into /data/saves/save_*save_number*.txt specified in menu
     bool load(int = 0);     // loads map from /data/saves/save_*save_number*.txt
-    bool loadFromSave(std::string path); // loads save from /data/saves/*save_name*
+    bool loadFromSave(const std::string& path); // loads save from /data/saves/*save_name*
     bool exit();        // exits the game and asks the user if they want to save the current progress
     void draw();        // draws the current state of map
     void drawTowers();  // draws the towers according to difficulty

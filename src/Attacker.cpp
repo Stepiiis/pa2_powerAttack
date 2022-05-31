@@ -1,10 +1,5 @@
-#pragma once
 #include "Attacker.h"
-#include "Entity.h"
-#include "Map.h"
-#include "constants.h"
-#include "exceptions.h"
-#include "Definitions.h"
+
 
 Attacker::Attacker(int posX, int posY, int maxHealth,Map *map, int id)
 : Entity(posX, posY, maxHealth, map, id)
@@ -63,7 +58,7 @@ bool Attacker::findShortestPath(){
      Point target = Point(-10,-10, '>'); // dummy point used to determine if we found a target
      std::map<Point, Point> visited;
      std::deque<Point> q;
-     Point current;
+     Point current = start;
      q.push_back(start);
      while(!q.empty())
      {

@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Attacker.h"
 #include <memory>
+#include "exceptions.h"
 
 class Tower : public Entity {
 public:

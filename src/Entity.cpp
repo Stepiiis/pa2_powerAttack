@@ -1,8 +1,5 @@
-#pragma once
-#include "Entity.h"
-#include "constants.h"
-#include "ncurses.h"
 
+#include "Entity.h"
 
 Entity::Entity(int posX, int posY, int maxHealth, Map* map,int attackerID)
     :   m_x(posX), m_y(posY), m_hp(maxHealth),m_maxhp(maxHealth), m_sharedMap(map), m_id(attackerID)

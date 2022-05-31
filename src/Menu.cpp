@@ -11,7 +11,7 @@ int newMenu(const CMenu & menu, bool wait){
     terminal term;
     int height = 25;
     int width = 75;
-    int posX = (width/2) - (menu._text.size()/2) - 10;
+    int posX = (width/2) - (int)(menu._text.size()/2) - 10;
 
     auto style = A_STANDOUT;
     getmaxyx(stdscr, term.height, term.width); // zjisteni velikosti obrazovky
@@ -31,7 +31,7 @@ int newMenu(const CMenu & menu, bool wait){
         text++;
     }
     wrefresh(menu_win);
-    int keypress;
+    int keypress = 0;
     int choice = 0;
     if(wait) {
         posY++;
@@ -54,7 +54,7 @@ int newMenu(const CMenu & menu, bool wait){
             else
                 choice %= (int)menu._options.size();
         } else if (keypress == KEY_DOWN) {
-            choice = (choice + 1) % menu._options.size();
+            choice = (choice + 1) % (int)menu._options.size();
         } else if (keypress == KEY_DC) {
             break;
         }

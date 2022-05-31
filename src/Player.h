@@ -23,12 +23,12 @@ public:
     bool emptyAttackerQueue();
     void setCoins(int coins);
     void clearAttackers();
-    int getCoins();
+    int getCoins() const;
     int attackerID;
 protected:
-    int _score;    // score calculated at the end of the game. could be calculated in class CGame
-    int _coins;    // current amount of money player has available to buy attackers
-    Point _spawnLane;
+    int _score{};    // score calculated at the end of the game. could be calculated in class CGame
+    int _coins{};    // current amount of money player has available to buy attackers
+    Point _spawnLane{};
     std::string attackerType;
     Map* _map = nullptr;
     defEntity _def; // definitions of towers loaded from file

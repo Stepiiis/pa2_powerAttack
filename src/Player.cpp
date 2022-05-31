@@ -1,7 +1,9 @@
 #include "Player.h"
+
+#include <utility>
 Player::Player(Map* map,defEntity def)
 {
-    _def = def;
+    _def = std::move(def);
     _map = map;
     _spawnLane._x=-10;
     _spawnLane._y=-10;
@@ -18,7 +20,7 @@ void Player::setLane(int lane) {
 void Player::setCoins(int coins){
     _coins = coins;
 }
-int Player::getCoins(){
+int Player::getCoins() const{
     return _coins;  
 }
 
@@ -55,6 +57,9 @@ void Player::setAttackerType(int type) {
             break;
         case 2:
             attackerType = CHARGERA;
+            break;
+        default:
+            attackerType = BASICA; // redundant
             break;
     }
 }

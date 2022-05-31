@@ -6,6 +6,9 @@
 #include <memory>
 #include <vector>
 #include <ncurses.h>
+#include "Map.h"
+#include "constants.h"
+#include <random>
 
 // handler of building and attacking of towers
 class Enemy{
@@ -16,7 +19,7 @@ public:
     void findEmptySpaces(); // finds empty spaces where towers can be built
     void createTowers(); // creates towers according to the difficulty chosen
     void printTowers(); // prints all created towers onto the map
-    int getTowerCount(); // returns the number of towers
+    size_t getTowerCount(); // returns the number of towers
 protected:
     Map* _map;
     std::vector<std::unique_ptr<Tower> > _towers;

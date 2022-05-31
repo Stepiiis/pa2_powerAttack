@@ -3,6 +3,7 @@
 #include "Map.h"
 #include <iostream>
 #include <memory>
+#include "ncurses.h"
 
 class Map;
 
@@ -42,7 +43,7 @@ protected:
 
     int m_y;       // -//- y
 
-    char m_symbol;    // symbol identifikující typ entity
+    char m_symbol{};    // symbol identifikující typ entity
 
     size_t m_id;    // identifikator dane postavy
 
@@ -53,9 +54,9 @@ protected:
     Map* m_sharedMap;   // pointer na sdilenou mapu.
                         // Mapa vždy přežije všechny entity.
 
-    Entity* currentFocus; // pointer to an entity that we are currently attacking
+    Entity* currentFocus = nullptr; // pointer to an entity that we are currently attacking
 
-    int m_speed;
+    int m_speed{};
 
-    int m_radius;
+    int m_radius{};
 };

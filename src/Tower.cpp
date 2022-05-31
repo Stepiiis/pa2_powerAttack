@@ -1,6 +1,6 @@
-#pragma once
+
 #include "Tower.h"
-#include "exceptions.h"
+
 
 Tower::Tower(int x, int y, int hp, Map* map, int towerID)
 : Entity(x,y, hp, map, towerID)

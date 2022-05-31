@@ -1,30 +1,23 @@
 #include "Game.h"
-#include <ncurses.h>
-#include <iostream>
-#include <memory>
-#include <sys/ioctl.h>
-#include <experimental/filesystem>
-#include "Definitions.h"
-#include "Menu.h"
 
 
-CGame::~CGame(){
+CGame::~CGame() {
     delete _player;
     delete _tower_manager;
     delwin(_game_window); // zavreni okna s hrou
     endwin(); // dealoc pameti a zavreni ncurses
 }
 
-bool CGame::start(){
-    _gameMap.redrawMap();   
+bool CGame::start() {
+    _gameMap.redrawMap();
     drawTowers();
     drawAttackerDefs();
-    if(resume())
+    if (resume())
         return true;
     return false;
 }
 
-bool CGame::initializeWindow(){
+bool CGame::initializeWindow() {
     refresh();
     keypad(_game_window, TRUE);
     box(_game_window, 0, 0);
@@ -34,87 +27,81 @@ bool CGame::initializeWindow(){
 
 // prevzato ze StackOverflow
 // https://stackoverflow.com/questions/421860/capture-characters-from-standard-input-without-waiting-for-enter-to-be-pressed/67363091#67363091
-int kbhit(){
+int kbhit() {
     static int nbbytes;
     ioctl(0, FIONREAD, &nbbytes);
     return nbbytes;
 }
 // konec prevzateho
 
-bool CGame::resume()
-{
+bool CGame::resume() {
     int input;
     _player->setCoins(2500);
-    while(true){
+    while (true) {
 //        if(kbhit())
-        if(_player->getCoins() <= 0){
+        if (_player->getCoins() <= 0) {
             return false; // GAME OVER, LET THE ATTACKERS FINISH/DIE
         }
         drawCurrentMoney();
-        wtimeout(_game_window,1000);
+        wtimeout(_game_window, 1000);
         input = wgetch(_game_window);
-        if(input != ERR)
-            mvprintw(0,0,"%c", input);
-        if(input == 'q'){
-            // TODO: BRING UP PAUSE MENU
-            if(pauseMenu()) {
+        if (input != ERR)
+            mvprintw(0, 0, "%c", input);
+        if (input == 'q') {
+            if (pauseMenu()) {
                 touchwin(_game_window);
-//                _gameMap.redrawMap();
-//                redrawTowers();
-//                drawAttackerDefs();
                 continue;
-            }else
+            } else
                 return false;
         }
 
-        if(input >= '0' && input <= '9')// CHOICES OF INPUT LANES, can be 0-9 (currently using 3)
-            _player->setLane(input-49);
-        if(input == 'a') // choices of attacker to spawn
+        if (input >= '0' && input <= '9')// CHOICES OF INPUT LANES, can be 0-9 (currently using 3)
+            _player->setLane(input - 49);
+        if (input == 'a') // choices of attacker to spawn
         {
             highlightAttacker(0);
             _player->setAttackerType(0);
         }
-        if(input == 's')
-        {
+        if (input == 's') {
             highlightAttacker(1);
             _player->setAttackerType(1);
         }
-        if(input == 'd')
-        {
+        if (input == 'd') {
             highlightAttacker(2);
             _player->setAttackerType(2);
         }
-        if(input == ' ')
-        {
+        if (input == ' ') {
             _player->addAttackerToQueue();
         }
-        if(!_player->emptyAttackerQueue())
+        if (!_player->emptyAttackerQueue())
             _player->spawnAttacker();
-        if(!_player->emptyAttackers())
+        // first figure out the route for attackers
+        // then add them to ncurses window buffer
+        if (!_player->emptyAttackers())
             _player->moveAttackers();
 //        wtimeout(_game_window,50);
 //        wgetch(_game_window);
         wrefresh(_game_window);
-        // first figure out the route for attackers
-        // then add them to ncurses window buffer
         // refresh screen at the end !!!
+
         // perform attacks from attackers (we will make it easier for the player)
         // perform attacks from towers
+        if (_tower_manager->getTowerCount() == 0)
+            break;
     }
     return true; // GAME WON
 }
 
 
-
-bool CGame::load(int level){
-    if(_gameMap.readMap(level)){
+bool CGame::load(int level) {
+    if (_gameMap.readMap(level)) {
         return true;
     }
     return false;
 }
 
-void CGame::drawTowers(){
-    if(_tower_manager->getTowerCount() != 0) {
+void CGame::drawTowers() {
+    if (_tower_manager->getTowerCount() != 0) {
         _tower_manager->clearTowers();
     }
     _tower_manager->findEmptySpaces();
@@ -122,18 +109,21 @@ void CGame::drawTowers(){
     _tower_manager->printTowers();
     wrefresh(_game_window);
 }
-void CGame::redrawTowers(){
-    if(_tower_manager->getTowerCount() != 0) {
+
+void CGame::redrawTowers() {
+    if (_tower_manager->getTowerCount() != 0) {
         _tower_manager->clearTowers();
     }
     _tower_manager->printTowers();
     wrefresh(_game_window);
 }
-bool CGame::save(){
+
+bool CGame::save() {
     //
-    throw(notImplementedException("save"));
+    throw (notImplementedException("save"));
 }
-bool CGame::loadFromSave(std::string path){
+
+bool CGame::loadFromSave(const std::string &path) {
     // delete all towers and players
     _player->clearAttackers();
     _tower_manager->clearTowers();
@@ -147,16 +137,16 @@ bool CGame::loadFromSave(std::string path){
     // delete the definitions and load them again
     // set the game score to the one specified in the save file
 
-    throw(notImplementedException("loadFromSave"));
+    throw (notImplementedException("loadFromSave"));
     return true;
 }
-bool CGame::exit(){
-    throw(notImplementedException("exit"));
+
+bool CGame::exit() {
+    throw (notImplementedException("exit"));
 }
 
 
-
-void hell(){
+void hell() {
     attron(A_STANDOUT);
     printw("welcome to hell");
     attroff(A_STANDOUT);
@@ -164,104 +154,102 @@ void hell(){
 
 
 void CGame::highlightAttacker(int type) {
-    int top = _gameMap.m_map.size() + 2 ;
+    int top = (int) _gameMap.m_map.size() + 2;
     int defaultTop = top;
     int left = 2;
     int i = 0;
-    for(const auto & ent: _definitions.getAttacker())
-    {
-        if(i == type)
-            wattron(_game_window,A_STANDOUT);
-        mvwprintw(_game_window,top,left,"%s",ent.first.c_str());
+    for (const auto &ent: _definitions.getAttacker()) {
+        if (i == type)
+            wattron(_game_window, A_STANDOUT);
+        mvwprintw(_game_window, top, left, "%s", ent.first.c_str());
         top++;
-        for(auto & hodnoty: ent.second){
+        for (auto &hodnoty: ent.second) {
             top++;
-            if(hodnoty.first == "symbol") {
-                mvwprintw(_game_window,top,left,"%s : %c",hodnoty.first.c_str(), hodnoty.second);
+            if (hodnoty.first == "symbol") {
+                mvwprintw(_game_window, top, left, "%s : %c", hodnoty.first.c_str(), hodnoty.second);
                 continue;
             }
-            mvwprintw(_game_window,top,left,"%s : %d",hodnoty.first.c_str(), hodnoty.second);
+            mvwprintw(_game_window, top, left, "%s : %d", hodnoty.first.c_str(), hodnoty.second);
         }
-        top=defaultTop;
-        left += ent.first.length()+4;
-        if(i == type)
-                wattroff(_game_window,A_STANDOUT);
+        top = defaultTop;
+        left += (int) ent.first.length() + 4;
+        if (i == type)
+            wattroff(_game_window, A_STANDOUT);
         i++;
     }
     wrefresh(_game_window);
 }
 
 void CGame::drawAttackerDefs() {
-    int top = _gameMap.m_map.size() + 2 ;
+    int top = (int) _gameMap.m_map.size() + 2;
     int defaultTop = top;
     int left = 2;
 
-    for(const auto & ent: _definitions.getAttacker())
-    {
-        mvwprintw(_game_window,top,left,"%s",ent.first.c_str());
+    for (const auto &ent: _definitions.getAttacker()) {
+        mvwprintw(_game_window, top, left, "%s", ent.first.c_str());
         top++;
-        for(auto & hodnoty: ent.second){
+        for (auto &hodnoty: ent.second) {
             top++;
-            if(hodnoty.first == "symbol") {
-                mvwprintw(_game_window,top,left,"%s : %c",hodnoty.first.c_str(), hodnoty.second);
+            if (hodnoty.first == "symbol") {
+                mvwprintw(_game_window, top, left, "%s : %c", hodnoty.first.c_str(), hodnoty.second);
                 continue;
             }
-            mvwprintw(_game_window,top,left,"%s : %d",hodnoty.first.c_str(), hodnoty.second);
+            mvwprintw(_game_window, top, left, "%s : %d", hodnoty.first.c_str(), hodnoty.second);
         }
-        top=defaultTop;
-        left += ent.first.length()+4;
+        top = defaultTop;
+        left += (int) ent.first.length() + 4;
     }
     wrefresh(_game_window);
 }
+
 // display the stats of the game and return to main menu
-bool CGame::gameEnd(const char * msg) {
+bool CGame::gameEnd(const char *msg) {
     wclear(_game_window);
-    _score = (towers_destroyed*200
-            + _player->getCoins()*100)* _difficulty ;
-    mvwprintw(_game_window,0,0,"Game Over!");
-    mvwprintw(_game_window,1,0,msg);
-    mvwprintw(_game_window,2,0,"Your score: %d",_score);
-    mvwprintw(_game_window,3,0,"Press 'q' to quit");
-    mvwprintw(_game_window,4,0,"Press 'm' to return to menu");
+    _score = (towers_destroyed * 200
+              + _player->getCoins() * 100) * _difficulty;
+    mvwprintw(_game_window, 0, 0, "Game Over!");
+    mvwprintw(_game_window, 1, 0, msg);
+    mvwprintw(_game_window, 2, 0, "Your score: %d", _score);
+    mvwprintw(_game_window, 3, 0, "Press 'q' to quit");
+    mvwprintw(_game_window, 4, 0, "Press 'm' to return to menu");
     wrefresh(_game_window);
     int ch;
-    while(true)
-    {
+    while (true) {
         ch = wgetch(_game_window);
-        if(ch == 'q') {
+        if (ch == 'q') {
             return false;
         }
-        if(ch == 'm')
+        if (ch == 'm')
             return true;
     }
 }
 
-bool CGame::init(int level,  int difficulty, const char * pathToSave ) {
+bool CGame::init(int level, int difficulty, const char *pathToSave) {
     _difficulty = difficulty;
-    if(_definitions.getTower().size() == 0)
+    if (_definitions.getTower().empty())
         _definitions.loadDefinitions();
     terminal term;
     int winheight = 25;
     int winwidth = 75;
     getmaxyx(stdscr, term.height, term.width); // zjisteni velikosti obrazovky
     int starty = (term.height - winheight) / 2; // vypocet pozice mapy
-    int startx = (term.width - winwidth )/ 2; // vypocet pozice mapy
+    int startx = (term.width - winwidth) / 2; // vypocet pozice mapy
     _game_window = newwin(winheight, winwidth, starty, startx);
     _gameMap.setWindow(_game_window);
     initializeWindow();
-    if(level == 0){
+    if (level == 0) {
         loadFromSave(pathToSave);
     } else {
-        if(_gameMap.m_map.empty())
+        if (_gameMap.m_map.empty())
             load(level);
     }
 
-    if(_player == nullptr)
+    if (_player == nullptr)
         _player = new Player(&_gameMap, _definitions.getAttacker());
     else
         _player->clearAttackers();
-    if(_tower_manager == nullptr)
-        _tower_manager = new Enemy(&_gameMap,_definitions.getTower(), _difficulty);
+    if (_tower_manager == nullptr)
+        _tower_manager = new Enemy(&_gameMap, _definitions.getTower(), _difficulty);
     else
         _tower_manager->clearTowers();
     return true;
@@ -273,20 +261,20 @@ bool CGame::play() {
     cbreak(); // ctrlc se neukonci program
 
 
-    while(true) {
+    while (true) {
         int choice = mainMenu();
 
         if (choice == 0) { // choice is new game
             //new game
-            if(!this->init(1 ,1))
+            if (!this->init(1, 1))
                 throw logException("Game init failed");
             if (!this->start()) {
-                if(this->gameEnd("You lost!"))
+                if (this->gameEnd("You lost!"))
                     continue;
                 else
                     return EXIT_FAILURE;
             } else {
-                if(this->gameEnd("You won!"))
+                if (this->gameEnd("You won!"))
                     continue;
                 else
                     return EXIT_FAILURE;
@@ -299,14 +287,14 @@ bool CGame::play() {
                 save = saves[choice];
             } else save = "";
 
-            this->init(1,1,save.c_str());
+            this->init(1, 1, save.c_str());
             if (!this->start()) {
-                if(this->gameEnd("You lost!"))
+                if (this->gameEnd("You lost!"))
                     continue;
                 else
                     return EXIT_FAILURE;
             } else {
-                if(this->gameEnd("You won!"))
+                if (this->gameEnd("You won!"))
                     continue;
                 else
                     return EXIT_FAILURE;
@@ -320,13 +308,13 @@ bool CGame::play() {
     return EXIT_SUCCESS;
 }
 
-bool CGame::pauseMenu(const char * msg) {
-    CMenu pauseMenu({"GAME PAUSED",msg}, {"Resume", "Save and resume", "Exit"});
+bool CGame::pauseMenu(const char *msg) {
+    CMenu pauseMenu({"GAME PAUSED", msg}, {"Resume", "Save and resume", "Exit"});
     int choice = newMenu(pauseMenu);
     if (choice == 0) { // resume game
         return true;
     } else if (choice == 1) {
-        if(!save())
+        if (!save())
             return this->pauseMenu("Save failed, try again.");
         return true; // game saved and resumed
     } else if (choice == 2) {
@@ -337,7 +325,7 @@ bool CGame::pauseMenu(const char * msg) {
 
 void CGame::drawCurrentMoney() {
     std::stringstream ss;
-    ss << "Money: " << _player->getCoins()<<" ";
+    ss << "Money: " << _player->getCoins() << " ";
     int width = _gameMap.getMapWidth();
     mvwprintw(_game_window, 2, width + 2, ss.str().c_str());
 }

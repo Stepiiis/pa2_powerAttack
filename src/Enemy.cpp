@@ -1,9 +1,6 @@
 
 #include "Enemy.h"
-#include "Map.h"
-#include "constants.h"
-#include "Definitions.h"
-#include <random>
+
 
 Enemy::Enemy(Map * map,defEntity def, int dif)
 : _def(std::move(def)), _difficulty(dif)
@@ -32,14 +29,14 @@ void Enemy::createTowers(){
     std::mt19937 rng(rds());
     if(_difficulty == 1) {
         for (int i = 0; i < nrTowers; i++) {
-            int x = rng() % MAP_WIDTH;
-            int y = rng() % MAP_HEIGHT;
+            int x = (int)rng() % MAP_WIDTH;
+            int y = (int)rng() % MAP_HEIGHT;
             if (_map->m_map[y][x]._type == Point::Empty) {
                 if (x <= MAP_WIDTH - 1 && x >= 0 && y <= MAP_HEIGHT - 1 && y >= 0) {
                     if(_map->checkNeighbours(x,y)){
                         _towers.emplace_back(new basicTower(x, y, _def["basicTower"]["hp"], _map, _towerIDcnt++));
                         _emptySpaces[y][x] = 'T';
-                        _map->updateCell(x,y,Point::Tower,_def["basicTower"]["symbol"]);
+                        _map->updateCell(x,y,Point::Tower,(char)_def["basicTower"]["symbol"]);
                     }else{
                         i--;
                         continue;
@@ -67,6 +64,6 @@ void Enemy::printTowers(){
     }
 //    getch();
 }
-int Enemy::getTowerCount(){
+size_t Enemy::getTowerCount(){
     return _towers.size();
 }

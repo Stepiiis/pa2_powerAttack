@@ -7,6 +7,9 @@
 #include <queue>
 #include <deque>
 #include "Map.h"
+#include "Entity.h"
+#include "exceptions.h"
+#include "Definitions.h"
 
 
 class Attacker: public Entity
@@ -32,7 +35,7 @@ protected:
     void popPath();
     Point getNextPoint();
     std::deque<Point> m_path;
-    int cycleCnt;
+    int cycleCnt{};
 };
 
 // symbol $
