@@ -4,7 +4,7 @@ Váš engine:
 
 ze souboru nahraje definici ÚTOČNÍKŮ (jméno, životy, rychlost, útok, odolnost na určitý typ věže ...)
 ze souboru nahraje možné mapy a typy obranných věží (životy, rychlost, dosah, útok, odolnost na určitý typ útočníka,...)
-implementuje jednoduchou interakci věž vs. útočníci (útok, proběhnutí, ...), počitadlo skóre, detekci vítězství (po nezabití x útočníků)
+implementuje jednoduchou interakci věž vs. útočníci (útok, proběhnutí, ...), počitadlo skóre, detekci vítězství (po nezabití _x útočníků)
 implementuje jednoduchou AI řídící rozmisťování věží
 umožňuje ukládat a načítat rozehrané hry
 Engine může fungovat jako real-time hra, či tahová hra.

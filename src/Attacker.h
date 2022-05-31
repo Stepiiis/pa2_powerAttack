@@ -21,8 +21,9 @@ public:
     bool checkRadius() override;
     void setPosition(int x, int y);
     void place(int x, int y);
-    virtual void moveOnPath() = 0;
-    virtual bool isTarget(const Point& p) const =0;
+    virtual bool moveOnPath() = 0;
+    virtual bool isTarget(const Point& p) const = 0;
+    Point::PointType getType() override;
     bool findShortestPath();
 // que that is updated everytime findPath is called
 
@@ -43,7 +44,7 @@ public:
     char getSymbol() override;
     bool checkRadius() override;
     bool isTarget(const Point& p) const override;
-    void moveOnPath() override;
+    bool moveOnPath() override;
 };
 
 
@@ -58,7 +59,7 @@ public:
     char getSymbol() override;
     bool checkRadius() override;
     bool isTarget(const Point& p) const override;
-    void moveOnPath() override;
+    bool moveOnPath() override;
 };
 
 // symbol @
@@ -72,5 +73,5 @@ public:
     char getSymbol() override;
     bool checkRadius() override;
     bool isTarget(const Point& p) const override;
-    void moveOnPath() override;
+    bool moveOnPath() override;
 };

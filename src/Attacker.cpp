@@ -27,11 +27,11 @@ char inline Attacker::getSymbol()
     return m_symbol;
 }
 
-//    bool Attacker::move (int x, int y)
+//    bool Attacker::move (int _x, int y)
 //    {
-//        if(x+y < 0 || m_x+x > MAP_HEIGHT || m_y+y > MAP_WIDTH)
+//        if(_x+y < 0 || m_x+_x > MAP_HEIGHT || m_y+y > MAP_WIDTH)
 //            return false;
-//        m_x += x;
+//        m_x += _x;
 //        m_y += y;
 //        return true;
 //    }
@@ -59,8 +59,8 @@ bool Attacker::operator>(Attacker &rhs) {
 bool Attacker::findShortestPath(){
     m_path.clear();
 //    using Type = Point::PointType;
-     Point start = Point(m_x,m_y);
-     Point target = Point(-10,-10);
+     Point start = Point(m_x,m_y, '<');
+     Point target = Point(-10,-10, '>'); // dummy point used to determine if we found a target
      std::map<Point, Point> visited;
      std::deque<Point> q;
      Point current;
@@ -72,7 +72,7 @@ bool Attacker::findShortestPath(){
 
         m_sharedMap->forEachNeighbor(current , [&](const Point& neighbor)
         {
-            if(neighbor == current || neighbor.type==Point::Entry || neighbor.type == Point::Attacker || neighbor.type==Point::Wall || neighbor.type == Point::Tower || visited.count(neighbor) != 0 )
+            if(neighbor == current || neighbor._type == Point::Entry || neighbor._type == Point::Attacker || neighbor._type == Point::Wall || neighbor._type == Point::Tower || visited.count(neighbor) != 0 )
                 return;
             visited.emplace(neighbor, current);
             q.push_back(neighbor);
@@ -84,13 +84,14 @@ bool Attacker::findShortestPath(){
         });
      }
 
-     if(target.x == -10)
+     if(target._x == -10)
          return false;
      m_path.push_back(target);
      while(target != start){
          target = visited[target];
          m_path.push_front(target);
      }
+     m_path.pop_front();
      return true;
 }
 
@@ -101,9 +102,14 @@ void Attacker::popPath() {
 
 Point Attacker::getNextPoint() {
     popPath();
-    Point temp = m_path.front();
-    popPath();
+    if(m_path.empty())
+        return {-10,-10};
+    Point& temp = m_path.front();
     return temp;
+}
+
+Point::PointType Attacker::getType() {
+    return Point::Attacker;
 }
 
 Attacker::~Attacker() = default;
@@ -113,18 +119,22 @@ bool basicAttacker::checkRadius(){
 }
 
 bool basicAttacker::isTarget(const Point &p) const{
-    return p.type == Point::Exit;
+    return p._type == Point::Exit;
 }
 
-void basicAttacker::moveOnPath() {
+bool basicAttacker::moveOnPath() {
     if(m_path.empty())
-        return;
+        return false;
     cycleCnt++;
 //    if(cycleCnt % CDefinitions::_attackerDefinitions.at(BASICA).at("mov")== 0)
 //    {
-        Point next = getNextPoint();
-        if(!m_sharedMap->updateMap(m_x,m_y,next.x,next.y,this))
-            return;
+        Point next = m_path.front();
+        m_path.pop_front();
+        if(next._type == Point::Exit)
+            return false;
+        if(!m_sharedMap->updateMap(next._x, next._y, this))
+            return false;
+        return true;
 //    }
 }
 
@@ -141,10 +151,10 @@ bool fastAttacker::checkRadius() {
 }
 
 bool fastAttacker::isTarget(const Point &p) const {
-    return p.type == Point::Exit;
+    return p._type == Point::Exit;
 }
 
-void fastAttacker::moveOnPath() {
+bool fastAttacker::moveOnPath() {
     throw(notImplementedException("fastAttacker moveOnPath"));
 }
 
@@ -163,9 +173,9 @@ bool chargerAttacker::checkRadius() {
 
 // returns true if the point is a tower
 bool chargerAttacker::isTarget(const Point &p) const {
-    return p.type == Point::Tower || p.type == Point::Exit;
+    return p._type == Point::Tower || p._type == Point::Exit;
 }
 
-void chargerAttacker::moveOnPath() {
+bool chargerAttacker::moveOnPath() {
     throw(notImplementedException("chargerAttacker moveOnPath"));
 }

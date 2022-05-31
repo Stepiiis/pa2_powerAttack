@@ -8,6 +8,7 @@ public:
     Tower(int x, int y, int hp, Map* map,int towerID);
     char getSymbol() override;
     bool checkRadius() override;
+    Point::PointType getType() override;
 };
 
 // základní věž se symbolem T

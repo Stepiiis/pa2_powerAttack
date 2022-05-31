@@ -9,71 +9,76 @@
 #include <complex>
 
 Point::Point(int x, int y, char symbol)
-        : x(x), y(y), m_symbol(symbol)
+        : _x(x), _y(y), _symbol(symbol), _defaultSymbol(symbol)
 {
     switch (symbol) {
         case '#':
-            type = Wall;
+            _type = Wall;
             break;
         case ' ':
-            type = Empty;
+            _type = Empty;
             break;
         case '@':
-            type = Attacker;
+            _type = Attacker;
             break;
         case 'I':
-            type = Tower;
+            _type = Tower;
             break;
         case '<':
-            type = Entry;
+            _type = Entry;
             break;
         case '>':
-            type = Exit;
+            _type = Exit;
             break;
     }
-    IDent = 0;
+    _defaultType = _type;
+    _IDent = 0;
 }
 // helper constructor for ForEachNeighbour function
 Point::Point(int x, int y) {
-    this->x = x;
-    this->y = y;
-    type = Empty;
-    m_symbol = ' ';
-    IDent = 0;
+    this->_x = x;
+    this->_y = y;
+    _type = Empty;
+    _symbol = ' ';
+    _IDent = 0;
 
 }
 
 bool Point::operator<(const Point &rhs) const {
-    return std::tie(x, y) < std::tie(rhs.x, rhs.y);
+    return std::tie(_x, _y) < std::tie(rhs._x, rhs._y);
 }
 
 bool Point::operator!=(const Point &rhs) const {
-    return x != rhs.x || y != rhs.y;
+    return _x != rhs._x || _y != rhs._y;
 }
 
 bool Point::operator==(const Point&rhs) const {
-    return x == rhs.x && y == rhs.y;
+    return _x == rhs._x && _y == rhs._y;
 }
 
 Point::Point(const Point & src) {
-    x=src.x;
-    y=src.y;
-    type=src.type;
-    m_symbol=src.m_symbol;
-    IDent=src.IDent;
+    _x=src._x;
+    _y=src._y;
+    _type=src._type;
+    _defaultType=src._defaultType;
+    _symbol = src._symbol;
+    _defaultSymbol = src._defaultSymbol;
+    _IDent=src._IDent;
 }
 
 Point &Point::operator=(const Point &rhs) {
-    x=rhs.x;
-    y=rhs.y;
-    type=rhs.type;
-    m_symbol=rhs.m_symbol;
-    IDent=rhs.IDent;
+    _x=rhs._x;
+    _y=rhs._y;
+    _type=rhs._type;
+    _defaultType=rhs._defaultType;
+    _symbol = rhs._symbol;
+    _defaultSymbol = rhs._defaultSymbol;
+    _IDent=rhs._IDent;
     return *this;
 }
 
 Point::Point(int x, int y, PointType type)
-: x(x), y(y), type(type)
+: _x(x), _y(y), _type(type)
 {
 }
 
@@ -83,35 +88,40 @@ Point::Point(int x, int y, PointType type)
 
 /**
  * @brief Map::updateMap
- * @param prevX  previous x position which will be filled with empty space
+ * @param prevX  previous _x position which will be filled with empty space
  * @param prevY  previous y position which will be filled with empty space
- * @param x      new x position to move entity to
+ * @param x      new _x position to move entity to
  * @param y      new y position to move entity to
- * @param entity entity to move
+ * @param entity entity to be moved
  */
-bool Map::updateMap(int prevX, int prevY, int x, int y, Entity * entity)
+bool Map::updateMap( int x, int y, Entity * entity)
 {
     if(y>m_map.size() || (y<0) || (x>m_map[0].size()) || (x<0))
     {
         throw(mapException("Out of bounds"));
     }
-    m_map[prevY][prevX].m_symbol= ' ';
-    m_map[prevY][prevX].IDent=0;
-    mvwprintw(m_game_window,prevY+1,prevX+1,"%c",' ');
+    auto prev = entity->getPosition();
+    m_map[prev.second][prev.first]._symbol = m_map[prev.second][prev.first]._defaultSymbol;
+    m_map[prev.second][prev.first]._type = m_map[prev.second][prev.first]._defaultType;
+    m_map[prev.second][prev.first]._IDent=0;
+    mvwprintw(m_game_window,prev.second+1,prev.first+1,"%c",m_map[prev.second][prev.first]._defaultSymbol);
     char symbol = entity->getSymbol();
     entity->move(x,y);
-    m_map[y][x] = Point(x,y,symbol);
-    m_map[y][x].IDent = entity->getID();
+    m_map[y][x]._type = entity->getType();
+    m_map[y][x]._symbol = symbol;
+    m_map[y][x]._IDent = entity->getID();
     mvwprintw(m_game_window,y+1,x+1,"%c",symbol);
     return true;
 }
 
-bool Map::updateEntity(int x, int y, Entity * entity){
+bool Map::setEntity(int x, int y, Entity * entity){
     if(y>m_map.size() || (y<0) || (x>m_map[0].size()) || (x<0))
     {
         throw(mapException("Out of bounds"));
     }
-    m_map[y][x] = Point(x,y,entity->getSymbol());
+    m_map[y][x]._type = entity->getType();
+    m_map[y][x]._symbol = entity->getSymbol();
+    m_map[y][x]._IDent = entity->getID();
     entity->move(x,y);
     mvwprintw(m_game_window,y+1,x+1,"%c",entity->getSymbol());
     return true;
@@ -150,9 +160,9 @@ bool Map::readMap(int level) {
         if(line.length() > 0) {
             m_map[y].reserve(100);
             for(size_t x = 0; x<=line.length(); x++) {
-                    mapLines.emplace_back(x,y,line[x]);
+                mapLines.emplace_back(x,y,line[x]);
             }
-            m_map.push_back(mapLines);
+            m_map.emplace_back(mapLines);
             mapLines.clear();
             y++;
         }
@@ -170,19 +180,25 @@ bool Map::readMap(int level) {
 void Map::printMap(){
     for( auto& line : m_map) {
         for ( auto & point: line) {
-            mvwprintw(m_game_window, point.y+1, point.x+1, "%c", point.m_symbol);
-            if(point.x == 0 || point.x == 1){
-                if(point.m_symbol == '<'){
+            mvwprintw(m_game_window, point._y + 1, point._x + 1, "%c", point._symbol);
+            if(point._x == 0 || point._x == 1){
+                if(point._symbol == '<'){
                     m_exit = point;
-                    point.type = Point::Exit;
-                }else if(point.m_symbol == '='){
-                    point.type = Point::Exit;
+                    point._type = Point::Exit;
+                    point._defaultType = Point::Exit;
+                }else if(point._symbol == '='){
+                    point._type = Point::Exit;
+                    point._defaultType = Point::Exit;
                 }
             }
-            else if(point.x == line.back().x-3) {
-                if(point.m_symbol == '<'){
-                    m_entries.emplace_back(point.x,point.y,point.m_symbol);
-                    point.type = Point::Entry;
+            else if(point._x == line.back()._x - 3 || point._x == line.back()._x - 2){
+                if(point._symbol == '<'){
+                    m_entries.emplace_back(point._x, point._y, point._symbol);
+                    point._type = Point::Entry;
+                    point._defaultType = Point::Entry;
+                }else if(point._symbol == '='){
+                    point._type = Point::Entry;
+                    point._defaultType = Point::Entry;
                 }
             }
         }
@@ -201,15 +217,15 @@ void Map::highlightLane(int lanenr){
     for(int i = 0; i<m_entries.size(); i++){
         if(i==lanenr){
             wattron(m_game_window, style);
-            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+1,"%c",'<');
-            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+2,"%c",'=');
-            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+3,"%d",i+1);
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 1, "%c", '<');
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 2, "%c", '=');
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 3, "%d", i + 1);
             wattroff(m_game_window, style);
             wrefresh(m_game_window);
         }else{
-            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+1,"%c",'<');
-            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+2,"%c",'=');
-            mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+3,"%d",i+1);
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 1, "%c", '<');
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 2, "%c", '=');
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 3, "%d", i + 1);
             wrefresh(m_game_window);
         }
     }
@@ -217,9 +233,9 @@ void Map::highlightLane(int lanenr){
 
 void Map::drawLanes(){
     for(int i = 0; i<m_entries.size(); i++){
-        mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+1,"%c",'<');
-        mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+2,"%c",'=');
-        mvwprintw(m_game_window,m_entries[i].y+1,m_entries[i].x+3,"%d",i+1);
+        mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 1, "%c", '<');
+        mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 2, "%c", '=');
+        mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 3, "%d", i + 1);
         wrefresh(m_game_window);
     }
 }
@@ -230,7 +246,7 @@ std::vector<char> lines;
     for(int row = 0; row<m_map.size(); row++) {
         lines.clear();
         for(int col = 0; col<m_map[row].size(); col++) {
-            if(m_map[row][col].m_symbol != ' ') {
+            if(m_map[row][col]._symbol != ' ') {
                 lines.emplace_back('#');
             }else{
                 lines.emplace_back(' ');
@@ -244,7 +260,7 @@ std::vector<char> lines;
 void Map::convertMap() {
     for(int row = 0; row<m_map.size(); row++) {
         for(int col = 0; col<m_map[row].size(); col++) {
-            m_mapString.push_back(m_map[row][col].m_symbol);
+            m_mapString.push_back(m_map[row][col]._symbol);
         }
     }
 }
@@ -258,8 +274,8 @@ void Map::redrawMap(){
 
 bool Map::checkNeighbours(int x, int y){
     if(x > 0 && x < MAP_WIDTH - 1 && y > 0 && y < MAP_HEIGHT - 1){
-        if(m_map[y][x - 1].type != Point::Entry && m_map[y][x + 1].type != Point::Entry && m_map[y - 1][x].type != Point::Entry && m_map[y + 1][x].type != Point::Entry){
-            if(m_map[y-1][x - 1].type != Point::Entry && m_map[y-1][x + 1].type != Point::Entry && m_map[y - 1][x+1].type != Point::Entry && m_map[y + 1][x-1].type != Point::Entry){
+        if(m_map[y][x - 1]._type != Point::Entry && m_map[y][x + 1]._type != Point::Entry && m_map[y - 1][x]._type != Point::Entry && m_map[y + 1][x]._type != Point::Entry){
+            if(m_map[y-1][x - 1]._type != Point::Entry && m_map[y - 1][x + 1]._type != Point::Entry && m_map[y - 1][x + 1]._type != Point::Entry && m_map[y + 1][x - 1]._type != Point::Entry){
                 return true;
             }
         }
@@ -274,24 +290,54 @@ void Map::setWindow(WINDOW *win) {
 void Map::forEachNeighborImpl(const Point &p, Map::Callback fun) {
     int x, y;
     for (auto [xd, yd] : { std::pair<int, int>{-1,0}, {0,-1}, {1, 0}, {0, 1} }) {
-        x = p.x + xd;
-        y = p.y + yd;
+        x = p._x + xd;
+        y = p._y + yd;
         if (y < 0 || y >= (int)m_map.size()) continue;
         auto& row = m_map[y];
         if (x < 0 || x >= (int)row.size()) continue;
         fun(m_map[y][x]);
-//        sendToLogFile(0, "currentPoint"+std::to_string(x)+" "+std::to_string(y), "BFS debug");
-//        mvwprintw(m_game_window,y+1,x+1,"%c",'V');
-//        wtimeout(m_game_window,20);
-//        wgetch(m_game_window);
-//        wrefresh(m_game_window);
     }
 }
 
 Point::PointType Map::getType(const Point& p) {
-    return m_map[p.y][p.x].type;
+    return m_map[p._y][p._x]._type;
 }
 
 Point Map::getMapExit() {
     return m_exit;
+}
+
+bool Map::updateCell(int x, int y, Point::PointType type, const char symbol) {
+    if (x < 0 || x >= (int)m_map[y].size()) throw mapException("Invalid _x coordinate: updateCell");
+    if (y < 0 || y >= (int)m_map.size()) throw mapException("Invalid y coordinate: updateCell");
+    m_map[y][x]._type = type;
+    m_map[y][x]._symbol = symbol;
+    mvwprintw(m_game_window,y+1,x+1,"%c",symbol);
+    return true;
+}
+
+bool Map::revertCell(int x, int y) {
+    if (x < 0 || x >= (int)m_map[y].size()) throw mapException("Invalid _x coordinate: updateCell");
+    if (y < 0 || y >= (int)m_map.size()) throw mapException("Invalid y coordinate: updateCell");
+    m_map[y][x]._type = m_map[y][x]._defaultType;
+    m_map[y][x]._symbol = m_map[y][x]._defaultSymbol;
+    mvwprintw(m_game_window,y+1,x+1,"%c",m_map[y][x]._defaultSymbol);
+    return true;
+}
+
+void Map::clearMap() {
+//    for(auto &row : m_map) {
+//       row.clear();
+//    }
+    m_map.clear();
+}
+
+int Map::getMapWidth() {
+    int width = 0;
+    for(auto &row : m_map) {
+        if(row.size() > width) {
+            width = (int)row.size();
+        }
+    }
+    return width;
 }

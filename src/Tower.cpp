@@ -31,5 +31,10 @@ char fastTower::getSymbol(){
 }
 
 bool Tower::checkRadius() { throw notImplementedException("tower checkRadius"); }
+
+Point::PointType Tower::getType() {
+    return Point::Tower;
+}
+
 bool basicTower::checkRadius() { throw notImplementedException("basicTower checkRadius"); }
 bool fastTower::checkRadius() { throw notImplementedException("fastTower checkRadius"); }

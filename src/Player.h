@@ -22,6 +22,7 @@ public:
     bool emptyAttackers();
     bool emptyAttackerQueue();
     void setCoins(int coins);
+    void clearAttackers();
     int getCoins();
     int attackerID;
 protected:
@@ -29,8 +30,8 @@ protected:
     int _coins;    // current amount of money player has available to buy attackers
     Point _spawnLane;
     std::string attackerType;
-    Map* _map;
+    Map* _map = nullptr;
     defEntity _def; // definitions of towers loaded from file
     std::vector< std::unique_ptr<Attacker> > _attackers;
-    std::queue<std::string> _attackersQueue;
+    std::deque<std::string> _attackersQueue;
 };

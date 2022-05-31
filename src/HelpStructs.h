@@ -1,3 +1,4 @@
+#pragma once
 
 struct terminal{
     int height{};

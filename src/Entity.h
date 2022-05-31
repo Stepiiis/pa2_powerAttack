@@ -11,7 +11,7 @@ public:
     virtual ~Entity() = default;
     Entity(int posX, int posY, int maxHealth, Map * map,int attackerID);
 
-    // moves the entity to the given position on screen and updates the shared map structure
+    // moves the entity to the given position on screen, actual showing on screen is handled by Map class
     bool move(int x, int y);
 
     // if the entity is alive, it will take damage and return true, otherwise it will return false
@@ -29,14 +29,16 @@ public:
     int getHP() const;
 
     virtual inline char getSymbol() = 0;
+    virtual Point::PointType getType() = 0;
     virtual bool checkRadius() = 0;
-    int getID()const;
+    size_t getID()const;
+    std::pair<int,int> getPosition()const;
     void setSymbol(char symbol);
 
     bool printEntity(int x, int y);
     bool alive = true;
 protected:
-    int m_x;       // souřadnice x
+    int m_x;       // souřadnice _x
 
     int m_y;       // -//- y
 
@@ -44,9 +46,9 @@ protected:
 
     size_t m_id;    // identifikator dane postavy
 
-    uint32_t m_hp;      // současné zdraví
+    int m_hp;      // současné zdraví
 
-    uint32_t m_maxhp;   // maximální zdraví
+    int m_maxhp;   // maximální zdraví
 
     Map* m_sharedMap;   // pointer na sdilenou mapu.
                         // Mapa vždy přežije všechny entity.

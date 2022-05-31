@@ -2,6 +2,7 @@
 #include <string>
 #include <exception>
 
+// logical exception, should never occur
 class logException : public std::exception {
 public:
     explicit logException(std::string  msg) : _msg(std::move(msg)) {}

@@ -29,10 +29,12 @@ public:
     bool operator==(const Point& rhs) const;
     Point& operator=(const Point& rhs);
 
-    char m_symbol;
-    int x, y;
-    int IDent; // unique identifier for each point (used for combat)
-    PointType type;
+    char _symbol;
+    int _x, _y;
+    size_t _IDent; // unique identifier for each point (used for combat)
+    PointType _type;
+    PointType _defaultType;
+    char _defaultSymbol;
     friend Map;
 };
 
@@ -47,8 +49,10 @@ public:
     void printMap();
     Map() = default;
     // updates map according to the certain entity. its previous position will be printed as its default value
-    bool updateMap(int prevX, int prevY,int x, int y, Entity * entity);
-    bool updateEntity(int x, int y, Entity * entity);
+    bool updateMap(int x, int y, Entity * entity); // used for movement. updates previous position to default value and moves intity to new position specified
+    bool updateCell(int x, int y, Point::PointType type, const char symbol); // updates specific cell
+    bool revertCell(int x, int y);
+    bool setEntity(int x, int y, Entity * entity);
     void redrawMap();
     bool loadNextMap(int level); // pass last map index as parameter
     bool readMap(int level); // pas new map index as parameter
@@ -62,13 +66,14 @@ public:
     void setWindow(WINDOW * win);
     Point getMapExit();
     bool getEmptySpaces(    std::vector<std::vector<char> >& );
-
+    void clearMap();
+    int getMapWidth();
 
     friend Point;
     std::vector<std::vector<Point> > m_map;  // 2D vector of chars
 protected:
     std::string m_mapString; // currently used for debugging and first drawing of the map on screen
-    WINDOW* m_game_window;
+    WINDOW* m_game_window = nullptr;
     Point m_exit;
     std::vector<Point> m_entries;
     using Callback = std::function<void(const Point&)>;

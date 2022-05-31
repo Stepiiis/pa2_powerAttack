@@ -31,15 +31,15 @@ void Enemy::createTowers(){
     std::random_device rds;
     std::mt19937 rng(rds());
     if(_difficulty == 1) {
-        // FIXME: TOWERS are sometimes created but not show up on the map
         for (int i = 0; i < nrTowers; i++) {
             int x = rng() % MAP_WIDTH;
             int y = rng() % MAP_HEIGHT;
-            if (_map->m_map[y][x].type == Point::Empty) {
+            if (_map->m_map[y][x]._type == Point::Empty) {
                 if (x <= MAP_WIDTH - 1 && x >= 0 && y <= MAP_HEIGHT - 1 && y >= 0) {
                     if(_map->checkNeighbours(x,y)){
                         _towers.emplace_back(new basicTower(x, y, _def["basicTower"]["hp"], _map, _towerIDcnt++));
                         _emptySpaces[y][x] = 'T';
+                        _map->updateCell(x,y,Point::Tower,_def["basicTower"]["symbol"]);
                     }else{
                         i--;
                         continue;

@@ -25,19 +25,21 @@ bool Entity::giveDamage(int damage, Entity* target){
     }
 
 bool Entity::destroy() {
-    m_sharedMap->m_map[m_x][m_y].type = Point::Empty;
-    m_sharedMap->m_map[m_x][m_y].m_symbol = ' ';
-
+    m_sharedMap->revertCell(m_x, m_y);
     return true;
 }
 
 int Entity::getHP() const{ return m_hp; }
 
 void Entity::draw(){
-    m_sharedMap->updateEntity( m_x, m_y, this);
+    m_sharedMap->setEntity( m_x, m_y, this);
     m_sharedMap->refreshWindow();
 }
 
-int Entity::getID()const {
+size_t Entity::getID()const {
     return m_id;
+}
+
+std::pair<int, int> Entity::getPosition() const {
+    return {m_x,m_y};
 }
