@@ -30,7 +30,7 @@ run: compile
 	./${LOGIN}
 
 valgrind: compile
-	valgrind ./${LOGIN}
+	valgrind --leak-check=full --show-leak-kinds=all ./${LOGIN}
 
 doc: doc/index.html
 

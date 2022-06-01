@@ -55,27 +55,19 @@ bool Point::operator!=(const Point &rhs) const {
 bool Point::operator==(const Point&rhs) const {
     return _x == rhs._x && _y == rhs._y;
 }
+//
+//Point::Point(const Point & src) {
+//    _x=src._x;
+//    _y=src._y;
+//    _type=src._type;
+//    _defaultType=src._defaultType;
+//    _symbol = src._symbol;
+//    _defaultSymbol = src._defaultSymbol;
+//    _IDent=src._IDent;
+//}
 
-Point::Point(const Point & src) {
-    _x=src._x;
-    _y=src._y;
-    _type=src._type;
-    _defaultType=src._defaultType;
-    _symbol = src._symbol;
-    _defaultSymbol = src._defaultSymbol;
-    _IDent=src._IDent;
-}
-
-Point &Point::operator=(const Point &rhs) {
-    _x=rhs._x;
-    _y=rhs._y;
-    _type=rhs._type;
-    _defaultType=rhs._defaultType;
-    _symbol = rhs._symbol;
-    _defaultSymbol = rhs._defaultSymbol;
-    _IDent=rhs._IDent;
-    return *this;
-}
+//Point &Point::operator=(const Point &rhs);
+//Point &Point::operator=(const Point &rhs);
 
 Point::Point(int x, int y, PointType type)
 : _x(x), _y(y), _type(type)
@@ -138,9 +130,7 @@ void Map::refreshWindow(){
 
 // loads map from data files and sets up the map into a 2D array
 bool Map::readMap(int level) {
-    m_map.erase(m_map.begin(), m_map.end());
-    m_map.reserve(30);
-
+    m_map.clear();
     std::string mapLocation = "data/maps/map" + std::to_string(level) + ".txt";
     std::ifstream mapFile(mapLocation, std::ios::in);
     if(!mapFile.is_open()) {
@@ -158,11 +148,10 @@ bool Map::readMap(int level) {
     int y = 0;
     while(getline(mapFile, line)) {
         if(line.length() > 0) {
-            m_map[y].reserve(100);
             for(size_t x = 0; x<=line.length(); x++) {
                 mapLines.emplace_back(x,y,line[x]);
             }
-            m_map.emplace_back(mapLines);
+            m_map.push_back(mapLines);
             mapLines.clear();
             y++;
         }
@@ -178,6 +167,7 @@ bool Map::readMap(int level) {
 
 // Prints the map to the screen and also checks for inputs and exits from the map
 void Map::printMap(){
+    m_entries.clear();
     for( auto& line : m_map) {
         for ( auto & point: line) {
             mvwprintw(m_game_window, point._y + 1, point._x + 1, "%c", point._symbol);
@@ -288,13 +278,13 @@ void Map::setWindow(WINDOW *win) {
 }
 
 void Map::forEachNeighborImpl(const Point &p, Map::Callback fun) {
-    int x, y;
+    size_t x, y;
     for (auto [xd, yd] : { std::pair<int, int>{-1,0}, {0,-1}, {1, 0}, {0, 1} }) {
         x = p._x + xd;
         y = p._y + yd;
-        if (y < 0 || y >= (int)m_map.size()) continue;
+        if (y < 0 || y >= m_map.size()) continue;
         auto& row = m_map[y];
-        if (x < 0 || x >= (int)row.size()) continue;
+        if (x < 0 || x >= row.size()) continue;
         fun(m_map[y][x]);
     }
 }

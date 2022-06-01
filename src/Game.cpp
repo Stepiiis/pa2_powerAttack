@@ -234,9 +234,11 @@ bool CGame::init(int level, int difficulty, const char *pathToSave) {
     getmaxyx(stdscr, term.height, term.width); // zjisteni velikosti obrazovky
     int starty = (term.height - winheight) / 2; // vypocet pozice mapy
     int startx = (term.width - winwidth) / 2; // vypocet pozice mapy
-    _game_window = newwin(winheight, winwidth, starty, startx);
-    _gameMap.setWindow(_game_window);
-    initializeWindow();
+    if(_game_window == nullptr) {
+        _game_window = newwin(winheight, winwidth, starty, startx);
+        _gameMap.setWindow(_game_window);
+        initializeWindow();
+    }
     if (level == 0) {
         loadFromSave(pathToSave);
     } else {

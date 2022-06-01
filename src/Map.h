@@ -23,11 +23,11 @@ public:
     Point(int x, int y, PointType type);
     Point() = default;
     ~Point() = default;
-    Point(const Point&);
+//    Point(const Point&);
     bool operator<(const Point& rhs) const;
     bool operator!=(const Point& rhs) const;
     bool operator==(const Point& rhs) const;
-    Point& operator=(const Point& rhs);
+    Point& operator=(const Point& rhs) = default;
 
     char _symbol;
     int _x, _y;

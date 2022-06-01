@@ -31,6 +31,7 @@ void Enemy::createTowers(){
         for (int i = 0; i < nrTowers; i++) {
             int x = (int)rng() % MAP_WIDTH;
             int y = (int)rng() % MAP_HEIGHT;
+            if(x<0 || y<0) {i--; continue;}
             if (_map->m_map[y][x]._type == Point::Empty) {
                 if (x <= MAP_WIDTH - 1 && x >= 0 && y <= MAP_HEIGHT - 1 && y >= 0) {
                     if(_map->checkNeighbours(x,y)){

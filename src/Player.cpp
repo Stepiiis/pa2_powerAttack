@@ -10,6 +10,7 @@ Player::Player(Map* map,defEntity def)
     attackerID = 0;
 }
 
+
 void Player::setLane(int lane) {
     if (!_map->getLaneByID(lane, _spawnLane)){
         _spawnLane._x = -10;
