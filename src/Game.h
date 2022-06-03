@@ -34,7 +34,7 @@ protected:
     [[nodiscard]] bool start();
     // saves the game into /data/saves/save_*save_number*.txt specified in menu
     bool save();
-    // loads map from /data/saves/save_*save_number*.txt
+    // loads map from /assets/maps_*map_number*.txt
     bool load(int = 0);
     // loads save from /data/saves/*save_name*
     bool loadFromSave(const std::string& path);

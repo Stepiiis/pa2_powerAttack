@@ -15,7 +15,7 @@ bool CDefinitions::loadDefinitions(){
 
 bool CDefinitions::loadEntity(std::string & path, defEntity & ent){
     ent.clear();
-    std::ifstream fileDef("data/definitions/"+path); // attackers/attackerDefinition.txt
+    std::ifstream fileDef("assets/definitions/"+path); // attackers/attackerDefinition.txt
     if(!fileDef.is_open()) {
         sendToLogFile(10, "Could not open file " + path , "LoadDefinitions");
         return false;

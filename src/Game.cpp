@@ -1,3 +1,4 @@
+#include <cstring>
 #include "Game.h"
 
 
@@ -123,14 +124,112 @@ bool CGame::save() {
     throw (notImplementedException("save"));
 }
 
-bool CGame::loadFromSave(const std::string &path) {
+bool CGame::loadFromSave(const std::string &nameOfSave) {
     // delete all towers and players
-    _player->clearAttackers();
-    _tower_manager->clearTowers();
+    if(_player != nullptr)
+        _player->clearAttackers();
+    if(_tower_manager!= nullptr)
+        _tower_manager->clearTowers();
     // delete the old map and load the map definition provided in the save file
     _gameMap.clearMap();
-    // load the safe file into a respective vectors of of attackers and towers
+    std::stringstream savepath;
+    savepath <<"assets/saves/"<<nameOfSave;
+    std::ifstream savefile(savepath.str(), std::ios::in);
+    std::string fileLine;
+    std::map<std::string,std::vector<std::map<std::string, std::string>>> entities;
+    std::map<std::string,std::string> givenEntity;
+    std::vector<std::map<std::string, std::string>> vectorOfEntities;
+    std::map<std::string, std::string> gameStats;
+    std::string name;
+    std::string value;
+    bool gameReading = false;
+    int lineindex = 0;
+    std::string entType;
+    int indexOfEnt;
+    std::string test;
+    while (getline(savefile, fileLine))
+    {
+        lineindex++;
+        if(fileLine.empty())
+            continue;
+        std::stringstream ss(fileLine);
+        if(!gameReading){
+            name.clear();
+            value.clear();
+            ss >> name;
+            ss >> value;
+            if(value.empty()) {
+                ss.str(std::string());
+                ss << "attribute on line " << lineindex << " in save file " << nameOfSave  <<" is incorrect. " << "name= " << name << " value= " << value;
+                throw syntaxErr(ss.str());
+            }
+            gameStats.emplace(name,value);
+            if(lineindex==5)
+                gameReading = true;
+            continue;
+        }
+        if( fileLine[0] == '#'){
+            if(!givenEntity.empty()) {
+                vectorOfEntities.emplace_back(givenEntity);
+                givenEntity.clear();
+            }
+            if(!vectorOfEntities.empty()) {
+                entities.emplace(entType, vectorOfEntities);
+                vectorOfEntities.clear();
+            }
+            test.clear();
+            ss >> entType; // getting rid of #
+            entType.clear();
+            ss >> entType; // value of type
+            if(entType=="end")
+                break;
+            ss >> test;
+            if(!test.empty() || entType.empty())
+            {
+                ss.str(std::string());
+                ss << "attribute on line " << lineindex << " in save file " << nameOfSave  <<" is incorrect.";
+                throw syntaxErr(ss.str());
+            }
+            continue;
+        }
+        name.clear();
+        value.clear();
+        test.clear();
+        ss >> name;
+        ss >> value;
+        ss >> test;
+        if(!test.empty() || value.empty() || name.empty())
+        {
+            ss.str(std::string());
+            ss << "attribute on line " << lineindex << " in save file " << nameOfSave  <<" is incorrect. "<< "name= " << name << " value= " << value;
+            throw syntaxErr(ss.str());
+        }
+        if(name == "type"){
+            if(!givenEntity.empty()) {
+                vectorOfEntities.emplace_back(givenEntity);
+                givenEntity.clear();
+            }
+        }
+        givenEntity.emplace(name,value);
+    }
 
+    int i{};
+    for(const auto & type: entities){
+        sendToLogFile(0,"loading entities typed "+type.first,"loadFromSave");
+        i = 0;
+        for (const auto & entity: type.second){
+            i++;
+            sendToLogFile(0,"   index "+std::to_string(i), "loadFromSave");
+            for (const auto & attr: entity){
+                sendToLogFile(0,"      attibute "+attr.first+ " valued " + attr.second, "loadFromFile");
+            }
+        }
+    }
+
+
+    // load the safe file into a respective vectors of of attackers and towers
+    _gameMap.readMap();
+    _gameMap.printMap();
     // print the map, towers and attackers on screen and start the game
     // set the game money to the one specified in the save file
     // set the difficulty to the one specified in the save file
@@ -221,7 +320,7 @@ bool CGame::gameEnd(const char *msg) {
     return true;
 }
 
-bool CGame::init(int level, int difficulty, const char *pathToSave) {
+bool CGame::init(int level, int difficulty, const char *nameOfSave) {
     _difficulty = difficulty;
     if (_definitions.getTower().empty())
         _definitions.loadDefinitions();
@@ -241,8 +340,8 @@ bool CGame::init(int level, int difficulty, const char *pathToSave) {
         _gameMap.setWindow(_game_window);
         initializeWindow();
     }
-    if (level == 0) {
-        loadFromSave(pathToSave);
+    if (std::strlen(nameOfSave)!=0) {
+        loadFromSave(nameOfSave);
     } else {
         if (_gameMap.m_map.empty())
             load(level);
@@ -288,7 +387,7 @@ bool CGame::play() {
             std::vector<std::string> saves;
             choice = loadMenu(saves);
             std::string save;
-            if (choice > 0) {
+            if (choice >= 0) {
                 save = saves[choice];
             } else save = "";
 

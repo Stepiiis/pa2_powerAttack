@@ -57,7 +57,7 @@ public:
     bool setEntity(int x, int y, Entity * entity);
     void redrawMap();
     bool loadNextMap(int level); // pass last map index as parameter
-    bool readMap(int level); // pas new map index as parameter
+    bool readMap(int level=1); // pas new map index as parameter
     Point::PointType getType(const Point& p);
     void convertMap();
     void refreshWindow();

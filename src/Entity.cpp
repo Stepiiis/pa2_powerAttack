@@ -52,31 +52,55 @@ char Entity::getSymbol() const {
 
 
 
+
+/*
+ * calculates all offsets on a grid which are in reach of steps of a given radius
+ *
+ * redius 1 deltas
+ *  x
+ * xxx
+ *  x
+ * radius 2 deltas
+ *   x
+ *  xxx
+ * xxxxx
+ *  xxx
+ *   x
+ * radius 3 deltas
+ *    x
+ *   xxx
+ *  xxxxx
+ * xxxxxxx
+ *  xxxxx
+ *   xxx
+ *    x
+ */
 void Entity::calculateDeltas() {
-    std::vector<std::pair<int,int>> temp;
-    for(int i = 0; i < m_radius; i++){
-        temp.emplace_back(i,0);
-        temp.emplace_back(0,i);
-        temp.emplace_back(-i,0);
-        temp.emplace_back(0,-i);
+    std::vector<std::pair<int,int>> init_vec;
+    for(int i = 0; i<=m_radius; ++i){
+        init_vec.emplace_back(0,i);
     }
+    for(const auto & point: init_vec ){
+        int steps = point.second;
+        auto temp = point;
+        auto pointNE = point; // NE, NW, SE, SW are coordinates where the point will be moving
+        auto pointNW = point;
+        auto pointSE = point;
+        auto pointSW = point;
+        pointNE.second = -point.second;
+        pointNW.second = -point.second;
 
-    for(int i = 0; i < floor(m_radius/2); i++){
-        temp.emplace_back(i,i);
-        temp.emplace_back(i,-i);
-        temp.emplace_back(-i,i);
-        temp.emplace_back(-i,-i);
-    }
+        m_deltas.emplace(pointNE);
+        m_deltas.emplace(pointSE);
 
-    for(const auto& [x,y] : temp){
-        m_deltas.emplace(x,y);
-        m_deltas.emplace(x+1, y);
-        m_deltas.emplace(x+1, y+1);
-        m_deltas.emplace(x-1, y+1);
-        m_deltas.emplace(x-1, y);
-        m_deltas.emplace(x-1, y-1);
-        m_deltas.emplace(x, y-1);
-        m_deltas.emplace(x-1, y-1);
+        while(steps>0)
+        {
+            --steps;
+            m_deltas.emplace(++pointSE.first, --pointSE.second);
+            m_deltas.emplace(--pointSW.first, --pointSW.second);
+            m_deltas.emplace(++pointNE.first, ++pointNE.second);
+            m_deltas.emplace(--pointNW.first, ++pointNW.second);
+        }
     }
 }
 

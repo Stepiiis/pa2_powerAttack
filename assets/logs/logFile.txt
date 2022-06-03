@@ -1867,3 +1867,140 @@ Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text:    index 1
+Level: 0 Context: loadFromFile Text:       attibute hp valued 50
+Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Level: 0 Context: loadFromFile Text:       attibute x valued 47
+Level: 0 Context: loadFromFile Text:       attibute y valued 3
+Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Level: 0 Context: loadFromSave Text:    index 1
+Level: 0 Context: loadFromFile Text:       attibute hp valued 50
+Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Level: 0 Context: loadFromFile Text:       attibute x valued 47
+Level: 0 Context: loadFromFile Text:       attibute y valued 3
+Level: 0 Context: loadFromSave Text: loading entities typed towers
+Level: 0 Context: loadFromSave Text:    index 1
+Level: 0 Context: loadFromFile Text:       attibute hp valued 100
+Level: 0 Context: loadFromFile Text:       attibute type valued basicTower
+Level: 0 Context: loadFromFile Text:       attibute x valued 4
+Level: 0 Context: loadFromFile Text:       attibute y valued 2
+Level: 0 Context: loadFromSave Text:    index 2
+Level: 0 Context: loadFromFile Text:       attibute hp valued 100
+Level: 0 Context: loadFromFile Text:       attibute type valued basicTower
+Level: 0 Context: loadFromFile Text:       attibute x valued 4
+Level: 0 Context: loadFromFile Text:       attibute y valued 2
+Level: 0 Context: loadFromSave Text:    index 3
+Level: 0 Context: loadFromFile Text:       attibute type valued basicTower
+Level: 0 Context: loadFromFile Text:       attibute x valued 6
+Level: 0 Context: loadFromFile Text:       attibute y valued 5

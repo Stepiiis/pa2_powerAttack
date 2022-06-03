@@ -102,7 +102,7 @@ int mainMenu(){
     return main.show(true);
 }
 int loadMenu(std::vector<std::string>& save_names){
-    const std::experimental::filesystem::path path {"data/saves/"};
+    const std::experimental::filesystem::path path {"assets/saves/"};
     for(const auto & saves: std::experimental::filesystem::directory_iterator(path)){
         save_names.emplace_back(saves.path().filename().string());
 //        std::cout << saves.path().filename().string() << std::endl;

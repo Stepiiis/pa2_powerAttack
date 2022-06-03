@@ -128,10 +128,10 @@ void Map::refreshWindow(){
 }
 
 
-// loads map from data files and sets up the map into a 2D array
+// loads map from assets files and sets up the map into a 2D array
 bool Map::readMap(int level) {
     m_map.clear();
-    std::string mapLocation = "data/maps/map" + std::to_string(level) + ".txt";
+    std::string mapLocation = "assets/maps/map" + std::to_string(level) + ".txt";
     std::ifstream mapFile(mapLocation, std::ios::in);
     if(!mapFile.is_open()) {
         std::cout << "Could not open map file :" << mapLocation << std::endl;

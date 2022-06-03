@@ -1,0 +1,33 @@
+map 1
+score 0
+tsdestroyed 0
+asfinished 0
+money 2400
+
+
+# attackers
+
+type basicAttacker
+x 47
+y 3
+hp 50
+slw 0
+
+
+# towers
+
+type basicTower
+x 4
+y 2
+hp 100
+
+type basicTower
+x 4
+y 2
+hp 100
+
+type basicTower
+x 6
+y 5
+
+# end

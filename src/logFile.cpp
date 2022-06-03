@@ -8,7 +8,7 @@
 
 
 bool sendToLogFile(short level, const std::string& text, const std::string& context){
-    std::ofstream logFile("data/logs/logFile.txt", std::ios::app);
+    std::ofstream logFile("assets/logs/logFile.txt", std::ios::app);
     if(!logFile.is_open()){
         throw logException("Log file not found");
     }
