@@ -25,6 +25,8 @@ int Player::getCoins() const{
     return _coins;  
 }
 
+
+
   bool Player::spawnAttacker(){
     if(_spawnLane._x == -10) // TODO: "callback" that player didnt choose lane
         return false;
@@ -119,5 +121,32 @@ std::vector<std::pair<int, int> > Player::getTowersToAttack() const {
             towers.emplace_back(attacker.second->getCurrentFocus(), attacker.second->getDamage());
     }
     return towers;
+}
+
+bool Player::createNewAttacker(int type, int x, int y, int hp, CEffects effects, int id) {
+    switch (type){
+        case 0:
+            _attackers.emplace(id, std::make_unique<basicAttacker>(x,y,_def,_map,id,hp));
+            break;
+        case 1:
+            _attackers.emplace(id, std::make_unique<fastAttacker>(x,y,_def,_map,id,hp));
+            break;
+        case 2:
+            _attackers.emplace(id, std::make_unique<chargerAttacker>(x,y,_def,_map,id,hp));
+            break;
+    }
+    return true;
+}
+
+bool Player::printAttackers() {
+    for(const auto& attacker: _attackers){
+        if(attacker.second->getHP()>0)
+            attacker.second->draw();
+    }
+    return true;
+}
+
+void Player::setFinAttackers(int nr) {
+    _attackersFinished = nr;
 }
 

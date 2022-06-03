@@ -17,12 +17,15 @@ public:
     void setLane(int lane);
     void setAttackerType(int type); // same as spawn
     void addAttackerToQueue();
-    bool spawnAttacker(); // 0 = basic, 1 = fast, 2 = charger
+    bool spawnAttacker();
+    bool printAttackers();
+    bool createNewAttacker(int type, int x, int y, int hp, CEffects effects, int id); //type  0 = basic, 1 = fast, 2 = charger
     void moveAttackers();
     bool emptyAttackers();
     bool emptyAttackerQueue();
     void setCoins(int coins);
     void clearAttackers();
+    void setFinAttackers(int nr);
     int getCoins() const;
     int getFinished() const;
     [[nodiscard]] std::vector<std::pair<int,int> > getTowersToAttack() const;

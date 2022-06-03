@@ -1,5 +1,5 @@
 map 1
-score 0
+difficulty 1
 tsdestroyed 0
 asfinished 0
 money 2400
@@ -29,5 +29,6 @@ hp 100
 type basicTower
 x 6
 y 5
+hp 100
 
 # end

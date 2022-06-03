@@ -10,7 +10,7 @@ CGame::~CGame() {
 }
 
 bool CGame::start() {
-    _gameMap.redrawMap();
+    _gameMap.printMap();
     drawTowers();
     drawAttackerDefs();
     if (resume())
@@ -123,7 +123,7 @@ bool CGame::save() {
     //
     throw (notImplementedException("save"));
 }
-
+// loads game from file defined in the parameter and starts the game
 bool CGame::loadFromSave(const std::string &nameOfSave) {
     // delete all towers and players
     if(_player != nullptr)
@@ -139,7 +139,7 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
     std::map<std::string,std::vector<std::map<std::string, std::string>>> entities;
     std::map<std::string,std::string> givenEntity;
     std::vector<std::map<std::string, std::string>> vectorOfEntities;
-    std::map<std::string, std::string> gameStats;
+    std::map<std::string, int> gameStats;
     std::string name;
     std::string value;
     bool gameReading = false;
@@ -154,16 +154,16 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
             continue;
         std::stringstream ss(fileLine);
         if(!gameReading){
+            int numvalue=-10;
             name.clear();
-            value.clear();
             ss >> name;
-            ss >> value;
-            if(value.empty()) {
+            ss >> numvalue;
+            if(numvalue == -10) {
                 ss.str(std::string());
                 ss << "attribute on line " << lineindex << " in save file " << nameOfSave  <<" is incorrect. " << "name= " << name << " value= " << value;
                 throw syntaxErr(ss.str());
             }
-            gameStats.emplace(name,value);
+            gameStats.emplace(name,numvalue);
             if(lineindex==5)
                 gameReading = true;
             continue;
@@ -228,15 +228,92 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
 
 
     // load the safe file into a respective vectors of of attackers and towers
+    int id = 0;
+    if(entities.count("attackers") ==0 || entities.count("towers") == 0 )
+    {
+        throw syntaxErr("error loading savefile, towers or attackers missing");
+    }
+    for(const auto& utocnici: entities["attackers"]){
+        int x;
+        int y;
+        int hp;
+        CEffects eff;
+        std::stringstream ss;
+        try{
+        x = std::stoi(utocnici.at("x"));
+        y = std::stoi(utocnici.at("y"));
+        hp = std::stoi(utocnici.at("hp"));
+        eff.m_slowEffect = std::stoi(utocnici.at("slw"));
+        }catch(std::invalid_argument& e)
+        {
+            ss.str(std::string());
+            ss << "one or more attributes is incorrect, saveFile might be corrupt";
+            throw syntaxErr(ss.str());
+        }
+        if(utocnici.at("type") == BASICA)
+         _player->createNewAttacker(0,x,y,hp,eff,id);
+        else if(utocnici.at("type") == FASTA)
+            _player->createNewAttacker(1,x,y,hp,eff,id);
+        else if(utocnici.at("type") == CHARGERA)
+            _player->createNewAttacker(2,x,y,hp,eff,id);
+        else{
+            ss.str(std::string());
+            ss << "one or more attributes is incorrect, saveFile might be corrupt";
+            throw syntaxErr(ss.str());
+        }
+        id++;
+    }
+    id = 0;
+    for(const auto& utocnici: entities["towers"]){
+        int x;
+        int y;
+        int hp;
+        std::stringstream ss;
+        try{
+            x = std::stoi(utocnici.at("x"));
+            y = std::stoi(utocnici.at("y"));
+            hp = std::stoi(utocnici.at("hp"));
+        }catch(std::invalid_argument& e)
+        {
+            ss.str(std::string());
+            ss << "one or more attributes is incorrect, saveFile might be corrupt";
+            throw syntaxErr(ss.str());
+        }
+        catch(std::out_of_range& e)
+        {
+            ss.str(std::string());
+            ss << "one or more attributes is missing, saveFile might be corrupt";
+            throw syntaxErr(ss.str());
+        }
+        if(utocnici.at("type") == BASICT)
+            _tower_manager->createNewTower(0,x,y,hp,id);
+        else if(utocnici.at("type") == FASTT)
+            _tower_manager->createNewTower(1,x,y,hp,id);
+        else if(utocnici.at("type") == STRONGT)
+            _tower_manager->createNewTower(2,x,y,hp,id);
+        else if(utocnici.at("type") == SLOWET)
+            _tower_manager->createNewTower(3,x,y,hp,id);
+        else{
+            ss.str(std::string());
+            ss << "one or more attributes is incorrect, saveFile might be corrupt";
+            throw syntaxErr(ss.str());
+        }
+        id++;
+    }
+
+
+    // print the map, towers and attackers on screen and start the game
     _gameMap.readMap();
     _gameMap.printMap();
-    // print the map, towers and attackers on screen and start the game
-    // set the game money to the one specified in the save file
-    // set the difficulty to the one specified in the save file
-    // delete the definitions and load them again
-    // set the game score to the one specified in the save file
-
-    throw (notImplementedException("loadFromSave"));
+    _tower_manager->printTowers();
+    _player->printAttackers();
+    // set the game money and difficulty to the one specified in the save file
+    if(gameStats.count("money")==0 || gameStats.count("money") == 0 || gameStats.count("asfinished") == 0 || gameStats.count("tsdestroyed") == 0)
+        throw syntaxErr("one or more gamestats is invalid, saveFile might be corrupt");
+    _player->setCoins(gameStats["money"]);
+    setDifficulty(gameStats["difficulty"]);
+    _player->setFinAttackers(gameStats["asfinished"]);
+    setTowersDestroyed(gameStats.at("tsdestroyed"));
     return true;
 }
 
@@ -307,11 +384,11 @@ bool CGame::gameEnd(const char *msg) {
     std::stringstream scorestring;
     std::stringstream sstowersDestroyed;
 
-    _score = (towers_destroyed * 200
+    _score = (_towers_destroyed * 200
               + _player->getCoins() * 100 + _player->getFinished()*25) * _difficulty;
 
     scorestring << "Your score is: " << _score;
-    sstowersDestroyed << "You have destroyed: " << towers_destroyed << " towers";
+    sstowersDestroyed << "You have destroyed: " << _towers_destroyed << " towers";
     endMenu.setMenu({"Game Over!"," ", scorestring.str(),sstowersDestroyed.str()}, {"QUIT", "RETURN TO MENU"});
 
     int retval = endMenu.show();
@@ -340,6 +417,17 @@ bool CGame::init(int level, int difficulty, const char *nameOfSave) {
         _gameMap.setWindow(_game_window);
         initializeWindow();
     }
+
+    if (_player == nullptr)
+        _player = new Player(&_gameMap, _definitions.getAttacker());
+    else
+        _player->clearAttackers();
+
+    if (_tower_manager == nullptr)
+        _tower_manager = new Enemy(&_gameMap, _definitions.getTower(), _difficulty);
+    else
+        _tower_manager->clearTowers();
+
     if (std::strlen(nameOfSave)!=0) {
         loadFromSave(nameOfSave);
     } else {
@@ -347,15 +435,6 @@ bool CGame::init(int level, int difficulty, const char *nameOfSave) {
             load(level);
     }
     _gameMap.setWindow(_game_window);
-
-    if (_player == nullptr)
-        _player = new Player(&_gameMap, _definitions.getAttacker());
-    else
-        _player->clearAttackers();
-    if (_tower_manager == nullptr)
-        _tower_manager = new Enemy(&_gameMap, _definitions.getTower(), _difficulty);
-    else
-        _tower_manager->clearTowers();
     return true;
 }
 
@@ -442,6 +521,14 @@ bool CGame::performAttacks() {
         _tower_manager->damageTowers(towersToAttack);
 
     size_t sizeAfter = _tower_manager->getTowerCount();
-    towers_destroyed+= sizeBefore - sizeAfter;
+    _towers_destroyed+= sizeBefore - sizeAfter;
     return true;
+}
+
+void CGame::setDifficulty(int def) {
+    _difficulty = def;
+}
+
+void CGame::setTowersDestroyed(int nr) {
+    _towers_destroyed=nr;
 }

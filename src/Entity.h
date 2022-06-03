@@ -11,7 +11,7 @@ class Map;
 class Entity {
 public:
     virtual ~Entity() = default;
-    Entity(int posX, int posY, defEntity def, Map * map,int attackerID);
+    Entity(int posX, int posY,int hp, int dmg, char symbol, int radius, int attackSpeed, Map * map,int attackerID);
 
     // moves the entity to the given position on screen, actual showing on screen is handled by Map class
     bool move(int x, int y);
@@ -52,18 +52,16 @@ protected:
 
     int m_hp;      // současné zdraví
 
-    int m_maxhp;   // maximální zdraví
 
     Map* m_sharedMap;   // pointer na sdilenou mapu.
                         // Mapa vždy přežije všechny entity.
     std::set<std::pair<int,int>> m_deltas;
     size_t m_currentFocusID=-10;// ID of an entity that we are currently attacking
     bool hasFocus = false;
-    defEntity m_def;
 
     int m_damage;
 
-    int m_speed{};
+    int m_attackSpeed{};
 
     int m_radius{};
 };

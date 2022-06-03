@@ -3,20 +3,38 @@
 
 
 
-Attacker::Attacker(int posX, int posY,defEntity def ,Map *map, int id)
-: Entity(posX, posY,std::move(def), map, id)
+Attacker::Attacker(int posX, int posY,int hp, int dmg, char symbol, int radius,int attackSpeed, Map * map,int attackerID)
+: Entity(posX, posY, hp,dmg, symbol, radius, attackSpeed, map, attackerID)
 {
+    m_slowEffectDuration = 0;
 }
 
-basicAttacker::basicAttacker(int posX, int posY, defEntity def,Map* map, int id)
-:Attacker(posX, posY,std::move(def) ,map,id)
+basicAttacker::basicAttacker(int posX, int posY, defEntity& def, Map* map, int id, int hp)
+:Attacker(posX, posY,def[BASICA]["hp"],def[BASICA]["dmg"],(char)def[BASICA]["symbol"],def[BASICA]["rng"],def[BASICA]["atkspeed"], map,id)
     {
-        m_hp = m_def[BASICA]["hp"];
-        m_symbol = (char)m_def[BASICA]["symbol"];
-        m_radius = m_def[BASICA]["rng"];
-        m_damage = m_def[BASICA]["dmg"];
+        m_movementSpeed = def[BASICA]["mov"];
+        if(hp!=-10)
+            m_hp = hp;
         calculateDeltas();
     }
+fastAttacker::fastAttacker(int posX, int posY, defEntity &def, Map *map, int id, int hp )
+: Attacker(posX, posY,def[FASTA]["hp"],def[FASTA]["dmg"],(char)def[FASTA]["symbol"],def[FASTA]["rng"], def[FASTA]["atkspeed"],map,id)
+{
+    m_movementSpeed = def[FASTA]["mov"];
+    if(hp!=-10)
+        m_hp = hp;
+    calculateDeltas();
+}
+
+chargerAttacker::chargerAttacker(int posX, int posY,defEntity& def, Map *map, int id, int hp)
+: Attacker(posX, posY,def[CHARGERA]["hp"],def[CHARGERA]["dmg"],(char)def[CHARGERA]["symbol"],def[CHARGERA]["rng"],def[CHARGERA]["atkspeed"], map,id)
+{
+    m_movementSpeed = def[CHARGERA]["mov"];
+    if(hp!=-10)
+        m_hp = hp;
+    calculateDeltas();
+}
+
 
 //    bool Attacker::move (int _x, int y)
 //    {
@@ -97,6 +115,12 @@ Point Attacker::getNextPoint() {
 Point::PointType Attacker::getType() {
     return Point::Attacker;
 }
+
+void Attacker::setEffects(CEffects &eff) {
+    m_slowEffectDuration=eff.m_slowEffect;
+}
+
+
 Attacker::~Attacker() = default;
 
 
@@ -108,7 +132,7 @@ bool basicAttacker::moveOnPath() {
     if(m_path.empty())
         return false;
     cycleCnt++;
-    if(cycleCnt % m_def.at(BASICA).at("mov") == 0)
+    if(cycleCnt % m_movementSpeed == 0)
     {
         cycleCnt = 0;
         Point next = m_path.front();
@@ -124,13 +148,7 @@ bool basicAttacker::moveOnPath() {
     return true;
 }
 
-fastAttacker::fastAttacker(int posX, int posY, defEntity def, Map *map, int id) : Attacker(posX, posY, std::move(def), map, id) {
-    m_hp = m_def[FASTA]["hp"];
-    m_symbol = (char)m_def[FASTA]["symbol"];
-    m_radius = m_def[FASTA]["rng"];
-    m_damage = m_def[FASTA]["dmg"];
-    calculateDeltas();
-}
+
 
 bool fastAttacker::isTarget(const Point &p) const {
     return p._type == Point::Exit;
@@ -140,13 +158,6 @@ bool fastAttacker::moveOnPath() {
     throw(notImplementedException("fastAttacker moveOnPath"));
 }
 
-chargerAttacker::chargerAttacker(int posX, int posY,defEntity def, Map *map, int id) : Attacker(posX, posY, std::move(def), map, id) {
-    m_hp = m_def[CHARGERA]["hp"];
-    m_symbol = (char)m_def[CHARGERA]["symbol"];
-    m_radius = m_def[CHARGERA]["rng"];
-    m_damage = m_def[CHARGERA]["dmg"];
-    calculateDeltas();
-}
 
 // returns true if the point is a tower
 bool chargerAttacker::isTarget(const Point &p) const {

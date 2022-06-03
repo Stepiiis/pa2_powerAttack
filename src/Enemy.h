@@ -22,6 +22,7 @@ public:
     void printTowers(); // prints all created towers onto the map
     size_t getTowerCount(); // returns the number of towers
     bool damageTowers(std::vector<std::pair<int, int> > &towers); // damages all towers in the vector
+    bool createNewTower(int type, int x, int y, int hp, int id); // 0 = BASIC, 1 = FAST, 2 = STRONG, 3 = SLOWEF
 protected:
     Map* _map;
     std::map<int,std::unique_ptr<Tower> > _towers;

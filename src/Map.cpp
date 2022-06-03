@@ -256,7 +256,7 @@ void Map::convertMap() {
 }
 
 void Map::redrawMap(){
-    convertMap();
+//    convertMap();
     printMap();
 //    mvwprintw(m_game_window,0,0,"%s",m_mapString.c_str());
 }

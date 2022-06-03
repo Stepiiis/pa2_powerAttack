@@ -59,7 +59,8 @@ protected:
     void highlightAttacker(int type);
     void drawAttackerDefs();
     bool performAttacks();
-
+    void setDifficulty(int);
+    void setTowersDestroyed(int);
 
     Map _gameMap = Map();
     Player * _player = nullptr;
@@ -67,7 +68,7 @@ protected:
     std::string _save_name;
     WINDOW * _game_window = nullptr;
     CDefinitions _definitions;
-    size_t towers_destroyed{};
+    size_t _towers_destroyed{};
     int _score{};
     int _difficulty;
 

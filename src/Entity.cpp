@@ -1,8 +1,8 @@
 
 #include "Entity.h"
 
-Entity::Entity(int posX, int posY,defEntity def,Map* map,int attackerID)
-    :   m_x(posX), m_y(posY),  m_id(attackerID), m_sharedMap(map), m_def(std::move(def))
+Entity::Entity(int posX, int posY, int hp, int dmg, char symbol, int radius, int attackSpeed, Map* map,int attackerID)
+    :   m_x(posX), m_y(posY),  m_symbol(symbol), m_id(attackerID),  m_hp(hp), m_sharedMap(map), m_damage(dmg), m_attackSpeed(attackSpeed), m_radius(radius)
     {
         m_currentFocusID = -10;
     }

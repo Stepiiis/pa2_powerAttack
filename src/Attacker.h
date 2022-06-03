@@ -10,6 +10,7 @@
 #include "Map.h"
 #include "Entity.h"
 #include "exceptions.h"
+#include "HelpStructs.h"
 #include "Definitions.h"
 #include <utility>
 
@@ -17,7 +18,7 @@
 class Attacker: public Entity
 {
 public:
-    Attacker(int posX, int posY, defEntity def, Map* map, int id);
+    Attacker(int posX, int posY,int hp, int dmg, char symbol, int radius, int attackSpeed, Map * map,int attackerID);
 //    ~Attacker() = default;
     ~Attacker() override;
     bool operator < (Attacker & rhs);
@@ -29,14 +30,16 @@ public:
     [[nodiscard]] virtual bool isTarget(const Point& p) const = 0;
     Point::PointType getType() override;
     bool findShortestPath();
+    void setEffects(CEffects& eff);
 
 // queue that is updated everytime findPath is called
 
 protected:
-
+    int m_slowEffectDuration;
     void popPath();
     std::deque<Point> m_path;
     int cycleCnt{};
+    int m_movementSpeed{};
 };
 
 // symbol $
@@ -44,7 +47,7 @@ protected:
 class basicAttacker final: public Attacker
 {
 public:
-    basicAttacker(int posX, int posY, defEntity def, Map* map, int id);
+    basicAttacker(int posX, int posY, defEntity& def, Map* map, int id, int hp = -10);
     bool isTarget(const Point& p) const override;
     bool moveOnPath() override;
 };
@@ -57,7 +60,7 @@ public:
 class fastAttacker final: public Attacker
 {
 public:
-    fastAttacker(int posX, int posY, defEntity def, Map* map, int id);
+    fastAttacker(int posX, int posY, defEntity& def, Map* map, int id, int hp = -10);
     bool isTarget(const Point& p) const override;
     bool moveOnPath() override;
 };
@@ -69,7 +72,7 @@ public:
 class chargerAttacker final: public Attacker
 {
 public:
-    chargerAttacker(int posX, int posY, defEntity def, Map* map,int id);
+    chargerAttacker(int posX, int posY, defEntity& def, Map* map,int id, int hp = -10);
     bool isTarget(const Point& p) const override;
     bool moveOnPath() override;
 };

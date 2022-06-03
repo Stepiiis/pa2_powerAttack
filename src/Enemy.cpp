@@ -87,3 +87,23 @@ bool Enemy::damageTowers(std::vector<std::pair<int, int>> &towers) {
     }
     return true;
 }
+
+bool Enemy::createNewTower(int type, int x, int y, int hp, int id) {
+    switch (type){
+        case 0:
+            _towers.emplace(id, std::make_unique<basicTower>(x,y,_def,_map,id,hp));
+            break;
+        case 1:
+            _towers.emplace(id, std::make_unique<fastTower>(x,y,_def,_map,id,hp));
+            break;
+        case 2:
+            _towers.emplace(id, std::make_unique<highDamageTower>(x,y,_def,_map,id,hp));
+            break;
+        case 3:
+            _towers.emplace(id, std::make_unique<slowEffectTower>(x,y,_def,_map,id,hp));
+            break;
+        default:
+        throw std::invalid_argument("type doesnt correspond any tower definition");
+    }
+    return true;
+}
