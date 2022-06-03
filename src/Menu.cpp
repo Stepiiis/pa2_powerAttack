@@ -7,11 +7,11 @@ CMenu::CMenu(std::vector<std::string> text, std::vector<std::string> options)
     _options = std::move(options);
 }
 
-int newMenu(const CMenu & menu, bool wait){
+int CMenu::show(bool wait){
     terminal term;
     int height = 25;
     int width = 75;
-    int posX = (width/2) - (int)(menu._text.size()/2) - 10;
+    int posX = (width/2) - (int)(this->_text.size()/2) - 10;
 
     auto style = A_STANDOUT;
     getmaxyx(stdscr, term.height, term.width); // zjisteni velikosti obrazovky
@@ -23,8 +23,8 @@ int newMenu(const CMenu & menu, bool wait){
     box(menu_win, 0, 0);
     wrefresh(menu_win);
     int posY = 5;
-    auto text = menu._text.begin();
-    while(text != menu._text.end()){
+    auto text = this->_text.begin();
+    while(text != this->_text.end()){
         mvwprintw(menu_win, posY, posX, "%s", (*text).c_str());
         wrefresh(menu_win);
         posY++;
@@ -50,19 +50,19 @@ int newMenu(const CMenu & menu, bool wait){
         if (keypress == KEY_UP) {
             choice = (choice - 1) ;
             if(choice == -1)
-                choice =  (int)menu._options.size() - 1;
+                choice =  (int)this->_options.size() - 1;
             else
-                choice %= (int)menu._options.size();
+                choice %= (int)this->_options.size();
         } else if (keypress == KEY_DOWN) {
-            choice = (choice + 1) % (int)menu._options.size();
+            choice = (choice + 1) % (int)this->_options.size();
         } else if (keypress == KEY_DC) {
             break;
         }
 //        wmove(menu_win,0,0);
 //        wprintw(menu_win, "%d %d %d", choice, menu._options.size()), (-1%3);
-        auto option = menu._options.begin();
-        while(option != menu._options.end()){
-            if(choice == std::distance(menu._options.begin(), option)){
+        auto option =this->_options.begin();
+        while(option != this->_options.end()){
+            if(choice == std::distance(this->_options.begin(), option)){
                 wattron(menu_win, style);
                 mvwprintw(menu_win, posY, posX, "%s", (*option).c_str());
                 wattroff(menu_win, style);
@@ -82,17 +82,24 @@ int newMenu(const CMenu & menu, bool wait){
     return choice;
 }
 
+void CMenu::setMenu(std::vector<std::string> text, std::vector<std::string> options) {
+    _text = std::move(text);
+    _options = std::move(options);
+}
+
 int mainMenu(){
 
-    return newMenu(CMenu({
-                                 "Welcome to",
-                                 "Tower Attack 2",
-                                 "Electric Boogaloo"
-                         },{
-                                 "New game",
-                                 "Load game",
-                                 "Exit"
-                         }), true);
+    CMenu main({
+                            "Welcome to",
+                            "Tower Attack 2",
+                            "Electric Boogaloo"
+                    },{
+                            "New game",
+                            "Load game",
+                            "Exit"
+                    });
+
+    return main.show(true);
 }
 int loadMenu(std::vector<std::string>& save_names){
     const std::experimental::filesystem::path path {"data/saves/"};
@@ -100,18 +107,23 @@ int loadMenu(std::vector<std::string>& save_names){
         save_names.emplace_back(saves.path().filename().string());
 //        std::cout << saves.path().filename().string() << std::endl;
     }
-    if(!save_names.empty())
-        return newMenu(CMenu({
-                                     "Please select a save file",
-                                     "and confirm with delete"
-                             },save_names));
+    CMenu loadMenu;
 
-    newMenu(CMenu({
-                          "No save files found",
-                          "Please create a new game"
-                  },{
-                          "New game"
-                  }));
+    if(!save_names.empty()) {
+        loadMenu.setMenu({
+                              "Please select a save file",
+                              "and confirm with delete"
+                      },save_names);
+        return loadMenu.show();
+    }
+    loadMenu.setMenu({
+                    "No save files found",
+                    "Please create a new game"
+            },{
+                    "New game"
+            });
+
+    loadMenu.show();
     return -10;
 }
 

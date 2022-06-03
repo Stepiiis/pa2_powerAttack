@@ -34,13 +34,13 @@ int Player::getCoins() const{
     attackerID++;
     switch (_def[_attackersQueue.front()]["symbol"]){ // chooses on the basis of different ascii values
         case 36: // ascii value of $
-            _attackers.insert(std::upper_bound(_attackers.begin(),_attackers.end(),std::make_unique<basicAttacker>(_spawnLane._x, _spawnLane._y, _def[BASICA]["hp"], _map, attackerID)), std::make_unique<basicAttacker>(_spawnLane._x, _spawnLane._y, _def[BASICA]["hp"], _map, attackerID));
+            _attackers.emplace(attackerID,std::make_unique<basicAttacker>(_spawnLane._x, _spawnLane._y, _def, _map, attackerID));
             break;
         case 37: // %
-            _attackers.insert(std::upper_bound(_attackers.begin(),_attackers.end(),std::make_unique<fastAttacker>(_spawnLane._x, _spawnLane._y, _def[BASICA]["hp"], _map, attackerID)), std::make_unique<fastAttacker>(_spawnLane._x, _spawnLane._y, _def[BASICA]["hp"], _map, attackerID));
+            _attackers.emplace(attackerID,std::make_unique<fastAttacker>(_spawnLane._x, _spawnLane._y, _def, _map, attackerID));
             break;
         case 64: // @
-            _attackers.insert(std::upper_bound(_attackers.begin(),_attackers.end(),std::make_unique<chargerAttacker>(_spawnLane._x, _spawnLane._y, _def[BASICA]["hp"], _map, attackerID)), std::make_unique<chargerAttacker>(_spawnLane._x, _spawnLane._y, _def[BASICA]["hp"], _map, attackerID));
+            _attackers.emplace(attackerID,std::make_unique<chargerAttacker>(_spawnLane._x, _spawnLane._y, _def, _map, attackerID));
             break;
     }
     _attackersQueue.pop_front();
@@ -70,14 +70,21 @@ void Player::addAttackerToQueue() {
 }
 
 void Player::moveAttackers() {
-    for (int i =0; i< _attackers.size(); ++i) {
-        if (_attackers[i]->findShortestPath()) {
-            if(!_attackers[i]->moveOnPath()) {
-                _attackers[i]->destroy();
-                _attackers.erase(_attackers.begin() + i);
-                i--;
+    std::vector<int> toDelete;
+    for (auto &attacker: _attackers) {
+
+        if (attacker.second->findShortestPath()) {
+            if(!attacker.second->moveOnPath()) {
+                if(attacker.second->getNextPoint()._type == Point::Exit){
+                    _attackersFinished++;
+                    toDelete.push_back(attacker.first);
+                    attacker.second->destroy();
+                }
             }
         }
+    }
+    for (auto &id: toDelete) {
+        _attackers.erase(id);
     }
 }
 
@@ -91,9 +98,26 @@ bool Player::emptyAttackerQueue() {
 
 void Player::clearAttackers() {
     for (auto &attacker: _attackers) {
-        attacker->destroy();
+        attacker.second->destroy();
     }
     _attackers.clear();
     _attackersQueue.clear();
+}
+
+int Player::getFinished() const {
+    return _attackersFinished;
+}
+
+auto& Player::getAttackers() const {
+    return _attackers;
+}
+
+std::vector<std::pair<int, int> > Player::getTowersToAttack() const {
+    std::vector<std::pair<int, int> > towers;
+    for (auto &attacker: _attackers) {
+        if(attacker.second->checkRadius(Point::Tower))
+            towers.emplace_back(attacker.second->getCurrentFocus(), attacker.second->getDamage());
+    }
+    return towers;
 }
 

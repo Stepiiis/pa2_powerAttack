@@ -4,8 +4,10 @@
 #include <memory>
 #include <ncurses.h>
 #include <functional>
+#include <cmath>
 #include "Entity.h"
 #include "Definitions.h"
+#define PI 3.14159265
 class Entity;
 class Map;
 class Point {
@@ -31,7 +33,7 @@ public:
 
     char _symbol;
     int _x, _y;
-    size_t _IDent; // unique identifier for each point (used for combat)
+    size_t _ident; // unique identifier for each point (used for combat)
     PointType _type;
     PointType _defaultType;
     char _defaultSymbol;
@@ -60,6 +62,7 @@ public:
     void convertMap();
     void refreshWindow();
     bool checkNeighbours(int x, int y);
+    bool checkClearSight(const std::pair<int,int>& p1, const std::pair<int,int>& p2)const;
     bool getLaneByID(int id, Point & ret)const;
     void highlightLane(int lanenr);
     void drawLanes();

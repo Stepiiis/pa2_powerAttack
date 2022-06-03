@@ -20,7 +20,8 @@ class CGame {
 public:
     CGame() = default;
     ~CGame();           // closes the window and frees the memory
-
+    bool play();        // starts the game
+protected:
     // first intiger specifies if we want to start a new game or load a saved game
     // second int is difficulty level (1-3)
     // third string is the name of save to load. if left empty, new game initiates with the difficulty level chosen
@@ -53,20 +54,21 @@ public:
     // then runs the procedure again
     bool resume();
     // initializes the game and starts it
-    bool play();
     [[nodiscard]] bool pauseMenu(const char* msg = "");
     bool gameEnd(const char * );
-protected:
     void highlightAttacker(int type);
     void drawAttackerDefs();
+    bool performAttacks();
+
+
     Map _gameMap = Map();
     Player * _player = nullptr;
     Enemy * _tower_manager = nullptr;
     std::string _save_name;
     WINDOW * _game_window = nullptr;
     CDefinitions _definitions;
-    int towers_destroyed;
-    int _score;
+    size_t towers_destroyed{};
+    int _score{};
     int _difficulty;
 
     void redrawTowers();

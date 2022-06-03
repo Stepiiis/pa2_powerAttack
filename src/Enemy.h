@@ -3,6 +3,7 @@
 #include "Tower.h"
 #include "Map.h"
 #include "Definitions.h"
+#include "logFile.h"
 #include <memory>
 #include <vector>
 #include <ncurses.h>
@@ -20,9 +21,10 @@ public:
     void createTowers(); // creates towers according to the difficulty chosen
     void printTowers(); // prints all created towers onto the map
     size_t getTowerCount(); // returns the number of towers
+    bool damageTowers(std::vector<std::pair<int, int> > &towers); // damages all towers in the vector
 protected:
     Map* _map;
-    std::vector<std::unique_ptr<Tower> > _towers;
+    std::map<int,std::unique_ptr<Tower> > _towers;
     int _towerIDcnt;
     int _difficulty;
     defEntity _def; // definitions of towers loaded from file

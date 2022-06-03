@@ -2,39 +2,55 @@
 #include "Tower.h"
 
 
-Tower::Tower(int x, int y, int hp, Map* map, int towerID)
-: Entity(x,y, hp, map, towerID)
-{}
-
-basicTower::basicTower(int x, int y, int hp, Map* map,int towerID)
-        : Tower(x,y, hp, map, towerID)
+Tower::Tower(int x, int y, defEntity def, Map* map, int towerID)
+: Entity(x,y, std::move(def), map, towerID)
 {
-    m_symbol = 'I';
-    m_radius = 4;
 }
 
-fastTower::fastTower(int x, int y, int hp, Map* map,int towerID)
-        : Tower(x,y, hp, map,towerID)
+basicTower::basicTower(int x, int y, defEntity def, Map* map,int towerID)
+        : Tower(x,y, std::move(def), map, towerID)
 {
-    m_symbol = '&';
-    m_radius = 3;
+    m_symbol = (char)m_def[BASICT]["symbol"];
+    m_radius = m_def[BASICT]["rng"];
+    m_hp = m_def[BASICT]["hp"];
+    m_damage = m_def[BASICT]["dmg"];
+    calculateDeltas();
 }
 
-char Tower::getSymbol(){
-    return m_symbol;
+fastTower::fastTower(int x, int y, defEntity def, Map* map,int towerID)
+        : Tower(x,y, std::move(def), map,towerID)
+{
+    m_symbol = (char)m_def[FASTT]["symbol"];
+    m_radius = m_def[FASTT]["rng"];
+    m_hp = m_def[FASTT]["hp"];
+    m_damage = m_def[FASTT]["dmg"];
+    calculateDeltas();
 }
-char basicTower::getSymbol() {
-    return m_symbol;
-}
-char fastTower::getSymbol(){
-    return m_symbol;
-}
-
-bool Tower::checkRadius() { throw notImplementedException("tower checkRadius"); }
 
 Point::PointType Tower::getType() {
     return Point::Tower;
 }
 
-bool basicTower::checkRadius() { throw notImplementedException("basicTower checkRadius"); }
-bool fastTower::checkRadius() { throw notImplementedException("fastTower checkRadius"); }
+bool Tower::operator<(Tower &rhs) {
+    return this->m_id<rhs.m_id;
+}
+
+bool Tower::operator>(Tower &rhs) {
+    return this->m_id>rhs.m_id;
+}
+
+highDamageTower::highDamageTower(int x, int y, defEntity def, Map *map, int towerID) : Tower(x, y, std::move(def), map, towerID) {
+    m_symbol = (char)m_def[STRONGT]["symbol"];
+    m_radius = m_def[STRONGT]["rng"];
+    m_hp = m_def[STRONGT]["hp"];
+    m_damage = m_def[STRONGT]["dmg"];
+    calculateDeltas();
+}
+
+slowEffectTower::slowEffectTower(int x, int y, defEntity def, Map *map, int towerID) : Tower(x, y, std::move(def), map, towerID) {
+    m_symbol = (char)m_def[SLOWET]["symbol"];
+    m_radius = m_def[SLOWET]["rng"];
+    m_hp = m_def[SLOWET]["hp"];
+    m_damage = m_def[SLOWET]["dmg"];
+    calculateDeltas();
+}

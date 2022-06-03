@@ -1,26 +1,22 @@
 #include "Attacker.h"
 
 
-Attacker::Attacker(int posX, int posY, int maxHealth,Map *map, int id)
-: Entity(posX, posY, maxHealth, map, id)
+
+
+Attacker::Attacker(int posX, int posY,defEntity def ,Map *map, int id)
+: Entity(posX, posY,std::move(def), map, id)
 {
 }
 
-basicAttacker::basicAttacker(int posX, int posY, int maxHealth,Map* map, int id)
-:Attacker(posX, posY, maxHealth,map,id)
+basicAttacker::basicAttacker(int posX, int posY, defEntity def,Map* map, int id)
+:Attacker(posX, posY,std::move(def) ,map,id)
     {
-        m_symbol = '$';
-        m_radius = 2; // the slower and more HP version will have range of 5 fire
+        m_hp = m_def[BASICA]["hp"];
+        m_symbol = (char)m_def[BASICA]["symbol"];
+        m_radius = m_def[BASICA]["rng"];
+        m_damage = m_def[BASICA]["dmg"];
+        calculateDeltas();
     }
-
-char inline Attacker::getSymbol()
-{
-    return m_symbol;
-
-}char inline basicAttacker::getSymbol()
-{
-    return m_symbol;
-}
 
 //    bool Attacker::move (int _x, int y)
 //    {
@@ -37,10 +33,6 @@ void Attacker::setPosition(int x, int y){
 }
 
 
-
-bool Attacker::checkRadius(){
-    throw (notImplementedException("Attacker checkRadius"));
-}
 
 bool Attacker::operator<(Attacker &rhs) {
     return this->m_id<rhs.m_id;
@@ -67,7 +59,7 @@ bool Attacker::findShortestPath(){
 
         m_sharedMap->forEachNeighbor(current , [&](const Point& neighbor)
         {
-            if(neighbor == current || neighbor._type == Point::Entry || neighbor._type == Point::Attacker || neighbor._type == Point::Wall || neighbor._type == Point::Tower || visited.count(neighbor) != 0 )
+            if(neighbor == current || neighbor._type == Point::Entry || neighbor._type == Point::Wall || neighbor._type == Point::Tower || visited.count(neighbor) != 0 )
                 return;
             visited.emplace(neighbor, current);
             q.push_back(neighbor);
@@ -96,22 +88,17 @@ void Attacker::popPath() {
 }
 
 Point Attacker::getNextPoint() {
-    popPath();
     if(m_path.empty())
         return {-10,-10};
-    Point& temp = m_path.front();
+    Point temp = m_path.front();
     return temp;
 }
 
 Point::PointType Attacker::getType() {
     return Point::Attacker;
 }
-
 Attacker::~Attacker() = default;
 
-bool basicAttacker::checkRadius(){
-    throw (notImplementedException("basicAttacker checkRadius"));
-}
 
 bool basicAttacker::isTarget(const Point &p) const{
     return p._type == Point::Exit;
@@ -121,28 +108,28 @@ bool basicAttacker::moveOnPath() {
     if(m_path.empty())
         return false;
     cycleCnt++;
-//    if(cycleCnt % CDefinitions::_attackerDefinitions.at(BASICA).at("mov")== 0)
-//    {
+    if(cycleCnt % m_def.at(BASICA).at("mov") == 0)
+    {
+        cycleCnt = 0;
         Point next = m_path.front();
-        m_path.pop_front();
         if(next._type == Point::Exit)
             return false;
+        if(next._type == Point::Attacker)
+            return true;
+        m_path.pop_front();
         if(!m_sharedMap->updateMap(next._x, next._y, this))
             return false;
         return true;
-//    }
+    }
+    return true;
 }
 
-fastAttacker::fastAttacker(int posX, int posY, int maxHealth, Map *map, int id) : Attacker(posX, posY, maxHealth, map, id) {
-
-}
-
-char fastAttacker::getSymbol() {
-    throw(notImplementedException("fastAttacker getSymbol"));
-}
-
-bool fastAttacker::checkRadius() {
-    throw(notImplementedException("fastAttacker checkRadius"));
+fastAttacker::fastAttacker(int posX, int posY, defEntity def, Map *map, int id) : Attacker(posX, posY, std::move(def), map, id) {
+    m_hp = m_def[FASTA]["hp"];
+    m_symbol = (char)m_def[FASTA]["symbol"];
+    m_radius = m_def[FASTA]["rng"];
+    m_damage = m_def[FASTA]["dmg"];
+    calculateDeltas();
 }
 
 bool fastAttacker::isTarget(const Point &p) const {
@@ -153,17 +140,12 @@ bool fastAttacker::moveOnPath() {
     throw(notImplementedException("fastAttacker moveOnPath"));
 }
 
-chargerAttacker::chargerAttacker(int posX, int posY, int maxHealth, Map *map, int id) : Attacker(posX, posY, maxHealth, map, id) {
-
-}
-
-char chargerAttacker::getSymbol() {
-    throw(notImplementedException("chargerAttacker getSymbol"));
-}
-
-bool chargerAttacker::checkRadius() {
-    throw(notImplementedException("chragerAttacker checkRadius"));
-
+chargerAttacker::chargerAttacker(int posX, int posY,defEntity def, Map *map, int id) : Attacker(posX, posY, std::move(def), map, id) {
+    m_hp = m_def[CHARGERA]["hp"];
+    m_symbol = (char)m_def[CHARGERA]["symbol"];
+    m_radius = m_def[CHARGERA]["rng"];
+    m_damage = m_def[CHARGERA]["dmg"];
+    calculateDeltas();
 }
 
 // returns true if the point is a tower

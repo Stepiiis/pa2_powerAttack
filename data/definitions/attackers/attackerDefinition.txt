@@ -1,7 +1,7 @@
 #basicAttacker
 symbol $
 hp 240
-rng 3
+rng 2
 dmg 35
 atkspeed 1
 mov 2
@@ -19,7 +19,7 @@ price 250
 #chargerAttacker
 symbol @
 hp 640
-rng 4
+rng 2
 dmg 30
 atkspeed 3
 mov 4

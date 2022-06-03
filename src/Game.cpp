@@ -81,11 +81,11 @@ bool CGame::resume() {
             _player->moveAttackers();
 //        wtimeout(_game_window,50);
 //        wgetch(_game_window);
-        wrefresh(_game_window);
-        // refresh screen at the end !!!
 
+        performAttacks();
         // perform attacks from attackers (we will make it easier for the player)
         // perform attacks from towers
+        wrefresh(_game_window);
         if (_tower_manager->getTowerCount() == 0)
             break;
     }
@@ -204,24 +204,19 @@ void CGame::drawAttackerDefs() {
 
 // display the stats of the game and return to main menu
 bool CGame::gameEnd(const char *msg) {
-    wclear(_game_window);
+    CMenu endMenu;
+    std::stringstream scorestring;
+
     _score = (towers_destroyed * 200
-              + _player->getCoins() * 100) * _difficulty;
-    mvwprintw(_game_window, 0, 0, "Game Over!");
-    mvwprintw(_game_window, 1, 0, msg);
-    mvwprintw(_game_window, 2, 0, "Your score: %d", _score);
-    mvwprintw(_game_window, 3, 0, "Press 'q' to quit");
-    mvwprintw(_game_window, 4, 0, "Press 'm' to return to menu");
-    wrefresh(_game_window);
-    int ch;
-    while (true) {
-        ch = wgetch(_game_window);
-        if (ch == 'q') {
-            return false;
-        }
-        if (ch == 'm')
-            return true;
-    }
+              + _player->getCoins() * 100 + _player->getFinished()*25) * _difficulty;
+
+    scorestring << "Your score is: " << _score;
+    endMenu.setMenu({"Game Over!"," ", scorestring.str()}, {"QUIT", "RETURN TO MENU"});
+
+    int retval = endMenu.show();
+    if(retval == 0)
+        return false;
+    return true;
 }
 
 bool CGame::init(int level, int difficulty, const char *pathToSave) {
@@ -311,8 +306,9 @@ bool CGame::play() {
 }
 
 bool CGame::pauseMenu(const char *msg) {
-    CMenu pauseMenu({"GAME PAUSED", msg}, {"Resume", "Save and resume", "Exit"});
-    int choice = newMenu(pauseMenu);
+    CMenu pauseMenu({"GAME PAUSED", msg}, {"Resume", "Save and resume", "End and don't save"});
+
+    int choice = pauseMenu.show();
     if (choice == 0) { // resume game
         return true;
     } else if (choice == 1) {
@@ -330,4 +326,15 @@ void CGame::drawCurrentMoney() {
     ss << "Money: " << _player->getCoins() << " ";
     int width = _gameMap.getMapWidth();
     mvwprintw(_game_window, 2, width + 2, ss.str().c_str());
+}
+
+bool CGame::performAttacks() {
+    auto towersToAttack = _player->getTowersToAttack();
+    size_t sizeBefore = _tower_manager->getTowerCount();
+    if(!towersToAttack.empty())
+        _tower_manager->damageTowers(towersToAttack);
+
+    size_t sizeAfter = _tower_manager->getTowerCount();
+    towers_destroyed+= sizeBefore - sizeAfter;
+    return true;
 }

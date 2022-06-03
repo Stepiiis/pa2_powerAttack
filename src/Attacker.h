@@ -3,6 +3,7 @@
 #include "Entity.h"
 #include "constants.h"
 #include <vector>
+#include <set>
 #include <memory>
 #include <queue>
 #include <deque>
@@ -10,30 +11,30 @@
 #include "Entity.h"
 #include "exceptions.h"
 #include "Definitions.h"
+#include <utility>
 
 
 class Attacker: public Entity
 {
 public:
-    Attacker(int posX, int posY, int maxHealth, Map* map, int id);
+    Attacker(int posX, int posY, defEntity def, Map* map, int id);
 //    ~Attacker() = default;
-    char getSymbol() override;
     ~Attacker() override;
     bool operator < (Attacker & rhs);
     bool operator > (Attacker & rhs);
-    bool checkRadius() override;
     void setPosition(int x, int y);
     void place(int x, int y);
     virtual bool moveOnPath() = 0;
-    virtual bool isTarget(const Point& p) const = 0;
+    Point getNextPoint();
+    [[nodiscard]] virtual bool isTarget(const Point& p) const = 0;
     Point::PointType getType() override;
     bool findShortestPath();
-// que that is updated everytime findPath is called
+
+// queue that is updated everytime findPath is called
 
 protected:
 
     void popPath();
-    Point getNextPoint();
     std::deque<Point> m_path;
     int cycleCnt{};
 };
@@ -43,9 +44,7 @@ protected:
 class basicAttacker final: public Attacker
 {
 public:
-    basicAttacker(int posX, int posY, int maxHealth, Map* map, int id);
-    char getSymbol() override;
-    bool checkRadius() override;
+    basicAttacker(int posX, int posY, defEntity def, Map* map, int id);
     bool isTarget(const Point& p) const override;
     bool moveOnPath() override;
 };
@@ -58,9 +57,7 @@ public:
 class fastAttacker final: public Attacker
 {
 public:
-    fastAttacker(int posX, int posY, int maxHealth, Map* map, int id);
-    char getSymbol() override;
-    bool checkRadius() override;
+    fastAttacker(int posX, int posY, defEntity def, Map* map, int id);
     bool isTarget(const Point& p) const override;
     bool moveOnPath() override;
 };
@@ -72,9 +69,7 @@ public:
 class chargerAttacker final: public Attacker
 {
 public:
-    chargerAttacker(int posX, int posY, int maxHealth, Map* map,int id);
-    char getSymbol() override;
-    bool checkRadius() override;
+    chargerAttacker(int posX, int posY, defEntity def, Map* map,int id);
     bool isTarget(const Point& p) const override;
     bool moveOnPath() override;
 };

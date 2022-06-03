@@ -32,7 +32,7 @@ Point::Point(int x, int y, char symbol)
             break;
     }
     _defaultType = _type;
-    _IDent = 0;
+    _ident = 0;
 }
 // helper constructor for ForEachNeighbour function
 Point::Point(int x, int y) {
@@ -40,7 +40,7 @@ Point::Point(int x, int y) {
     this->_y = y;
     _type = Empty;
     _symbol = ' ';
-    _IDent = 0;
+    _ident = 0;
 
 }
 
@@ -95,13 +95,13 @@ bool Map::updateMap( int x, int y, Entity * entity)
     auto prev = entity->getPosition();
     m_map[prev.second][prev.first]._symbol = m_map[prev.second][prev.first]._defaultSymbol;
     m_map[prev.second][prev.first]._type = m_map[prev.second][prev.first]._defaultType;
-    m_map[prev.second][prev.first]._IDent=0;
+    m_map[prev.second][prev.first]._ident=0;
     mvwprintw(m_game_window,prev.second+1,prev.first+1,"%c",m_map[prev.second][prev.first]._defaultSymbol);
     char symbol = entity->getSymbol();
     entity->move(x,y);
     m_map[y][x]._type = entity->getType();
     m_map[y][x]._symbol = symbol;
-    m_map[y][x]._IDent = entity->getID();
+    m_map[y][x]._ident = entity->getID();
     mvwprintw(m_game_window,y+1,x+1,"%c",symbol);
     return true;
 }
@@ -113,7 +113,7 @@ bool Map::setEntity(int x, int y, Entity * entity){
     }
     m_map[y][x]._type = entity->getType();
     m_map[y][x]._symbol = entity->getSymbol();
-    m_map[y][x]._IDent = entity->getID();
+    m_map[y][x]._ident = entity->getID();
     entity->move(x,y);
     mvwprintw(m_game_window,y+1,x+1,"%c",entity->getSymbol());
     return true;
@@ -302,6 +302,7 @@ bool Map::updateCell(int x, int y, Point::PointType type, const char symbol) {
     if (y < 0 || y >= (int)m_map.size()) throw mapException("Invalid y coordinate: updateCell");
     m_map[y][x]._type = type;
     m_map[y][x]._symbol = symbol;
+    m_map[y][x]._ident = 0;
     mvwprintw(m_game_window,y+1,x+1,"%c",symbol);
     return true;
 }
@@ -311,6 +312,7 @@ bool Map::revertCell(int x, int y) {
     if (y < 0 || y >= (int)m_map.size()) throw mapException("Invalid y coordinate: updateCell");
     m_map[y][x]._type = m_map[y][x]._defaultType;
     m_map[y][x]._symbol = m_map[y][x]._defaultSymbol;
+    m_map[y][x]._ident = 0;
     mvwprintw(m_game_window,y+1,x+1,"%c",m_map[y][x]._defaultSymbol);
     return true;
 }
@@ -330,4 +332,89 @@ int Map::getMapWidth() {
         }
     }
     return width;
+}
+// tried doing the bresenham algoroithm but i dont understand it fully so tried my own version
+//bool Map::checkClearSight(std::pair<int,int>& p1, std::pair<int,int>& p2) {
+//    int x1 = p1.first;
+//    int y1 = p1.second;
+//    int x2 = p2.first;
+//    int y2 = p2.second;
+//
+//    int dx = abs(x2 - x1); // x vzdalenost dvou bodu
+//    int dy = abs(y2 - y1); // y vzdalenost dvou bodu
+//    int sx = x1 < x2 ? 1 : -1; // smer x
+//    int sy = y1 < y2 ? 1 : -1; // smer y
+//    int err = dx - dy; // err threshold
+//    while (true) {
+//        if (x1 == x2 && y1 == y2) { // došli jsme do konce v pohodě
+//            return true;
+//        }
+//        if(m_map[y1][x1]._type != Point::Empty) { // v cestě je překážka
+//            return false;
+//        }
+//        int e2 = 2 * err;
+//        if (e2 > -dy) {
+//            err -= dy;
+//            x1 += sx;
+//        }
+//        if (e2 < dx) {
+//            err += dx;
+//            y1 += sy;
+//        }
+//    }
+//}
+
+
+/**
+ * \Brief
+ * Function tries to find a clear path from p1 to p2.
+ * Used by entities to check if they can clearly see another entity that they want to attack.
+ *
+ * \context The function uses my own algorithm, which decides based on the degree between two points
+ *  because I didnt fully understand bresenham algorithm i used my much slower version but atleast i didnt copypaste it
+ *
+ * @param p1 start point coordinate
+ * @param p2 end point coordinate
+ * @return true if path was found and false if there is an obstruction
+ */
+bool Map::checkClearSight(const std::pair<int,int>& p1, const std::pair<int,int>& p2) const{
+
+    int x1 = p1.first; // aktualni pozice "cesty"
+    int y1 = p1.second; // aktualni pozice "cesty"
+    int x2 = p2.first;
+    int y2 = p2.second;
+    int dx; // x vzdalenost dvou bodu
+    int dy; // y vzdalenost dvou bodu
+    double incl;
+    while(true) {
+        if(x1 == x2 && y1 == y2) { // došli jsme do konce v pohodě
+            return true;
+        }
+        if(m_map[y1][x1]._type == Point::Wall) { // v cestě je překážka
+            break;
+        }
+        dx = abs(x2 - x1); // x vzdalenost dvou bodu
+        dy = abs(y2 - y1); // y vzdalenost dvou bodu
+
+        int sx = x1 < x2 ? 1 : -1; // smer x
+        int sy = y1 < y2 ? 1 : -1; // smer y
+
+        if (dy == 0) {
+            x1 += sx;
+            continue;
+        } else if (dx == 0) {
+            y1 += sy;
+            continue;
+        }
+
+        incl = (atan2(dy, dx) * 180) / PI; // úhel svíraný mezi bodem a p2
+        bool posuny = incl > 45; // posun x
+        bool posunx = incl < 45;
+//        bool half = (incl - 45) <= EPSILON ;
+
+        x1 += posunx ? sx : 0;
+        y1 += posuny ? sy : 0;
+
+    }
+    return false;
 }

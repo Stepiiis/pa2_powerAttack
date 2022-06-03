@@ -6,18 +6,17 @@
 
 class Tower : public Entity {
 public:
-    Tower(int x, int y, int hp, Map* map,int towerID);
-    char getSymbol() override;
-    bool checkRadius() override;
+    Tower(int x, int y, defEntity def, Map* map,int towerID);
+    bool operator < (Tower & rhs);
+    bool operator > (Tower & rhs);
     Point::PointType getType() override;
 };
+
 
 // základní věž se symbolem T
 class basicTower final: public Tower{
 public:
-    basicTower(int x, int y, int hp, Map* map,int towerID);
-    char getSymbol() override;
-    bool checkRadius() override;
+    basicTower(int x, int y, defEntity def, Map* map,int towerID);
 };
 
 
@@ -25,9 +24,7 @@ public:
 // Zničení odmění hráče základní odměnou
 class fastTower final: public Tower{
 public:
-    fastTower(int x, int y, int hp, Map* map,int towerID);
-    char getSymbol() override;
-    bool checkRadius() override;
+    fastTower(int x, int y, defEntity def, Map* map,int towerID);
 };
 
 // útok od této věže je ~1,5x větší než základ. je však 2x dražší
@@ -35,9 +32,7 @@ public:
 class highDamageTower final: public Tower
     {
 public:
-        highDamageTower(int x, int y, int hp, Map* map,int towerID);
-        char getSymbol() override;
-        bool checkRadius() override;
+        highDamageTower(int x, int y, defEntity def, Map* map,int towerID);
     };
 
 
@@ -45,7 +40,5 @@ public:
 class slowEffectTower final: public Tower
         {
 public:
-    slowEffectTower(int x, int y, int hp, Map* map,int towerID);
-    char getSymbol() override;
-    bool checkRadius() override;
+    slowEffectTower(int x, int y, defEntity def, Map* map,int towerID);
         };
