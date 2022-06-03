@@ -71,6 +71,7 @@ size_t Enemy::getTowerCount(){
 }
 
 bool Enemy::damageTowers(std::vector<std::pair<int, int>> &towers) {
+
     std::vector<int> toRemove;
     for(const auto & tower: towers){
         if(_towers.count(tower.first)) {
@@ -79,8 +80,10 @@ bool Enemy::damageTowers(std::vector<std::pair<int, int>> &towers) {
         }
     }
     for(int index : toRemove){
-        _towers[index]->destroy();
-        _towers.erase(index);
+        if(_towers.count(index)) {
+            _towers[index]->destroy();
+            _towers.erase(index);
+        }
     }
     return true;
 }

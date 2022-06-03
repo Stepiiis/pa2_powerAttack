@@ -206,12 +206,14 @@ void CGame::drawAttackerDefs() {
 bool CGame::gameEnd(const char *msg) {
     CMenu endMenu;
     std::stringstream scorestring;
+    std::stringstream sstowersDestroyed;
 
     _score = (towers_destroyed * 200
               + _player->getCoins() * 100 + _player->getFinished()*25) * _difficulty;
 
     scorestring << "Your score is: " << _score;
-    endMenu.setMenu({"Game Over!"," ", scorestring.str()}, {"QUIT", "RETURN TO MENU"});
+    sstowersDestroyed << "You have destroyed: " << towers_destroyed << " towers";
+    endMenu.setMenu({"Game Over!"," ", scorestring.str(),sstowersDestroyed.str()}, {"QUIT", "RETURN TO MENU"});
 
     int retval = endMenu.show();
     if(retval == 0)
@@ -233,6 +235,11 @@ bool CGame::init(int level, int difficulty, const char *pathToSave) {
         _game_window = newwin(winheight, winwidth, starty, startx);
         _gameMap.setWindow(_game_window);
         initializeWindow();
+    }else{
+        delwin(_game_window);
+        _game_window = newwin(winheight, winwidth, starty, startx);
+        _gameMap.setWindow(_game_window);
+        initializeWindow();
     }
     if (level == 0) {
         loadFromSave(pathToSave);
@@ -240,6 +247,7 @@ bool CGame::init(int level, int difficulty, const char *pathToSave) {
         if (_gameMap.m_map.empty())
             load(level);
     }
+    _gameMap.setWindow(_game_window);
 
     if (_player == nullptr)
         _player = new Player(&_gameMap, _definitions.getAttacker());

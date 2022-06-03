@@ -31,7 +31,7 @@ public:
     void draw();
     int getDamage() const;
     int getHP() const;
-    size_t getCurrentFocus();
+    size_t getCurrentFocus() const;
     char getSymbol() const;
     virtual Point::PointType getType() = 0;
     bool checkRadius(Point::PointType type);

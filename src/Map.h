@@ -90,7 +90,7 @@ protected:
     *   @Vyhýbání_se_věžím - pro fast attackera najde cestu do cíle která bude nejkratší dobu v dosahu věží
     *   @Náběh_na_vež - běží k nejbližší věži a ničí věž dokud není mrtvá ( pro heavy attackera, který má hodně hp)
     */
-    void forEachNeighborImpl(const Point& p, Callback fun);
+    void forEachNeighborImpl(const Point& p, const Callback& fun);
 public:
     /**
  * @abstract

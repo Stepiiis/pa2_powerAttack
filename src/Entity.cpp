@@ -28,7 +28,6 @@ bool Entity::giveDamage(int damage, Entity* target){
 
 bool Entity::destroy() {
     m_sharedMap->revertCell(m_x, m_y);
-    this->alive = false;
     return true;
 }
 
@@ -62,7 +61,7 @@ void Entity::calculateDeltas() {
         temp.emplace_back(0,-i);
     }
 
-    for(int i = 0; i < floor(m_radius); i++){
+    for(int i = 0; i < floor(m_radius/2); i++){
         temp.emplace_back(i,i);
         temp.emplace_back(i,-i);
         temp.emplace_back(-i,i);
@@ -81,7 +80,7 @@ void Entity::calculateDeltas() {
     }
 }
 
-
+// parameter specifies for what are we looking for
 bool Entity::checkRadius(Point::PointType type){
     std::map<size_t, std::pair<int,int>> towers;
     std::map<std::pair<int,int>, size_t> closestTowers;
@@ -114,7 +113,7 @@ bool Entity::checkRadius(Point::PointType type){
     }
 }
 
-size_t Entity::getCurrentFocus() {
+size_t Entity::getCurrentFocus() const {
     return m_currentFocusID;
 }
 

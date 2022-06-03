@@ -277,7 +277,7 @@ void Map::setWindow(WINDOW *win) {
     m_game_window=win;
 }
 
-void Map::forEachNeighborImpl(const Point &p, Map::Callback fun) {
+void Map::forEachNeighborImpl(const Point &p, const Map::Callback& fun) {
     size_t x, y;
     for (auto [xd, yd] : { std::pair<int, int>{-1,0}, {0,-1}, {1, 0}, {0, 1} }) {
         x = p._x + xd;
@@ -391,7 +391,7 @@ bool Map::checkClearSight(const std::pair<int,int>& p1, const std::pair<int,int>
             return true;
         }
         if(m_map[y1][x1]._type == Point::Wall) { // v cestě je překážka
-            break;
+            return false;
         }
         dx = abs(x2 - x1); // x vzdalenost dvou bodu
         dy = abs(y2 - y1); // y vzdalenost dvou bodu
