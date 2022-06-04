@@ -7,7 +7,6 @@ Player::Player(Map* map,defEntity def)
     _map = map;
     _spawnLane._x=-10;
     _spawnLane._y=-10;
-    attackerID = 0;
 }
 
 
@@ -35,7 +34,6 @@ int Player::getCoins() const{
         return false;
     _attackersQueue.pop_front();
     _coins-=_def[attacker.first]["price"];
-    attackerID++;
     switch (_def[attacker.first]["symbol"]){ // chooses on the basis of different ascii values
         case 36: // ascii value of $
             _attackers.emplace(attackerID,std::make_unique<basicAttacker>(attacker.second._x, attacker.second._y, _def, _map, attackerID));
@@ -47,6 +45,7 @@ int Player::getCoins() const{
             _attackers.emplace(attackerID,std::make_unique<chargerAttacker>(attacker.second._x, attacker.second._y, _def, _map, attackerID));
             break;
     }
+      attackerID++;
     return true;
 }
 
@@ -119,7 +118,8 @@ std::vector<std::pair<int, int> > Player::getTowersToAttack() const {
     std::vector<std::pair<int, int> > towers;
     for (auto &attacker: _attackers) {
         if(attacker.second->checkRadius(Point::Tower))
-            towers.emplace_back(attacker.second->getCurrentFocus(), attacker.second->getDamage());
+            if(attacker.second->isFocused())
+                towers.emplace_back(attacker.second->getCurrentFocus(), attacker.second->getDamage());
     }
     return towers;
 }
@@ -153,5 +153,27 @@ void Player::setFinished(int nr) {
 
 void Player::addAttackersToQueue(std::deque<std::pair<std::string, Point> >& queue) {
     _attackersQueue = queue;
+}
+
+size_t Player::getAttackerCount() {
+    return _attackers.size();
+}
+
+int Player::damageAttackers(std::vector<std::pair<int,int> >& attackers) {
+    std::vector<int> toRemove;
+    for(const auto & attacker: attackers){
+        if(_attackers.count(attacker.first)) {
+            if (!_attackers[attacker.first]->takeDamage(attacker.second))
+                toRemove.emplace_back(attacker.first);
+        }
+    }
+    for(int index : toRemove){
+        if(_attackers.count(index)) {
+            _attackers[index]->destroy();
+            _attackers.erase(index);
+        }
+    }
+
+    return toRemove.size();
 }
 

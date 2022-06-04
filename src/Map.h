@@ -33,7 +33,7 @@ public:
 
     char _symbol;
     int _x, _y;
-    size_t _ident; // unique identifier for each point (used for combat)
+    int _ident; // unique identifier for each point (used for combat)
     PointType _type;
     PointType _defaultType;
     char _defaultSymbol;

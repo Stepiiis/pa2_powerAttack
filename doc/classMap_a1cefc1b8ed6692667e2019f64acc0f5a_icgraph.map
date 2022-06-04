@@ -1,6 +1,10 @@
 <map id="Map::printMap" name="Map::printMap">
-<area shape="rect" id="node1" title=" " alt="" coords="443,5,559,32"/>
-<area shape="rect" id="node2" href="$classMap.html#af5b5492b49e9d1aaa54e586d1203030f" title=" " alt="" coords="264,5,395,32"/>
-<area shape="rect" id="node3" href="$classCGame.html#aa70fa8586abbd097b8eb7fb8d540841d" title=" " alt="" coords="108,5,216,32"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="829,56,945,83"/>
+<area shape="rect" id="node2" href="$classCGame.html#afbbb4f8d05f753b7c2d6a0d91ca96a9b" title=" " alt="" coords="611,5,781,32"/>
+<area shape="rect" id="node7" href="$classMap.html#af5b5492b49e9d1aaa54e586d1203030f" title=" " alt="" coords="631,56,761,83"/>
+<area shape="rect" id="node8" href="$classCGame.html#aa70fa8586abbd097b8eb7fb8d540841d" title=" " alt="" coords="455,81,563,108"/>
+<area shape="rect" id="node3" href="$classCGame.html#a4225411d7a9a23bf0dcbaf63d6a41936" title=" " alt="" coords="459,19,558,45"/>
+<area shape="rect" id="node4" href="$classCGame.html#aa7c80b7185158a0bde186d83f0e8cbb4" title=" " alt="" coords="300,56,407,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="197,31,252,57"/>
+<area shape="rect" id="node6" href="$structCMenu.html#a07236cc397b0e4e55ec4f916c3893fbd" title=" " alt="" coords="5,56,149,83"/>
 </map>

@@ -1,4 +1,27 @@
 var searchData=
 [
-  ['x_300',['x',['../classPoint.html#a8c779e11e694b20e0946105a9f5de842',1,'Point']]]
+  ['m_5fattackspeed_503',['m_attackSpeed',['../classEntity.html#ac255477f1342876282217f8e015937f5',1,'Entity']]],
+  ['m_5fcurrentfocusid_504',['m_currentFocusID',['../classEntity.html#a9f149e7bdf64788360be1a32f43ebdcf',1,'Entity']]],
+  ['m_5fdamage_505',['m_damage',['../classEntity.html#aafa3179d12fe91febd4e62e7c12b2c9d',1,'Entity']]],
+  ['m_5fdeltas_506',['m_deltas',['../classEntity.html#a1cbf4c16eb5619ab05918eb07f95ca9d',1,'Entity']]],
+  ['m_5fentries_507',['m_entries',['../classMap.html#aa4144c02481e7d3bf3fb379d228add3f',1,'Map']]],
+  ['m_5fexit_508',['m_exit',['../classMap.html#a4baf0c668982bf3a54a4d32863757bc5',1,'Map']]],
+  ['m_5ffireeffect_509',['m_fireEffect',['../structCEffects.html#aa8df70ec7cb870762a324406711573c0',1,'CEffects']]],
+  ['m_5fgame_5fwindow_510',['m_game_window',['../classMap.html#ab1954ff579267e206e3241ac6173b96b',1,'Map']]],
+  ['m_5fhp_511',['m_hp',['../classEntity.html#a9606227292d34f3c0acc12dacb414295',1,'Entity']]],
+  ['m_5fid_512',['m_id',['../classEntity.html#a0aeecc13f67e631dba8e5c1614cea0a0',1,'Entity']]],
+  ['m_5fmap_513',['m_map',['../classMap.html#a91a3a594f9b54a224c3cc9c93ec21e0c',1,'Map']]],
+  ['m_5fmapstring_514',['m_mapString',['../classMap.html#a77ac83afdd4ec49414bf563abf905c8d',1,'Map']]],
+  ['m_5fmovementspeed_515',['m_movementSpeed',['../classAttacker.html#a22e6d4ec642225523ea5948576140cee',1,'Attacker']]],
+  ['m_5fpath_516',['m_path',['../classAttacker.html#ad5fe590c3ba20c9ce845e8acf06fe776',1,'Attacker']]],
+  ['m_5fradius_517',['m_radius',['../classEntity.html#a3b9a9926c41bd760cd92a7fee064c9bc',1,'Entity']]],
+  ['m_5fsharedmap_518',['m_sharedMap',['../classEntity.html#ad90b654e214ad7b1894ed250e312071d',1,'Entity']]],
+  ['m_5fsloweffect_519',['m_slowEffect',['../structCEffects.html#ac4e7cd3b65c5a149f9e4a26ee7b0e543',1,'CEffects']]],
+  ['m_5fsloweffectduration_520',['m_slowEffectDuration',['../classAttacker.html#a9706569f0fd8723d989cd9dc355196cb',1,'Attacker']]],
+  ['m_5fsymbol_521',['m_symbol',['../classEntity.html#a8b6f5fdf38f2be75330f24f272785acc',1,'Entity']]],
+  ['m_5fx_522',['m_x',['../classEntity.html#acbfc593608011a16f6a2f97c0b6cbbe2',1,'Entity']]],
+  ['m_5fy_523',['m_y',['../classEntity.html#a00ba81d262aa2c8ed22913610e4a5bfa',1,'Entity']]],
+  ['map_524',['Map',['../classPoint.html#a633a8bc22610ffb806e4d3de98e852e4',1,'Point']]],
+  ['maxhp_525',['maxHP',['../structdefBaseEntity.html#a3f8e641c97493f85b6390211f55825f1',1,'defBaseEntity']]],
+  ['movement_526',['movement',['../structdefBaseEntity.html#af1754f8306f79934ee4b72f573aa2365',1,'defBaseEntity']]]
 ];

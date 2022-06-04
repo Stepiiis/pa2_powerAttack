@@ -32,7 +32,7 @@ Point::Point(int x, int y, char symbol)
             break;
     }
     _defaultType = _type;
-    _ident = 0;
+    _ident = -10;
 }
 // helper constructor for ForEachNeighbour function
 Point::Point(int x, int y) {
@@ -40,7 +40,7 @@ Point::Point(int x, int y) {
     this->_y = y;
     _type = Empty;
     _symbol = ' ';
-    _ident = 0;
+    _ident = -10;
 
 }
 
@@ -93,10 +93,7 @@ bool Map::updateMap( int x, int y, Entity * entity)
         throw(mapException("Out of bounds"));
     }
     auto prev = entity->getPosition();
-    m_map[prev.second][prev.first]._symbol = m_map[prev.second][prev.first]._defaultSymbol;
-    m_map[prev.second][prev.first]._type = m_map[prev.second][prev.first]._defaultType;
-    m_map[prev.second][prev.first]._ident=0;
-    mvwprintw(m_game_window,prev.second+1,prev.first+1,"%c",m_map[prev.second][prev.first]._defaultSymbol);
+    revertCell(prev.first, prev.second);
     char symbol = entity->getSymbol();
     entity->move(x,y);
     m_map[y][x]._type = entity->getType();
@@ -302,7 +299,7 @@ bool Map::updateCell(int x, int y, Point::PointType type, const char symbol) {
     if (y < 0 || y >= (int)m_map.size()) throw mapException("Invalid y coordinate: updateCell");
     m_map[y][x]._type = type;
     m_map[y][x]._symbol = symbol;
-    m_map[y][x]._ident = 0;
+    m_map[y][x]._ident = -10;
     mvwprintw(m_game_window,y+1,x+1,"%c",symbol);
     return true;
 }
@@ -312,7 +309,7 @@ bool Map::revertCell(int x, int y) {
     if (y < 0 || y >= (int)m_map.size()) throw mapException("Invalid y coordinate: updateCell");
     m_map[y][x]._type = m_map[y][x]._defaultType;
     m_map[y][x]._symbol = m_map[y][x]._defaultSymbol;
-    m_map[y][x]._ident = 0;
+    m_map[y][x]._ident = -10;
     mvwprintw(m_game_window,y+1,x+1,"%c",m_map[y][x]._defaultSymbol);
     return true;
 }

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['terminal_163',['terminal',['../structterminal.html',1,'']]],
-  ['tower_164',['Tower',['../classTower.html',1,'']]]
+  ['sloweffecttower_285',['slowEffectTower',['../classslowEffectTower.html',1,'']]],
+  ['syntaxerr_286',['syntaxErr',['../classsyntaxErr.html',1,'']]]
 ];

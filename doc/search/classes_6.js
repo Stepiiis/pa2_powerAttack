@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logexception_156',['logException',['../classlogException.html',1,'']]]
+  ['highdamagetower_278',['highDamageTower',['../classhighDamageTower.html',1,'']]]
 ];

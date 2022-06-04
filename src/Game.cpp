@@ -74,6 +74,11 @@ bool CGame::resume() {
         if (input == ' ') {
             _player->addAttackerToQueue();
         }
+
+        // perform attacks from attackers (we will make it easier for the player)
+        // perform attacks from towers
+        performAttacks();
+
         if (!_player->emptyAttackerQueue())
             _player->spawnAttacker();
         // first figure out the route for attackers
@@ -83,9 +88,8 @@ bool CGame::resume() {
 //        wtimeout(_game_window,50);
 //        wgetch(_game_window);
 
-        performAttacks();
-        // perform attacks from attackers (we will make it easier for the player)
-        // perform attacks from towers
+
+
         wrefresh(_game_window);
         if (_tower_manager->getTowerCount() == 0)
             break;
@@ -325,15 +329,15 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
         id++;
     }
     id = 0;
-    for(const auto& utocnici: entities["towers"]){
+    for(const auto& veze: entities["towers"]){
         int x;
         int y;
         int hp;
         std::stringstream ss;
         try{
-            x = std::stoi(utocnici.at("x"));
-            y = std::stoi(utocnici.at("y"));
-            hp = std::stoi(utocnici.at("hp"));
+            x = std::stoi(veze.at("x"));
+            y = std::stoi(veze.at("y"));
+            hp = std::stoi(veze.at("hp"));
         }catch(std::invalid_argument& e)
         {
             ss.str(std::string());
@@ -346,13 +350,13 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
             ss << "one or more attributes is missing, saveFile might be corrupt";
             throw syntaxErr(ss.str());
         }
-        if(utocnici.at("type") == BASICT)
+        if(veze.at("type") == BASICT)
             _tower_manager->createNewTower(0,x,y,hp,id);
-        else if(utocnici.at("type") == FASTT)
+        else if(veze.at("type") == FASTT)
             _tower_manager->createNewTower(1,x,y,hp,id);
-        else if(utocnici.at("type") == STRONGT)
+        else if(veze.at("type") == STRONGT)
             _tower_manager->createNewTower(2,x,y,hp,id);
-        else if(utocnici.at("type") == SLOWET)
+        else if(veze.at("type") == SLOWET)
             _tower_manager->createNewTower(3,x,y,hp,id);
         else{
             ss.str(std::string());
@@ -582,12 +586,21 @@ void CGame::drawCurrentMoney() {
 
 bool CGame::performAttacks() {
     auto towersToAttack = _player->getTowersToAttack();
-    size_t sizeBefore = _tower_manager->getTowerCount();
-    if(!towersToAttack.empty())
-        _tower_manager->damageTowers(towersToAttack);
 
-    size_t sizeAfter = _tower_manager->getTowerCount();
-    _towers_destroyed+= sizeBefore - sizeAfter;
+    if(!towersToAttack.empty())
+        _towers_destroyed+= _tower_manager->damageTowers(towersToAttack);
+
+    auto attackersToAttack = _tower_manager->getAttackersToAttack();
+    if(!attackersToAttack.empty())
+        _player->damageAttackers(attackersToAttack);
+
+    for(const auto & attacker: attackersToAttack){
+        sendToLogFile(0, "performing attack on Attacker ID:"+std::to_string(attacker.first), "CGame::performAttacks");
+    }
+    for(const auto & tower: towersToAttack){
+        sendToLogFile(0, "performing attack on Tower ID:"+std::to_string(tower.first), "CGame::performAttacks");
+    }
+
     return true;
 }
 

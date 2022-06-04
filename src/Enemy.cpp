@@ -70,7 +70,7 @@ size_t Enemy::getTowerCount(){
     return _towers.size();
 }
 
-bool Enemy::damageTowers(std::vector<std::pair<int, int>> &towers) {
+int Enemy::damageTowers(std::vector<std::pair<int, int>> &towers) {
 
     std::vector<int> toRemove;
     for(const auto & tower: towers){
@@ -85,7 +85,7 @@ bool Enemy::damageTowers(std::vector<std::pair<int, int>> &towers) {
             _towers.erase(index);
         }
     }
-    return true;
+    return toRemove.size();
 }
 
 bool Enemy::createNewTower(int type, int x, int y, int hp, int id) {
@@ -106,4 +106,14 @@ bool Enemy::createNewTower(int type, int x, int y, int hp, int id) {
         throw std::invalid_argument("type doesnt correspond any tower definition");
     }
     return true;
+}
+
+std::vector<std::pair<int, int> > Enemy::getAttackersToAttack() {
+    std::vector<std::pair<int, int> > attackers;
+    for (auto &attacker: _towers) {
+        if(attacker.second->checkRadius(Point::Attacker))
+            if(attacker.second->isFocused())
+                attackers.emplace_back(attacker.second->getCurrentFocus(), attacker.second->getDamage());
+    }
+    return attackers;
 }

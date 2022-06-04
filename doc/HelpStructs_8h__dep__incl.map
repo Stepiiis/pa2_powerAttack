@@ -1,6 +1,16 @@
 <map id="src/HelpStructs.h" name="src/HelpStructs.h">
-<area shape="rect" id="node1" title=" " alt="" coords="60,5,192,32"/>
-<area shape="rect" id="node2" href="$Game_8h.html" title=" " alt="" coords="78,80,174,107"/>
-<area shape="rect" id="node3" href="$Game_8cpp.html" title=" " alt="" coords="5,155,116,181"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title=" " alt="" coords="140,155,245,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="447,5,579,32"/>
+<area shape="rect" id="node2" href="$Attacker_8h.html" title=" " alt="" coords="321,80,431,107"/>
+<area shape="rect" id="node7" href="$Game_8h.html" title=" " alt="" coords="415,304,511,331"/>
+<area shape="rect" id="node13" href="$Menu_8h.html" title=" " alt="" coords="559,80,652,107"/>
+<area shape="rect" id="node3" href="$Attacker_8cpp.html" title=" " alt="" coords="177,155,303,181"/>
+<area shape="rect" id="node4" href="$Player_8h.html" title=" " alt="" coords="327,155,425,181"/>
+<area shape="rect" id="node11" href="$Tower_8h.html" title=" " alt="" coords="58,155,153,181"/>
+<area shape="rect" id="node5" href="$Enemy_8h.html" title=" " alt="" coords="139,229,239,256"/>
+<area shape="rect" id="node10" href="$Player_8cpp.html" title=" " alt="" coords="263,229,375,256"/>
+<area shape="rect" id="node6" href="$Enemy_8cpp.html" title=" " alt="" coords="132,304,247,331"/>
+<area shape="rect" id="node8" href="$Game_8cpp.html" title=" " alt="" coords="341,379,451,405"/>
+<area shape="rect" id="node9" href="$main_8cpp.html" title=" " alt="" coords="475,379,581,405"/>
+<area shape="rect" id="node12" href="$Tower_8cpp.html" title=" " alt="" coords="5,229,115,256"/>
+<area shape="rect" id="node14" href="$Menu_8cpp.html" title=" " alt="" coords="551,155,659,181"/>
 </map>

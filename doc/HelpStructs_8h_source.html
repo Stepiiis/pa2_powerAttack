@@ -69,15 +69,26 @@ $(function() {
 <div class="title">HelpStructs.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="HelpStructs_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="structterminal.html">    2</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structterminal.html">terminal</a>{</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="structterminal.html#a3317b3382463b0265e0a5dfe44fd6807">    3</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structterminal.html#a3317b3382463b0265e0a5dfe44fd6807">height</a>{};</div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b">    4</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b">width</a>{};</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;};</div>
+<a href="HelpStructs_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="structCEffects.html">    2</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structCEffects.html">CEffects</a>{</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="structCEffects.html#ad4dee569b51998c9a56fc0399ad5bad2">    3</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structCEffects.html#ad4dee569b51998c9a56fc0399ad5bad2">CEffects</a>(<span class="keywordtype">int</span> slowEffect = 0, <span class="keywordtype">int</span> fireEffect = 0): <a class="code" href="structCEffects.html#ac4e7cd3b65c5a149f9e4a26ee7b0e543">m_slowEffect</a>(slowEffect), <a class="code" href="structCEffects.html#aa8df70ec7cb870762a324406711573c0">m_fireEffect</a>(fireEffect){}</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="structCEffects.html#ac4e7cd3b65c5a149f9e4a26ee7b0e543">    4</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structCEffects.html#ac4e7cd3b65c5a149f9e4a26ee7b0e543">m_slowEffect</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="structCEffects.html#aa8df70ec7cb870762a324406711573c0">    5</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structCEffects.html#aa8df70ec7cb870762a324406711573c0">m_fireEffect</a>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">// to be added</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;};</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structterminal.html">    9</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structterminal.html">terminal</a>{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structterminal.html#a3317b3382463b0265e0a5dfe44fd6807">   10</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structterminal.html#a3317b3382463b0265e0a5dfe44fd6807">height</a>{};</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b">   11</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b">width</a>{};</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructterminal_html_a14f060e9040bf81cf74d9d68e3b2c92b"><div class="ttname"><a href="structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b">terminal::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> HelpStructs.h:4</div></div>
-<div class="ttc" id="astructterminal_html_a3317b3382463b0265e0a5dfe44fd6807"><div class="ttname"><a href="structterminal.html#a3317b3382463b0265e0a5dfe44fd6807">terminal::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> HelpStructs.h:3</div></div>
-<div class="ttc" id="astructterminal_html"><div class="ttname"><a href="structterminal.html">terminal</a></div><div class="ttdef"><b>Definition:</b> HelpStructs.h:2</div></div>
+<div class="ttc" id="astructterminal_html_a14f060e9040bf81cf74d9d68e3b2c92b"><div class="ttname"><a href="structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b">terminal::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> HelpStructs.h:11</div></div>
+<div class="ttc" id="astructCEffects_html_aa8df70ec7cb870762a324406711573c0"><div class="ttname"><a href="structCEffects.html#aa8df70ec7cb870762a324406711573c0">CEffects::m_fireEffect</a></div><div class="ttdeci">int m_fireEffect</div><div class="ttdef"><b>Definition:</b> HelpStructs.h:5</div></div>
+<div class="ttc" id="astructterminal_html_a3317b3382463b0265e0a5dfe44fd6807"><div class="ttname"><a href="structterminal.html#a3317b3382463b0265e0a5dfe44fd6807">terminal::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition:</b> HelpStructs.h:10</div></div>
+<div class="ttc" id="astructCEffects_html_ac4e7cd3b65c5a149f9e4a26ee7b0e543"><div class="ttname"><a href="structCEffects.html#ac4e7cd3b65c5a149f9e4a26ee7b0e543">CEffects::m_slowEffect</a></div><div class="ttdeci">int m_slowEffect</div><div class="ttdef"><b>Definition:</b> HelpStructs.h:4</div></div>
+<div class="ttc" id="astructCEffects_html_ad4dee569b51998c9a56fc0399ad5bad2"><div class="ttname"><a href="structCEffects.html#ad4dee569b51998c9a56fc0399ad5bad2">CEffects::CEffects</a></div><div class="ttdeci">CEffects(int slowEffect=0, int fireEffect=0)</div><div class="ttdef"><b>Definition:</b> HelpStructs.h:3</div></div>
+<div class="ttc" id="astructterminal_html"><div class="ttname"><a href="structterminal.html">terminal</a></div><div class="ttdef"><b>Definition:</b> HelpStructs.h:9</div></div>
+<div class="ttc" id="astructCEffects_html"><div class="ttname"><a href="structCEffects.html">CEffects</a></div><div class="ttdef"><b>Definition:</b> HelpStructs.h:2</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

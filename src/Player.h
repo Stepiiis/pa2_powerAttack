@@ -26,13 +26,15 @@ public:
     void addAttackersToQueue(std::deque<std::pair<std::string, Point> >& queue);
     void setCoins(int coins);
     void clearAttackers();
+    int damageAttackers(std::vector<std::pair<int,int> > & attackers);
     void setFinished(int nr);
     int getFinished() const;
     int getCoins() const;
+    size_t getAttackerCount();
 
     [[nodiscard]] std::vector<std::pair<int,int> > getTowersToAttack() const;
     [[nodiscard]] auto& getAttackers() const;
-    int attackerID;
+    int attackerID = 0;
 protected:
     int _score{};    // score calculated at the end of the game. could be calculated in class CGame
     int _attackersFinished{};

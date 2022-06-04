@@ -18,7 +18,7 @@ slw 0
 
 type basicTower
 x 4
-y 2
+y 3
 hp 100
 
 type basicTower

@@ -1,7 +1,13 @@
 <map id="sendToLogFile" name="sendToLogFile">
-<area shape="rect" id="node1" title=" " alt="" coords="536,31,649,57"/>
-<area shape="rect" id="node2" href="$classMap.html#a79a4355510b026646449df1852768c38" title=" " alt="" coords="373,31,488,57"/>
-<area shape="rect" id="node3" href="$classCGame.html#a9945af5487d059db1d7119ae16cd2dd3" title=" " alt="" coords="199,5,306,32"/>
-<area shape="rect" id="node5" href="$classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381" title=" " alt="" coords="180,56,325,83"/>
-<area shape="rect" id="node4" href="$classCGame.html#a68085be13e3fe743b90b57f69c92e140" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1079,56,1192,83"/>
+<area shape="rect" id="node2" href="$classCDefinitions.html#aeb13eb4e77295a396ba683bc8ed61fc4" title=" " alt="" coords="856,5,1031,32"/>
+<area shape="rect" id="node8" href="$classCGame.html#afbbb4f8d05f753b7c2d6a0d91ca96a9b" title=" " alt="" coords="619,56,790,83"/>
+<area shape="rect" id="node9" href="$classMap.html#acd24cfa7aca34a2839a94490ef563aa2" title=" " alt="" coords="886,107,1001,133"/>
+<area shape="rect" id="node3" href="$classCDefinitions.html#a9f1aafe71cad232d999da224681ad03f" title=" " alt="" coords="601,5,808,32"/>
+<area shape="rect" id="node4" href="$classCGame.html#a4225411d7a9a23bf0dcbaf63d6a41936" title=" " alt="" coords="455,56,553,83"/>
+<area shape="rect" id="node5" href="$classCGame.html#aa7c80b7185158a0bde186d83f0e8cbb4" title=" " alt="" coords="300,56,407,83"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="197,31,252,57"/>
+<area shape="rect" id="node7" href="$structCMenu.html#a07236cc397b0e4e55ec4f916c3893fbd" title=" " alt="" coords="5,56,149,83"/>
+<area shape="rect" id="node10" href="$classCGame.html#a9945af5487d059db1d7119ae16cd2dd3" title=" " alt="" coords="651,107,758,133"/>
+<area shape="rect" id="node11" href="$classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381" title=" " alt="" coords="632,157,777,184"/>
 </map>

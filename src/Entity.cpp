@@ -38,7 +38,7 @@ void Entity::draw(){
     m_sharedMap->refreshWindow();
 }
 
-size_t Entity::getID()const {
+int Entity::getID()const {
     return m_id;
 }
 
@@ -106,41 +106,48 @@ void Entity::calculateDeltas() {
 
 // parameter specifies for what are we looking for
 bool Entity::checkRadius(Point::PointType type){
-    std::map<size_t, std::pair<int,int>> towers;
-    std::map<std::pair<int,int>, size_t> closestTowers;
+//    std::map<size_t, std::pair<int,int>> towers;
+    std::map<std::pair<int,int>, int> closestEntity;
     bool foundFocus = false;
     for(const auto& [x,y] : m_deltas){
         if(m_x+x<0 || m_y+y<0 || m_x+x>=m_sharedMap->m_map[m_y].size()|| m_y+y>=m_sharedMap->m_map.size())
             continue;
-        if(m_sharedMap->m_map[m_y+y][m_x+y]._type == type) {
+            continue;
+        if(m_sharedMap->m_map[m_y+y][m_x+x]._type == type) {
             if(m_sharedMap->checkClearSight({m_x,m_y},{m_x+x,m_y+y})){
                 if(hasFocus) {
-                    if ((size_t) m_sharedMap->m_map[m_y + y][m_x + x]._ident == m_currentFocusID){
+                    if (m_sharedMap->m_map[m_y + y][m_x + x]._ident == m_currentFocusID){
                         foundFocus = true;
-                        towers.emplace((size_t)m_sharedMap->m_map[m_y+y][m_x+x]._ident, std::make_pair(x, y));
+//                        towers.emplace((size_t)m_sharedMap->m_map[m_y+y][m_x+x]._ident, std::make_pair(x, y));
                         break;
                     }
                 }
-                closestTowers.emplace(std::make_pair(x,y), (size_t)m_sharedMap->m_map[m_y+y][m_x+x]._ident);
-                towers.emplace((size_t)m_sharedMap->m_map[m_y+y][m_x+x]._ident, std::make_pair(x, y));
+                closestEntity.emplace(std::make_pair(x, y), m_sharedMap->m_map[m_y + y][m_x + x]._ident);
+//                towers.emplace((size_t)m_sharedMap->m_map[m_y+y][m_x+x]._ident, std::make_pair(x, y));
             }
         }
     }
     if(foundFocus)
         return true;
-    else if(closestTowers.empty())
+    else if(closestEntity.empty()) {
+        hasFocus = false;
         return false;
+    }
     else {
-        m_currentFocusID = closestTowers.begin()->second;
+        m_currentFocusID = closestEntity.begin()->second;
         hasFocus = true;
         return true;
     }
 }
 
-size_t Entity::getCurrentFocus() const {
+int Entity::getCurrentFocus() const {
     return m_currentFocusID;
 }
 
 int Entity::getDamage() const {
     return m_damage;
+}
+
+bool Entity::isFocused() const {
+    return hasFocus;
 }

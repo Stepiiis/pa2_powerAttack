@@ -1,7 +1,11 @@
 <map id="logException::what" name="logException::what">
-<area shape="rect" id="node1" title=" " alt="" coords="536,31,683,57"/>
-<area shape="rect" id="node2" href="$classMap.html#a79a4355510b026646449df1852768c38" title=" " alt="" coords="373,31,488,57"/>
-<area shape="rect" id="node3" href="$classCGame.html#a9945af5487d059db1d7119ae16cd2dd3" title=" " alt="" coords="199,5,306,32"/>
-<area shape="rect" id="node5" href="$classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381" title=" " alt="" coords="180,56,325,83"/>
-<area shape="rect" id="node4" href="$classCGame.html#a68085be13e3fe743b90b57f69c92e140" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="983,56,1129,83"/>
+<area shape="rect" id="node2" href="$classMap.html#acd24cfa7aca34a2839a94490ef563aa2" title=" " alt="" coords="820,56,935,83"/>
+<area shape="rect" id="node3" href="$classCGame.html#a9945af5487d059db1d7119ae16cd2dd3" title=" " alt="" coords="633,5,740,32"/>
+<area shape="rect" id="node8" href="$classCGame.html#afbbb4f8d05f753b7c2d6a0d91ca96a9b" title=" " alt="" coords="601,56,772,83"/>
+<area shape="rect" id="node9" href="$classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381" title=" " alt="" coords="614,107,759,133"/>
+<area shape="rect" id="node4" href="$classCGame.html#a4225411d7a9a23bf0dcbaf63d6a41936" title=" " alt="" coords="455,31,553,57"/>
+<area shape="rect" id="node5" href="$classCGame.html#aa7c80b7185158a0bde186d83f0e8cbb4" title=" " alt="" coords="300,31,407,57"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="197,5,252,32"/>
+<area shape="rect" id="node7" href="$structCMenu.html#a07236cc397b0e4e55ec4f916c3893fbd" title=" " alt="" coords="5,31,149,57"/>
 </map>

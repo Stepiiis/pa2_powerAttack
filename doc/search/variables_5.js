@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_298',['type',['../classPoint.html#ad45cb3c17cf58510bc92f61982b2390c',1,'Point']]]
+  ['fast_499',['fast',['../structattackerDef.html#addee8d0bff0257829adebfa6478db4c8',1,'attackerDef::fast()'],['../structtowerDef.html#ab3943915343412718b1cf66ec7ef3e16',1,'towerDef::fast()']]]
 ];

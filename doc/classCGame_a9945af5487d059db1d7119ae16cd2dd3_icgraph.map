@@ -1,4 +1,7 @@
 <map id="CGame::load" name="CGame::load">
-<area shape="rect" id="node1" title=" " alt="" coords="180,5,287,32"/>
-<area shape="rect" id="node2" href="$classCGame.html#a68085be13e3fe743b90b57f69c92e140" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="601,31,708,57"/>
+<area shape="rect" id="node2" href="$classCGame.html#a4225411d7a9a23bf0dcbaf63d6a41936" title=" " alt="" coords="455,31,553,57"/>
+<area shape="rect" id="node3" href="$classCGame.html#aa7c80b7185158a0bde186d83f0e8cbb4" title=" " alt="" coords="300,31,407,57"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="197,5,252,32"/>
+<area shape="rect" id="node5" href="$structCMenu.html#a07236cc397b0e4e55ec4f916c3893fbd" title=" " alt="" coords="5,31,149,57"/>
 </map>

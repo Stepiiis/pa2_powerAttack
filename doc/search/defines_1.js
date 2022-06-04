@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basic_5fattacker_5fdamage_311',['BASIC_ATTACKER_DAMAGE',['../constants_8h.html#a05fe62c38c8ee8a9c911eda7ea11aae4',1,'constants.h']]]
+  ['chargera_545',['CHARGERA',['../constants_8h.html#ae717d16323d5a9f39199c07fe6ce348f',1,'constants.h']]]
 ];

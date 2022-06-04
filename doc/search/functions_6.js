@@ -1,7 +1,26 @@
 var searchData=
 [
-  ['getemptyspaces_211',['getEmptySpaces',['../classMap.html#ae4713f8271b2c9fd62184ab0f2342447',1,'Map']]],
-  ['gethp_212',['getHP',['../classEntity.html#aa5a172de7c9f01920bd14a5b81716cbd',1,'Entity']]],
-  ['getsymbol_213',['getSymbol',['../classAttacker.html#aa933edde82ad9a88257c0bfbc06e2a4c',1,'Attacker::getSymbol()'],['../classbasicAttacker.html#acd6001f0d25ce986963affe459f2f993',1,'basicAttacker::getSymbol()'],['../classFastAttacker.html#a40f5850f91e711388128ee0fe13b2493',1,'FastAttacker::getSymbol()'],['../classchargerAttacker.html#a5b303119bb6dfa3d05de29acfd97d995',1,'chargerAttacker::getSymbol()'],['../classEntity.html#ac2d420ffaa0663a2acd2ecdf4b1ee9de',1,'Entity::getSymbol()'],['../classTower.html#abadae3cb0b344ca668195290629cde13',1,'Tower::getSymbol()'],['../classfastTower.html#aaffe49c4f5aaf2ff67a4c31b5946d8a2',1,'fastTower::getSymbol()'],['../classhighDamageTower.html#a38b2e0fe5894afaf55dabc06e58d9d45',1,'highDamageTower::getSymbol()'],['../classslowEffectTower.html#acec85504f88f4d3934027c689d8bfcb4',1,'slowEffectTower::getSymbol()']]],
-  ['givedamage_214',['giveDamage',['../classEntity.html#a45cb0c95ba5ed056038583db9a00cac1',1,'Entity']]]
+  ['gameend_358',['gameEnd',['../classCGame.html#a0dfb929b70b99ac2281273eefb2eb652',1,'CGame']]],
+  ['getattacker_359',['getAttacker',['../classCDefinitions.html#ab8536fabb45ea006662e63bbc414dbef',1,'CDefinitions']]],
+  ['getattackercount_360',['getAttackerCount',['../classPlayer.html#a569c871c07f6a047808542fc2492691d',1,'Player']]],
+  ['getattackers_361',['getAttackers',['../classPlayer.html#a3d96a5347d33784c432695ea4c5a1417',1,'Player']]],
+  ['getattackerstoattack_362',['getAttackersToAttack',['../classEnemy.html#a44e4128d98c48b30045cd11873a132c2',1,'Enemy']]],
+  ['getcoins_363',['getCoins',['../classPlayer.html#a35e23c050e86892c31ff783457f8ec24',1,'Player']]],
+  ['getcurrentfocus_364',['getCurrentFocus',['../classEntity.html#a85626aa9d3e1f48e33e99aeaa0d7c9e6',1,'Entity']]],
+  ['getdamage_365',['getDamage',['../classEntity.html#af723cc5c75855e421a0b2dcf29eb2903',1,'Entity']]],
+  ['getemptyspaces_366',['getEmptySpaces',['../classMap.html#ae4713f8271b2c9fd62184ab0f2342447',1,'Map']]],
+  ['getfinished_367',['getFinished',['../classPlayer.html#a58da876811cd1848aab2809f5758d315',1,'Player']]],
+  ['gethp_368',['getHP',['../classEntity.html#aa5a172de7c9f01920bd14a5b81716cbd',1,'Entity']]],
+  ['getid_369',['getID',['../classEntity.html#ae18a1a6367fa577ecc7e5889679b285c',1,'Entity']]],
+  ['getlanebyid_370',['getLaneByID',['../classMap.html#a93e47351a83408edee40bef3198ef101',1,'Map']]],
+  ['getmapexit_371',['getMapExit',['../classMap.html#a7a8d3abe0bd7571b5116d18c43bb2feb',1,'Map']]],
+  ['getmapwidth_372',['getMapWidth',['../classMap.html#a286853d8475bc1bbede582c89e9b1491',1,'Map']]],
+  ['getnextpoint_373',['getNextPoint',['../classAttacker.html#a72b2c9f6b11cc106209db4e15fc05f4b',1,'Attacker']]],
+  ['getposition_374',['getPosition',['../classEntity.html#a52fb5526ad22c0f34358aadd9f545856',1,'Entity']]],
+  ['getsymbol_375',['getSymbol',['../classEntity.html#aa9b4d32a894d4117dddcdff3c46842ae',1,'Entity']]],
+  ['gettower_376',['getTower',['../classCDefinitions.html#a63bf212acb75d60793b5f88b62468dcd',1,'CDefinitions']]],
+  ['gettowercount_377',['getTowerCount',['../classEnemy.html#ac7a14593067f5d799c2080fadaf33cbb',1,'Enemy']]],
+  ['gettowerstoattack_378',['getTowersToAttack',['../classPlayer.html#a040334eb4b145681595cc67168543b5d',1,'Player']]],
+  ['gettype_379',['getType',['../classAttacker.html#a6f77b0b2f420b9d708146cb2c632454a',1,'Attacker::getType()'],['../classEntity.html#aaaef5a4ba021755cd32ae39ecbbb38cd',1,'Entity::getType()'],['../classMap.html#af482c6f7d02d4e79c26097b53f4ce808',1,'Map::getType()'],['../classTower.html#adf2e5969865f51f71432821ea627dba1',1,'Tower::getType()']]],
+  ['givedamage_380',['giveDamage',['../classEntity.html#a45cb0c95ba5ed056038583db9a00cac1',1,'Entity']]]
 ];

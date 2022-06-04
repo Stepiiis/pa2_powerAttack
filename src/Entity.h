@@ -31,12 +31,13 @@ public:
     void draw();
     int getDamage() const;
     int getHP() const;
-    size_t getCurrentFocus() const;
+    int getCurrentFocus() const;
     char getSymbol() const;
     virtual Point::PointType getType() = 0;
     bool checkRadius(Point::PointType type);
     void calculateDeltas();
-    size_t getID()const;
+    bool isFocused() const;
+    int getID()const;
     [[nodiscard]] std::pair<int,int> getPosition()const;
 
     bool printEntity(int x, int y);
@@ -48,7 +49,7 @@ protected:
 
     char m_symbol{};    // symbol identifikující typ entity
 
-    size_t m_id;    // identifikator dane postavy
+    int m_id;    // identifikator dane postavy
 
     int m_hp;      // současné zdraví
 
@@ -56,7 +57,7 @@ protected:
     Map* m_sharedMap;   // pointer na sdilenou mapu.
                         // Mapa vždy přežije všechny entity.
     std::set<std::pair<int,int>> m_deltas;
-    size_t m_currentFocusID=-10;// ID of an entity that we are currently attacking
+    int m_currentFocusID=-10;// ID of an entity that we are currently attacking
     bool hasFocus = false;
 
     int m_damage;

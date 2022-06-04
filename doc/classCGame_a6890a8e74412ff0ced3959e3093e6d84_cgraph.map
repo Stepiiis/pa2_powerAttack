@@ -1,9 +1,15 @@
 <map id="CGame::drawTowers" name="CGame::drawTowers">
-<area shape="rect" id="node1" title=" " alt="" coords="5,81,160,108"/>
-<area shape="rect" id="node2" href="$classEnemy.html#ab8dab466556eb7f9a39697c045864289" title=" " alt="" coords="226,5,377,32"/>
-<area shape="rect" id="node3" href="$classEnemy.html#a238798e0d954a7ee3b6fafb592151cde" title=" " alt="" coords="221,56,381,83"/>
-<area shape="rect" id="node5" href="$classEnemy.html#ac81638432442d1e4cc2aa0c4ca49f439" title=" " alt="" coords="208,107,395,133"/>
-<area shape="rect" id="node7" href="$classEnemy.html#a95c457b3e58d8c931e06877c6bde6d11" title=" " alt="" coords="227,157,376,184"/>
-<area shape="rect" id="node4" href="$classMap.html#a4b669f3ae1f41ad70ae8c28910bfa4e8" title=" " alt="" coords="443,56,613,83"/>
-<area shape="rect" id="node6" href="$classMap.html#ae4713f8271b2c9fd62184ab0f2342447" title=" " alt="" coords="445,107,611,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,160,159"/>
+<area shape="rect" id="node2" href="$classEnemy.html#ab8dab466556eb7f9a39697c045864289" title=" " alt="" coords="226,31,377,57"/>
+<area shape="rect" id="node3" href="$classEnemy.html#a238798e0d954a7ee3b6fafb592151cde" title=" " alt="" coords="221,81,381,108"/>
+<area shape="rect" id="node10" href="$classEnemy.html#ac81638432442d1e4cc2aa0c4ca49f439" title=" " alt="" coords="208,132,395,159"/>
+<area shape="rect" id="node12" href="$classEnemy.html#ac7a14593067f5d799c2080fadaf33cbb" title=" " alt="" coords="216,183,387,209"/>
+<area shape="rect" id="node13" href="$classEnemy.html#a95c457b3e58d8c931e06877c6bde6d11" title=" " alt="" coords="227,233,376,260"/>
+<area shape="rect" id="node4" href="$classMap.html#a4b669f3ae1f41ad70ae8c28910bfa4e8" title=" " alt="" coords="443,31,613,57"/>
+<area shape="rect" id="node5" href="$classMap.html#adb8bd1312b25de59794e421009b6fa3e" title=" " alt="" coords="470,81,586,108"/>
+<area shape="rect" id="node6" href="$classEntity.html#ae18a1a6367fa577ecc7e5889679b285c" title=" " alt="" coords="679,5,781,32"/>
+<area shape="rect" id="node7" href="$classEntity.html#aa9b4d32a894d4117dddcdff3c46842ae" title=" " alt="" coords="661,56,799,83"/>
+<area shape="rect" id="node8" href="$classEntity.html#aaaef5a4ba021755cd32ae39ecbbb38cd" title=" " alt="" coords="671,107,789,133"/>
+<area shape="rect" id="node9" href="$classEntity.html#a6171cc57bf9ab1a0d0fe18b7a8acc4ea" title=" " alt="" coords="678,157,782,184"/>
+<area shape="rect" id="node11" href="$classMap.html#ae4713f8271b2c9fd62184ab0f2342447" title=" " alt="" coords="445,132,611,159"/>
 </map>

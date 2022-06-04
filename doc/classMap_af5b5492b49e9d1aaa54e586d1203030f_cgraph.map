@@ -1,5 +1,4 @@
 <map id="Map::redrawMap" name="Map::redrawMap">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,136,57"/>
-<area shape="rect" id="node2" href="$classMap.html#a1f7ed5381d68b10d5adfca2a7d26516a" title=" " alt="" coords="184,5,319,32"/>
-<area shape="rect" id="node3" href="$classMap.html#a1cefc1b8ed6692667e2019f64acc0f5a" title=" " alt="" coords="193,56,309,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$classMap.html#a1cefc1b8ed6692667e2019f64acc0f5a" title=" " alt="" coords="184,5,300,32"/>
 </map>

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['width_299',['width',['../structterminal.html#a14f060e9040bf81cf74d9d68e3b2c92b',1,'terminal']]]
+  ['hasfocus_500',['hasFocus',['../classEntity.html#a54e9c425963a27ae01957cc68de36feb',1,'Entity']]],
+  ['height_501',['height',['../structterminal.html#a3317b3382463b0265e0a5dfe44fd6807',1,'terminal']]],
+  ['highd_502',['highD',['../structtowerDef.html#a0f452126e1c2bb02d3117ccb2c544a95',1,'towerDef']]]
 ];
