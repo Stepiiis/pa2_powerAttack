@@ -22,9 +22,11 @@ public:
     void printTowers(); // prints all created towers onto the map
     size_t getTowerCount(); // returns the number of towers
     int damageTowers(std::vector<std::pair<int, int> > &towers); // damages all towers in the vector
-    bool createNewTower(int type, int x, int y, int hp, int id); // 0 = BASIC, 1 = FAST, 2 = STRONG, 3 = SLOWEF
+    bool createNewTower(int type, int x, int y, int hp); // 0 = BASIC, 1 = FAST, 2 = STRONG, 3 = SLOWEF
     std::vector<std::pair<int,int> > getAttackersToAttack();
+    [[nodiscard]] const std::map<int, std::unique_ptr<Tower> >& getTowers() const;
 protected:
+    int towersSpawned = 0;
     Map* _map;
     std::map<int,std::unique_ptr<Tower> > _towers;
     int _towerIDcnt;

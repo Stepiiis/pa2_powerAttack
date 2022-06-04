@@ -3,8 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
-
+#include <ctime>
+#include <sstream>
 
 
 bool sendToLogFile(short level, const std::string& text, const std::string& context){
@@ -12,7 +12,21 @@ bool sendToLogFile(short level, const std::string& text, const std::string& cont
     if(!logFile.is_open()){
         throw logException("Log file not found");
     }
-//    std::cout << "Level: " << level << " Context: " << context << " Text: " << text << std::endl;
-    logFile << "Level: " << level << " Context: " << context << " Text: " << text << std::endl;
+    std::time_t result = std::time(nullptr);
+    std::stringstream cas(std::asctime(std::localtime(&result)));
+    std::stringstream vysledny_string;
+    std::string pouzitelne;
+    std::string trash;
+    cas >> trash;
+    cas >> pouzitelne;
+    vysledny_string << pouzitelne;
+    cas >> pouzitelne;
+    vysledny_string << pouzitelne << " ";
+    cas >> pouzitelne;
+    vysledny_string << pouzitelne.substr(0,5) << " ";
+    cas >> pouzitelne;
+    vysledny_string << pouzitelne.substr(2,2);
+    //    std::cout << "Level: " << level << " Context: " << context << " Text: " << text << std::endl;
+    logFile <<"Time: " << vysledny_string.str() <<  " Level: " << level << " Context: " << context << " Text: " << text << std::endl;
     return true;
 }

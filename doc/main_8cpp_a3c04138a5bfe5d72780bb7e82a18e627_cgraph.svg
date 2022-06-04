@@ -443,7 +443,7 @@
 <title>Node23</title>
 <g id="a_node22"><a xlink:href="classPlayer.html#a87e8bbfff4cf193bd570e35622977b72" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="539,-971.38 539,-990.38 698,-990.38 698,-971.38 539,-971.38"/>
-<text text-anchor="middle" x="618.5" y="-978.38" font-family="Helvetica,sans-Serif" font-size="10.00">Player::addAttackersToQueue</text>
+<text text-anchor="middle" x="618.5" y="-978.38" font-family="Helvetica,sans-Serif" font-size="10.00">Player::setAttackersQueue</text>
 </a>
 </g>
 </g>

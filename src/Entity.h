@@ -36,6 +36,8 @@ public:
     virtual Point::PointType getType() = 0;
     bool checkRadius(Point::PointType type);
     void calculateDeltas();
+    [[nodiscard]] const std::set<std::pair<int,int>> &getDeltas() const;
+    virtual std::string getTypeName() const = 0;
     bool isFocused() const;
     int getID()const;
     [[nodiscard]] std::pair<int,int> getPosition()const;

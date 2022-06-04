@@ -1,0 +1,22 @@
+map 1
+difficulty 1
+tsdestroyed 0
+asfinished 3
+money 30000
+
+# attackers
+# towers
+type basicTower
+x 6
+y 3
+hp 650
+type basicTower
+x 14
+y 1
+hp 650
+type basicTower
+x 19
+y 6
+hp 580
+# queue
+# end

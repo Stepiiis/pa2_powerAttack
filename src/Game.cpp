@@ -11,7 +11,6 @@ CGame::~CGame() {
 
 bool CGame::start() {
     _gameMap.printMap();
-    drawTowers();
     drawAttackerDefs();
     if (resume())
         return true;
@@ -37,11 +36,10 @@ int kbhit() {
 
 bool CGame::resume() {
     int input;
-    _player->setCoins(2500);
     while (true) {
 //        if(kbhit())
         if (_player->getCoins() <= 0) {
-            return false; // GAME OVER, LET THE ATTACKERS FINISH/DIE
+            return false; // TODO: GAME OVER, LET THE ATTACKERS FINISH/DIE
         }
         drawCurrentMoney();
         wtimeout(_game_window, 1000);
@@ -72,7 +70,7 @@ bool CGame::resume() {
             _player->setAttackerType(2);
         }
         if (input == ' ') {
-            _player->addAttackerToQueue();
+            _player->addAttackerToQueue(); // TODO: "CALLBACK" not enough money
         }
 
         // perform attacks from attackers (we will make it easier for the player)
@@ -127,16 +125,47 @@ bool CGame::save() {
     std::string saveName = CMenu::saveMenu();
     if(saveName.empty())
         return false;
-    std::stringstream ss("assets/saves/");
-    ss << saveName<< ".txt";
-    std::ofstream saveFile(ss.str(), std::ios::app);
+    std::stringstream ss;
+    ss << "assets/saves/"<< saveName<< ".txt";
+    std::ofstream saveFile;
+    saveFile.open(ss.str(), std::ofstream::out| std::ofstream::trunc);
+    if(!saveFile.is_open())
+        return false;
+    if(saveFile.good() == 0)
+        return false;
     saveFile << "map " << 1 << std::endl;
     saveFile << "difficulty "<< _difficulty << std::endl;
-    saveFile << "tsdestroyed" << _towers_destroyed << std::endl;
-    saveFile << "asfinished" << _player->getFinished() << std::endl;
-    saveFile << "money" << _player->getCoins() << std::endl;
+    saveFile << "tsdestroyed " << _towers_destroyed << std::endl;
+    saveFile << "asfinished " << _player->getFinished() << std::endl;
+    saveFile << "money " << _player->getCoins() << std::endl;
     saveFile << std::endl;
-
+    saveFile << "# attackers" << std::endl;
+    for(const auto & attacker: _player->getAttackers()) {
+        auto point = attacker.second->getPosition();
+        saveFile << "type " << attacker.second->getTypeName() << std::endl
+        << "x " << point.first << std::endl
+        << "y " << point.second << std::endl
+        << "hp "<< attacker.second->getHP() << std::endl
+        << "slw " << attacker.second->getEffects().m_slowEffect << std::endl;
+    }
+    saveFile << "# towers" << std::endl;
+    for(const auto & attacker: _tower_manager->getTowers()) {
+        auto point = attacker.second->getPosition();
+        saveFile << "type " << attacker.second->getTypeName() << std::endl
+                 << "x " << point.first << std::endl
+                 << "y " << point.second << std::endl
+                 << "hp "<< attacker.second->getHP() << std::endl;
+    }
+    saveFile << "# queue" << std::endl;
+    for(const auto & attacker: _player->getAttackersQueue()) {
+        auto point = attacker.second;
+        saveFile << "name " << attacker.first << std::endl
+                 << "x " << point._x << std::endl
+                 << "y " << point._y << std::endl;
+    }
+    saveFile << "# end" << std::endl;
+    saveFile<< std::flush;
+    saveFile.close();
     return true;
 }
 // loads game from file defined in the parameter and starts the game
@@ -293,86 +322,84 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
 
 
     // load the safe file into a respective vectors of of attackers and towers
-    int id = 0;
-    if(entities.count("attackers") ==0 || entities.count("towers") == 0 )
+    if(entities.count("attackers") == 1 ) // entities.count("towers") == 1
     {
-        throw syntaxErr("error loading savefile, towers or attackers missing");
+        for(const auto& utocnici: entities["attackers"]){
+            int x;
+            int y;
+            int hp;
+            CEffects eff;
+            std::stringstream ss;
+            try{
+                x = std::stoi(utocnici.at("x"));
+                y = std::stoi(utocnici.at("y"));
+                hp = std::stoi(utocnici.at("hp"));
+                eff.m_slowEffect = std::stoi(utocnici.at("slw"));
+            }catch(std::exception& e)
+            {
+                ss.str(std::string());
+                ss << "one or more attributes is incorrect, saveFile might be corrupt";
+                throw syntaxErr(ss.str());
+            }
+            if(utocnici.at("type") == BASICA)
+                _player->createNewAttacker(0,x,y,hp,eff);
+            else if(utocnici.at("type") == FASTA)
+                _player->createNewAttacker(1,x,y,hp,eff);
+            else if(utocnici.at("type") == CHARGERA)
+                _player->createNewAttacker(2,x,y,hp,eff);
+            else{
+                ss.str(std::string());
+                ss << "one or more attributes is incorrect, saveFile might be corrupt";
+                throw syntaxErr(ss.str());
+            }
+        }
     }
-    for(const auto& utocnici: entities["attackers"]){
-        int x;
-        int y;
-        int hp;
-        CEffects eff;
-        std::stringstream ss;
-        try{
-        x = std::stoi(utocnici.at("x"));
-        y = std::stoi(utocnici.at("y"));
-        hp = std::stoi(utocnici.at("hp"));
-        eff.m_slowEffect = std::stoi(utocnici.at("slw"));
-        }catch(std::invalid_argument& e)
-        {
-            ss.str(std::string());
-            ss << "one or more attributes is incorrect, saveFile might be corrupt";
-            throw syntaxErr(ss.str());
-        }
-        if(utocnici.at("type") == BASICA)
-         _player->createNewAttacker(0,x,y,hp,eff,id);
-        else if(utocnici.at("type") == FASTA)
-            _player->createNewAttacker(1,x,y,hp,eff,id);
-        else if(utocnici.at("type") == CHARGERA)
-            _player->createNewAttacker(2,x,y,hp,eff,id);
-        else{
-            ss.str(std::string());
-            ss << "one or more attributes is incorrect, saveFile might be corrupt";
-            throw syntaxErr(ss.str());
-        }
-        id++;
+    if(entities.count("towers") == 1 ){
+        for(const auto& veze: entities["towers"]){
+            int x;
+            int y;
+            int hp;
+            std::stringstream ss;
+            try{
+                x = std::stoi(veze.at("x"));
+                y = std::stoi(veze.at("y"));
+                hp = std::stoi(veze.at("hp"));
+            }catch(std::invalid_argument& e)
+            {
+                ss.str(std::string());
+                ss << "one or more attributes is incorrect, saveFile might be corrupt";
+                throw syntaxErr(ss.str());
+            }
+            catch(std::out_of_range& e)
+            {
+                ss.str(std::string());
+                ss << "one or more attributes is missing, saveFile might be corrupt";
+                throw syntaxErr(ss.str());
+            }
+            if(veze.at("type") == BASICT)
+                _tower_manager->createNewTower(0,x,y,hp);
+            else if(veze.at("type") == FASTT)
+                _tower_manager->createNewTower(1,x,y,hp);
+            else if(veze.at("type") == STRONGT)
+                _tower_manager->createNewTower(2,x,y,hp);
+            else if(veze.at("type") == SLOWET)
+                _tower_manager->createNewTower(3,x,y,hp);
+            else{
+                ss.str(std::string());
+                ss << "one or more attributes is incorrect, saveFile might be corrupt";
+                throw syntaxErr(ss.str());
+            }
     }
-    id = 0;
-    for(const auto& veze: entities["towers"]){
-        int x;
-        int y;
-        int hp;
-        std::stringstream ss;
-        try{
-            x = std::stoi(veze.at("x"));
-            y = std::stoi(veze.at("y"));
-            hp = std::stoi(veze.at("hp"));
-        }catch(std::invalid_argument& e)
-        {
-            ss.str(std::string());
-            ss << "one or more attributes is incorrect, saveFile might be corrupt";
-            throw syntaxErr(ss.str());
-        }
-        catch(std::out_of_range& e)
-        {
-            ss.str(std::string());
-            ss << "one or more attributes is missing, saveFile might be corrupt";
-            throw syntaxErr(ss.str());
-        }
-        if(veze.at("type") == BASICT)
-            _tower_manager->createNewTower(0,x,y,hp,id);
-        else if(veze.at("type") == FASTT)
-            _tower_manager->createNewTower(1,x,y,hp,id);
-        else if(veze.at("type") == STRONGT)
-            _tower_manager->createNewTower(2,x,y,hp,id);
-        else if(veze.at("type") == SLOWET)
-            _tower_manager->createNewTower(3,x,y,hp,id);
-        else{
-            ss.str(std::string());
-            ss << "one or more attributes is incorrect, saveFile might be corrupt";
-            throw syntaxErr(ss.str());
-        }
-        id++;
+
     }
 
 
-    // print the map, towers and attackers on screen and start the game
-    _gameMap.readMap();
-    _gameMap.printMap();
+    // read the map
+    _gameMap.readMap(gameStats["map"]);
+    // print towers and attackers on screen and start the game
     _tower_manager->printTowers();
     _player->printAttackers();
-    _player->addAttackersToQueue(attackersInQueue);
+    _player->setAttackersQueue(attackersInQueue);
     // set the game money and difficulty to the one specified in the save file
     if(gameStats.count("money")==0 || gameStats.count("money") == 0 || gameStats.count("asfinished") == 0 || gameStats.count("tsdestroyed") == 0)
         throw syntaxErr("one or more gamestats is invalid, saveFile might be corrupt");
@@ -499,6 +526,8 @@ bool CGame::init(int level, int difficulty, const char *nameOfSave) {
     } else {
         if (_gameMap.m_map.empty())
             load(level);
+        drawTowers();
+        _player->setCoins(2500);
     }
     _gameMap.setWindow(_game_window);
     return true;

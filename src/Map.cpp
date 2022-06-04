@@ -75,11 +75,12 @@ Point::Point(int x, int y, PointType type)
 }
 
 /**
- * EVERY COORDINATE SHOULD BE MOVED BY 1 TO ACCOUNT FOR THE BORDER
- */
+ *  */
 
 /**
- * @brief Map::updateMap
+ * @Brief
+ * WHEN PRINTING ON SCREEN EVERY COORDINATE SHOULD BE MOVED BY 1 TO ACCOUNT FOR THE BORDER
+ *
  * @param prevX  previous _x position which will be filled with empty space
  * @param prevY  previous y position which will be filled with empty space
  * @param x      new _x position to move entity to
@@ -95,6 +96,24 @@ bool Map::updateMap( int x, int y, Entity * entity)
     auto prev = entity->getPosition();
     revertCell(prev.first, prev.second);
     char symbol = entity->getSymbol();
+    if(entity->getType() == Point::Tower)
+    {
+        auto deltas = entity->getDeltas();
+        for(auto [dx,dy] : deltas) {
+            if(checkBounds(prev.first+dx,prev.second+dy)) {
+                if (m_map[prev.second + dy][prev.first + dx]._type == Point::Empty || m_map[prev.second + dy][prev.first + dx]._type == Point::Attacker) {
+                    removeFromRadius(prev.first + dx, prev.second+dy, entity);
+                }
+            }
+        }
+        for(auto [dx,dy] : deltas) {
+            if(checkBounds(x+dx,y+dy)) {
+                if (m_map[y + dy][x + dx]._type == Point::Empty || m_map[y + dy][x + dx]._type == Point::Attacker) {
+                    addToRadius(x + dx, y, entity);
+                }
+            }
+        }
+    }
     entity->move(x,y);
     m_map[y][x]._type = entity->getType();
     m_map[y][x]._symbol = symbol;
@@ -111,6 +130,15 @@ bool Map::setEntity(int x, int y, Entity * entity){
     m_map[y][x]._type = entity->getType();
     m_map[y][x]._symbol = entity->getSymbol();
     m_map[y][x]._ident = entity->getID();
+    if(entity->getType() == Point::Tower) {
+        for(auto [dx,dy] : entity->getDeltas()) {
+            if(checkBounds(x+dx,y+dy)) {
+                if (getType({x+dx,y+dy}) == Point::Empty || getType({x+dx,y+dy}) == Point::Attacker) {
+                    addToRadius(x + dx, y + dy, entity);
+                }
+            }
+        }
+    }
     entity->move(x,y);
     mvwprintw(m_game_window,y+1,x+1,"%c",entity->getSymbol());
     return true;
@@ -179,11 +207,11 @@ void Map::printMap(){
                 }
             }
             else if(point._x == line.back()._x - 3 || point._x == line.back()._x - 2){
-                if(point._symbol == '<'){
+                if(point._symbol == '='){
                     m_entries.emplace_back(point._x, point._y, point._symbol);
                     point._type = Point::Entry;
                     point._defaultType = Point::Entry;
-                }else if(point._symbol == '='){
+                }else if(point._symbol == '<'){
                     point._type = Point::Entry;
                     point._defaultType = Point::Entry;
                 }
@@ -196,6 +224,7 @@ bool Map::getLaneByID(int id, Point & spawnLane)const{
     if(m_entries.size()<id)
         return false;
     spawnLane = m_entries.at(id);
+    spawnLane._x = spawnLane._x - 1;
     return true;
 }
 
@@ -204,15 +233,15 @@ void Map::highlightLane(int lanenr){
     for(int i = 0; i<m_entries.size(); i++){
         if(i==lanenr){
             wattron(m_game_window, style);
-            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 1, "%c", '<');
-            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 2, "%c", '=');
-            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 3, "%d", i + 1);
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 0, "%c", '<');
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 1, "%c", '=');
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 2, "%d", i + 1);
             wattroff(m_game_window, style);
             wrefresh(m_game_window);
         }else{
-            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 1, "%c", '<');
-            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 2, "%c", '=');
-            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 3, "%d", i + 1);
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 0, "%c", '<');
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 1, "%c", '=');
+            mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 2, "%d", i + 1);
             wrefresh(m_game_window);
         }
     }
@@ -414,4 +443,29 @@ bool Map::checkClearSight(const std::pair<int,int>& p1, const std::pair<int,int>
 
     }
     return false;
+}
+
+void Map::removeFromRadius(int x, int y, Entity *entity) {
+    if(m_map[y][x]._inRadiusOf.count(entity->getType()) == 1) {
+        if(m_map[y][x]._inRadiusOf[entity->getType()].count(entity->getID()) == 1) {
+            m_map[y][x]._inRadiusOf[entity->getType()].erase(entity->getID());
+            if(m_map[y][x]._inRadiusOf[entity->getType()].empty()) {
+                m_map[y][x]._inRadiusOf.erase(entity->getType());
+            }
+        }
+    }
+}
+
+void Map::addToRadius(int x, int y, Entity * entity) {
+if(m_map[y][x]._inRadiusOf.count(entity->getType()) == 0) {
+        std::map<int,bool> temp;
+        temp.insert(std::pair<int,bool>(entity->getID(),true));
+        m_map[y][x]._inRadiusOf.emplace(entity->getType(),temp);
+}else{
+        m_map[y][x]._inRadiusOf[entity->getType()].insert(std::pair<int,bool>(entity->getID(),true));
+    }
+}
+
+bool Map::checkBounds(int x, int y) {
+    return x >= 0 && x < getMapWidth() && y >= 0 && y < m_map.size();
 }

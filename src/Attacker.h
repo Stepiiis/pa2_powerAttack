@@ -24,13 +24,16 @@ public:
     bool operator < (Attacker & rhs);
     bool operator > (Attacker & rhs);
     void setPosition(int x, int y);
+    virtual bool checkSpecialization(const Point &point) = 0;
     void place(int x, int y);
-    virtual bool moveOnPath() = 0;
+    bool moveOnPath();
     Point getNextPoint();
     [[nodiscard]] virtual bool isTarget(const Point& p) const = 0;
     Point::PointType getType() override;
+    [[nodiscard]] std::string getTypeName() const override = 0;
     bool findShortestPath();
     void setEffects(CEffects& eff);
+    CEffects getEffects() const;
 
 // queue that is updated everytime findPath is called
 
@@ -49,7 +52,8 @@ class basicAttacker final: public Attacker
 public:
     basicAttacker(int posX, int posY, defEntity& def, Map* map, int id, int hp = -10);
     bool isTarget(const Point& p) const override;
-    bool moveOnPath() override;
+    [[nodiscard]] std::string getTypeName() const override;
+    bool checkSpecialization(const Point &point) override;
 };
 
 
@@ -62,7 +66,8 @@ class fastAttacker final: public Attacker
 public:
     fastAttacker(int posX, int posY, defEntity& def, Map* map, int id, int hp = -10);
     bool isTarget(const Point& p) const override;
-    bool moveOnPath() override;
+    [[nodiscard]] std::string getTypeName() const override;
+    bool checkSpecialization(const Point &point) override;
 };
 
 // symbol @
@@ -74,5 +79,6 @@ class chargerAttacker final: public Attacker
 public:
     chargerAttacker(int posX, int posY, defEntity& def, Map* map,int id, int hp = -10);
     bool isTarget(const Point& p) const override;
-    bool moveOnPath() override;
+    [[nodiscard]] std::string getTypeName() const override;
+    bool checkSpecialization(const Point &point) override;
 };

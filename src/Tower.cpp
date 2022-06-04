@@ -15,12 +15,20 @@ basicTower::basicTower(int x, int y, defEntity &def, Map* map,int towerID, int h
     calculateDeltas();
 }
 
+std::string basicTower::getTypeName() const {
+    return {"basicTower"};
+}
+
 fastTower::fastTower(int x, int y, defEntity &def, Map* map,int towerID, int hp)
         : Tower( x, y, def[FASTT]["hp"], def[FASTT]["dmg"], (char)def[FASTT]["symbol"], def[FASTT]["rng"], def[FASTT]["atkspeed"], map, towerID)
 {
     if(hp != -10)
         m_hp = hp;
     calculateDeltas();
+}
+
+std::string fastTower::getTypeName() const {
+    return {"fastTower"};
 }
 
 
@@ -32,6 +40,10 @@ highDamageTower::highDamageTower(int x, int y, defEntity &def, Map *map, int tow
     calculateDeltas();
 }
 
+std::string highDamageTower::getTypeName() const {
+    return {"highDamageTower"};
+}
+
 
 slowEffectTower::slowEffectTower(int x, int y, defEntity& def, Map *map, int towerID, int hp)
 : Tower( x, y, def[SLOWET]["hp"], def[SLOWET]["dmg"], (char)def[SLOWET]["symbol"], def[SLOWET]["rng"], def[SLOWET]["atkspeed"], map, towerID)
@@ -39,6 +51,10 @@ slowEffectTower::slowEffectTower(int x, int y, defEntity& def, Map *map, int tow
     if(hp != -10)
         m_hp = hp;
     calculateDeltas();
+}
+
+std::string slowEffectTower::getTypeName() const {
+    return {"slowEffectTower"};
 }
 
 

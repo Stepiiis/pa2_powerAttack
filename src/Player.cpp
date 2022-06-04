@@ -30,10 +30,10 @@ int Player::getCoins() const{
       auto attacker = _attackersQueue.front();
     if(attacker.second._x == -10) // TODO: "callback" that player didnt choose lane
         return false;
-    if(_def[attacker.first]["price"]>_coins) // TODO: "CALLBACK" not enough money
-        return false;
+    auto point = attacker.second;
+    if(_map->m_map[point._y][point._x]._type != Point::Entry)
+        throw logException("Player::spawnAttacker: point is not an entry");
     _attackersQueue.pop_front();
-    _coins-=_def[attacker.first]["price"];
     switch (_def[attacker.first]["symbol"]){ // chooses on the basis of different ascii values
         case 36: // ascii value of $
             _attackers.emplace(attackerID,std::make_unique<basicAttacker>(attacker.second._x, attacker.second._y, _def, _map, attackerID));
@@ -56,10 +56,10 @@ void Player::setAttackerType(int type) {
             attackerType = BASICA ;
             break;
         case 1:
-            attackerType = FASTA;
+            attackerType = CHARGERA;
             break;
         case 2:
-            attackerType = CHARGERA;
+            attackerType = FASTA;
             break;
         default:
             attackerType = BASICA; // redundant
@@ -67,8 +67,12 @@ void Player::setAttackerType(int type) {
     }
 }
 
-void Player::addAttackerToQueue() {
+bool Player::addAttackerToQueue() {
+    if(_def[attackerType]["price"]>_coins)
+        return false;
+    _coins-=_def[attackerType]["price"];
     _attackersQueue.emplace_back(attackerType, _spawnLane);
+    return true;
 }
 
 void Player::moveAttackers() {
@@ -110,7 +114,7 @@ int Player::getFinished() const {
     return _attackersFinished;
 }
 
-auto& Player::getAttackers() const {
+const std::map<int, std::unique_ptr<Attacker> >  & Player::getAttackers() const {
     return _attackers;
 }
 
@@ -124,18 +128,19 @@ std::vector<std::pair<int, int> > Player::getTowersToAttack() const {
     return towers;
 }
 
-bool Player::createNewAttacker(int type, int x, int y, int hp, CEffects effects, int id) {
+bool Player::createNewAttacker(int type, int x, int y, int hp, CEffects effects) {
     switch (type){
         case 0:
-            _attackers.emplace(id, std::make_unique<basicAttacker>(x,y,_def,_map,id,hp));
+            _attackers.emplace(attackerID, std::make_unique<basicAttacker>(x,y,_def,_map,attackerID,hp));
             break;
         case 1:
-            _attackers.emplace(id, std::make_unique<fastAttacker>(x,y,_def,_map,id,hp));
+            _attackers.emplace(attackerID, std::make_unique<fastAttacker>(x,y,_def,_map,attackerID,hp));
             break;
         case 2:
-            _attackers.emplace(id, std::make_unique<chargerAttacker>(x,y,_def,_map,id,hp));
+            _attackers.emplace(attackerID, std::make_unique<chargerAttacker>(x,y,_def,_map,attackerID,hp));
             break;
     }
+    attackerID++;
     return true;
 }
 
@@ -151,7 +156,7 @@ void Player::setFinished(int nr) {
     _attackersFinished = nr;
 }
 
-void Player::addAttackersToQueue(std::deque<std::pair<std::string, Point> >& queue) {
+void Player::setAttackersQueue(std::deque<std::pair<std::string, Point> >& queue) {
     _attackersQueue = queue;
 }
 
@@ -175,5 +180,9 @@ int Player::damageAttackers(std::vector<std::pair<int,int> >& attackers) {
     }
 
     return toRemove.size();
+}
+
+std::deque<std::pair<std::string, Point> > &Player::getAttackersQueue() {
+    return _attackersQueue;
 }
 

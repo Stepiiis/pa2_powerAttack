@@ -2,7 +2,7 @@
 symbol I
 hp 650
 rng 3
-dmg 240
+dmg 30
 atkspeed 2
 mov 0
 price 0

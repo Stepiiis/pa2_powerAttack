@@ -37,6 +37,7 @@ public:
     PointType _type;
     PointType _defaultType;
     char _defaultSymbol;
+    std::map<PointType,std::map<int, bool>> _inRadiusOf;
     friend Map;
 };
 
@@ -55,6 +56,9 @@ public:
     bool updateCell(int x, int y, Point::PointType type, const char symbol); // updates specific cell
     bool revertCell(int x, int y);
     bool setEntity(int x, int y, Entity * entity);
+    void removeFromRadius(int x, int y, Entity * entity);
+    void addToRadius(int x, int y, Entity * entity);
+    bool checkBounds(int x, int y);
     void redrawMap();
     bool loadNextMap(int level); // pass last map index as parameter
     bool readMap(int level=1); // pas new map index as parameter
@@ -68,7 +72,7 @@ public:
     void drawLanes();
     void setWindow(WINDOW * win);
     Point getMapExit();
-    bool getEmptySpaces(    std::vector<std::vector<char> >& );
+    bool getEmptySpaces(std::vector<std::vector<char> >& );
     void clearMap();
     int getMapWidth();
 

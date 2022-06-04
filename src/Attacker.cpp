@@ -77,7 +77,10 @@ bool Attacker::findShortestPath(){
 
         m_sharedMap->forEachNeighbor(current , [&](const Point& neighbor)
         {
-            if(neighbor == current || neighbor._type == Point::Entry || neighbor._type == Point::Wall || neighbor._type == Point::Tower || visited.count(neighbor) != 0 )
+            if(this->checkSpecialization(neighbor)){
+                return;
+            }
+            if(neighbor == current || neighbor._type == Point::Entry || neighbor._type == Point::Wall || visited.count(neighbor) != 0 )
                 return;
             visited.emplace(neighbor, current);
             q.push_back(neighbor);
@@ -87,15 +90,20 @@ bool Attacker::findShortestPath(){
                 return;
             }
         });
+        if(target._x != -10)
+            break;
      }
 
      if(target._x == -10)
          return false;
      m_path.push_back(target);
+
      while(target != start){
          target = visited[target];
          m_path.push_front(target);
      }
+     if(this->getTypeName()==CHARGERA)
+         m_path.pop_back();
      m_path.pop_front();
      return true;
 }
@@ -120,6 +128,10 @@ void Attacker::setEffects(CEffects &eff) {
     m_slowEffectDuration=eff.m_slowEffect;
 }
 
+CEffects Attacker::getEffects() const {
+    return CEffects(m_slowEffectDuration);
+}
+
 
 Attacker::~Attacker() = default;
 
@@ -128,7 +140,7 @@ bool basicAttacker::isTarget(const Point &p) const{
     return p._type == Point::Exit;
 }
 
-bool basicAttacker::moveOnPath() {
+bool Attacker::moveOnPath() {
     if(m_path.empty())
         return false;
     cycleCnt++;
@@ -148,14 +160,31 @@ bool basicAttacker::moveOnPath() {
     return true;
 }
 
+std::string basicAttacker::getTypeName() const {
+    return {"basicAttacker"};
+}
+
+bool basicAttacker::checkSpecialization(const Point &point) {
+    if(point._type == Point::Tower)
+        return true;
+    return false;
+}
 
 
 bool fastAttacker::isTarget(const Point &p) const {
     return p._type == Point::Exit;
 }
 
-bool fastAttacker::moveOnPath() {
-    throw(notImplementedException("fastAttacker moveOnPath"));
+std::string fastAttacker::getTypeName() const {
+    return {"fastAttacker"};
+}
+
+bool fastAttacker::checkSpecialization(const Point &point) {
+    if(point._inRadiusOf.count(Point::Tower) ==1)
+        return true;
+    if(point._type == Point::Attacker)
+        return true;
+    return false;
 }
 
 
@@ -164,6 +193,10 @@ bool chargerAttacker::isTarget(const Point &p) const {
     return p._type == Point::Tower || p._type == Point::Exit;
 }
 
-bool chargerAttacker::moveOnPath() {
-    throw(notImplementedException("chargerAttacker moveOnPath"));
+std::string chargerAttacker::getTypeName() const {
+    return {"chargerAttacker"};
+}
+
+bool chargerAttacker::checkSpecialization(const Point &point) {
+    return point._type == Point::Attacker;
 }

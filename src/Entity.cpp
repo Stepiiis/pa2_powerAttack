@@ -112,7 +112,6 @@ bool Entity::checkRadius(Point::PointType type){
     for(const auto& [x,y] : m_deltas){
         if(m_x+x<0 || m_y+y<0 || m_x+x>=m_sharedMap->m_map[m_y].size()|| m_y+y>=m_sharedMap->m_map.size())
             continue;
-            continue;
         if(m_sharedMap->m_map[m_y+y][m_x+x]._type == type) {
             if(m_sharedMap->checkClearSight({m_x,m_y},{m_x+x,m_y+y})){
                 if(hasFocus) {
@@ -150,4 +149,8 @@ int Entity::getDamage() const {
 
 bool Entity::isFocused() const {
     return hasFocus;
+}
+
+const std::set<std::pair<int, int>>& Entity::getDeltas() const{
+    return m_deltas;
 }

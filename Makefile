@@ -12,11 +12,14 @@ SOURCES = $(wildcard src/*.cpp)
 OBJECTS = $(patsubst src/%.cpp, build/%.o, ${SOURCES})
 DEPS = $(patsubst src/%.cpp, build/%.dep, ${SOURCES})
 
-.PHONY: all compile run valgrind doc clean count zip
+.PHONY: all compile run valgrind doc clean count zip chmod
 
-all: compile doc
+all: compile doc chmod
 
-compile: ${LOGIN}
+chmod:
+	@chmod +x ${LOGIN}
+
+compile: ${LOGIN} chmod
 
 ${LOGIN}: ${OBJECTS}
 	@mkdir -p build/

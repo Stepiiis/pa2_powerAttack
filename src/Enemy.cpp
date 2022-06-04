@@ -88,23 +88,25 @@ int Enemy::damageTowers(std::vector<std::pair<int, int>> &towers) {
     return toRemove.size();
 }
 
-bool Enemy::createNewTower(int type, int x, int y, int hp, int id) {
+bool Enemy::createNewTower(int type, int x, int y, int hp) {
+
     switch (type){
         case 0:
-            _towers.emplace(id, std::make_unique<basicTower>(x,y,_def,_map,id,hp));
+            _towers.emplace(towersSpawned, std::make_unique<basicTower>(x,y,_def,_map,towersSpawned,hp));
             break;
         case 1:
-            _towers.emplace(id, std::make_unique<fastTower>(x,y,_def,_map,id,hp));
+            _towers.emplace(towersSpawned, std::make_unique<fastTower>(x,y,_def,_map,towersSpawned,hp));
             break;
         case 2:
-            _towers.emplace(id, std::make_unique<highDamageTower>(x,y,_def,_map,id,hp));
+            _towers.emplace(towersSpawned, std::make_unique<highDamageTower>(x,y,_def,_map,towersSpawned,hp));
             break;
         case 3:
-            _towers.emplace(id, std::make_unique<slowEffectTower>(x,y,_def,_map,id,hp));
+            _towers.emplace(towersSpawned, std::make_unique<slowEffectTower>(x,y,_def,_map,towersSpawned,hp));
             break;
         default:
         throw std::invalid_argument("type doesnt correspond any tower definition");
     }
+    towersSpawned++;
     return true;
 }
 
@@ -116,4 +118,8 @@ std::vector<std::pair<int, int> > Enemy::getAttackersToAttack() {
                 attackers.emplace_back(attacker.second->getCurrentFocus(), attacker.second->getDamage());
     }
     return attackers;
+}
+
+const std::map<int, std::unique_ptr<Tower> > &Enemy::getTowers() const {
+    return _towers;
 }

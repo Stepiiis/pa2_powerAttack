@@ -16,14 +16,15 @@ public:
     virtual ~Player() = default;
     void setLane(int lane);
     void setAttackerType(int type); // same as spawn
-    void addAttackerToQueue();
+    bool addAttackerToQueue();
     bool spawnAttacker();
     bool printAttackers();
-    bool createNewAttacker(int type, int x, int y, int hp, CEffects effects, int id); //type  0 = basic, 1 = fast, 2 = charger
+    bool createNewAttacker(int type, int x, int y, int hp, CEffects effects); //type  0 = basic, 1 = fast, 2 = charger
     void moveAttackers();
     bool emptyAttackers();
     bool emptyAttackerQueue();
-    void addAttackersToQueue(std::deque<std::pair<std::string, Point> >& queue);
+    void setAttackersQueue(std::deque<std::pair<std::string, Point> >& queue);
+    std::deque<std::pair<std::string, Point> >& getAttackersQueue();
     void setCoins(int coins);
     void clearAttackers();
     int damageAttackers(std::vector<std::pair<int,int> > & attackers);
@@ -33,7 +34,7 @@ public:
     size_t getAttackerCount();
 
     [[nodiscard]] std::vector<std::pair<int,int> > getTowersToAttack() const;
-    [[nodiscard]] auto& getAttackers() const;
+    [[nodiscard]] const std::map<int, std::unique_ptr<Attacker> >& getAttackers() const;
     int attackerID = 0;
 protected:
     int _score{};    // score calculated at the end of the game. could be calculated in class CGame

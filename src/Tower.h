@@ -10,6 +10,7 @@ public:
     bool operator < (Tower & rhs);
     bool operator > (Tower & rhs);
     Point::PointType getType() override;
+    [[nodiscard]] std::string getTypeName() const override = 0;
 };
 
 
@@ -17,6 +18,7 @@ public:
 class basicTower final: public Tower{
 public:
     basicTower(int x, int y, defEntity &def, Map* map,int towerID, int hp = -10);
+    [[nodiscard]] std::string getTypeName() const override;
 };
 
 
@@ -25,6 +27,7 @@ public:
 class fastTower final: public Tower{
 public:
     fastTower(int x, int y, defEntity& def, Map* map,int towerID, int hp = -10);
+    [[nodiscard]] std::string getTypeName() const override;
 };
 
 // útok od této věže je ~1,5x větší než základ. je však 2x dražší
@@ -32,7 +35,8 @@ public:
 class highDamageTower final: public Tower
     {
 public:
-        highDamageTower(int x, int y, defEntity &def, Map* map,int towerID, int hp = -10);
+    highDamageTower(int x, int y, defEntity &def, Map* map,int towerID, int hp = -10);
+    [[nodiscard]] std::string getTypeName() const override;
     };
 
 
@@ -41,4 +45,5 @@ class slowEffectTower final: public Tower
         {
 public:
     slowEffectTower(int x, int y, defEntity& def, Map* map,int , int hp = -10);
+    [[nodiscard]] std::string getTypeName() const override;
         };
