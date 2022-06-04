@@ -120,8 +120,20 @@ void CGame::redrawTowers() {
 }
 
 bool CGame::save() {
-    //
-    throw (notImplementedException("save"));
+    std::string saveName = CMenu::saveMenu();
+    if(saveName.empty())
+        return false;
+    std::stringstream ss("assets/saves/");
+    ss << saveName<< ".txt";
+    std::ofstream saveFile(ss.str(), std::ios::app);
+    saveFile << "map " << 1 << std::endl;
+    saveFile << "difficulty "<< _difficulty << std::endl;
+    saveFile << "tsdestroyed" << _towers_destroyed << std::endl;
+    saveFile << "asfinished" << _player->getFinished() << std::endl;
+    saveFile << "money" << _player->getCoins() << std::endl;
+    saveFile << std::endl;
+
+    return true;
 }
 // loads game from file defined in the parameter and starts the game
 bool CGame::loadFromSave(const std::string &nameOfSave) {
@@ -139,10 +151,13 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
     std::map<std::string,std::vector<std::map<std::string, std::string>>> entities;
     std::map<std::string,std::string> givenEntity;
     std::vector<std::map<std::string, std::string>> vectorOfEntities;
+    std::map<std::string, std::string> mapOfAttackersInQueue;
+    std::deque<std::pair<std::string, Point>> attackersInQueue;
     std::map<std::string, int> gameStats;
     std::string name;
     std::string value;
     bool gameReading = false;
+    bool queueReading = false;
     int lineindex = 0;
     std::string entType;
     int indexOfEnt;
@@ -168,49 +183,95 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
                 gameReading = true;
             continue;
         }
-        if( fileLine[0] == '#'){
-            if(!givenEntity.empty()) {
-                vectorOfEntities.emplace_back(givenEntity);
-                givenEntity.clear();
+        if(!queueReading){
+            if( fileLine[0] == '#'){
+                if(!givenEntity.empty()) {
+                    vectorOfEntities.emplace_back(givenEntity);
+                    givenEntity.clear();
+                }
+                if(!vectorOfEntities.empty()) {
+                    entities.emplace(entType, vectorOfEntities);
+                    vectorOfEntities.clear();
+                }
+                test.clear();
+                ss >> entType; // getting rid of #
+                entType.clear();
+                ss >> entType; // value of type
+                if(entType=="queue") {
+                    queueReading = true;
+                    continue;
+                }
+                ss >> test;
+                if(!test.empty() || entType.empty())
+                {
+                    ss.str(std::string());
+                    ss << "attribute on line " << lineindex << " in save file " << nameOfSave  <<" is incorrect.";
+                    throw syntaxErr(ss.str());
+                }
+                continue;
             }
-            if(!vectorOfEntities.empty()) {
-                entities.emplace(entType, vectorOfEntities);
-                vectorOfEntities.clear();
-            }
+            name.clear();
+            value.clear();
             test.clear();
-            ss >> entType; // getting rid of #
-            entType.clear();
-            ss >> entType; // value of type
-            if(entType=="end")
-                break;
+            ss >> name;
+            ss >> value;
             ss >> test;
-            if(!test.empty() || entType.empty())
+            if(!test.empty() || value.empty() || name.empty())
             {
                 ss.str(std::string());
-                ss << "attribute on line " << lineindex << " in save file " << nameOfSave  <<" is incorrect.";
+                ss << "attribute on line " << lineindex << " in save file " << nameOfSave  <<" is incorrect. "<< "name= " << name << " value= " << value;
                 throw syntaxErr(ss.str());
             }
-            continue;
-        }
-        name.clear();
-        value.clear();
-        test.clear();
-        ss >> name;
-        ss >> value;
-        ss >> test;
-        if(!test.empty() || value.empty() || name.empty())
-        {
-            ss.str(std::string());
-            ss << "attribute on line " << lineindex << " in save file " << nameOfSave  <<" is incorrect. "<< "name= " << name << " value= " << value;
-            throw syntaxErr(ss.str());
-        }
-        if(name == "type"){
-            if(!givenEntity.empty()) {
-                vectorOfEntities.emplace_back(givenEntity);
-                givenEntity.clear();
+            if(name == "type"){
+                if(!givenEntity.empty()) {
+                    vectorOfEntities.emplace_back(givenEntity);
+                    givenEntity.clear();
+                }
             }
+            givenEntity.emplace(name,value);
+        }else{
+            int number;
+            name.clear();
+            value.clear();
+            test.clear();
+            ss >> name;
+            ss >> value;
+            ss >> test;
+            if(!test.empty() || name.empty() || value.empty())
+            {
+                ss.str(std::string());
+                ss << "attribute of queue on line" << lineindex << " in save file " << nameOfSave  <<" is incorrect. "<< "name= " << name << " value= " << value;
+                throw syntaxErr(ss.str());
+            }
+            if(name == "name" || (name == "#" && value == "end"))
+            {
+                if(!mapOfAttackersInQueue.empty()){
+                    std::string attrName;
+                    int attrX;
+                    int attrY;
+                    if(mapOfAttackersInQueue.count("name")==0 ||mapOfAttackersInQueue.count("x")==0 || mapOfAttackersInQueue.count("y")==0)
+                    {
+                        ss.str(std::string());
+                        ss << "one or more attributes in queue in save file " << nameOfSave  <<" is incorrect.";
+                        throw syntaxErr(ss.str());
+                    }
+                    try{
+                        attrName = mapOfAttackersInQueue.at("name");
+                        attrX = std::stoi(mapOfAttackersInQueue.at("x"));
+                        attrY = std::stoi(mapOfAttackersInQueue.at("y"));
+                    }catch(std::exception &e){
+                        ss.str(std::string());
+                        ss << "one or more attributes in queue in save file " << nameOfSave  <<" is incorrect.";
+                        throw syntaxErr(ss.str());
+                    }
+                    attackersInQueue.emplace_back(std::make_pair(attrName, Point(attrX,attrY)));
+                    mapOfAttackersInQueue.clear();
+                }
+                if(name == "#" && value == "end")
+                    break;
+            }
+            mapOfAttackersInQueue.emplace(name, value);
         }
-        givenEntity.emplace(name,value);
     }
 
     int i{};
@@ -307,12 +368,13 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
     _gameMap.printMap();
     _tower_manager->printTowers();
     _player->printAttackers();
+    _player->addAttackersToQueue(attackersInQueue);
     // set the game money and difficulty to the one specified in the save file
     if(gameStats.count("money")==0 || gameStats.count("money") == 0 || gameStats.count("asfinished") == 0 || gameStats.count("tsdestroyed") == 0)
         throw syntaxErr("one or more gamestats is invalid, saveFile might be corrupt");
     _player->setCoins(gameStats["money"]);
     setDifficulty(gameStats["difficulty"]);
-    _player->setFinAttackers(gameStats["asfinished"]);
+    _player->setFinished(gameStats["asfinished"]);
     setTowersDestroyed(gameStats.at("tsdestroyed"));
     return true;
 }
@@ -445,11 +507,11 @@ bool CGame::play() {
 
 
     while (true) {
-        int choice = mainMenu();
+        int choice = CMenu::mainMenu();
 
         if (choice == 0) { // choice is new game
             //new game
-            if (!this->init(1, 1))
+            if (!this->init(1, _difficulty))
                 throw logException("Game init failed");
             if (!this->start()) {
                 if (this->gameEnd("You lost!"))
@@ -464,13 +526,14 @@ bool CGame::play() {
             }
         } else if (choice == 1) { // load game
             std::vector<std::string> saves;
-            choice = loadMenu(saves);
+            choice = CMenu::loadMenu(saves);
             std::string save;
             if (choice >= 0) {
                 save = saves[choice];
-            } else save = "";
+            }else if (choice == -20)
+                continue;
 
-            this->init(1, 1, save.c_str());
+            this->init(1, _difficulty, save.c_str());
             if (!this->start()) {
                 if (this->gameEnd("You lost!"))
                     continue;
@@ -482,8 +545,11 @@ bool CGame::play() {
                 else
                     return EXIT_FAILURE;
             }
-
-        } else if (choice == 2) {
+        }else if(choice == 2)
+        {
+            _difficulty = CMenu::optionsMenu() + 1;
+            continue;
+        } else if (choice == 3) {
             //exit
             break;
         }

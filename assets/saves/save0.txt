@@ -31,4 +31,10 @@ x 6
 y 5
 hp 100
 
+# queue
+
+name basicAttacker
+x 47
+y 1
+
 # end

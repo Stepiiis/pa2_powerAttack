@@ -28,24 +28,25 @@ int Player::getCoins() const{
 
 
   bool Player::spawnAttacker(){
-    if(_spawnLane._x == -10) // TODO: "callback" that player didnt choose lane
+      auto attacker = _attackersQueue.front();
+    if(attacker.second._x == -10) // TODO: "callback" that player didnt choose lane
         return false;
-     if(_def[_attackersQueue.front()]["price"]>_coins) // TODO: "CALLBACK" not enough money
-         return false;
-    _coins-=_def[_attackersQueue.front()]["price"];
+    if(_def[attacker.first]["price"]>_coins) // TODO: "CALLBACK" not enough money
+        return false;
+    _attackersQueue.pop_front();
+    _coins-=_def[attacker.first]["price"];
     attackerID++;
-    switch (_def[_attackersQueue.front()]["symbol"]){ // chooses on the basis of different ascii values
+    switch (_def[attacker.first]["symbol"]){ // chooses on the basis of different ascii values
         case 36: // ascii value of $
-            _attackers.emplace(attackerID,std::make_unique<basicAttacker>(_spawnLane._x, _spawnLane._y, _def, _map, attackerID));
+            _attackers.emplace(attackerID,std::make_unique<basicAttacker>(attacker.second._x, attacker.second._y, _def, _map, attackerID));
             break;
         case 37: // %
-            _attackers.emplace(attackerID,std::make_unique<fastAttacker>(_spawnLane._x, _spawnLane._y, _def, _map, attackerID));
+            _attackers.emplace(attackerID,std::make_unique<fastAttacker>(attacker.second._x, attacker.second._y, _def, _map, attackerID));
             break;
         case 64: // @
-            _attackers.emplace(attackerID,std::make_unique<chargerAttacker>(_spawnLane._x, _spawnLane._y, _def, _map, attackerID));
+            _attackers.emplace(attackerID,std::make_unique<chargerAttacker>(attacker.second._x, attacker.second._y, _def, _map, attackerID));
             break;
     }
-    _attackersQueue.pop_front();
     return true;
 }
 
@@ -68,7 +69,7 @@ void Player::setAttackerType(int type) {
 }
 
 void Player::addAttackerToQueue() {
-    _attackersQueue.push_back(attackerType);
+    _attackersQueue.emplace_back(attackerType, _spawnLane);
 }
 
 void Player::moveAttackers() {
@@ -146,7 +147,11 @@ bool Player::printAttackers() {
     return true;
 }
 
-void Player::setFinAttackers(int nr) {
+void Player::setFinished(int nr) {
     _attackersFinished = nr;
+}
+
+void Player::addAttackersToQueue(std::deque<std::pair<std::string, Point> >& queue) {
+    _attackersQueue = queue;
 }
 

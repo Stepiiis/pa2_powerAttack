@@ -70,7 +70,7 @@ protected:
     CDefinitions _definitions;
     size_t _towers_destroyed{};
     int _score{};
-    int _difficulty;
+    int _difficulty = 1;
 
     void redrawTowers();
 
