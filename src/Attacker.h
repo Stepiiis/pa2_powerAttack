@@ -19,25 +19,80 @@
 class Attacker: public Entity
 {
 public:
+    /**
+     * Constructor of abstract class Attacker - used to instantiate derived classes basicAttacker, fastAttacker, chargerAttacker
+     * @param posX - initial x coordinate of attacker
+     * @param posY - initial y coordinate of attacker
+     * @param hp - hp at spawn
+     * @param dmg - damage, that attacker can give
+     * @param symbol - symbol which will be shown on map
+     * @param radius - reach of attacker, where he can attack
+     * @param attackSpeed - speed at which attacker can move (lower is faster)
+     * @param map - pointer to a shared instance of Class Map
+     * @param attackerID - id of current attacker
+     */
     Attacker(int posX, int posY,int hp, int dmg, char symbol, int radius, int attackSpeed, Map * map,int attackerID);
+
+    /** virtual destructor of abstract class */
     ~Attacker() override = default;
+
+    /** operator < used for ordering inside a map, compares ids of Attackers @param rhs right hand side of comparison */
     bool operator < (Attacker & rhs);
+
+    /** operator < used for ordering inside a map, compares ids of Attackers @param rhs right hand side of comparison */
     bool operator > (Attacker & rhs);
 
+    /** virtual abstract method which checks wether a certain derived class can use the point passed as parameter
+     * @param point point to be checked if derived attacker can use it to move
+     * @returns false if attacker can not use it
+     * @returns true if attacker can use it
+     * */
     virtual bool checkSpecialization(const Point &point) = 0;
 
-    bool moveOnPath(); // moves attacker to next point
-    Point getNextPoint(); // returns next point on path
-    [[nodiscard]] virtual bool isTarget(const Point& p) const = 0; // absract function for all derivates which returns target type used by BFS
-    Point::PointType getType() override; // returns type of entity
-    [[nodiscard]] std::string getTypeName() const override = 0; // returns name of entity
-    bool findShortestPath(Point::PointType endType = Point::Exit); // finds shortest path using BFS
+    /** moves attacker to first point in deque m_path and removes point from queue
+     * @returns true if movement went correct
+     * @returns false if attacker could not move (path empty, next in path is Exit/Attacker, updating of Map went wrong)*/
+    bool moveOnPath();
+
+    /** @returns first Point in m_path and doesn't remove it from deque, if its empty, it returns empty Point{x = -10, y = -10}*/
+    Point getNextPoint();
+
+    /** Absract virtual function which is used by BFS algrithm to determine end of search for each type of attacker
+     * @returns true if point type of paramter p is the target of given Attacker. Otherwise returs false.
+     * @param p - const reference to point on map whose current type we check.*/
+    [[nodiscard]] virtual bool isTarget(const Point& p) const = 0;
+
+    /** Used to polymorphically edit Map. @returns type of entity.*/
+    Point::PointType getType() override;
+
+    /** Used to save the game. @returns name of Attacker. */
+    [[nodiscard]] std::string getTypeName() const override = 0;
+
+    /** finds the shortest path to given target for given attacker using the BFS algortihm.
+     * Uses polymorphic functions inside to determine end and usable points.
+     * @returns true if path was found, otherwise returns false
+     * @param endType default parameter that specifies to go to the Exit of Map.*/
+    bool findShortestPath(Point::PointType endType = Point::Exit);
+
+    /**@returns read write reference to Path dequeue */
     std::deque<Point>& getPath();
-    void addEffects(const CEffects eff);
+
+    /** adds effects to current entity. @param eff structure CEffects which specifies which effects to assign to attacker*/
+    void addEffects(CEffects eff);
+
+    /** @returns current effects that are on Attacker. */
     CEffects getEffects() const;
+
+    /** @returns true if Attacker has a slow effect currently on. false otherwise. */
     [[nodiscard]] bool hasSlowEffect() const;
+
+    /**@returns true if slower movement was assigned. false otherwise (wont happen). */
     bool setSlowerMovement();
+
+    /** @returns true if default movement speed was set. false otherwise. */
     bool setNormalMovement();
+
+    /** @returns which type is used by Attacker to hide from Towers */
     virtual Point::PointType pointToHide(); // not used anymore
 
 

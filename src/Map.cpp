@@ -88,19 +88,8 @@ Point::Point(int x, int y, PointType type)
 {
 }
 
-/**
- *  */
 
-/**
- * @Brief
- * WHEN PRINTING ON SCREEN EVERY COORDINATE SHOULD BE MOVED BY 1 TO ACCOUNT FOR THE BORDER
- *
- * @param prevX  previous _x position which will be filled with empty space
- * @param prevY  previous y position which will be filled with empty space
- * @param x      new _x position to move entity to
- * @param y      new y position to move entity to
- * @param entity entity to be moved
- */
+
 bool Map::updateMap( int x, int y, Entity * entity)
 {
     if(y>m_map.size() || (y<0) || (x>m_map[0].size()) || (x<0))
@@ -168,7 +157,8 @@ bool Map::loadNextMap(int level){
 }
 
 void Map::refreshWindow(){
-    wrefresh(m_game_window);
+    if(m_game_window != nullptr)
+        wrefresh(m_game_window);
 }
 
 
@@ -240,7 +230,7 @@ void Map::printMap(){
     wrefresh(m_game_window);
 }
 bool Map::getLaneByID(int id, Point & spawnLane)const{
-    if(m_entries.size()<id)
+    if(m_entries.size()<id || id<0)
         return false;
     spawnLane = m_entries.at(id-1);
     spawnLane._x = spawnLane._x - 1;
@@ -269,8 +259,8 @@ void Map::highlightLane(int lanenr){
 
 bool Map::checkNeighbours(int x, int y){
     if(x > 0 && x < MAP_WIDTH - 1 && y > 0 && y < MAP_HEIGHT - 1){
-        if(m_map[y][x - 1]._type != Point::Entry && m_map[y][x + 1]._type != Point::Entry && m_map[y - 1][x]._type != Point::Entry && m_map[y + 1][x]._type != Point::Entry){
-            if(m_map[y-1][x - 1]._type != Point::Entry && m_map[y - 1][x + 1]._type != Point::Entry && m_map[y - 1][x + 1]._type != Point::Entry && m_map[y + 1][x - 1]._type != Point::Entry){
+        if(m_map[y][x - 1]._type == Point::Empty && m_map[y][x + 1]._type == Point::Empty && m_map[y - 1][x]._type == Point::Empty && m_map[y + 1][x]._type == Point::Empty){
+            if(m_map[y-1][x - 1]._type == Point::Empty && m_map[y - 1][x + 1]._type == Point::Empty && m_map[y - 1][x + 1]._type == Point::Empty && m_map[y + 1][x - 1]._type == Point::Empty){
                 return true;
             }
         }
@@ -281,16 +271,7 @@ bool Map::checkNeighbours(int x, int y){
 void Map::setWindow(WINDOW *win) {
     m_game_window=win;
 }
-/**
-*   @abstract
-*   Procházení mapy v závislosti na tom, pro kterého attackera hledáme cestu k cíli
-*   Hledání pomocí algoritmu BFS.
-*   Tato funkce bude sice volána pokaždé když se bude rozhodovat o dalším postupu,
-*   protože se může stát, že věž na kterou byl původně attacker nasměrován je už zničena.
-*   @Nejjednodušší - jde vždy nejkratší cestou do cíle
-*   @Vyhýbání_se_věžím - pro fast attackera najde cestu do cíle která bude nejkratší dobu v dosahu věží
-*   @Náběh_na_vež - běží k nejbližší věži a ničí věž dokud není mrtvá ( pro heavy attackera, který má hodně hp)
-*/
+
 void Map::forEachNeighborImpl(const Point &p, const Map::Callback& fun) {
     size_t x, y;
     for (auto [xd, yd] : { std::pair<int, int>{-1,0}, {0,-1}, {1, 0}, {0, 1} }) {
@@ -320,7 +301,7 @@ bool Map::updateCell(int x, int y, Point::PointType type, const char symbol) {
     mvwprintw(m_game_window,y+1,x+1,"%c",symbol);
     return true;
 }
-
+// throws mapException if coordinate is out of bounds of map
 bool Map::revertCell(int x, int y) {
     if (x < 0 || x >= (int)m_map[y].size()) throw mapException("Invalid _x coordinate: updateCell");
     if (y < 0 || y >= (int)m_map.size()) throw mapException("Invalid y coordinate: updateCell");
@@ -379,18 +360,7 @@ int Map::getMapWidth() {
 //}
 
 
-/**
- * \Brief
- * Function tries to find a clear path from p1 to p2.
- * Used by entities to check if they can clearly see another entity that they want to attack.
- *
- * \context The function uses my own algorithm, which decides based on the degree between two points
- *  because I didnt fully understand bresenham algorithm i used my much slower version but atleast i didnt copypaste it
- *
- * @param p1 start point coordinate
- * @param p2 end point coordinate
- * @return true if path was found and false if there is an obstruction
- */
+
 bool Map::checkClearSight(const std::pair<int,int>& p1, const std::pair<int,int>& p2) const{
 
     int x1 = p1.first; // aktualni pozice "cesty"

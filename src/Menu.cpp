@@ -1,9 +1,10 @@
 #include "Menu.h"
 
 
-CMenu::CMenu(std::vector<std::string> text, std::vector<std::string> options) {
+CMenu::CMenu(std::vector<std::string> text, std::vector<std::string> options, int defaultOption) {
     _text = std::move(text);
     _options = std::move(options);
+    _chosen = defaultOption;
 }
 
 int CMenu::show(bool wait) {
@@ -31,7 +32,7 @@ int CMenu::show(bool wait) {
     }
     wrefresh(menu_win);
     int keypress = 0;
-    int choice = 0;
+    int choice = _chosen;
     if (wait) {
         posY++;
         mvwprintw(menu_win, posY, posX, "Press any key to continue");
@@ -275,11 +276,11 @@ std::string CMenu::saveMenu() {
     return saveName;
 }
 
-int CMenu::optionsMenu() {
+int CMenu::optionsMenu(int &difficulty) {
     CMenu options(
             {"Please choose difiiculty"},
-            {"Easy", "Normal", "Hard"}
+            {"Easy", "Normal", "Hard"},difficulty
     );
-    return options.show();
+    difficulty = options.show();
 }
 

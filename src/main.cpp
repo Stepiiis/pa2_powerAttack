@@ -1,8 +1,4 @@
 #pragma once
-//
-// Created by Štěpán on 27.04.2022.
-//
-
 #include "Game.h"
 
 

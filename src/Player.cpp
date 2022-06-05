@@ -35,7 +35,7 @@ std::string Player::spawnAttacker() {
     std::pair<std::string, Point> attacker = m_attackersQueue.front();
     auto point = attacker.second;
     if (point._x == -10)
-        return "You didnt choose any lane or error in save file.";
+        return {};
     if (m_map->getType(point) != Point::Entry)
         throw logException("Player::spawnAttacker: point is not an entry");
 
@@ -168,12 +168,11 @@ bool Player::createNewAttacker(int type, int x, int y, int hp, CEffects effects)
     return true;
 }
 
-bool Player::printAttackers() {
+void Player::printAttackers() {
     for (const auto &attacker: m_attackers) {
         if (attacker.second->getHP() > 0)
             attacker.second->draw();
     }
-    return true;
 }
 
 void Player::setFinished(int nr) {
@@ -181,6 +180,7 @@ void Player::setFinished(int nr) {
 }
 
 void Player::setAttackersQueue(std::deque<std::pair<std::string, Point> > &queue) {
+    m_attackersQueue.clear();
     m_attackersQueue = queue;
 }
 
@@ -208,7 +208,7 @@ int Player::damageAttackers(std::vector<std::tuple<int, int, CEffects> > &attack
     return toRemove.size();
 }
 
-std::deque<std::pair<std::string, Point> > &Player::getAttackersQueue() {
+const std::deque<std::pair<std::string, Point>> & Player::getAttackersQueue() {
     return m_attackersQueue;
 }
 

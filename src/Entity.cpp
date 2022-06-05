@@ -22,8 +22,7 @@ bool Entity::takeDamage(int damage){
     }
 
 bool Entity::destroy() {
-    m_sharedMap->revertCell(m_x, m_y);
-    return true;
+    return m_sharedMap->revertCell(m_x, m_y);
 }
 
 int Entity::getHP() const{ return m_hp; }

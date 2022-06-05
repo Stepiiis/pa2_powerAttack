@@ -17,9 +17,18 @@ private:
 public:
     CDefinitions() = default;
     ~CDefinitions() = default;
-    bool loadDefinitions();                                 // helper func to facilitate all def. loadings
+    /** loads all definitions onto two instances of structure defEntity @returns true if definitions went correctly. otherwise returns false.
+     * Can throw synException if fatal error occurs.*/
+    bool loadDefinitions();
+
+    /**loads definition for given entity. @returns true if entity definition went cirrectly. otherwise returns false.
+     * Can throw synException if fatal error occurs.*/
     bool loadEntity(std::string& path, defEntity& entity);  // loads deifinition for given entity
+
+    /** @reutrns read reference to Tower definitions.*/
     const defEntity & getTower();
+    
+    /** returns read reference to Attacker definitions.*/
     const defEntity & getAttacker();
 };
 

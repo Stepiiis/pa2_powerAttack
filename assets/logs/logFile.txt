@@ -24385,3 +24385,1147 @@ Time: Jun5 05:56 22 Level: 0 Context: CGame::performAttacks Text: performing att
 Time: Jun5 05:56 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
 Time: Jun5 05:56 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
 Time: Jun5 05:56 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 13:08 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 13:08 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:08 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:5
+Time: Jun5 13:48 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 13:48 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 13:48 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 13:48 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 13:48 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 13:48 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 13:50 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 13:50 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 13:50 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 13:50 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 13:50 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 13:50 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 15:10 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 15:10 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 15:10 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 15:11 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 15:11 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 15:11 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 15:12 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 15:12 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 15:12 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 15:13 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 15:13 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 15:13 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 15:13 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 15:13 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 15:13 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:13 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:4
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 15:14 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 15:14 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 15:14 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 15:14 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 16:14 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 16:14 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 16:14 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 16:14 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 16:14 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 16:14 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 16:16 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 16:16 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 16:16 22 Level: 0 Context: loadFromSave Text: loading entities typed towers
+Time: Jun5 16:16 22 Level: 0 Context: loadFromSave Text:    index 1
+Time: Jun5 16:16 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 1000
+Time: Jun5 16:16 22 Level: 0 Context: loadFromFile Text:       attibute type valued slowEffectTower
+Time: Jun5 16:16 22 Level: 0 Context: loadFromFile Text:       attibute x valued 36
+Time: Jun5 16:16 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 16:16 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 16:16 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 16:16 22 Level: 0 Context: loadFromSave Text: loading entities typed towers
+Time: Jun5 16:16 22 Level: 0 Context: loadFromSave Text:    index 1
+Time: Jun5 16:16 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 1000
+Time: Jun5 16:16 22 Level: 0 Context: loadFromFile Text:       attibute type valued slowEffectTower
+Time: Jun5 16:16 22 Level: 0 Context: loadFromFile Text:       attibute x valued 36
+Time: Jun5 16:16 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 16:16 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:16 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 16:44 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 16:44 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 16:44 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 16:46 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 16:46 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 16:46 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:4
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:5
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:6
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:7
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:8
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:3
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:10
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:9
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:11
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:12
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:46 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:13
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:14
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:14
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:14
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:14
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:14
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:14
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:14
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:14
+Time: Jun5 16:47 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 16:47 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 16:47 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 16:47 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 17:03 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 17:03 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 17:03 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:1
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Attacker ID:2
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:0
+Time: Jun5 17:03 22 Level: 0 Context: CGame::performAttacks Text: performing attack on Tower ID:2
+Time: Jun5 17:03 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 17:03 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 1
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 32
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 2
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 2
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 35
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 3
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 32
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 3
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 4
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 36
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 5
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 32
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 4
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 6
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 37
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 7
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 32
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 8
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 38
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 9
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 33
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 10
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 43
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 7
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 11
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 44
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 7
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 12
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 45
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 7
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text: loading entities typed towers
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 1
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 650
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicTower
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 22
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 6
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 2
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 650
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicTower
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 21
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:03 22 Level: 0 Context: loadFromSave Text:    index 3
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 650
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicTower
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute x valued 9
+Time: Jun5 17:03 22 Level: 0 Context: loadFromFile Text:       attibute y valued 4
+Time: Jun5 17:03 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully
+Time: Jun5 17:04 22 Level: 0 Context: LoadDefinitions Text: Loaded file attackers/attackerDefinition.txt
+Time: Jun5 17:04 22 Level: 0 Context: LoadDefinitions Text: Loaded file towers/towerDefinition.txt
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text: loading entities typed attackers
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 1
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 32
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 2
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 2
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 35
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 3
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 32
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 3
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 4
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 36
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 5
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 32
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 4
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 6
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 37
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 7
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 32
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 8
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 38
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 9
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 33
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 10
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 43
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 7
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 11
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 44
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 7
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 12
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 240
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute slw valued 0
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicAttacker
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 45
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 7
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text: loading entities typed towers
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 1
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 650
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicTower
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 22
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 6
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 2
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 650
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicTower
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 21
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 5
+Time: Jun5 17:04 22 Level: 0 Context: loadFromSave Text:    index 3
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute hp valued 650
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute type valued basicTower
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute x valued 9
+Time: Jun5 17:04 22 Level: 0 Context: loadFromFile Text:       attibute y valued 4
+Time: Jun5 17:04 22 Level: 0 Context: Map.cpp Text: Map::readMap: Map loaded successfully

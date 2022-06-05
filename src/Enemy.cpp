@@ -10,7 +10,6 @@ Enemy::Enemy(Map * map,defEntity def, int dif)
 
 }
 
-Enemy::~Enemy() = default;
 
 
 void Enemy::clearTowers(){
@@ -34,7 +33,7 @@ void Enemy::createTowers(){
                 if (x <= MAP_WIDTH - 1 && x >= 0 && y <= MAP_HEIGHT - 1 && y >= 0) {
                     if(m_map->checkNeighbours(x, y)){
                         m_towers.emplace(m_towerIDcnt, new basicTower(x, y, m_def, m_map, m_towerIDcnt));
-                        m_map->setEntity(x, y, m_towers[m_towerIDcnt].get());
+                        //m_map->setEntity(x, y, m_towers[m_towerIDcnt].get());
                         m_towerIDcnt++;
                     }else{
                         i--;
@@ -77,7 +76,7 @@ void Enemy::createTowers(){
             else if(typeEnt == 3){
                 m_towers.emplace(m_towerIDcnt, new highDamageTower(p._x, p._y, m_def, m_map, m_towerIDcnt));
             }
-            m_map->setEntity(p._x, p._y, m_towers[m_towerIDcnt].get());
+            //m_map->setEntity(p._x, p._y, m_towers[m_towerIDcnt].get());
             m_towerIDcnt++;
         }
         delete testPathCreator;

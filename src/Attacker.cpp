@@ -64,7 +64,7 @@ bool Attacker::findShortestPath(Point::PointType endType) {
         // checks each neighbor of current ponit in queue of points
         m_sharedMap->forEachNeighbor(current , [&](const Point& neighbor)
         {
-            if(this->checkSpecialization(neighbor)){
+            if(!this->checkSpecialization(neighbor)){
                 return;
             }
             if(neighbor == current || neighbor._type == Point::Wall || visited.count(neighbor) != 0 )
@@ -174,8 +174,8 @@ std::string basicAttacker::getTypeName() const {
 
 bool basicAttacker::checkSpecialization(const Point &point) {
     if(point._type == Point::Tower || point._type == Point::Water)
-        return true;
-    return false;
+        return false;
+    return true;
 }
 
 
@@ -189,10 +189,10 @@ std::string fastAttacker::getTypeName() const {
 
 bool fastAttacker::checkSpecialization(const Point &point) {
     if(point._inRadiusOf.count(Point::Tower) == 1)
-        return true;
+        return false;
     if(point._type == Point::Attacker || point._type == Point::Entry || point._type== Point::Tower)
-        return true;
-    return false;
+        return false;
+    return true;
 }
 
 Point::PointType fastAttacker::pointToHide() {
@@ -210,5 +210,7 @@ std::string chargerAttacker::getTypeName() const {
 }
 
 bool chargerAttacker::checkSpecialization(const Point &point) {
-    return point._type == Point::Attacker || point._type == Point::Entry || point._type == Point::Water;
+    if(point._type == Point::Attacker || point._type == Point::Entry || point._type == Point::Water)
+        return false;
+    return true;
 }
