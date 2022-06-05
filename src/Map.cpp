@@ -4,9 +4,10 @@
 #include <memory>
 #include "logFile.h"
 #include "Entity.h"
-#include "Map.h"
 #include "ncurses.h"
 #include <complex>
+#include "Map.h"
+
 
 Point::Point(int x, int y, char symbol)
         : _symbol(symbol), _x(x), _y(y),  _defaultSymbol(symbol)
@@ -265,46 +266,6 @@ void Map::highlightLane(int lanenr){
     }
 }
 
-void Map::drawLanes(){
-    for(int i = 0; i<m_entries.size(); i++){
-        mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 1, "%c", '<');
-        mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 2, "%c", '=');
-        mvwprintw(m_game_window, m_entries[i]._y + 1, m_entries[i]._x + 3, "%d", i + 1);
-        wrefresh(m_game_window);
-    }
-}
-
-bool Map::getEmptySpaces(    std::vector<std::vector<char> > &_emptySpaces){
-_emptySpaces.erase(_emptySpaces.begin(), _emptySpaces.end());
-std::vector<char> lines;
-    for(int row = 0; row<m_map.size(); row++) {
-        lines.clear();
-        for(int col = 0; col<m_map[row].size(); col++) {
-            if(m_map[row][col]._symbol != ' ') {
-                lines.emplace_back('#');
-            }else{
-                lines.emplace_back(' ');
-            }
-        }
-        _emptySpaces.push_back(lines);
-    }
-    return true;
-}
-
-void Map::convertMap() {
-    for(int row = 0; row<m_map.size(); row++) {
-        for(int col = 0; col<m_map[row].size(); col++) {
-            m_mapString.push_back(m_map[row][col]._symbol);
-        }
-    }
-}
-
-void Map::redrawMap(){
-//    convertMap();
-    printMap();
-//    mvwprintw(m_game_window,0,0,"%s",m_mapString.c_str());
-}
-
 
 bool Map::checkNeighbours(int x, int y){
     if(x > 0 && x < MAP_WIDTH - 1 && y > 0 && y < MAP_HEIGHT - 1){
@@ -320,7 +281,16 @@ bool Map::checkNeighbours(int x, int y){
 void Map::setWindow(WINDOW *win) {
     m_game_window=win;
 }
-
+/**
+*   @abstract
+*   Procházení mapy v závislosti na tom, pro kterého attackera hledáme cestu k cíli
+*   Hledání pomocí algoritmu BFS.
+*   Tato funkce bude sice volána pokaždé když se bude rozhodovat o dalším postupu,
+*   protože se může stát, že věž na kterou byl původně attacker nasměrován je už zničena.
+*   @Nejjednodušší - jde vždy nejkratší cestou do cíle
+*   @Vyhýbání_se_věžím - pro fast attackera najde cestu do cíle která bude nejkratší dobu v dosahu věží
+*   @Náběh_na_vež - běží k nejbližší věži a ničí věž dokud není mrtvá ( pro heavy attackera, který má hodně hp)
+*/
 void Map::forEachNeighborImpl(const Point &p, const Map::Callback& fun) {
     size_t x, y;
     for (auto [xd, yd] : { std::pair<int, int>{-1,0}, {0,-1}, {1, 0}, {0, 1} }) {
@@ -377,7 +347,7 @@ int Map::getMapWidth() {
     }
     return width;
 }
-// tried doing the bresenham algoroithm but i dont understand it fully so tried my own version
+//I tried implementing the bresenham algoroithm but i dont understand it fully so tried my own version
 //bool Map::checkClearSight(std::pair<int,int>& p1, std::pair<int,int>& p2) {
 //    int x1 = p1.first;
 //    int y1 = p1.second;

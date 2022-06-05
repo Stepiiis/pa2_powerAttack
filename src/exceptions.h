@@ -5,10 +5,8 @@
 // logical exception, should never occur
 class logException : public std::exception {
 public:
-    explicit logException(std::string  msg) : _msg(std::move(msg)) {}
-    const char* what() const noexcept override {
-        return _msg.c_str();
-    }
+    explicit logException(std::string  msg);
+    [[nodiscard]] const char* what() const noexcept override;
     const std::string _msg;
 
 };
@@ -16,27 +14,21 @@ public:
 class mapException : public std::exception {
 public:
     explicit mapException(std::string  msg) : _msg(std::move(msg)) {}
-    const char* what() const noexcept override {
-        return _msg.c_str();
-    }
+    const char* what() const noexcept override{return _msg.c_str();}
     const std::string _msg;
 };
 
 class notImplementedException : public std::exception {
 public:
-    explicit notImplementedException(std::string msg) : _msg(std::move(msg)) {}
-    const char* what() const noexcept override {
-        return _msg.c_str();
-    }
+    explicit notImplementedException(std::string msg);
+    const char* what() const noexcept override ;
     const std::string _msg;
 
 };
 
 class syntaxErr : public std::exception {
 public:
-    explicit syntaxErr(std::string  msg) : _msg(std::move(msg)) {}
-    const char* what() const noexcept override {
-        return _msg.c_str();
-    }
+    explicit syntaxErr(std::string  msg);
+    const char* what() const noexcept override;
     const std::string _msg;
 };

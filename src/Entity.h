@@ -17,29 +17,25 @@ public:
     // moves the entity to the given position on screen, actual showing on screen is handled by Map class
     bool move(int x, int y);
 
-    // if the entity is alive, it will take damage and return true, otherwise it will return false
+    // if the entity is alive, it will take damage and return true, otherwise it will return false and set status alive to false
     bool takeDamage(int damage);
-    // gives damage to targeted entity and if the entity dies it returns false, otherwise it returns true.
-    // if the entity dies it will be removed from the map
-    bool giveDamage(int damage, Entity* target);
 
     // removes the entity from the map and sets alive to false
     bool destroy();
 
     void setRadius(int radius);
     int getRadius()const;
-    void draw();
+    void draw(); // draws the entity on the map
     int getDamage() const;
     int getHP() const;
     int getCurrentFocus() const;
     char getSymbol() const;
-    int getAttackSpeed() const;
     bool canAttack() ;
     virtual Point::PointType getType() = 0;
-    bool checkRadius(Point::PointType type);
-    void calculateDeltas();
+    bool checkRadius(Point::PointType type); // checks radius of the entity and returns true if agiven entity type is in the radius
+    void calculateDeltas(); // calculates deltas according to the radius (reach) of the entity
     [[nodiscard]] const std::set<std::pair<int,int>> &getDeltas() const;
-    virtual std::string getTypeName() const = 0;
+    virtual std::string getTypeName() const = 0;  // returns name of type, used for saves
     int getID()const;
     [[nodiscard]] std::pair<int,int> getPosition()const;
 

@@ -24,15 +24,6 @@ bool CGame::initializeWindow() {
     return true;
 }
 
-// prevzato ze StackOverflow
-// https://stackoverflow.com/questions/421860/capture-characters-from-standard-input-without-waiting-for-enter-to-be-pressed/67363091#67363091
-int kbhit() {
-    static int nbbytes;
-    ioctl(0, FIONREAD, &nbbytes);
-    return nbbytes;
-}
-// konec prevzateho
-
 bool CGame::resume() {
     int input;
     auto startTime = std::chrono::system_clock::now();
@@ -81,7 +72,7 @@ bool CGame::resume() {
             m_player->setAttackerType(2);
         }
         if (input == ' ') {
-            if(!m_player->addAttackerToQueue()) // TODO: "CALLBACK" not enough money
+            if(!m_player->addAttackerToQueue())
                 errorMessage = "Not enough money  to spawn this     attacker";
         }
         currentTime = std::chrono::system_clock::now();
@@ -100,11 +91,10 @@ bool CGame::resume() {
             // then add them to ncurses window buffer
             if (!m_player->emptyAttackers())
                 m_player->moveAttackers();
-//        wtimeout(_game_window,50);
-//        wgetch(_game_window);
+
         }
         wrefresh(m_game_window);
-        if (m_tower_manager->getTowerCount() == 0)
+        if (m_tower_manager->getTowerCount() == 0 && m_player->getAttackerCount() == 0)
             break;
         if(m_player->getAttackerCount() == 0 && m_player->getCoins() < 100)
             return false;
@@ -125,14 +115,6 @@ void CGame::drawTowers() {
         m_tower_manager->clearTowers();
     }
     m_tower_manager->createTowers();
-    m_tower_manager->printTowers();
-    wrefresh(m_game_window);
-}
-
-void CGame::redrawTowers() {
-    if (m_tower_manager->getTowerCount() != 0) {
-        m_tower_manager->clearTowers();
-    }
     m_tower_manager->printTowers();
     wrefresh(m_game_window);
 }
@@ -210,7 +192,7 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
     bool queueReading = false;
     int lineindex = 0;
     std::string entType;
-    int indexOfEnt;
+
     std::string test;
     while (getline(savefile, fileLine))
     {
@@ -280,7 +262,6 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
             }
             givenEntity.emplace(name,value);
         }else{
-            int number;
             name.clear();
             value.clear();
             test.clear();
@@ -427,18 +408,6 @@ bool CGame::loadFromSave(const std::string &nameOfSave) {
     return true;
 }
 
-bool CGame::exit() {
-    throw (notImplementedException("exit"));
-}
-
-
-void hell() {
-    attron(A_STANDOUT);
-    printw("welcome to hell");
-    attroff(A_STANDOUT);
-}
-
-
 void CGame::highlightAttacker(int type) {
     int top = (int) m_gameMap.m_map.size() + 2;
     int defaultTop = top;
@@ -496,8 +465,7 @@ bool CGame::gameEnd(const char *msg) {
     std::stringstream coinsLeft;
     std::stringstream playersFinished;
 
-    m_score = (m_towers_destroyed * 10
-               + m_player->getCoins() + m_player->getFinished() * 25) * m_difficulty+1;
+    m_score = (m_towers_destroyed * 10 + m_player->getCoins() + m_player->getFinished() * 25) * (m_difficulty+1);
     sstowersDestroyed << "towers destroyed: \t" << m_towers_destroyed << " * 10 = " << m_towers_destroyed * 10;
     coinsLeft << "coins left: \t\t" << m_player->getCoins();
     playersFinished << "players finished: \t" << m_player->getFinished() << " * 25 = " << m_player->getFinished() * 25;

@@ -11,8 +11,8 @@
 struct CMenu{
     CMenu() = default;
     CMenu(std::vector<std::string> text, std::vector<std::string> options);
-    int show(bool wait = false); // returns the number of option that was chosen
-    void setMenu(std::vector<std::string> text, std::vector<std::string> options);
+    int show(bool wait = false); // returns the number of option that was chosen, if wait is true, it will wait for input before showing menu
+    void setMenu(std::vector<std::string> text, std::vector<std::string> options); // sets the menu
 
     static int mainMenu();
 

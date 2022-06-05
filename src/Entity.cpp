@@ -21,11 +21,6 @@ bool Entity::takeDamage(int damage){
         return alive;
     }
 
-bool Entity::giveDamage(int damage, Entity* target){
-        target->takeDamage(damage);
-        return true;
-    }
-
 bool Entity::destroy() {
     m_sharedMap->revertCell(m_x, m_y);
     return true;
@@ -152,9 +147,6 @@ const std::set<std::pair<int, int>>& Entity::getDeltas() const{
     return m_deltas;
 }
 
-int Entity::getAttackSpeed() const {
-    return m_attackSpeed;
-}
 
 bool Entity::canAttack(){
     m_attackClock++;

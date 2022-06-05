@@ -11,7 +11,7 @@ public:
     ~Tower() override = default;
     bool operator < (Tower & rhs);
     bool operator > (Tower & rhs);
-    virtual CEffects  getEffect() const =0;
+    virtual CEffects  getEffect() const =0; // returns effects which should be given on attack to enemy
     Point::PointType getType() override;
     [[nodiscard]] std::string getTypeName() const override = 0;
 };

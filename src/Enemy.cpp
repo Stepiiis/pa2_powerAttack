@@ -119,21 +119,21 @@ bool Enemy::createNewTower(int type, int x, int y, int hp) {
 
     switch (type){
         case 0:
-            m_towers.emplace(m_towersSpawned, std::make_unique<basicTower>(x, y, m_def, m_map, m_towersSpawned, hp));
+            m_towers.emplace(m_towerIDcnt, std::make_unique<basicTower>(x, y, m_def, m_map, m_towerIDcnt, hp));
             break;
         case 1:
-            m_towers.emplace(m_towersSpawned, std::make_unique<fastTower>(x, y, m_def, m_map, m_towersSpawned, hp));
+            m_towers.emplace(m_towerIDcnt, std::make_unique<fastTower>(x, y, m_def, m_map, m_towerIDcnt, hp));
             break;
         case 2:
-            m_towers.emplace(m_towersSpawned, std::make_unique<highDamageTower>(x, y, m_def, m_map, m_towersSpawned, hp));
+            m_towers.emplace(m_towerIDcnt, std::make_unique<highDamageTower>(x, y, m_def, m_map, m_towerIDcnt, hp));
             break;
         case 3:
-            m_towers.emplace(m_towersSpawned, std::make_unique<slowEffectTower>(x, y, m_def, m_map, m_towersSpawned, hp));
+            m_towers.emplace(m_towerIDcnt, std::make_unique<slowEffectTower>(x, y, m_def, m_map, m_towerIDcnt, hp));
             break;
         default:
         throw std::invalid_argument("type doesnt correspond any tower definition");
     }
-    m_towersSpawned++;
+    m_towerIDcnt++;
     return true;
 }
 

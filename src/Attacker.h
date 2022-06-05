@@ -23,27 +23,27 @@ public:
     ~Attacker() override = default;
     bool operator < (Attacker & rhs);
     bool operator > (Attacker & rhs);
-    void setPosition(int x, int y);
+
     virtual bool checkSpecialization(const Point &point) = 0;
-    void place(int x, int y);
-    bool moveOnPath();
-    Point getNextPoint();
-    [[nodiscard]] virtual bool isTarget(const Point& p) const = 0;
-    Point::PointType getType() override;
-    [[nodiscard]] std::string getTypeName() const override = 0;
-    bool findShortestPath(Point::PointType endType = Point::Exit);
+
+    bool moveOnPath(); // moves attacker to next point
+    Point getNextPoint(); // returns next point on path
+    [[nodiscard]] virtual bool isTarget(const Point& p) const = 0; // absract function for all derivates which returns target type used by BFS
+    Point::PointType getType() override; // returns type of entity
+    [[nodiscard]] std::string getTypeName() const override = 0; // returns name of entity
+    bool findShortestPath(Point::PointType endType = Point::Exit); // finds shortest path using BFS
     std::deque<Point>& getPath();
     void addEffects(const CEffects eff);
     CEffects getEffects() const;
-    bool hasSlowEffect() const;
+    [[nodiscard]] bool hasSlowEffect() const;
     bool setSlowerMovement();
     bool setNormalMovement();
-    virtual Point::PointType pointToHide();
-// queue that is updated everytime findPath is called
+    virtual Point::PointType pointToHide(); // not used anymore
+
 
 protected:
     void popPath();
-    std::deque<Point> m_path;
+    std::deque<Point> m_path; // queue that is updated everytime findPath is called
     int m_cycleCnt{};
     int m_movementSpeed;
     CEffects m_effects{};

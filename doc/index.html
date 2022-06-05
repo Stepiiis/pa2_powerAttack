@@ -69,7 +69,7 @@ $(function() {
 Introduction</h1>
 <h2><a class="anchor" id="autotoc_md1"></a>
 What is Tower Attack?</h2>
-<p><a class="el" href="classTower.html">Tower</a> attack is a game where the player has control of spawning attackers and tries to conquer the battlefield by destroying the tower and entering leaving trough the next door;</p>
+<p><a class="el" href="classTower.html">Tower</a> attack is a game where the player has control of spawning attackers and tries to conquer the battlefield by destroying all towers and leaving through the exit door.</p>
 <h3><a class="anchor" id="autotoc_md2"></a>
 Points on map legend</h3>
 <ul>
@@ -97,27 +97,28 @@ Controls</h1>
 </ul>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Implementace</h1>
-<h3><a class="anchor" id="autotoc_md5"></a>
-Pohyb útočníků</h3>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Pohyb útočníků</h2>
 <ul>
 <li>Pro hledání cesty útočníků je použit algoritmus Bredth First Search se specializací pro každý druh útočníka.</li>
 <li>Výpočet cesty se provede při každém kroku.</li>
 <li>Pokud má útočník slowEffect, bude po dobu platnosti jeho pohyb ~1.5x zpomalen dokud efekt nevyprší.</li>
 <li>Útočník se pohybuje pouze pokud je na dalším políčku, kam se má posunout podle vypočítané cesty, volno. Pokud je obsazeno, stojí na místě.</li>
-<li>slower attacker je pomalejší, ale má vyšší damage než základní útočník. Vždy směřuje směrem na nejbližší věž, nebo východ.</li>
-<li>faster attacker je rychlejší, ale má nižší HP a damage. Vždy směřuje směrem k východu a při cestě se vyhíbá permieteru věží.</li>
-<li>Tyto specifikace fungují pomocí polymorfních tříd a jejich virtuálních metod, které specializují který prvek můžou navšítit.</li>
+<li><a href="classchargerAttacker.html">Slower attacker</a> je pomalejší, ale má vyšší damage než základní útočník. Vždy směřuje směrem na nejbližší věž, nebo východ.</li>
+<li><a href="classfastAttacker.html">Faster attacker</a> je rychlejší, ale má nižší HP a damage. Vždy směřuje směrem k východu a při cestě se vyhíbá permieteru věží.</li>
+<li>Tyto specifikace fungují pomocípolymorfních tříd a jejich <a href="classAttacker.html#ab77eae745103e33b7032878215f57ac1">virtuálních metod</a>, které specializují který prvek můžou navšítit.</li>
 <li>Pohyb entit se projevuje nejen v parameterch entity, ale upravuje se podle něj i obsah třídy <a class="el" href="classMap.html">Map</a>.</li>
-<li>Bližší info v \src\Attacker.cpp</li>
+<li>Bližší info v <a class="el" href="classAttacker.html">Attacker</a>. (Hlavní je funkce <a href="classAttacker.html#a711c4a8037d8d97ae9ee525f9b6e439e">Attacker::findShortestPath()</a>)</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md6"></a>
-AI věží</h2>
+"AI" protihráče</h2>
 <ul>
 <li>Věže jsou vytvářeny vždy na začátku hry podle dané obtížnosti.</li>
 <li>Pokud je daná obtížnost "easy", jde pouze o náhodné vytvoření věží na mapě.</li>
 <li>pokud je daná obtížnost "medium", věže jsou vytvořeny v okolí oblasti kudy by mohli útočníci chodit.</li>
 <li>pokud je daná obtížnost "hard", pouze se zvýší počet věží a použije se stejný algoritmus jako "medium".</li>
 <li>pro zjištění přibližné cesty útočníků je použit algoritmus BFS od výstupu k vstupům.</li>
+<li>bližší info ve funkci <a href="classEnemy.html#a238798e0d954a7ee3b6fafb592151cde">Enemy::createTowers()</a>.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Interakce mezi entitami</h2>
@@ -125,20 +126,22 @@ Interakce mezi entitami</h2>
 <li>nejprve je u každé entity zkontrolován perimetr, který je stanoven v definičním souboru a pokud nenašla entitu na kterou měla focus, zaútočí na novou nejližší nepřátelskou entitu a uloží si jeho ID jako současný focus.</li>
 <li>útoky nejdřív provedou útočníci, které případně mohou i věže zničit.</li>
 <li>poté zbylé věže provedou útoky na útočníky.</li>
+<li>bližší info ve funkci <a href="classCGame.html#a746d639da0897949fda403039daf4bf5">CGame::performAttacks()</a>.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md8"></a>
-Načítání z definice</h1>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Načítání z definice</h2>
 <ul>
 <li>definice mapy je uložena v souboru map1.txt a soubor je postupně načítán a vyvtářeno dvourozměrné pole, které je poté vykresleno na obrazovku</li>
 <li>definice útočníků a věží jsou uloženy ve vlastních kontejnerech std::map, které mají klíče vždy názaev typu a hodnotou uvnitř mapy je další mapa, která obsahuje dané parametry a klíčem je jejich název.</li>
 <li>k definicím přisupují konstruktory specifických entit pomocí reference a pouze si vyberou která data chtějí použít.</li>
+<li>bližší info ve třídě <a class="el" href="classCDefinitions.html">CDefinitions</a>. </li>
 </ul>
 <h2><a class="anchor" id="autotoc_md9"></a>
 Ukládání a načítání hry</h2>
 <ul>
-<li>hra je načítána podobným způsobem jako načítá z definice. Mapa v mapě v mapě... více v \src\Map.cpp</li>
+<li>hra je načítána podobným způsobem jako načítá z definice. Mapa v mapě v mapě...</li>
+<li>funkce vykonávající tuto funkcionalitu jsou: <a href="classCGame.html#afbbb4f8d05f753b7c2d6a0d91ca96a9b">CGame::loadFromSave(const std::string &amp;path)</a> a <a href="classCGame.html#a260a60819a5e6a8991e7f7983c51a509">CGame::save()</a> </li>
 </ul>
-<p>../doc/classbasicAttacker.html::a5b7a46059eaf43894f32016477c1e9a9 </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

@@ -17,6 +17,7 @@ basicAttacker::basicAttacker(int posX, int posY, defEntity& def, Map* map, int i
             m_hp = hp;
         calculateDeltas();
     }
+
 fastAttacker::fastAttacker(int posX, int posY, defEntity &def, Map *map, int id, int hp )
 : Attacker(posX, posY,def[FASTA]["hp"],def[FASTA]["dmg"],(char)def[FASTA]["symbol"],def[FASTA]["rng"], def[FASTA]["atkspeed"],map,id)
 {
@@ -38,22 +39,6 @@ chargerAttacker::chargerAttacker(int posX, int posY,defEntity& def, Map *map, in
 }
 
 
-//    bool Attacker::move (int _x, int y)
-//    {
-//        if(_x+y < 0 || m_x+_x > MAP_HEIGHT || m_y+y > MAP_WIDTH)
-//            return false;
-//        m_x += _x;
-//        m_y += y;
-//        return true;
-//    }
-
-// do not use
-void Attacker::setPosition(int x, int y){
-    m_sharedMap->m_map[x][y] = Point(x,y,m_symbol);
-}
-
-
-
 bool Attacker::operator<(Attacker &rhs) {
     return this->m_id<rhs.m_id;
 }
@@ -68,15 +53,15 @@ bool Attacker::findShortestPath(Point::PointType endType) {
 //    using Type = Point::PointType;
      Point start = Point(m_x,m_y);
      Point target = Point(-10,-10); // dummy point used to determine if we found a target
-     std::map<Point, Point> visited;
-     std::deque<Point> q;
+     std::map<Point, Point> visited; // map of already visited points and ther previous points (used to reconstruct shortest path)
+     std::deque<Point> q; // points to visit
      Point current = start;
      q.push_back(start);
      while(!q.empty())
      {
         current = q.front();
         q.pop_front();
-
+        // checks each neighbor of current ponit in queue of points
         m_sharedMap->forEachNeighbor(current , [&](const Point& neighbor)
         {
             if(this->checkSpecialization(neighbor)){
@@ -87,7 +72,7 @@ bool Attacker::findShortestPath(Point::PointType endType) {
             visited.emplace(neighbor, current);
             q.push_back(neighbor);
 
-            if(neighbor._type == endType || this->isTarget(neighbor)){
+            if(neighbor._type == endType || this->isTarget(neighbor)){ // checks wether point is current entities desired end point
                 target = neighbor;
                 return;
             }
@@ -100,11 +85,11 @@ bool Attacker::findShortestPath(Point::PointType endType) {
 
      m_path.push_back(target);
 
-     while(target != start){
+     while(target != start){ // path reconstruction
          target = visited[target];
          m_path.push_front(target);
      }
-     if(this->getTypeName()==CHARGERA && m_path.back()._type != Point::Exit)
+     if(this->getTypeName()==CHARGERA && m_path.back()._type != Point::Exit) // charger cant move into the entity its reaching
          m_path.pop_back();
      m_path.pop_front();
      return true;

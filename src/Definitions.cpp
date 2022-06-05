@@ -1,6 +1,6 @@
 
 #include "Definitions.h"
-#include "logFile.h"
+
 
 bool CDefinitions::loadDefinitions(){
     std::string path ="attackers/attackerDefinition.txt";
@@ -40,8 +40,8 @@ bool CDefinitions::loadEntity(std::string & path, defEntity & ent){
                 throw(syntaxErr( "Error in file " + path + " at line " + line));
             }
             try{final = std::stoi(value);}
-            catch(std::invalid_argument){
-                final = *(value.substr(0,1).c_str());
+            catch(std::invalid_argument& e){
+                final = (unsigned char)*(value.substr(0,1).c_str());
             }
 
             ent[entName].insert(std::pair<std::string, int>(key, final));
