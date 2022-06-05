@@ -2,16 +2,17 @@
 
 #include "Entity.h"
 #include "constants.h"
-#include <vector>
-#include <set>
-#include <memory>
-#include <queue>
-#include <deque>
 #include "Map.h"
 #include "Entity.h"
 #include "exceptions.h"
 #include "HelpStructs.h"
 #include "Definitions.h"
+
+#include <vector>
+#include <set>
+#include <memory>
+#include <queue>
+#include <deque>
 #include <utility>
 
 
@@ -19,8 +20,7 @@ class Attacker: public Entity
 {
 public:
     Attacker(int posX, int posY,int hp, int dmg, char symbol, int radius, int attackSpeed, Map * map,int attackerID);
-//    ~Attacker() = default;
-    ~Attacker() override;
+    ~Attacker() override = default;
     bool operator < (Attacker & rhs);
     bool operator > (Attacker & rhs);
     void setPosition(int x, int y);
@@ -31,18 +31,23 @@ public:
     [[nodiscard]] virtual bool isTarget(const Point& p) const = 0;
     Point::PointType getType() override;
     [[nodiscard]] std::string getTypeName() const override = 0;
-    bool findShortestPath();
-    void setEffects(CEffects& eff);
+    bool findShortestPath(Point::PointType endType = Point::Exit);
+    std::deque<Point>& getPath();
+    void addEffects(const CEffects eff);
     CEffects getEffects() const;
-
+    bool hasSlowEffect() const;
+    bool setSlowerMovement();
+    bool setNormalMovement();
+    virtual Point::PointType pointToHide();
 // queue that is updated everytime findPath is called
 
 protected:
-    int m_slowEffectDuration;
     void popPath();
     std::deque<Point> m_path;
-    int cycleCnt{};
-    int m_movementSpeed{};
+    int m_cycleCnt{};
+    int m_movementSpeed;
+    CEffects m_effects{};
+    int m_defaultMovementSpeed;
 };
 
 // symbol $
@@ -68,6 +73,7 @@ public:
     bool isTarget(const Point& p) const override;
     [[nodiscard]] std::string getTypeName() const override;
     bool checkSpecialization(const Point &point) override;
+    Point::PointType pointToHide() override;
 };
 
 // symbol @

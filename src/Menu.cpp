@@ -218,7 +218,7 @@ std::string CMenu::saveMenu() {
     wattron(menu_win,A_STANDOUT);
     int keypress = 0;
     while(true){
-        wtimeout(menu_win,10);
+        wtimeout(menu_win,50);
         keypress = wgetch(menu_win);
         if(keypress!= ERR){
             if(keypress == 27 ) // Code for ESC in NCurses

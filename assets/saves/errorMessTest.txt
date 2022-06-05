@@ -1,0 +1,25 @@
+map 1
+difficulty 1
+tsdestroyed 0
+asfinished 0
+money 2250
+
+# attackers
+# towers
+type basicTower
+x 39
+y 6
+hp 650
+type basicTower
+x 40
+y 2
+hp 650
+type basicTower
+x 6
+y 5
+hp 650
+# queue
+name fastAttacker
+x 47
+y 4
+# end

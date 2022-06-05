@@ -11,7 +11,7 @@ price 100
 symbol %
 hp 130
 rng 2
-dmg 25
+dmg 35
 atkspeed 1
 mov 1
 price 250
@@ -20,7 +20,7 @@ price 250
 symbol @
 hp 640
 rng 2
-dmg 30
-atkspeed 3
+dmg 65
+atkspeed 4
 mov 4
-price 400
+price 300

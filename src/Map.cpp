@@ -9,7 +9,7 @@
 #include <complex>
 
 Point::Point(int x, int y, char symbol)
-        : _x(x), _y(y), _symbol(symbol), _defaultSymbol(symbol)
+        : _symbol(symbol), _x(x), _y(y),  _defaultSymbol(symbol)
 {
     switch (symbol) {
         case '#':
@@ -27,8 +27,21 @@ Point::Point(int x, int y, char symbol)
         case '<':
             _type = Entry;
             break;
+        case '=':
+            if(x == 1)
+                _type = Exit;
+            else
+                _type = Entry;
+            _type = Entry;
+            break;
         case '>':
             _type = Exit;
+            break;
+        case 'o':
+            _type = Water;
+            break;
+        case '0':
+            _type = Water;
             break;
     }
     _defaultType = _type;
@@ -131,6 +144,10 @@ bool Map::setEntity(int x, int y, Entity * entity){
     m_map[y][x]._symbol = entity->getSymbol();
     m_map[y][x]._ident = entity->getID();
     if(entity->getType() == Point::Tower) {
+        int radius = entity->getRadius();
+        entity->setRadius(abs(radius - 2)); // temporarily setting radius to be little smaller
+        entity->calculateDeltas();     // so that fast attackers have to go in their range
+        entity->setRadius(radius);
         for(auto [dx,dy] : entity->getDeltas()) {
             if(checkBounds(x+dx,y+dy)) {
                 if (getType({x+dx,y+dy}) == Point::Empty || getType({x+dx,y+dy}) == Point::Attacker) {
@@ -138,6 +155,7 @@ bool Map::setEntity(int x, int y, Entity * entity){
                 }
             }
         }
+        entity->calculateDeltas();
     }
     entity->move(x,y);
     mvwprintw(m_game_window,y+1,x+1,"%c",entity->getSymbol());
@@ -223,7 +241,7 @@ void Map::printMap(){
 bool Map::getLaneByID(int id, Point & spawnLane)const{
     if(m_entries.size()<id)
         return false;
-    spawnLane = m_entries.at(id);
+    spawnLane = m_entries.at(id-1);
     spawnLane._x = spawnLane._x - 1;
     return true;
 }
@@ -468,4 +486,8 @@ if(m_map[y][x]._inRadiusOf.count(entity->getType()) == 0) {
 
 bool Map::checkBounds(int x, int y) {
     return x >= 0 && x < getMapWidth() && y >= 0 && y < m_map.size();
+}
+
+const Point &Map::getExit() const {
+    return m_exit;
 }

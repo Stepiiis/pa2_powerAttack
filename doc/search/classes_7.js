@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logexception_279',['logException',['../classlogException.html',1,'']]]
+  ['logexception_309',['logException',['../classlogException.html',1,'']]]
 ];

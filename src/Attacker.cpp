@@ -6,13 +6,13 @@
 Attacker::Attacker(int posX, int posY,int hp, int dmg, char symbol, int radius,int attackSpeed, Map * map,int attackerID)
 : Entity(posX, posY, hp,dmg, symbol, radius, attackSpeed, map, attackerID)
 {
-    m_slowEffectDuration = 0;
 }
 
 basicAttacker::basicAttacker(int posX, int posY, defEntity& def, Map* map, int id, int hp)
 :Attacker(posX, posY,def[BASICA]["hp"],def[BASICA]["dmg"],(char)def[BASICA]["symbol"],def[BASICA]["rng"],def[BASICA]["atkspeed"], map,id)
     {
         m_movementSpeed = def[BASICA]["mov"];
+        m_defaultMovementSpeed = m_movementSpeed;
         if(hp!=-10)
             m_hp = hp;
         calculateDeltas();
@@ -21,6 +21,7 @@ fastAttacker::fastAttacker(int posX, int posY, defEntity &def, Map *map, int id,
 : Attacker(posX, posY,def[FASTA]["hp"],def[FASTA]["dmg"],(char)def[FASTA]["symbol"],def[FASTA]["rng"], def[FASTA]["atkspeed"],map,id)
 {
     m_movementSpeed = def[FASTA]["mov"];
+    m_defaultMovementSpeed = m_movementSpeed;
     if(hp!=-10)
         m_hp = hp;
     calculateDeltas();
@@ -30,6 +31,7 @@ chargerAttacker::chargerAttacker(int posX, int posY,defEntity& def, Map *map, in
 : Attacker(posX, posY,def[CHARGERA]["hp"],def[CHARGERA]["dmg"],(char)def[CHARGERA]["symbol"],def[CHARGERA]["rng"],def[CHARGERA]["atkspeed"], map,id)
 {
     m_movementSpeed = def[CHARGERA]["mov"];
+    m_defaultMovementSpeed = m_movementSpeed;
     if(hp!=-10)
         m_hp = hp;
     calculateDeltas();
@@ -61,11 +63,11 @@ bool Attacker::operator>(Attacker &rhs) {
 }
 
 
-bool Attacker::findShortestPath(){
+bool Attacker::findShortestPath(Point::PointType endType) {
     m_path.clear();
 //    using Type = Point::PointType;
-     Point start = Point(m_x,m_y, '<');
-     Point target = Point(-10,-10, '>'); // dummy point used to determine if we found a target
+     Point start = Point(m_x,m_y);
+     Point target = Point(-10,-10); // dummy point used to determine if we found a target
      std::map<Point, Point> visited;
      std::deque<Point> q;
      Point current = start;
@@ -80,12 +82,12 @@ bool Attacker::findShortestPath(){
             if(this->checkSpecialization(neighbor)){
                 return;
             }
-            if(neighbor == current || neighbor._type == Point::Entry || neighbor._type == Point::Wall || visited.count(neighbor) != 0 )
+            if(neighbor == current || neighbor._type == Point::Wall || visited.count(neighbor) != 0 )
                 return;
             visited.emplace(neighbor, current);
             q.push_back(neighbor);
 
-            if(this->isTarget(neighbor)){
+            if(neighbor._type == endType || this->isTarget(neighbor)){
                 target = neighbor;
                 return;
             }
@@ -93,16 +95,16 @@ bool Attacker::findShortestPath(){
         if(target._x != -10)
             break;
      }
-
      if(target._x == -10)
          return false;
+
      m_path.push_back(target);
 
      while(target != start){
          target = visited[target];
          m_path.push_front(target);
      }
-     if(this->getTypeName()==CHARGERA)
+     if(this->getTypeName()==CHARGERA && m_path.back()._type != Point::Exit)
          m_path.pop_back();
      m_path.pop_front();
      return true;
@@ -124,29 +126,27 @@ Point::PointType Attacker::getType() {
     return Point::Attacker;
 }
 
-void Attacker::setEffects(CEffects &eff) {
-    m_slowEffectDuration=eff.m_slowEffect;
+void Attacker::addEffects(const CEffects eff) {
+    m_effects += eff;
 }
 
 CEffects Attacker::getEffects() const {
-    return CEffects(m_slowEffectDuration);
+    return m_effects;
 }
 
 
-Attacker::~Attacker() = default;
-
 
 bool basicAttacker::isTarget(const Point &p) const{
-    return p._type == Point::Exit;
+    return false; // basicAttacker has a target type Point::Exit which is provided as a default argument in the function findShortestPath
 }
 
 bool Attacker::moveOnPath() {
     if(m_path.empty())
         return false;
-    cycleCnt++;
-    if(cycleCnt % m_movementSpeed == 0)
+    m_cycleCnt++;
+    if((m_cycleCnt % m_movementSpeed) == 0)
     {
-        cycleCnt = 0;
+        m_cycleCnt = 0;
         Point next = m_path.front();
         if(next._type == Point::Exit)
             return false;
@@ -160,12 +160,35 @@ bool Attacker::moveOnPath() {
     return true;
 }
 
+bool Attacker::hasSlowEffect() const {
+    return m_effects.m_slowEffect != 0;
+}
+
+bool Attacker::setSlowerMovement() {
+    m_movementSpeed = floor(m_defaultMovementSpeed * 1.5);
+    m_effects.m_slowEffect--;
+    return true;
+}
+
+bool Attacker::setNormalMovement() {
+    m_movementSpeed = m_defaultMovementSpeed;
+    return true;
+}
+
+std::deque<Point>& Attacker::getPath() {
+    return m_path;
+}
+
+Point::PointType Attacker::pointToHide() {
+    return Point::Entry;
+}
+
 std::string basicAttacker::getTypeName() const {
     return {"basicAttacker"};
 }
 
 bool basicAttacker::checkSpecialization(const Point &point) {
-    if(point._type == Point::Tower)
+    if(point._type == Point::Tower || point._type == Point::Water)
         return true;
     return false;
 }
@@ -180,11 +203,15 @@ std::string fastAttacker::getTypeName() const {
 }
 
 bool fastAttacker::checkSpecialization(const Point &point) {
-    if(point._inRadiusOf.count(Point::Tower) ==1)
+    if(point._inRadiusOf.count(Point::Tower) == 1)
         return true;
-    if(point._type == Point::Attacker)
+    if(point._type == Point::Attacker || point._type == Point::Entry || point._type== Point::Tower)
         return true;
     return false;
+}
+
+Point::PointType fastAttacker::pointToHide() {
+    return Point::Water;
 }
 
 
@@ -198,5 +225,5 @@ std::string chargerAttacker::getTypeName() const {
 }
 
 bool chargerAttacker::checkSpecialization(const Point &point) {
-    return point._type == Point::Attacker;
+    return point._type == Point::Attacker || point._type == Point::Entry || point._type == Point::Water;
 }

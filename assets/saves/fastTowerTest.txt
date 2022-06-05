@@ -1,0 +1,14 @@
+map 1
+difficulty 1
+tsdestroyed 2
+asfinished 0
+money 30000
+
+# attackers
+# towers
+type fastTower
+x 36
+y 5
+hp 1000
+# queue
+# end

@@ -4,12 +4,13 @@
 #include "Map.h"
 #include "Definitions.h"
 #include "logFile.h"
+#include "Map.h"
+#include "constants.h"
 #include <memory>
 #include <vector>
 #include <ncurses.h>
-#include "Map.h"
-#include "constants.h"
 #include <random>
+#include <unordered_set>
 
 // handler of building and attacking of towers
 class Enemy{
@@ -23,14 +24,14 @@ public:
     size_t getTowerCount(); // returns the number of towers
     int damageTowers(std::vector<std::pair<int, int> > &towers); // damages all towers in the vector
     bool createNewTower(int type, int x, int y, int hp); // 0 = BASIC, 1 = FAST, 2 = STRONG, 3 = SLOWEF
-    std::vector<std::pair<int,int> > getAttackersToAttack();
+    std::vector<std::tuple<int,int, CEffects> > getAttackersToAttack();
     [[nodiscard]] const std::map<int, std::unique_ptr<Tower> >& getTowers() const;
 protected:
-    int towersSpawned = 0;
-    Map* _map;
-    std::map<int,std::unique_ptr<Tower> > _towers;
-    int _towerIDcnt;
-    int _difficulty;
-    defEntity _def; // definitions of towers loaded from file
-    std::vector<std::vector<char> > _emptySpaces;
+    int m_towersSpawned = 0;
+    Map* m_map;
+    std::map<int,std::unique_ptr<Tower> > m_towers;
+    int m_towerIDcnt;
+    int m_difficulty;
+    defEntity m_def; // definitions of towers loaded from file
+    std::vector<std::vector<char> > m_emptySpaces;
 };

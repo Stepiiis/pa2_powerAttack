@@ -77,8 +77,7 @@ $(function() {
 <div class="dynheader">
 Collaboration diagram for Map:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap__coll__graph.svg" width="88" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap__coll__graph.svg" width="88" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -88,7 +87,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1197ab65e40dd20b891ba165471e3163"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a1197ab65e40dd20b891ba165471e3163">Map</a> ()=default</td></tr>
 <tr class="separator:a1197ab65e40dd20b891ba165471e3163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae84f294b7e9de1a49954dc2d13698e13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#ae84f294b7e9de1a49954dc2d13698e13">updateMap</a> (int x, int y, <a class="el" href="classEntity.html">Entity</a> *entity)</td></tr>
-<tr class="memdesc:ae84f294b7e9de1a49954dc2d13698e13"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMap.html#ae84f294b7e9de1a49954dc2d13698e13" title="Map::updateMap.">Map::updateMap</a>.  <a href="classMap.html#ae84f294b7e9de1a49954dc2d13698e13">More...</a><br /></td></tr>
 <tr class="separator:ae84f294b7e9de1a49954dc2d13698e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116fabc6e920ef02952a208655673921"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a116fabc6e920ef02952a208655673921">updateCell</a> (int x, int y, <a class="el" href="classPoint.html#ac4cc62b224c258e128a6e591b0248b41">Point::PointType</a> type, const char symbol)</td></tr>
 <tr class="separator:a116fabc6e920ef02952a208655673921"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -96,6 +94,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a68610141c789e77187bc53fc1510dc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb8bd1312b25de59794e421009b6fa3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#adb8bd1312b25de59794e421009b6fa3e">setEntity</a> (int x, int y, <a class="el" href="classEntity.html">Entity</a> *entity)</td></tr>
 <tr class="separator:adb8bd1312b25de59794e421009b6fa3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886aa8a72b03b24d6b60202d9cddc634"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a886aa8a72b03b24d6b60202d9cddc634">removeFromRadius</a> (int x, int y, <a class="el" href="classEntity.html">Entity</a> *entity)</td></tr>
+<tr class="separator:a886aa8a72b03b24d6b60202d9cddc634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4968d82a24a805f98028a0a5b1a01e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#ae4968d82a24a805f98028a0a5b1a01e8">addToRadius</a> (int x, int y, <a class="el" href="classEntity.html">Entity</a> *entity)</td></tr>
+<tr class="separator:ae4968d82a24a805f98028a0a5b1a01e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12616a2a3c221b40b7bb56efb7f32330"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a12616a2a3c221b40b7bb56efb7f32330">checkBounds</a> (int x, int y)</td></tr>
+<tr class="separator:a12616a2a3c221b40b7bb56efb7f32330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5b5492b49e9d1aaa54e586d1203030f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#af5b5492b49e9d1aaa54e586d1203030f">redrawMap</a> ()</td></tr>
 <tr class="separator:af5b5492b49e9d1aaa54e586d1203030f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a1bc119b284fc82e2f3b1c2956b4381"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a0a1bc119b284fc82e2f3b1c2956b4381">loadNextMap</a> (int level)</td></tr>
@@ -128,6 +132,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7ded655c7db0e9d72816430b4f2c83a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a286853d8475bc1bbede582c89e9b1491"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a286853d8475bc1bbede582c89e9b1491">getMapWidth</a> ()</td></tr>
 <tr class="separator:a286853d8475bc1bbede582c89e9b1491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a535be22b99fa88937940593a90c1bcb7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classPoint.html">Point</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMap.html#a535be22b99fa88937940593a90c1bcb7">getExit</a> () const</td></tr>
+<tr class="separator:a535be22b99fa88937940593a90c1bcb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9ef6e116a9e6b1f3b22c7e0a85e6fde"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:af9ef6e116a9e6b1f3b22c7e0a85e6fde"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classMap.html#af9ef6e116a9e6b1f3b22c7e0a85e6fde">forEachNeighbor</a> (const <a class="el" href="classPoint.html">Point</a> &amp;p, T Fun)</td></tr>
 <tr class="separator:af9ef6e116a9e6b1f3b22c7e0a85e6fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,6 +218,88 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae4968d82a24a805f98028a0a5b1a01e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4968d82a24a805f98028a0a5b1a01e8">&#9670;&nbsp;</a></span>addToRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Map::addToRadius </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEntity.html">Entity</a> *&#160;</td>
+          <td class="paramname"><em>entity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ae4968d82a24a805f98028a0a5b1a01e8_cgraph.svg" width="318" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ae4968d82a24a805f98028a0a5b1a01e8_icgraph.svg" width="1390" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a12616a2a3c221b40b7bb56efb7f32330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12616a2a3c221b40b7bb56efb7f32330">&#9670;&nbsp;</a></span>checkBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Map::checkBounds </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a12616a2a3c221b40b7bb56efb7f32330_cgraph.svg" width="348" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a12616a2a3c221b40b7bb56efb7f32330_icgraph.svg" width="1394" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a0fb31ef7fcef2c7071c549ebf4f66153"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0fb31ef7fcef2c7071c549ebf4f66153">&#9670;&nbsp;</a></span>checkClearSight()</h2>
 
@@ -250,8 +338,7 @@ Protected Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a0fb31ef7fcef2c7071c549ebf4f66153_icgraph.svg" width="371" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a0fb31ef7fcef2c7071c549ebf4f66153_icgraph.svg" width="371" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -284,8 +371,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a4b669f3ae1f41ad70ae8c28910bfa4e8_icgraph.svg" width="1198" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a4b669f3ae1f41ad70ae8c28910bfa4e8_icgraph.svg" width="1235" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -307,8 +393,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a7ded655c7db0e9d72816430b4f2c83a5_icgraph.svg" width="944" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a7ded655c7db0e9d72816430b4f2c83a5_icgraph.svg" width="991" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -391,14 +476,12 @@ template&lt;typename T &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_af9ef6e116a9e6b1f3b22c7e0a85e6fde_cgraph.svg" width="420" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_af9ef6e116a9e6b1f3b22c7e0a85e6fde_cgraph.svg" width="420" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_af9ef6e116a9e6b1f3b22c7e0a85e6fde_icgraph.svg" width="416" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_af9ef6e116a9e6b1f3b22c7e0a85e6fde_icgraph.svg" width="416" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -440,8 +523,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_abe01c7193313018b8f5d9afbd32b49c2_icgraph.svg" width="659" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_abe01c7193313018b8f5d9afbd32b49c2_icgraph.svg" width="659" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -461,11 +543,27 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a535be22b99fa88937940593a90c1bcb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a535be22b99fa88937940593a90c1bcb7">&#9670;&nbsp;</a></span>getExit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classPoint.html">Point</a> &amp; Map::getExit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ae4713f8271b2c9fd62184ab0f2342447_icgraph.svg" width="1220" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a535be22b99fa88937940593a90c1bcb7_icgraph.svg" width="1168" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -498,8 +596,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a93e47351a83408edee40bef3198ef101_icgraph.svg" width="1103" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a93e47351a83408edee40bef3198ef101_icgraph.svg" width="1103" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -538,8 +635,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a286853d8475bc1bbede582c89e9b1491_icgraph.svg" width="1187" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a286853d8475bc1bbede582c89e9b1491_icgraph.svg" width="1646" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -559,6 +655,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_af482c6f7d02d4e79c26097b53f4ce808_icgraph.svg" width="1398" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -580,8 +681,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a4c6de1d62db7a7aca78b01838b8d0a6a_icgraph.svg" width="1108" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a4c6de1d62db7a7aca78b01838b8d0a6a_icgraph.svg" width="1108" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -604,8 +704,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a0a1bc119b284fc82e2f3b1c2956b4381_cgraph.svg" width="514" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a0a1bc119b284fc82e2f3b1c2956b4381_cgraph.svg" width="514" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -627,8 +726,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a1cefc1b8ed6692667e2019f64acc0f5a_icgraph.svg" width="951" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a1cefc1b8ed6692667e2019f64acc0f5a_icgraph.svg" width="802" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -651,14 +749,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_acd24cfa7aca34a2839a94490ef563aa2_cgraph.svg" width="320" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_acd24cfa7aca34a2839a94490ef563aa2_cgraph.svg" width="320" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_acd24cfa7aca34a2839a94490ef563aa2_icgraph.svg" width="940" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_acd24cfa7aca34a2839a94490ef563aa2_icgraph.svg" width="987" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -680,8 +776,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_af5b5492b49e9d1aaa54e586d1203030f_cgraph.svg" width="306" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_af5b5492b49e9d1aaa54e586d1203030f_cgraph.svg" width="306" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -703,8 +798,51 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_adba2ce32305e081466f8039fd9ccdf17_icgraph.svg" width="314" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_adba2ce32305e081466f8039fd9ccdf17_icgraph.svg" width="314" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a886aa8a72b03b24d6b60202d9cddc634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a886aa8a72b03b24d6b60202d9cddc634">&#9670;&nbsp;</a></span>removeFromRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Map::removeFromRadius </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEntity.html">Entity</a> *&#160;</td>
+          <td class="paramname"><em>entity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a886aa8a72b03b24d6b60202d9cddc634_cgraph.svg" width="363" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a886aa8a72b03b24d6b60202d9cddc634_icgraph.svg" width="590" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -737,8 +875,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a68610141c789e77187bc53fc1510dc15_icgraph.svg" width="298" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_a68610141c789e77187bc53fc1510dc15_icgraph.svg" width="527" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -777,14 +914,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_adb8bd1312b25de59794e421009b6fa3e_cgraph.svg" width="312" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_adb8bd1312b25de59794e421009b6fa3e_cgraph.svg" width="536" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_adb8bd1312b25de59794e421009b6fa3e_icgraph.svg" width="1143" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_adb8bd1312b25de59794e421009b6fa3e_icgraph.svg" width="1180" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -807,8 +942,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ac36f80dbbf7dccfdfc7837d300427da7_icgraph.svg" width="738" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ac36f80dbbf7dccfdfc7837d300427da7_icgraph.svg" width="784" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -884,9 +1018,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p><a class="el" href="classMap.html#ae84f294b7e9de1a49954dc2d13698e13" title="Map::updateMap.">Map::updateMap</a>. </p>
-<p>EVERY COORDINATE SHOULD BE MOVED BY 1 TO ACCOUNT FOR THE BORDER </p><dl class="params"><dt>Parameters</dt><dd>
+<p>@Brief WHEN PRINTING ON SCREEN EVERY COORDINATE SHOULD BE MOVED BY 1 TO ACCOUNT FOR THE BORDER</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">prevX</td><td>previous _x position which will be filled with empty space </td></tr>
     <tr><td class="paramname">prevY</td><td>previous y position which will be filled with empty space </td></tr>
@@ -899,14 +1032,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ae84f294b7e9de1a49954dc2d13698e13_cgraph.svg" width="330" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ae84f294b7e9de1a49954dc2d13698e13_cgraph.svg" width="568" height="480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ae84f294b7e9de1a49954dc2d13698e13_icgraph.svg" width="391" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMap_ae84f294b7e9de1a49954dc2d13698e13_icgraph.svg" width="356" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

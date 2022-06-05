@@ -1,10 +1,11 @@
 #pragma once
 #include "constants.h"
 #include "Map.h"
+#include "ncurses.h"
+#include "HelpStructs.h"
 #include <iostream>
 #include <memory>
 #include <set>
-#include "ncurses.h"
 
 class Map;
 
@@ -24,25 +25,24 @@ public:
 
     // removes the entity from the map and sets alive to false
     bool destroy();
-    void attack();
-    void update();
 
-
+    void setRadius(int radius);
+    int getRadius()const;
     void draw();
     int getDamage() const;
     int getHP() const;
     int getCurrentFocus() const;
     char getSymbol() const;
+    int getAttackSpeed() const;
+    bool canAttack() ;
     virtual Point::PointType getType() = 0;
     bool checkRadius(Point::PointType type);
     void calculateDeltas();
     [[nodiscard]] const std::set<std::pair<int,int>> &getDeltas() const;
     virtual std::string getTypeName() const = 0;
-    bool isFocused() const;
     int getID()const;
     [[nodiscard]] std::pair<int,int> getPosition()const;
 
-    bool printEntity(int x, int y);
     bool alive = true;
 protected:
     int m_x;       // souřadnice _x
@@ -55,16 +55,16 @@ protected:
 
     int m_hp;      // současné zdraví
 
-
     Map* m_sharedMap;   // pointer na sdilenou mapu.
                         // Mapa vždy přežije všechny entity.
     std::set<std::pair<int,int>> m_deltas;
     int m_currentFocusID=-10;// ID of an entity that we are currently attacking
-    bool hasFocus = false;
+    bool m_hasFocus = false;
 
     int m_damage;
 
     int m_attackSpeed{};
+    int m_attackClock = 0;
 
     int m_radius{};
 };

@@ -18,14 +18,15 @@ public:
         Attacker,
         Tower,
         Entry,
-        Exit
+        Exit,
+        Water
     };
     Point(int x, int y, char symbol);
     Point(int x, int y);
     Point(int x, int y, PointType type);
     Point() = default;
     ~Point() = default;
-//    Point(const Point&);
+    Point(const Point&) = default;
     bool operator<(const Point& rhs) const;
     bool operator!=(const Point& rhs) const;
     bool operator==(const Point& rhs) const;
@@ -75,6 +76,7 @@ public:
     bool getEmptySpaces(std::vector<std::vector<char> >& );
     void clearMap();
     int getMapWidth();
+    const Point & getExit()const;
 
     friend Point;
     std::vector<std::vector<Point> > m_map;  // 2D vector of chars

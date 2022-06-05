@@ -114,7 +114,7 @@ bool Entity::checkRadius(Point::PointType type){
             continue;
         if(m_sharedMap->m_map[m_y+y][m_x+x]._type == type) {
             if(m_sharedMap->checkClearSight({m_x,m_y},{m_x+x,m_y+y})){
-                if(hasFocus) {
+                if(m_hasFocus) {
                     if (m_sharedMap->m_map[m_y + y][m_x + x]._ident == m_currentFocusID){
                         foundFocus = true;
 //                        towers.emplace((size_t)m_sharedMap->m_map[m_y+y][m_x+x]._ident, std::make_pair(x, y));
@@ -129,12 +129,12 @@ bool Entity::checkRadius(Point::PointType type){
     if(foundFocus)
         return true;
     else if(closestEntity.empty()) {
-        hasFocus = false;
+        m_hasFocus = false;
         return false;
     }
     else {
         m_currentFocusID = closestEntity.begin()->second;
-        hasFocus = true;
+        m_hasFocus = true;
         return true;
     }
 }
@@ -147,10 +147,30 @@ int Entity::getDamage() const {
     return m_damage;
 }
 
-bool Entity::isFocused() const {
-    return hasFocus;
-}
 
 const std::set<std::pair<int, int>>& Entity::getDeltas() const{
     return m_deltas;
+}
+
+int Entity::getAttackSpeed() const {
+    return m_attackSpeed;
+}
+
+bool Entity::canAttack(){
+    m_attackClock++;
+    if(m_attackClock%m_attackSpeed == 0){
+        m_attackClock = 0;
+        if(m_hasFocus)
+            return true;
+        else
+            return false;
+    }
+}
+
+int Entity::getRadius() const{
+    return m_radius;
+}
+
+void Entity::setRadius(int radius) {
+    m_radius = radius;
 }

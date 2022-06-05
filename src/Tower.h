@@ -1,14 +1,17 @@
 #pragma once
 #include "Entity.h"
 #include "Attacker.h"
-#include <memory>
 #include "exceptions.h"
+#include <memory>
+
 
 class Tower : public Entity {
 public:
     Tower(int posX, int posY,int hp, int dmg, char symbol, int radius, int attackSpeed, Map * map,int attackerID);
+    ~Tower() override = default;
     bool operator < (Tower & rhs);
     bool operator > (Tower & rhs);
+    virtual CEffects  getEffect() const =0;
     Point::PointType getType() override;
     [[nodiscard]] std::string getTypeName() const override = 0;
 };
@@ -19,6 +22,7 @@ class basicTower final: public Tower{
 public:
     basicTower(int x, int y, defEntity &def, Map* map,int towerID, int hp = -10);
     [[nodiscard]] std::string getTypeName() const override;
+    CEffects  getEffect() const override;
 };
 
 
@@ -28,6 +32,7 @@ class fastTower final: public Tower{
 public:
     fastTower(int x, int y, defEntity& def, Map* map,int towerID, int hp = -10);
     [[nodiscard]] std::string getTypeName() const override;
+    CEffects  getEffect() const override;
 };
 
 // útok od této věže je ~1,5x větší než základ. je však 2x dražší
@@ -37,6 +42,7 @@ class highDamageTower final: public Tower
 public:
     highDamageTower(int x, int y, defEntity &def, Map* map,int towerID, int hp = -10);
     [[nodiscard]] std::string getTypeName() const override;
+    CEffects  getEffect() const override;
     };
 
 
@@ -46,4 +52,5 @@ class slowEffectTower final: public Tower
 public:
     slowEffectTower(int x, int y, defEntity& def, Map* map,int , int hp = -10);
     [[nodiscard]] std::string getTypeName() const override;
+    CEffects  getEffect() const override;
         };

@@ -19,6 +19,10 @@ std::string basicTower::getTypeName() const {
     return {"basicTower"};
 }
 
+CEffects basicTower::getEffect() const {
+    return CEffects(0,0);
+}
+
 fastTower::fastTower(int x, int y, defEntity &def, Map* map,int towerID, int hp)
         : Tower( x, y, def[FASTT]["hp"], def[FASTT]["dmg"], (char)def[FASTT]["symbol"], def[FASTT]["rng"], def[FASTT]["atkspeed"], map, towerID)
 {
@@ -29,6 +33,10 @@ fastTower::fastTower(int x, int y, defEntity &def, Map* map,int towerID, int hp)
 
 std::string fastTower::getTypeName() const {
     return {"fastTower"};
+}
+
+CEffects fastTower::getEffect() const {
+    return CEffects(0,0);
 }
 
 
@@ -44,6 +52,10 @@ std::string highDamageTower::getTypeName() const {
     return {"highDamageTower"};
 }
 
+CEffects highDamageTower::getEffect() const {
+    return CEffects(0,0);
+}
+
 
 slowEffectTower::slowEffectTower(int x, int y, defEntity& def, Map *map, int towerID, int hp)
 : Tower( x, y, def[SLOWET]["hp"], def[SLOWET]["dmg"], (char)def[SLOWET]["symbol"], def[SLOWET]["rng"], def[SLOWET]["atkspeed"], map, towerID)
@@ -55,6 +67,10 @@ slowEffectTower::slowEffectTower(int x, int y, defEntity& def, Map *map, int tow
 
 std::string slowEffectTower::getTypeName() const {
     return {"slowEffectTower"};
+}
+
+CEffects slowEffectTower::getEffect() const {
+    return CEffects(5,0);
 }
 
 

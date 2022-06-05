@@ -74,8 +74,7 @@ $(function() {
 <div class="dynheader">
 Collaboration diagram for Enemy:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy__coll__graph.svg" width="94" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy__coll__graph.svg" width="98" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -94,27 +93,31 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a95c457b3e58d8c931e06877c6bde6d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7a14593067f5d799c2080fadaf33cbb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#ac7a14593067f5d799c2080fadaf33cbb">getTowerCount</a> ()</td></tr>
 <tr class="separator:ac7a14593067f5d799c2080fadaf33cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae18d396bd69ed23683e95a03b97cfc8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#ae18d396bd69ed23683e95a03b97cfc8c">damageTowers</a> (std::vector&lt; std::pair&lt; int, int &gt; &gt; &amp;towers)</td></tr>
-<tr class="separator:ae18d396bd69ed23683e95a03b97cfc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc1a12934dc9719abd466553a8a0dee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a9cc1a12934dc9719abd466553a8a0dee">createNewTower</a> (int type, int x, int y, int hp, int id)</td></tr>
-<tr class="separator:a9cc1a12934dc9719abd466553a8a0dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44e4128d98c48b30045cd11873a132c2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a44e4128d98c48b30045cd11873a132c2">getAttackersToAttack</a> ()</td></tr>
-<tr class="separator:a44e4128d98c48b30045cd11873a132c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390bf077438219faa02e4afddbe48926"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a390bf077438219faa02e4afddbe48926">damageTowers</a> (std::vector&lt; std::pair&lt; int, int &gt; &gt; &amp;towers)</td></tr>
+<tr class="separator:a390bf077438219faa02e4afddbe48926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d55547c52bd2a075fe0671f1d3e923"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a99d55547c52bd2a075fe0671f1d3e923">createNewTower</a> (int type, int x, int y, int hp)</td></tr>
+<tr class="separator:a99d55547c52bd2a075fe0671f1d3e923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998ef3d944cd7973580c247895b811e3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::tuple&lt; int, int, <a class="el" href="structCEffects.html">CEffects</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a998ef3d944cd7973580c247895b811e3">getAttackersToAttack</a> ()</td></tr>
+<tr class="separator:a998ef3d944cd7973580c247895b811e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eca7a1be6c0e00dc6f95c60157f0e8c"><td class="memItemLeft" align="right" valign="top">const std::map&lt; int, std::unique_ptr&lt; <a class="el" href="classTower.html">Tower</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a8eca7a1be6c0e00dc6f95c60157f0e8c">getTowers</a> () const</td></tr>
+<tr class="separator:a8eca7a1be6c0e00dc6f95c60157f0e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a3949d0dcc37aad7902833bd3f5c2689f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMap.html">Map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a3949d0dcc37aad7902833bd3f5c2689f">_map</a></td></tr>
-<tr class="separator:a3949d0dcc37aad7902833bd3f5c2689f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accf65f43aa8f10c4e32fd843cdbed409"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::unique_ptr&lt; <a class="el" href="classTower.html">Tower</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#accf65f43aa8f10c4e32fd843cdbed409">_towers</a></td></tr>
-<tr class="separator:accf65f43aa8f10c4e32fd843cdbed409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a085619b24b73cd25a1bd4b014ef06b39"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a085619b24b73cd25a1bd4b014ef06b39">_towerIDcnt</a></td></tr>
-<tr class="separator:a085619b24b73cd25a1bd4b014ef06b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af756b93c23a85bbd10a19c2579b094bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#af756b93c23a85bbd10a19c2579b094bf">_difficulty</a></td></tr>
-<tr class="separator:af756b93c23a85bbd10a19c2579b094bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbbb6a70d60e7ea75ab0f9c92dd4f40b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Definitions_8h.html#ab45df275492bca9c55d88678dad922b4">defEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#acbbb6a70d60e7ea75ab0f9c92dd4f40b">_def</a></td></tr>
-<tr class="separator:acbbb6a70d60e7ea75ab0f9c92dd4f40b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad06d450aa550e08560f97173e30c7ee"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; char &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#aad06d450aa550e08560f97173e30c7ee">_emptySpaces</a></td></tr>
-<tr class="separator:aad06d450aa550e08560f97173e30c7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2f99f449566e727a46f50cc38ad8857"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#aa2f99f449566e727a46f50cc38ad8857">m_towersSpawned</a> = 0</td></tr>
+<tr class="separator:aa2f99f449566e727a46f50cc38ad8857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29512ae34f9b80e32c8318389094a940"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMap.html">Map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a29512ae34f9b80e32c8318389094a940">m_map</a></td></tr>
+<tr class="separator:a29512ae34f9b80e32c8318389094a940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e81acc588e91930f7703eb2b9d72fc"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, std::unique_ptr&lt; <a class="el" href="classTower.html">Tower</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#ac0e81acc588e91930f7703eb2b9d72fc">m_towers</a></td></tr>
+<tr class="separator:ac0e81acc588e91930f7703eb2b9d72fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da7c215f380c25dd5245f808855e240"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a2da7c215f380c25dd5245f808855e240">m_towerIDcnt</a></td></tr>
+<tr class="separator:a2da7c215f380c25dd5245f808855e240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dd42ae8194c6c336f1d614385338c9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a7dd42ae8194c6c336f1d614385338c9f">m_difficulty</a></td></tr>
+<tr class="separator:a7dd42ae8194c6c336f1d614385338c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604624768615d26cd4a6ec3acd913601"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Definitions_8h.html#ab45df275492bca9c55d88678dad922b4">defEntity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a604624768615d26cd4a6ec3acd913601">m_def</a></td></tr>
+<tr class="separator:a604624768615d26cd4a6ec3acd913601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c241708f59aa265bb3d321c907c607b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; char &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEnemy.html#a9c241708f59aa265bb3d321c907c607b">m_emptySpaces</a></td></tr>
+<tr class="separator:a9c241708f59aa265bb3d321c907c607b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2c65c22cb4865e489d7bab4bb76054ea"></a>
@@ -194,14 +197,13 @@ Protected Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_ab8dab466556eb7f9a39697c045864289_icgraph.svg" width="986" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_ab8dab466556eb7f9a39697c045864289_icgraph.svg" width="1023" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="a9cc1a12934dc9719abd466553a8a0dee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cc1a12934dc9719abd466553a8a0dee">&#9670;&nbsp;</a></span>createNewTower()</h2>
+<a id="a99d55547c52bd2a075fe0671f1d3e923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d55547c52bd2a075fe0671f1d3e923">&#9670;&nbsp;</a></span>createNewTower()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,13 +230,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>hp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
+          <td class="paramname"><em>hp</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -246,8 +242,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a9cc1a12934dc9719abd466553a8a0dee_icgraph.svg" width="1008" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a99d55547c52bd2a075fe0671f1d3e923_icgraph.svg" width="1055" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -269,26 +264,24 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a238798e0d954a7ee3b6fafb592151cde_cgraph.svg" width="575" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a238798e0d954a7ee3b6fafb592151cde_cgraph.svg" width="799" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a238798e0d954a7ee3b6fafb592151cde_icgraph.svg" width="979" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a238798e0d954a7ee3b6fafb592151cde_icgraph.svg" width="1016" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="ae18d396bd69ed23683e95a03b97cfc8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae18d396bd69ed23683e95a03b97cfc8c">&#9670;&nbsp;</a></span>damageTowers()</h2>
+<a id="a390bf077438219faa02e4afddbe48926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390bf077438219faa02e4afddbe48926">&#9670;&nbsp;</a></span>damageTowers()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Enemy::damageTowers </td>
+          <td class="memname">int Enemy::damageTowers </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::pair&lt; int, int &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>towers</em></td><td>)</td>
@@ -299,8 +292,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_ae18d396bd69ed23683e95a03b97cfc8c_icgraph.svg" width="1190" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a390bf077438219faa02e4afddbe48926_icgraph.svg" width="1190" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -319,29 +311,17 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_ac81638432442d1e4cc2aa0c4ca49f439_cgraph.svg" width="412" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_ac81638432442d1e4cc2aa0c4ca49f439_icgraph.svg" width="1006" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
-<a id="a44e4128d98c48b30045cd11873a132c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44e4128d98c48b30045cd11873a132c2">&#9670;&nbsp;</a></span>getAttackersToAttack()</h2>
+<a id="a998ef3d944cd7973580c247895b811e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998ef3d944cd7973580c247895b811e3">&#9670;&nbsp;</a></span>getAttackersToAttack()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::pair&lt; int, int &gt; &gt; Enemy::getAttackersToAttack </td>
+          <td class="memname">std::vector&lt; std::tuple&lt; int, int, <a class="el" href="structCEffects.html">CEffects</a> &gt; &gt; Enemy::getAttackersToAttack </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -351,8 +331,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a44e4128d98c48b30045cd11873a132c2_icgraph.svg" width="1230" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a998ef3d944cd7973580c247895b811e3_icgraph.svg" width="1230" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -374,8 +353,29 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_ac7a14593067f5d799c2080fadaf33cbb_icgraph.svg" width="1216" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_ac7a14593067f5d799c2080fadaf33cbb_icgraph.svg" width="1050" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a8eca7a1be6c0e00dc6f95c60157f0e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eca7a1be6c0e00dc6f95c60157f0e8c">&#9670;&nbsp;</a></span>getTowers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt; int, std::unique_ptr&lt; <a class="el" href="classTower.html">Tower</a> &gt; &gt; &amp; Enemy::getTowers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a8eca7a1be6c0e00dc6f95c60157f0e8c_icgraph.svg" width="1290" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -397,15 +397,14 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a95c457b3e58d8c931e06877c6bde6d11_icgraph.svg" width="984" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEnemy_a95c457b3e58d8c931e06877c6bde6d11_icgraph.svg" width="1022" height="164"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="acbbb6a70d60e7ea75ab0f9c92dd4f40b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbbb6a70d60e7ea75ab0f9c92dd4f40b">&#9670;&nbsp;</a></span>_def</h2>
+<a id="a604624768615d26cd4a6ec3acd913601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a604624768615d26cd4a6ec3acd913601">&#9670;&nbsp;</a></span>m_def</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,7 +413,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="Definitions_8h.html#ab45df275492bca9c55d88678dad922b4">defEntity</a> Enemy::_def</td>
+          <td class="memname"><a class="el" href="Definitions_8h.html#ab45df275492bca9c55d88678dad922b4">defEntity</a> Enemy::m_def</td>
         </tr>
       </table>
   </td>
@@ -426,8 +425,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="af756b93c23a85bbd10a19c2579b094bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af756b93c23a85bbd10a19c2579b094bf">&#9670;&nbsp;</a></span>_difficulty</h2>
+<a id="a7dd42ae8194c6c336f1d614385338c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dd42ae8194c6c336f1d614385338c9f">&#9670;&nbsp;</a></span>m_difficulty</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -436,7 +435,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Enemy::_difficulty</td>
+          <td class="memname">int Enemy::m_difficulty</td>
         </tr>
       </table>
   </td>
@@ -448,8 +447,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aad06d450aa550e08560f97173e30c7ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad06d450aa550e08560f97173e30c7ee">&#9670;&nbsp;</a></span>_emptySpaces</h2>
+<a id="a9c241708f59aa265bb3d321c907c607b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c241708f59aa265bb3d321c907c607b">&#9670;&nbsp;</a></span>m_emptySpaces</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -458,7 +457,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;char&gt; &gt; Enemy::_emptySpaces</td>
+          <td class="memname">std::vector&lt;std::vector&lt;char&gt; &gt; Enemy::m_emptySpaces</td>
         </tr>
       </table>
   </td>
@@ -470,8 +469,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a3949d0dcc37aad7902833bd3f5c2689f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3949d0dcc37aad7902833bd3f5c2689f">&#9670;&nbsp;</a></span>_map</h2>
+<a id="a29512ae34f9b80e32c8318389094a940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29512ae34f9b80e32c8318389094a940">&#9670;&nbsp;</a></span>m_map</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -480,7 +479,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMap.html">Map</a>* Enemy::_map</td>
+          <td class="memname"><a class="el" href="classMap.html">Map</a>* Enemy::m_map</td>
         </tr>
       </table>
   </td>
@@ -492,8 +491,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a085619b24b73cd25a1bd4b014ef06b39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a085619b24b73cd25a1bd4b014ef06b39">&#9670;&nbsp;</a></span>_towerIDcnt</h2>
+<a id="a2da7c215f380c25dd5245f808855e240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da7c215f380c25dd5245f808855e240">&#9670;&nbsp;</a></span>m_towerIDcnt</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -502,7 +501,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Enemy::_towerIDcnt</td>
+          <td class="memname">int Enemy::m_towerIDcnt</td>
         </tr>
       </table>
   </td>
@@ -514,8 +513,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="accf65f43aa8f10c4e32fd843cdbed409"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accf65f43aa8f10c4e32fd843cdbed409">&#9670;&nbsp;</a></span>_towers</h2>
+<a id="ac0e81acc588e91930f7703eb2b9d72fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e81acc588e91930f7703eb2b9d72fc">&#9670;&nbsp;</a></span>m_towers</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -524,7 +523,29 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;int,std::unique_ptr&lt;<a class="el" href="classTower.html">Tower</a>&gt; &gt; Enemy::_towers</td>
+          <td class="memname">std::map&lt;int,std::unique_ptr&lt;<a class="el" href="classTower.html">Tower</a>&gt; &gt; Enemy::m_towers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2f99f449566e727a46f50cc38ad8857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f99f449566e727a46f50cc38ad8857">&#9670;&nbsp;</a></span>m_towersSpawned</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Enemy::m_towersSpawned = 0</td>
         </tr>
       </table>
   </td>
