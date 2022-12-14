@@ -10,8 +10,8 @@ by destroying all towers and leaving through the exit door.
 
 #### Points on map legend
 - ' ' - Empty places where Towers can be placed and Attackers can move
-- 'I' - default tower
 - 'F' - fast shooting tower
+- 'I' - default tower
 - 'T' - high damage tower
 - 'S' - tower which shoots damage and gives slow buff
 - '#' - wall
@@ -33,7 +33,7 @@ by destroying all towers and leaving through the exit door.
 ## Implementace
 
 ### Pohyb útočníků
-- Pro hledání cesty útočníků je použit algoritmus Bredth First Search se specializací pro každý druh útočníka.
+- Pro hledání cesty útočníků je použit algoritmus Breadth First Search se specializací pro každý druh útočníka.
 - Výpočet cesty se provede při každém kroku.
 - Pokud má útočník slowEffect, bude po dobu platnosti jeho pohyb ~1.5x zpomalen dokud efekt nevyprší.
 - Útočník se pohybuje pouze pokud je na dalším políčku, kam se má posunout podle vypočítané cesty, volno. Pokud je obsazeno, stojí na místě.
